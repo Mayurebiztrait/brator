@@ -4654,3 +4654,12 @@ ul#menu-left-sidebar li a {
     font-weight: bold;
     color: gray;
 }
+.contact-heading::after {
+    position: absolute;
+    content: '';
+    border-bottom: 3px solid darkgray;
+    width: 100%;
+    transform: translateX(-50%);
+    bottom: -13px;
+    left: 50%;
+}
