@@ -4646,3 +4646,11 @@ padding-left: 0px;
 ul#menu-left-sidebar li.active a {
     color: #ed3333!important;
 }
+ul#menu-left-sidebar li {
+    line-height: 58px;
+}
+ul#menu-left-sidebar li a {
+    font-size: 24px;
+    font-weight: bold;
+    color: gray;
+}
