@@ -4643,3 +4643,6 @@ padding-left: 0px;
 .contact-bottom .brator-contact-form-header h2 {
     margin-bottom: 15px!important;
 }
+ul#menu-left-sidebar li.active a {
+    color: #ed3333!important;
+}
