@@ -4415,8 +4415,15 @@ section.brator-blog-post-area .woocommerce-MyAccount-navigation ul{
 /****************/
 .contact-bottom .brator-contact-header-area.design-one {
     padding-top: 0px;
+	padding-bottom: 0px;
 }
 .contact-bottom .container-xxxl.container-xxl.container {
     margin-left: 0px;
 padding-left: 0px;
+}
+.contact-bottom .brator-contact-list-header h2 {
+    margin-bottom: 15px!important;
+}
+.contact-bottom .brator-contact-form-header h2 {
+    margin-bottom: 15px!important;
 }
