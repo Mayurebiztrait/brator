@@ -4657,9 +4657,18 @@ ul#menu-left-sidebar li a {
 .contact-heading::after {
     position: absolute;
     content: '';
-    border-bottom: 3px solid darkgray;
+    border-bottom: 1px solid darkgray;
     width: 100%;
     transform: translateX(-50%);
     bottom: -13px;
+    left: 50%;
+}
+.contact-left-side::before {
+    position: absolute;
+    content: '';
+    border-left: 1px solid darkgray;
+    width: 100%;
+    transform: translateX(-50%);
+    left: -13px;
     left: 50%;
 }
