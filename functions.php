@@ -798,3 +798,21 @@ function custom_dropdown_bulk_actions_shop_order( $actions ) {
     $actions['mark_partially-shipped'] = __( 'Mark Shipped', 'woocommerce' );
     return $actions;
 }
+// Custom Menu For Page Left Sidebar
+function my_custom_menu() {
+    register_nav_menus(
+        array(
+            'left-sidebar-menu' => _( 'Page left sidebar' ),
+           // 'my-custom-menu-2' =>_('My Second Custom Menu')
+        )
+    );
+}
+add_action( 'init', 'my_custom_menu' );
+add_shortcode('sh_custom_menu_display', 'custom_menu_display');
+function custom_menu_display(){
+	wp_nav_menu( 
+        array( 
+            'theme_location' => 'left-sidebar-menu'
+        ) 
+    ); 
+}
