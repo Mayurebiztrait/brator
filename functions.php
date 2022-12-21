@@ -812,7 +812,8 @@ add_shortcode('sh_custom_menu_display', 'custom_menu_display');
 function custom_menu_display(){
 	wp_nav_menu( 
         array( 
-            'theme_location' => 'left-sidebar-menu'
+            'theme_location' => 'left-sidebar-menu',
+			'menu_class' => 'left-sidebar-menu'
         ) 
     ); 
 }
