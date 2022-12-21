@@ -61,9 +61,9 @@ get_header(); ?>
                         
                     <?php endwhile; ?>
                     <?php wp_reset_query(); ?>
-                
-                <?php }   ?>
-            </div>
+                    </div>
+            <?php }   ?>
+            
         </div>
     </section>
 
