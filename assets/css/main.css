@@ -4650,6 +4650,7 @@ ul#menu-left-sidebar li {
     line-height: 58px;
 }
 ul#menu-left-sidebar li a {
+	text-transform: uppercase;
     font-size: 24px;
     font-weight: bold;
     color: gray;
