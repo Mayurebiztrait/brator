@@ -28,6 +28,18 @@
 	
   <!-- main-css -->
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/assets/css/main.css">
+  <?php
+		if(is_page(8182)){ ?>
+			<style>
+			section.brator-breadcrumb-area {
+    display: none;
+}
+.brator-blog-post-area {
+    padding: 0px 0!important;
+}
+			</style>
+		<?php }
+  ?>
 </head>
 <body <?php body_class(); ?>>
 <div class="page-wrapper">
