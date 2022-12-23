@@ -61,7 +61,7 @@ ul#menu-left-sidebar {
     padding-left: 0px;
 }
 .innerpage .leftside {
-    border-left: 1px solid;
+    border-left: 1px solid darkgray;
     padding-left: 8px;
 }
 </style>
