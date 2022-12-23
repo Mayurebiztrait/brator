@@ -28,10 +28,52 @@ $args = array(
 );
 $query = new WP_Query( $args); 
 ?>
-<div class="brator-blog-post-area faqs-archive">
+<style>
+.top-banner {
+    padding-top: 425px;
+    background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/download.png)!important;
+    background-size: cover;
+}
+.faqs-archive h2 {
+    margin-top: 40px!Important;
+}
+.faqs-archive h2:after {
+    position: absolute;
+    content: '';
+    border-bottom: 1px solid darkgray;
+    width: 100%;
+    transform: translateX(-50%);
+    bottom: -13px;
+    left: 50%;
+}
+.brator-blog-post-area.faqs-archive li.menu-item.menu-item-type-custom.menu-item-object-custom.current-menu-item {
+    background-color: #fff!important;
+}
+.innerpage h2 {
+    font-family: 'Robinson';
+	font-size: 52px;
+}
+.innerpage li a {
+    font-size: 41px!important;
+    font-family: 'Robinson';
+}
+ul#menu-left-sidebar {
+    padding-left: 0px;
+}
+.innerpage .leftside {
+    border-left: 1px solid darkgray;
+    padding-left: 8px;
+}
+</style>
+<div class="top-banner"></div>
+<div class="brator-blog-post-area faqs-archive innerpage">
 	<div class="container-xxxl container-xxl container">
-		
-				<div class="brator-blog-post">
+	<div class="row"><div class="col-sm-12"><h2><?php echo 'Faqs'; ?></h2></div></div>
+	<div class="row">
+	<div class="col-sm-4"><?php echo do_shortcode('[sh_custom_menu_display]'); ?></div>
+	<div class="col-sm-8">
+	<div class="leftside">
+					<div class="brator-blog-post">
 					<?php
 					if ( $query->have_posts() ) : ?>
                         <div class="row">
@@ -74,6 +116,11 @@ $query = new WP_Query( $args);
 						</div>
 					<?php endif; ?>
 				</div>
+				</div>
+	</div>
+	</div>
+		
+
 			
 	</div>
 </div>

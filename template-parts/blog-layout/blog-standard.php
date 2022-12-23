@@ -1,6 +1,6 @@
 <?php
 if ( is_active_sidebar( 'sidebar-1' ) ) :
-	$blog_post_list_class = 'col-xl-9';
+	$blog_post_list_class = 'col-xl-6';
 else :
 	$blog_post_list_class = 'col-xl-12';
 endif;
@@ -14,10 +14,22 @@ if ( $blog_list_top ) :
 	endif;
 endif;
 ?>
-<div class="brator-blog-post-area">
+<style>
+.top-banner {
+    padding-top: 425px;
+    background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/download.png)!important;
+    background-size: cover;
+}
+</style>
+<div class="top-banner"></div>
+<div class="brator-blog-post-area newspage">
 	<div class="container-xxxl container-xxl container">
-		<div class="row">
-			<div class="<?php echo esc_attr( $blog_post_list_class ); ?> col-lg-12">
+	<div class="row"><div class="col-sm-12"><h2><?php echo 'News'; ?></h2></div></div>
+		<div class="row bottom">
+		<div class="col-xl-3 col-lg-12">
+		<?php echo do_shortcode('[sh_custom_menu_display]'); ?>
+		</div>
+			<div class="<?php echo esc_attr( $blog_post_list_class ); ?> col-lg-12 middlesec">
 				<div class="brator-blog-post">
 					<?php
 					if ( have_posts() ) :
