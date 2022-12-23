@@ -2914,7 +2914,7 @@ ul#menu-left-sidebar li {
 ul#menu-left-sidebar li a {
     text-transform: uppercase;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 500;
     color: gray;
 }
 
