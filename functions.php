@@ -7,6 +7,84 @@
  * @package brator  BRATOR_THEME_URI BRATOR
  */
 function custom_post_type() {
+
+	// Set UI labels for Custom Post Type
+	$labels = array(
+		'name'                => _x( 'Top Features', 'Post Type General Name', 'aodes' ),
+		'singular_name'       => _x( 'Feature', 'Post Type Singular Name', 'aodes' ),
+		'menu_name'           => __( 'Top Features', 'aodes' ),
+		'parent_item_colon'   => __( 'Parent Feature', 'aodes' ),
+		'all_items'           => __( 'All Top Features', 'aodes' ),
+		'view_item'           => __( 'View Feature', 'aodes' ),
+		'add_new_item'        => __( 'Add New Feature', 'aodes' ),
+		'add_new'             => __( 'Add New', 'aodes' ),
+		'edit_item'           => __( 'Edit Feature', 'aodes' ),
+		'update_item'         => __( 'Update Feature', 'aodes' ),
+		'search_items'        => __( 'Search Feature', 'aodes' ),
+		'not_found'           => __( 'Not Found', 'aodes' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'aodes' ),
+	);
+	  
+// Set other options for Custom Post Type
+	  
+	$args = array(
+		'label'               => __( 'Top Features', 'aodes' ),
+		'description'         => __( 'Feature news and reviews', 'aodes' ),
+		'labels'              => $labels,
+		// Features this CPT supports in Post Editor
+		'supports'            => array( 'title','editor','thumbnail','page-attributes','custom-fields','post-formats'),
+		// You can associate this CPT with a taxonomy or custom taxonomy. 
+		'taxonomies'          => array( 'features-categories' ),
+		/* A hierarchical CPT is like Pages and can have
+		* Parent and child items. A non-hierarchical CPT
+		* is like Posts.
+		*/
+		'hierarchical'        => true,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'post',
+		'show_in_rest' => true,
+  
+	);
+	  
+	// Registering your Custom Post Type
+	register_post_type( 'topfeatures', $args );
+
+	$labels = array(
+		'name' => 'Categories'  ,
+		'singular_name' => 'Category',
+		'search_items' =>  __( 'Search Categories' ),
+		'all_items' => __( 'All Categories' ),
+		'parent_item' => __( 'Parent Category' ),
+		'parent_item_colon' => __( 'Parent Category:' ),
+		'edit_item' => __( 'Edit Category' ), 
+		'update_item' => __( 'Update Category' ),
+		'add_new_item' => __( 'Add New Category' ),
+		'new_item_name' => __( 'New Category Name' ),
+		'menu_name' => __( 'Categories' ),
+	  );    
+	 
+	// Now register the taxonomy
+	  register_taxonomy('features-categories',array('topfeatures'), array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_in_rest' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'features-category' ),
+	  ));
+
+	// register taxonomy
+   // register_taxonomy('features-categories', 'top-features', array('hierarchical' => true, 'label' => 'Category', 'query_var' => true, 'rewrite' => array( 'slug' => 'features-category' )));
   
     // Set UI labels for Custom Post Type
         $labels = array(

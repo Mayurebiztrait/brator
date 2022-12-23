@@ -1,4 +1,39 @@
 jQuery( document ).ready(function() {
+
+ 
+    const imgs = document.querySelectorAll('.img-select a');
+const imgBtns = [...imgs];
+let imgId = 1;
+
+imgBtns.forEach((imgItem) => {
+    imgItem.addEventListener('click', (event) => {
+        event.preventDefault();
+        imgId = imgItem.dataset.id;
+        slideImage();
+    });
+});
+
+function slideImage(){
+    const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
+
+    document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+}
+
+window.addEventListener('resize', slideImage);
+
+jQuery(".custom-card-main .custom-learn-svg").click(function(){
+  
+  var content = jQuery(this).siblings('.card-description').html();
+  var title = jQuery(this).siblings('.custom-card-text').clone();
+  var img_tag  = jQuery(this).parents('.custom-card-text-wrapper').siblings('.custom-card-img').find('img').clone();
+  // alert(jQuery(this).html());
+  // alert(content);
+  jQuery('#view_feature .mcontent').html(content);
+  jQuery(this).siblings('.custom-card-text').clone().prependTo('#view_feature .mcontent');
+  jQuery('#view_feature .mimage').html(img_tag);
+  
+});
+
   jQuery(".menu-icon").click(function(){
     jQuery(".header-nav").slideToggle();
     
