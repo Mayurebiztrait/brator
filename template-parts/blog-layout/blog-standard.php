@@ -22,8 +22,9 @@ endif;
 }
 </style>
 <div class="top-banner"></div>
-<div class="brator-blog-post-area s">
+<div class="brator-blog-post-area newspage">
 	<div class="container-xxxl container-xxl container">
+	<div class="row"><div class="col-sm-12"><h2><?php echo 'Faqs'; ?></h2></div></div>
 		<div class="row">
 		<div class="col-xl-3 col-lg-12">
 		<?php echo do_shortcode('[sh_custom_menu_display]'); ?>
