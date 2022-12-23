@@ -28,6 +28,7 @@ $args = array(
 );
 $query = new WP_Query( $args); 
 ?>
+<div class="top-banner" style="background-img:'https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/download.png'"></div>
 <div class="brator-blog-post-area faqs-archive">
 	<div class="container-xxxl container-xxl container">
 	<div class="row"><div class="col-sm-12"><h2><?php echo 'Faqs'; ?></h2></div></div>
