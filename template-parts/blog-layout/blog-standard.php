@@ -1,6 +1,6 @@
 <?php
 if ( is_active_sidebar( 'sidebar-1' ) ) :
-	$blog_post_list_class = 'col-xl-7';
+	$blog_post_list_class = 'col-xl-6';
 else :
 	$blog_post_list_class = 'col-xl-12';
 endif;
@@ -50,7 +50,7 @@ endif;
 				</div>
 			</div>
 			<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
-				<div class="col-xl-2 col-lg-5 col-md-6 col-12">
+				<div class="col-xl-3 col-lg-5 col-md-6 col-12">
 					<div class="brator-blog-post-sidebar">
 						<?php get_sidebar(); ?>
 					</div>
