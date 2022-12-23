@@ -14,10 +14,19 @@ if ( $blog_list_top ) :
 	endif;
 endif;
 ?>
+<style>
+.top-banner {
+    padding-top: 425px;
+    background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/download.png)!important;
+    background-size: cover;
+}
+</style>
+<div class="top-banner"></div>
 <div class="brator-blog-post-area s">
 	<div class="container-xxxl container-xxl container">
 		<div class="row">
 		<div class="col-xl-3 col-lg-12">
+		<?php echo do_shortcode('[sh_custom_menu_display]'); ?>
 		</div>
 			<div class="<?php echo esc_attr( $blog_post_list_class ); ?> col-lg-12">
 				<div class="brator-blog-post">
