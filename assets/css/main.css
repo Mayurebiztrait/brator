@@ -2971,7 +2971,40 @@ ul#menu-left-sidebar li a {
     margin: 30px 0 30px 0;
     /* border-radius: 20px; */
 }
+/********** 23 DEC 2022 *************/
+.brator-blog-post-area.newspage h2 {
+    margin-top: 40px;
+}
+h2:after {
+    position: absolute;
+    content: '';
+    border-bottom: 1px solid darkgray;
+    width: 100%;
+    transform: translateX(-50%);
+    bottom: -13px;
+    left: 50%;
+}
+.row.bottom {
+    margin-top: 28px;
+}
+.middlesec {
+    border-left: 1px solid darkgray;
+}
+.newspage h2 {
+    font-family: 'Robinson';
+    font-weight: 500!important;
+    font-size: 50px;
+}
+ul#menu-left-sidebar li a {
+    font-size: 41px!important;
+    font-family: 'Robinson';
+}
 
+
+
+
+
+/*************************************/
 /*=======================*/
 /* medai quary start here*/
 /*=======================*/
