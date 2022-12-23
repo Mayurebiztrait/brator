@@ -46,6 +46,9 @@ $query = new WP_Query( $args);
     bottom: -13px;
     left: 50%;
 }
+.brator-blog-post-area.faqs-archive li.menu-item.menu-item-type-custom.menu-item-object-custom.current-menu-item {
+    background-color: #fff!important;
+}
 </style>
 <div class="top-banner"></div>
 <div class="brator-blog-post-area faqs-archive">
