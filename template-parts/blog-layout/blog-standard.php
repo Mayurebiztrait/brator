@@ -14,7 +14,7 @@ if ( $blog_list_top ) :
 	endif;
 endif;
 ?>
-<div class="brator-blog-post-area">
+<div class="brator-blog-post-area s">
 	<div class="container-xxxl container-xxl container">
 		<div class="row">
 			<div class="<?php echo esc_attr( $blog_post_list_class ); ?> col-lg-12">
