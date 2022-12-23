@@ -49,12 +49,24 @@ $query = new WP_Query( $args);
 .brator-blog-post-area.faqs-archive li.menu-item.menu-item-type-custom.menu-item-object-custom.current-menu-item {
     background-color: #fff!important;
 }
-.brator-blog-post-area.faqs-archive h2 {
+.innerpage h2 {
     font-family: 'Robinson';
+	font-size: 52px;
+}
+.innerpage li a {
+    font-size: 41px!important;
+    font-family: 'Robinson';
+}
+ul#menu-left-sidebar {
+    padding-left: 0px;
+}
+.innerpage .leftside {
+    border-left: 1px solid;
+    padding-left: 8px;
 }
 </style>
 <div class="top-banner"></div>
-<div class="brator-blog-post-area faqs-archive">
+<div class="brator-blog-post-area faqs-archive innerpage">
 	<div class="container-xxxl container-xxl container">
 	<div class="row"><div class="col-sm-12"><h2><?php echo 'Faqs'; ?></h2></div></div>
 	<div class="row">
