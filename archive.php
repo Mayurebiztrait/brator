@@ -15,7 +15,7 @@
 get_header();
 
 if ( is_active_sidebar( 'sidebar-1' ) ) :
-	$blog_post_list_class = 'col-xl-9';
+	$blog_post_list_class = 'col-xl-7';
 else :
 	$blog_post_list_class = 'col-xl-12';
 endif;
@@ -33,6 +33,9 @@ endif;
 	</div>
 	<div class="container-xxxl container-xxl container">
 		<div class="row">
+		<div class="col-lg-3 col-lg-12">
+		<h2>Hi I am Good</h2>
+		</div>
 			<div class="<?php echo esc_attr( $blog_post_list_class ); ?> col-lg-12">
 				<div class="brator-blog-post">
 					<?php
@@ -64,7 +67,7 @@ endif;
 				</div>
 			</div>
 			<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
-				<div class="col-xl-3 col-lg-5 col-md-6 col-12">
+				<div class="col-xl-2 col-lg-5 col-md-6 col-12">
 					<div class="brator-blog-post-sidebar">
 						<?php get_sidebar(); ?>
 					</div>
