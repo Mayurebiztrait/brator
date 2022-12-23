@@ -28,13 +28,33 @@ $args = array(
 );
 $query = new WP_Query( $args); 
 ?>
-<div class="top-banner" style="background-img:'https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/download.png'"></div>
+<style>
+.top-banner {
+    padding-top: 425px;
+    background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/download.png)!important;
+    background-size: cover;
+}
+.faqs-archive h2 {
+    margin-top: 40px!Important;
+}
+.faqs-archive h2:after {
+    position: absolute;
+    content: '';
+    border-bottom: 1px solid darkgray;
+    width: 100%;
+    transform: translateX(-50%);
+    bottom: -13px;
+    left: 50%;
+}
+</style>
+<div class="top-banner"></div>
 <div class="brator-blog-post-area faqs-archive">
 	<div class="container-xxxl container-xxl container">
 	<div class="row"><div class="col-sm-12"><h2><?php echo 'Faqs'; ?></h2></div></div>
 	<div class="row">
 	<div class="col-sm-4"><?php echo do_shortcode('[sh_custom_menu_display]'); ?></div>
 	<div class="col-sm-8">
+	<div class="leftside">
 					<div class="brator-blog-post">
 					<?php
 					if ( $query->have_posts() ) : ?>
@@ -77,6 +97,7 @@ $query = new WP_Query( $args);
 							?>
 						</div>
 					<?php endif; ?>
+				</div>
 				</div>
 	</div>
 	</div>
