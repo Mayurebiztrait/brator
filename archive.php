@@ -33,7 +33,7 @@ endif;
 	</div>
 	<div class="container-xxxl container-xxl container">
 		<div class="row">
-		<div class="col-lg-3 col-lg-12">
+		<div class="col-lg-3">
 		<h2>Hi I am Good</h2>
 		</div>
 			<div class="<?php echo esc_attr( $blog_post_list_class ); ?> col-lg-12">
