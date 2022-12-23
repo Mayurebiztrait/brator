@@ -32,7 +32,7 @@ $query = new WP_Query( $args);
 	<div class="container-xxxl container-xxl container">
 	<div class="row"><div class="col-sm-12"><h2><?php echo 'Faqs'; ?></h2></div></div>
 	<div class="row">
-	<div class="col-sm-4"><?php echo do_shortcode('sh_custom_menu_display'); ?></div>
+	<div class="col-sm-4"><?php echo do_shortcode('[sh_custom_menu_display]'); ?></div>
 	<div class="col-sm-8">
 					<div class="brator-blog-post">
 					<?php
