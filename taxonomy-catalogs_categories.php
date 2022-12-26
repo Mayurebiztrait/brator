@@ -35,8 +35,18 @@ endif;
 </style>
 <div class="top-banner"></div>
 <div class="top-middle-banner">
-<div class="inner-section"><h3>INCLUDE EVERYTHING REGARDING IN 2023 AODES LINEUP.</h3>
-<p>VEHICLES, ACCESSORIES & GEAR!</p>
+<div class="inner-section">
+<div class="row section-1">
+<div class="col-sm-4"></div>
+<div class="col-sm-4"><h3>INCLUDE EVERYTHING REGARDING IN 2023 AODES LINEUP.</h3></div>
+<div class="col-sm-4"></div>
+</div>
+<div class="row section-2">
+<div class="col-sm-4"></div>
+<div class="col-sm-4"><p>VEHICLES, ACCESSORIES & GEAR!</p></div>
+<div class="col-sm-4"></div>
+</div>
+
 </div>
 </div>
 <div class="brator-blog-post-area catalogs-archive">
