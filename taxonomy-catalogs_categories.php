@@ -49,6 +49,18 @@ endif;
     text-align: center;
     font-size: 24px;
 }
+.row.main-title-catalog h1 {
+margin-bottom: 14px;
+    float: left;
+    text-transform: uppercase;
+    font-size: 32px;
+}
+.row.main-title-catalog {
+    border-bottom: 1px solid darkgray;
+}
+.brator-blog-post.bottom-catalog {
+    margin-top: 15px;
+}
 </style>
 <div class="top-banner"></div>
 <div class="top-middle-banner">
@@ -68,7 +80,7 @@ endif;
 </div>
 <div class="brator-blog-post-area catalogs-archive">
 	<div class="container-xxxl container-xxl container">
-		<div class="row">
+		<div class="row main-title-catalog">
 			<div class="col-lg-12">
 				<div class="brator-breadcrumb">
 					<h1 class="text-center">Download <?php single_term_title();?> Catalog</h1>
@@ -78,7 +90,7 @@ endif;
 	</div>
 	<div class="container-xxxl container-xxl container">
 		
-				<div class="brator-blog-post">
+				<div class="brator-blog-post bottom-catalog">
 					<?php
 					if ( have_posts() ) : ?>
                         <div class="row">
