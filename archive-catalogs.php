@@ -21,7 +21,7 @@ else :
 endif;
 ?>
 
-<div class="brator-blog-post-area catalogs-archive s">
+<div class="brator-blog-post-area catalogs-archive">
 	<div class="container-xxxl container-xxl container">
 		<div class="row">
 			<div class="col-lg-12">
