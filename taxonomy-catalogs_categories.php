@@ -79,7 +79,7 @@ margin-bottom: 14px;
 .inner-top {
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
