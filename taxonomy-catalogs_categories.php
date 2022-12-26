@@ -84,6 +84,9 @@ margin-bottom: 14px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.row.main-title-catalog span {
+    color: #ed3333;
+}
 </style>
 <div class="top-banner">
 <div class="inner-top">
