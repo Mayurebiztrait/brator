@@ -26,8 +26,14 @@ endif;
     background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/download.png)!important;
     background-size: cover;
 }
+.top-middle-banner {
+    padding-top: 425px;
+    background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/catalog-banner-small.png)!important;
+    background-size: cover;
+}
 </style>
 <div class="top-banner"></div>
+<div class="top-middle-banner"></div>
 <div class="brator-blog-post-area catalogs-archive">
 	<div class="container-xxxl container-xxl container">
 		<div class="row">
