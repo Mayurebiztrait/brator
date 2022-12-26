@@ -5511,7 +5511,7 @@ ul#menu-left-sidebar li a {
 .inner-top {
     width: 100%;
     position: absolute;
-    top: 73%;
+    top: 71%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
