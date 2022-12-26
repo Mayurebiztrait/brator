@@ -56,6 +56,7 @@ margin-bottom: 14px;
     font-size: 32px;
 }
 .row.main-title-catalog {
+	margin-top: 24px;
     border-bottom: 1px solid darkgray;
 }
 .brator-blog-post.bottom-catalog {
@@ -120,7 +121,7 @@ margin-bottom: 14px;
 		<div class="row main-title-catalog">
 			<div class="col-lg-12">
 				<div class="brator-breadcrumb">
-					<h1 class="text-center">Download <?php single_term_title();?> Catalog</h1>
+					<h1 class="text-center">Download <span><?php single_term_title();?> Catalog</span></h1>
 				</div>
 			</div>
 		</div>
