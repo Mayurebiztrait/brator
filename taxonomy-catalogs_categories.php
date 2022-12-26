@@ -30,9 +30,9 @@ endif;
 <div class="top-banner">
 <div class="inner-top">
 <div class="row section-top-1">
-<div class="col-sm-4"></div>
-<div class="col-sm-4 ct"><h3>AODES</h3></div>
-<div class="col-sm-4"></div>
+<div class="col-sm-2"></div>
+<div class="col-sm-8"><h3>AODES</h3></div>
+<div class="col-sm-2"></div>
 </div>
 <div class="row section-top-2">
 <div class="col-sm-2"></div>
@@ -46,9 +46,9 @@ endif;
 <div class="top-middle-banner">
 <div class="inner-section">
 <div class="row section-1">
-<div class="col-sm-2"></div>
-<div class="col-sm-8"><h3>INCLUDE EVERYTHING REGARDING IN 2023 AODES LINEUP.</h3></div>
-<div class="col-sm-2"></div>
+<div class="col-sm-4"></div>
+<div class="col-sm-4 ct"><h3>INCLUDE EVERYTHING REGARDING IN 2023 AODES LINEUP.</h3></div>
+<div class="col-sm-4"></div>
 </div>
 <div class="row section-2">
 <div class="col-sm-2"></div>
