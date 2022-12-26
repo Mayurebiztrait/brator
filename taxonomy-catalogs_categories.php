@@ -37,14 +37,14 @@ endif;
 <div class="top-middle-banner">
 <div class="inner-section">
 <div class="row section-1">
-<div class="col-sm-4"></div>
-<div class="col-sm-4"><h3>INCLUDE EVERYTHING REGARDING IN 2023 AODES LINEUP.</h3></div>
-<div class="col-sm-4"></div>
+<div class="col-sm-2"></div>
+<div class="col-sm-8"><h3>INCLUDE EVERYTHING REGARDING IN 2023 AODES LINEUP.</h3></div>
+<div class="col-sm-2"></div>
 </div>
 <div class="row section-2">
-<div class="col-sm-4"></div>
-<div class="col-sm-4"><p>VEHICLES, ACCESSORIES & GEAR!</p></div>
-<div class="col-sm-4"></div>
+<div class="col-sm-2"></div>
+<div class="col-sm-8"><p>VEHICLES, ACCESSORIES & GEAR!</p></div>
+<div class="col-sm-2"></div>
 </div>
 
 </div>
