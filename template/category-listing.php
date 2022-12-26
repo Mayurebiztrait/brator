@@ -14,7 +14,7 @@ get_header(); ?>
         <div class="container-xxxl container-xxl container">
             <?php
             $args = array(
-                'taxonomy' => 'product_cat',
+                'taxonomy' => 'vehicle_category',
                 'orderby' => 'name',
                 'order' => 'ASC',
                 'hide_empty' => true
@@ -30,28 +30,33 @@ get_header(); ?>
             
                     <?php
                     $args = array(
-                        'product_cat' => $category->slug,
+                        'vehicle_category' => $category->slug,
                         'posts_per_page' => -1,
                         'post_status' => 'publish',
+                        
                         'orderby' => 'name',
                         'order' => 'ASC',
                     );
                     $loop = new WP_Query($args);
                     while ($loop->have_posts()) : $loop->the_post();
-                    global $product;
-                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->id ), 'single-post-thumbnail' );
+                    
+                    $vehicle_id = get_the_ID();
+                    $base_msrp = get_field('base_msrp',$vehicle_id);
+                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $vehicle_id ), 'single-post-thumbnail' );
                     ?>
                     <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
                         <div class="product-details-wrapper">
-                            <a href="<?php echo site_url('/simple-product-detail').'?productid='.$product->id;?>">
+                            <a href="<?php echo site_url('/simple-product-detail').'?vehicleid='.$vehicle_id;?>">
+                            <?php if(isset($image[0])){ ?>    
                                 <div class="product-details-main-img">
                                     <img src="<?php echo $image[0];?>" alt="<?php the_title(); ?>" >
                                 </div>
+                            <?php }?>
                                 <div class="product-details-content">
                                     <h2><?php the_title(); ?></h2>
-                                    <h3>Starting at <span>$<?php echo $product->price; ?></span> us MSRP</h3>
+                                    <h3>Starting at <span>$<?php echo $base_msrp; ?></span> us MSRP</h3>
                                     <p>
-                                        <?php echo $product->short_description; ?>
+                                        <?php echo get_the_excerpt(); ?>
                                     </p>
                                 </div>
                             </a>

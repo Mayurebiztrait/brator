@@ -26,8 +26,8 @@ jQuery(".custom-card-main .custom-learn-svg").click(function(){
   var content = jQuery(this).siblings('.card-description').html();
   var title = jQuery(this).siblings('.custom-card-text').clone();
   var img_tag  = jQuery(this).parents('.custom-card-text-wrapper').siblings('.custom-card-img').find('img').clone();
-  // alert(jQuery(this).html());
   // alert(content);
+  // alert(title);
   jQuery('#view_feature .mcontent').html(content);
   jQuery(this).siblings('.custom-card-text').clone().prependTo('#view_feature .mcontent');
   jQuery('#view_feature .mimage').html(img_tag);
