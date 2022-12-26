@@ -5447,3 +5447,65 @@ ul#menu-left-sidebar li a {
 /*=====================*/
 /* medai quary end here*/
 /*=====================*/
+/*** 26 Dec 2022 ***/
+.top-middle-banner {
+    padding-top: 147px;
+    background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/catalog-banner-small.png)!important;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.inner-section h3 {
+    margin: 11px 0px 5px 0px;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+}
+.inner-section {
+    margin-top: -125px;
+}
+.section-1 .col-sm-8 {
+    background: #000;
+}
+.row.section-2 p {
+    margin: 10px 0 0 0;
+    text-align: center;
+    font-size: 24px;
+}
+.row.main-title-catalog h1 {
+margin-bottom: 14px;
+    float: left;
+    text-transform: uppercase;
+    font-size: 32px;
+}
+.row.main-title-catalog {
+	margin-top: 24px;
+    border-bottom: 1px solid darkgray;
+}
+.brator-blog-post.bottom-catalog {
+    margin-top: 15px;
+}
+.row.section-top-1 h3 {
+    font-size: 52px;
+    color: #fff;
+}
+.row.section-top-1 h3 {
+    font-size: 52px;
+    color: #ed3333;
+}
+.row.section-top-2 p {
+   padding: 25px 0px 92px 69px;
+    font-size: 42px;
+    color: #fff;
+    background: #ee2c22;
+    opacity: 0.5;
+}
+.inner-top {
+    width: 100%;
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.row.main-title-catalog span {
+    color: #ed3333;
+}
