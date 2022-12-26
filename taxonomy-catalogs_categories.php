@@ -61,6 +61,28 @@ margin-bottom: 14px;
 .brator-blog-post.bottom-catalog {
     margin-top: 15px;
 }
+.row.section-top-1 h3 {
+    font-size: 52px;
+    color: #fff;
+}
+.row.section-top-1 h3 {
+    font-size: 52px;
+    color: #ed3333;
+}
+.row.section-top-2 p {
+   padding: 25px 0px 92px 69px;
+    font-size: 42px;
+    color: #fff;
+    background: #ee2c22;
+    opacity: 0.5;
+}
+.inner-top {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 </style>
 <div class="top-banner">
 <div class="inner-top">
