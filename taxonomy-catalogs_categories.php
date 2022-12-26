@@ -20,20 +20,57 @@ else :
 	$blog_post_list_class = 'col-xl-12';
 endif;
 ?>
+<style>
+.top-banner {
+    padding-top: 425px;
+    background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/download.png)!important;
+    background-size: cover;
+}
+</style>
+<div class="top-banner">
+<div class="inner-top">
+<div class="row section-top-1">
+<div class="col-sm-2"></div>
+<div class="col-sm-8"><h3>AODES</h3></div>
+<div class="col-sm-2"></div>
+</div>
+<div class="row section-top-2">
+<div class="col-sm-2"></div>
+<div class="col-sm-8"><p>CATALOGS & <?php single_term_title();?></p></div>
+<div class="col-sm-2"></div>
+</div>
+</div>
+</div>
+</div>
+<!--===================================-->
+<div class="top-middle-banner">
+<div class="inner-section">
+<div class="row section-1">
+<div class="col-sm-4"></div>
+<div class="col-sm-4 ct"><h3>INCLUDE EVERYTHING REGARDING IN 2023 AODES LINEUP.</h3></div>
+<div class="col-sm-4"></div>
+</div>
+<div class="row section-2">
+<div class="col-sm-2"></div>
+<div class="col-sm-8"><p>VEHICLES, ACCESSORIES & GEAR!</p></div>
+<div class="col-sm-2"></div>
+</div>
 
+</div>
+</div>
 <div class="brator-blog-post-area catalogs-archive">
 	<div class="container-xxxl container-xxl container">
-		<div class="row">
+		<div class="row main-title-catalog">
 			<div class="col-lg-12">
 				<div class="brator-breadcrumb">
-					<h1 class="text-center">Download <?php single_term_title();?> Catalog</h1>
+					<h1 class="text-center">Download <span><?php single_term_title();?> Catalog</span></h1>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="container-xxxl container-xxl container">
 		
-				<div class="brator-blog-post">
+				<div class="brator-blog-post bottom-catalog">
 					<?php
 					if ( have_posts() ) : ?>
                         <div class="row">
