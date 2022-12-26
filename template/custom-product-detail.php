@@ -11,23 +11,13 @@
 
 get_header(); 
 
-$product = wc_get_product( $_GET['productid'] );
-$product_id = $_GET['productid'];
 // echo "<pre>";
 // print_r($product);
 // exit;
-$image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->id ), 'single-post-thumbnail' );
-$attachment_ids = $product->get_gallery_image_ids();
+$vehicle_id = $_GET['vehicleid'];
+$base_msrp = get_field('base_msrp',$vehicle_id);
+$image = wp_get_attachment_image_src( get_post_thumbnail_id( $vehicle_id ), 'single-post-thumbnail' );
 
-foreach( $attachment_ids as $attachment_id ) 
-    {
-        // Display the image URL
-        echo $Original_image_url = wp_get_attachment_url( $attachment_id );
-
-        // Display Image instead of URL
-        echo wp_get_attachment_image($attachment_id, 'full');
-
-    }
 ?>
 <div class="custom_product_detail_wrap">
 <section class="">
@@ -69,15 +59,15 @@ foreach( $attachment_ids as $attachment_id )
                     </div>
                     <!-- card right -->
                     <div class="product-content">
-                        <h2 class="product-title"><?php echo $product->name;?></h2>
+                        <h2 class="product-title"><?php echo get_the_title($vehicle_id);?></h2>
 
                         <div class="product-price">
-                            <p class="new-price"><span>$<?php echo $product->price;?></span></p>
+                            <p class="new-price"><span>$<?php echo $base_msrp;?></span></p>
                         </div>
 
                         <div class="product-detail">
                             <p>
-                            <?php echo $product->description;?>
+                            <?php echo get_the_content('','',$vehicle_id);?>
                             </p>
                             <ul>
                                 <li>Color: <span>Black</span></li>
@@ -166,10 +156,15 @@ foreach( $attachment_ids as $attachment_id )
 
                     <?php 
                     $active_tab = '';
-                    $e_show = get_field('e_show',$product_id);
-                    $c_show = get_field('c_show',$product_id);
-                    $d_show = get_field('d_show',$product_id);
-                    $ds_show = get_field('ds_show',$product_id);
+                    $e_show_modal_image = '';
+                    $c_show_modal_image = '';
+                    $d_show_modal_image = '';
+                    $ds_show_modal_image = '';
+
+                    $e_show = get_field('e_show',$vehicle_id);
+                    $c_show = get_field('c_show',$vehicle_id);
+                    $d_show = get_field('d_show',$vehicle_id);
+                    $ds_show = get_field('ds_show',$vehicle_id);
 
                     if($e_show == true){
                         $active_tab = 'e_show';
@@ -236,14 +231,22 @@ foreach( $attachment_ids as $attachment_id )
                 </div>
             </div>
             <div class="tab-content" id="pills-tabContent">
-                <?php if( have_rows('engine_posts_content',$product_id) ) { ?>
+                <?php 
+                $e_description = [];
+                $ed_count = 0;
+                if( have_rows('engine_posts_content',$vehicle_id) ) { ?>
                 <div class="tab-pane fade <?php if($active_tab == 'e_show'){ echo "show active";} ?>" id="e_show" role="tabpanel">
                     <?php 
                     $e_count = 1;
-                    while( have_rows('engine_posts_content',$product_id) ): the_row(); 
+                    while( have_rows('engine_posts_content',$vehicle_id) ): the_row(); 
                     $title = get_sub_field('title');
                     $image = get_sub_field('image');
+                    if($e_show_modal_image == ''){
+                        $e_show_modal_image = $image;
+                    }
                     $description = get_sub_field('description');
+                    $e_description[$ed_count]['title'] = $title;
+                    $e_description[$ed_count]['description'] = $description;
                     ?>      
                     <?php if($e_count == 1){ ?>
                     <div class="row">
@@ -281,17 +284,25 @@ foreach( $attachment_ids as $attachment_id )
                     <?php if($e_count == 3){ ?>
                     </div>
                     <?php $e_count = 0; $show_in_list = false; break; }?>
-                    <?php $e_count++; endwhile; ?>        
+                    <?php $e_count++; $ed_count++; endwhile; ?>        
                 </div>
                 <?php }?>
-                <?php if( have_rows('chassis_posts_content_copy',$product_id) ) { ?>
+                <?php 
+                $cd_count = 0;
+                $c_description = [];
+                if( have_rows('chassis_posts_content_copy',$vehicle_id) ) { ?>
                 <div class="tab-pane fade <?php if($active_tab == 'c_show'){ echo "show active";} ?>" id="c_show" role="tabpanel">
                     <?php 
                     $e_count = 1;
-                    while( have_rows('chassis_posts_content_copy',$product_id) ): the_row(); 
+                    while( have_rows('chassis_posts_content_copy',$vehicle_id) ): the_row(); 
                     $title = get_sub_field('title');
                     $image = get_sub_field('image');
+                    if($_show_modal_image == ''){
+                        $c_show_modal_image = $image;
+                    }
                     $description = get_sub_field('description');
+                    $c_description[$cd_count]['title'] = $title;
+                    $c_description[$cd_count]['description'] = $description;
                     ?>      
                     <?php if($e_count == 1){ ?>
                     <div class="row">
@@ -329,17 +340,25 @@ foreach( $attachment_ids as $attachment_id )
                     <?php } if($e_count == 3){ ?>
                     </div>
                     <?php $e_count = 0; $show_in_list= false;  break; }?>
-                    <?php $e_count++; endwhile; ?>        
+                    <?php $e_count++; $cd_count++; endwhile; ?>        
                 </div>
                 <?php }?>
-                <?php if( have_rows('drivetrain_posts_content',$product_id) ) { ?>
+                <?php 
+                $d_description = [];
+                $dd_count = 0;
+                if( have_rows('drivetrain_posts_content',$vehicle_id) ) { ?>
                 <div class="tab-pane fade <?php if($active_tab == 'd_show'){ echo "show active";} ?>" id="d_show" role="tabpanel">
                     <?php 
                     $e_count = 1;
-                    while( have_rows('drivetrain_posts_content',$product_id) ): the_row(); 
+                    while( have_rows('drivetrain_posts_content',$vehicle_id) ): the_row(); 
                     $title = get_sub_field('title');
                     $image = get_sub_field('image');
+                    if($d_show_modal_image == ''){
+                        $d_show_modal_image = $image;
+                    }
                     $description = get_sub_field('description');
+                    $d_description[$dd_count]['title'] = $title;
+                    $d_description[$dd_count]['description'] = $description;
                     ?>      
                     <?php if($e_count == 1){ ?>
                     <div class="row">
@@ -377,17 +396,25 @@ foreach( $attachment_ids as $attachment_id )
                     <?php } if($e_count == 3){ ?>
                     </div>
                     <?php $e_count = 0; $show_in_list = false;break;}?>
-                    <?php $e_count++; endwhile; ?>        
+                    <?php $e_count++; $dd_count++; endwhile; ?>        
                 </div>
                 <?php }?>
-                <?php if( have_rows('design_posts_content',$product_id) ) { ?>
+                <?php 
+                $ds_description = [];
+                $dds_count = 0;
+                if( have_rows('design_posts_content',$vehicle_id) ) { ?>
                 <div class="tab-pane fade <?php if($active_tab == 'ds_show'){ echo "show active";} ?>" id="ds_show" role="tabpanel">
                     <?php 
                     $e_count = 1;
-                    while( have_rows('design_posts_content',$product_id) ): the_row(); 
+                    while( have_rows('design_posts_content',$vehicle_id) ): the_row(); 
                     $title = get_sub_field('title');
                     $image = get_sub_field('image');
+                    if($ds_show_modal_image == ''){
+                        $ds_show_modal_image = $image;
+                    }
                     $description = get_sub_field('description');
+                    $ds_description[$dds_count]['title'] = $title;
+                    $ds_description[$dds_count]['description'] = $description;
                     ?>      
                     <?php if($e_count == 1){ ?>
                     <div class="row">
@@ -404,7 +431,7 @@ foreach( $attachment_ids as $attachment_id )
                                     </div>
                                     <div class="custom-card-text-wrapper">
                                         <h4 class="custom-card-text"><?php echo $title;?></h4>
-                                        <div class="custom-learn-svg" data-bs-toggle="modal" data-bs-target="#view_features">
+                                        <div class="custom-learn-svg" data-bs-toggle="modal" data-bs-target="#view_feature">
                                             <span class="custom-learn-more">Learn More</span>
                                             <div class="custom-card-svg">
                                                 <svg width="12" height="19" viewBox="0 0 12 19">
@@ -424,7 +451,7 @@ foreach( $attachment_ids as $attachment_id )
                     <?php } if($e_count == 3){ ?>
                     </div>
                     <?php $e_count = 0; $show_in_list = false; break;}?>
-                    <?php $e_count++; endwhile; ?>        
+                    <?php $e_count++; $dds_count++;endwhile; ?>        
                 </div>
                 <?php }?>
             </div>
@@ -433,7 +460,7 @@ foreach( $attachment_ids as $attachment_id )
                 <div class="col-md-12 container-xxxl container-xxl container">
                     <div class="custom-button-modal">
                         <!-- Button trigger modal -->
-                        <a href="" type="button" class="" data-bs-toggle="modal" data-bs-target="#view_feature">
+                        <a href="" type="button" class="" data-bs-toggle="modal" data-bs-target="#View_all_features">
                             View all features
                             <span class="custom-card-svg">
                                 <svg width="12" height="19" viewBox="0 0 12 19">
@@ -451,17 +478,122 @@ foreach( $attachment_ids as $attachment_id )
                     <div class="modal-dialog modal-fullscreen">
                         <div class=" modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <h5 class="modal-title text-uppercase" id="exampleModalLabel">Features</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <?php if($e_show == true){?>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active"  data-bs-toggle="pill"
+                                            data-bs-target="#modal-pills-Engine" type="button" role="tab" aria-controls="pills-Engine"
+                                            aria-selected="true">Engine</button>
+                                    </li>
+                                    <?php }?>
+                                    <?php if($c_show == true){?>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link"  data-bs-toggle="pill"
+                                            data-bs-target="#modal-pills-chassis" type="button" role="tab" aria-controls="pills-chassis"
+                                            aria-selected="false">chassis</button>
+                                    </li>
+                                    <?php }?>
+                                    <?php if($d_show == true){?>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link"  data-bs-toggle="pill"
+                                            data-bs-target="#modal-pills-drivetrain" type="button" role="tab"
+                                            aria-controls="pills-drivetrain" aria-selected="false">Drivetrain</button>
+                                    </li>
+                                    <?php }?>
+                                    <?php if($ds_show == true){?>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link"  data-bs-toggle="pill"
+                                            data-bs-target="#modal-pills-Design" type="button" role="tab" aria-controls="pills-Design"
+                                            aria-selected="false">Design</button>
+                                    </li>
+                                    <?php }?>
+                                </ul>
+                                <div class="row">
+                                    <?php if($e_show == true){?>
+                                        <div class="col-md-6">
+                                            <img class="img img-fluid" src="<?php echo $e_show_modal_image;?>">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="m_description">
+                                                <h2 class="m_title">Engine</h2>
+                                                <?php foreach($e_description as $content){
+                                                    
+                                                    if($content['title']){
+                                                        echo '<h3 class="p_title">'.$content['title'].'</h3>';
+                                                    }
+                                                    if($content['description']){
+                                                        echo $content['description'];
+                                                    }   
+                                                } ?>
+                                            </div>
+                                        </div>
+                                    <?php }?>
+                                    <?php if($c_show == true){?>
+                                        <div class="col-md-6">
+                                            <img class="img img-fluid" src="<?php echo $c_show_modal_image;?>">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="m_description">
+                                            <h2 class="m_title">Chassis</h2>
+                                                <?php foreach($c_description as $content){
+                                                    if($content['title']){
+                                                        echo '<h3 class="p_title">'.$content['title'].'</h3>';
+                                                    }
+                                                    if($content['description']){
+                                                        echo $content['description'];
+                                                    }   
+                                                } ?>
+                                            </div>
+                                        </div>
+                                    <?php }?>
+                                    <?php if($d_show == true){?>
+                                        <div class="col-md-6">
+                                            <img class="img img-fluid" src="<?php echo $d_show_modal_image;?>">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="m_description">
+                                            <h2 class="m_title">Drivetrain</h2>
+                                                <?php foreach($d_description as $content){
+                                                    if($content['title']){
+                                                        echo '<h3 class="p_title">'.$content['title'].'</h3>';
+                                                    }
+                                                    if($content['description']){
+                                                        echo $content['description'];
+                                                    }         
+                                                     
+                                                } ?>
+                                            </div>
+                                        </div>
+                                    <?php }?>
+                                    <?php if($ds_show == true){?>
+                                        <div class="col-md-6">
+                                            <img class="img img-fluid" src="<?php echo $ds_show_modal_image;?>">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="m_description">
+                                            <h2 class="m_title">Design</h2>
+                                                <?php foreach($ds_description as $content){
+                                                    if($content['title']){
+                                                        echo '<h3 class="p_title">'.$content['title'].'</h3>';
+                                                    }
+                                                    if($content['description']){
+                                                        echo $content['description'];
+                                                    }   
+                                                } ?>
+                                            </div>
+                                        </div>
+                                    <?php }?>
+                                </div>
                             </div>
-                            <div class="modal-footer">
+                            <!-- <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -587,7 +719,7 @@ foreach( $attachment_ids as $attachment_id )
             <div class="col-md-12">
                 <div class="custom-specification-button-modal">
                     <!-- Button trigger modal -->
-                    <a href="" type="button" class="" data-bs-toggle="modal" data-bs-target="#View_all_features">
+                    <a href="" type="button" class="" data-bs-toggle="modal" data-bs-target="#view_all_specification">
                         View all features
                         <span class="custom-specification-card-svg">
                             <svg width="12" height="19" viewBox="0 0 12 19">
@@ -597,6 +729,30 @@ foreach( $attachment_ids as $attachment_id )
                             </svg>
                         </span>
                     </a>
+                </div>
+                <div class="modal fade" id="view_all_specification" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class=" modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-uppercase" id="exampleModalLabel">Specifications</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6 mcontent">
+                                    </div>
+                                    <div class="col-md-6 mimage">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div> -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
