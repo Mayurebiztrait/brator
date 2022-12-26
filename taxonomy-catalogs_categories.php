@@ -32,6 +32,23 @@ endif;
     background-size: contain;
     background-repeat: no-repeat;
 }
+.inner-section h3 {
+    margin: 5px 0px 5px 0px;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+}
+.inner-section {
+    margin-top: -125px;
+}
+.section-1 .col-sm-8 {
+    background: #000;
+}
+.row.section-2 p {
+    margin: 10px 0 0 0;
+    text-align: center;
+    font-size: 24px;
+}
 </style>
 <div class="top-banner"></div>
 <div class="top-middle-banner">
