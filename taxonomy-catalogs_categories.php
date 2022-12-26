@@ -23,7 +23,7 @@ endif;
 <style>
 .top-banner {
     padding-top: 425px;
-    background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/catalog-banner-small_cleanup.png)!important;
+    background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/download.png)!important;
     background-size: cover;
 }
 </style>
