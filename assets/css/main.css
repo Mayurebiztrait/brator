@@ -5455,6 +5455,7 @@ ul#menu-left-sidebar li a {
     background-repeat: no-repeat;
 }
 .inner-section h3 {
+	    font-family: 'Robinson';
     color: #fff;
     font-size: 38px;
     text-align: center;
@@ -5466,11 +5467,13 @@ ul#menu-left-sidebar li a {
     background: #000;
 }
 .row.section-2 p {
+	    font-family: 'Robinson';
     margin: 10px 0 0 0;
     text-align: center;
     font-size: 24px;
 }
 .row.main-title-catalog h1 {
+	    font-family: 'Robinson';
 margin-bottom: 14px;
     float: left;
     text-transform: uppercase;
@@ -5484,14 +5487,17 @@ margin-bottom: 14px;
     margin-top: 15px;
 }
 .row.section-top-1 h3 {
+	    font-family: 'Robinson';
     font-size: 52px;
     color: #fff;
 }
 .row.section-top-1 h3 {
+	    font-family: 'Robinson';
     font-size: 52px;
     color: #ed3333;
 }
 .row.section-top-2 p {
+	    font-family: 'Robinson';
    padding: 25px 0px 92px 69px;
     font-size: 42px;
     color: #fff;
