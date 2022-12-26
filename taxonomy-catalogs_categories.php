@@ -27,13 +27,18 @@ endif;
     background-size: cover;
 }
 .top-middle-banner {
-    padding-top: 425px;
+    padding-top: 147px;
     background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/catalog-banner-small.png)!important;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 </style>
 <div class="top-banner"></div>
-<div class="top-middle-banner"></div>
+<div class="top-middle-banner">
+<div class="inner-section"><h3>INCLUDE EVERYTHING REGARDING IN 2023 AODES LINEUP.</h3>
+<p>VEHICLES, ACCESSORIES & GEAR!</p>
+</div>
+</div>
 <div class="brator-blog-post-area catalogs-archive">
 	<div class="container-xxxl container-xxl container">
 		<div class="row">
