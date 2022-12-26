@@ -33,7 +33,7 @@ endif;
     background-repeat: no-repeat;
 }
 .inner-section h3 {
-    margin: 5px 0px 5px 0px;
+    margin: 11px 0px 5px 0px;
     color: #fff;
     font-size: 24px;
     text-align: center;
@@ -79,7 +79,7 @@ margin-bottom: 14px;
 .inner-top {
     width: 100%;
     position: absolute;
-    top: 70%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
