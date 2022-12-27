@@ -18,6 +18,31 @@ endif;
     background-size: cover;
 }
 </style>
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+</style>
 <div class="top-banner">
 <div class="inner-top">
 <div class="row section-top-1">
@@ -74,17 +99,34 @@ if ( $terms && !is_wp_error( $terms ) ) :
             <li><a href="<?php echo get_term_link($term->slug, $taxonomy); ?>"><?php echo $term->name; ?></a></li>
         <?php } ?>
     </ul>-->
-	<div class="tab">
 	<?php foreach ( $terms as $term ) { ?>
-    <label class="tab-label" for="chck<?php the_ID(); ?>"><?php echo $term->name;?></label>
-    <div class="tab-content">test</div>
-	<?php } ?>
+	<button class="accordion"><?php echo $term->name; ?></button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
+	<?php } ?>
 <?php endif;?>
 				
 				</div>
 			
 	</div>
 </div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
 <?php
 get_footer();
+?>
