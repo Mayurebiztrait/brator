@@ -86,12 +86,12 @@ endif;
 	</div>
 	<div class="container-xxxl container-xxl container">
 		
-				<div class="brator-blog-post bottom-catalog">
+<div class="brator-blog-post bottom-catalog">
 <?php
 $post_type = 'manuals';
 // Get all the taxonomies for this post type
 $taxonomies = get_object_taxonomies( (object) array( 'post_type' => $post_type ) );
-foreach( $taxonomies as $taxonomy ) :
+foreach( $taxonomies as $taxonomy ) {
 
     // Gets every "category" (term) in this taxonomy to get the respective posts
     $terms = get_terms( $taxonomy,
@@ -102,7 +102,7 @@ foreach( $taxonomies as $taxonomy ) :
         )
     );
 
-        foreach( $terms as $term ) : 
+        foreach( $terms as $term ) {
             // WP_Query arguments
         $args = array (
             'post_type'   => $post_type,
@@ -123,28 +123,9 @@ foreach( $taxonomies as $taxonomy ) :
         $posts = new WP_Query( $args );
 
         // The Loop
-        if( $posts->have_posts() ) : ?>
-            <dl id="box-loop-list-<?php echo $term->slug ;?>">    <div id="accordion" role="tablist">    <div class="card">
-<div class="card-header" role="tab" id="heading-<?php the_ID(); ?>">
-  <h5 class="mb-0">
-    <a data-toggle="collapse" href="#collapse-<?php the_ID(); ?>" aria-expanded="true" aria-controls="collapse-<?php the_ID(); ?>">
-      <?php echo $term->name;  ?>
-    </a>
-  </h5>
-</div>
-
-<div id="collapse-<?php the_ID(); ?>" class="collapse<?php echo ($the_query->current_post == 0 ? ' in' : ''); ?>" role="tabpanel" aria-labelledby="heading-<?php the_ID(); ?>" data-parent="#accordion">
-  <div class="card-body">
-
-            <?php while( $posts->have_posts() ) : $posts->the_post(); ?>
-                <p><?php the_title(); ?></p>
-                <?php endwhile; ?>
-        </div>
-</div>
-				
-				</div>
-			
-	</div>
+        if( $posts->have_posts() ){  
+		the_title()
+<?php }}} ?>
 </div>
 <script>
 var acc = document.getElementsByClassName("accordion");
