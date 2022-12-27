@@ -62,24 +62,21 @@ endif;
 	<div class="container-xxxl container-xxl container">
 		
 				<div class="brator-blog-post bottom-catalog">
-				<?php 
-				
-				$args = array(
-               'taxonomy' => 'manual-categories',
-               'orderby' => 'name',
-               'order'   => 'ASC'
-           );
+				<?php
 
-   $cats = get_categories($args);
+$taxonomy = 'manuals_categories';
+$terms = get_terms($taxonomy); // Get all terms of a taxonomy
 
-   foreach($cats as $cat) {
+if ( $terms && !is_wp_error( $terms ) ) :
 ?>
-      <a href="<?php echo get_category_link( $cat->term_id ) ?>">
-           <?php echo $cat->name; ?>
-      </a>
-<?php
-   }
-				?>
+    <ul>
+        <?php foreach ( $terms as $term ) { ?>
+            <li><a href="<?php echo get_term_link($term->slug, $taxonomy); ?>"><?php echo $term->name; ?></a></li>
+        <?php } ?>
+    </ul>
+<?php endif;?>
+
+?>
 				
 				</div>
 			
