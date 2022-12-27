@@ -1014,64 +1014,44 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                 CONNECTED
                             </h2>
                         </div>
-
-                    </div>
-                </div>
-                <div class="col-md-1">
-                    <div class="vl-form-wrapper">
-                        <div class="vl-form">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="contact-form-wrapper">
-                        <h5 class="contact-form-title">
-                            We'll keep you up to speed on all the latest AODES Talon news. Just fill in your information
-                            here.
-                        </h5>
-                        <div class="form" action="submit">
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="First name*"
-                                        aria-label="First name">
-                                </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Last name*"
-                                        aria-label="Last name">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="E-MAIL*" aria-label="E-MAIL">
-                                </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="ZIP CODE*"
-                                        aria-label="ZIP CODE">
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    <p class="confirmation-text">By checking this box, I agree to: (1) receive recurring
-                                        automated marketing and non-marketing calls, texts, and emails from American
-                                        AODES Motor Co., Inc. and participating AODES and Acura dealers at any phone
-                                        numbers and email addresses provided above (consent not required to make a
-                                        purchase, msg & data rates apply, reply STOP to opt-out of texts or HELP for
-                                        help); (2) the <a href="#" class="highlighted-text">SMS Terms</a> (including
-                                        arbitration provision); and (3) the <a href="#" class="highlighted-text">Privacy
-                                            Policy</a> (which describes how AODES collects and uses personal information
-                                        and any privacy rights I may have).</p>
-                                </label>
-                            </div>
-
-                            <a href="#" class="form-submit-button">SEND</a>
-                        </div>
-
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="col-md-8">
+                <div class="contact-form-wrapper">
+                    <h5 class="contact-form-title">
+                        We'll keep you up to speed on all the latest AODES Talon news. Just fill in your information
+                        here.
+                    </h5>
+                    <?php echo do_shortcode('[contact-form-7 id="8495" title="Category Listing Single Page Form"]'); ?>
+                    <!--<div class="form" action="submit">
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="First name*" aria-label="First name">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Last name*" aria-label="Last name">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="E-MAIL*" aria-label="E-MAIL">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="ZIP CODE*" aria-label="ZIP CODE">
+                        </div>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            <p class="confirmation-text">By checking this box, I agree to: (1) receive recurring automated marketing and non-marketing calls, texts, and emails from American AODES Motor Co., Inc. and participating AODES and Acura dealers at any phone numbers and email addresses provided above (consent not required to make a purchase, msg & data rates apply, reply STOP to opt-out of texts or HELP for help); (2) the <a href="#" class="highlighted-text">SMS Terms</a> (including arbitration provision); and (3) the <a href="#" class="highlighted-text">Privacy Policy</a> (which describes how AODES collects and uses personal information and any privacy rights I may have).</p>
+                        </label>
+                      </div>
+                      
+                      <a href="#" class="form-submit-button">SEND</a>  
+                </div>-->
+                </div>
+            </div>
     </section>
 </div>
 

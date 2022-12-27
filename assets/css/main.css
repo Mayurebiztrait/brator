@@ -5692,15 +5692,29 @@ ul#menu-left-sidebar li a {
     font-family: 'Robinson';
     padding: 25px 0px 92px 69px;
     font-size: 42px;
+    font-weight: 500;
+    font-family: 'Robinson';
+    font-size: 92px;
+    color: #ed3333;
+    letter-spacing: 10px;
+    margin-left: 69px;
+}
+
+.row.section-top-2 p {
+    font-weight: 500;
+    font-family: 'Robinson';
+    padding: 25px 0px 92px 69px;
+    font-size: 58px;
     color: #fff;
     background: #ee2c22;
     opacity: 0.5;
+    letter-spacing: 5px;
 }
 
 .inner-top {
     width: 100%;
     position: absolute;
-    top: 73%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
