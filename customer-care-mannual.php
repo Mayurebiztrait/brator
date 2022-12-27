@@ -75,10 +75,10 @@ if ( $terms && !is_wp_error( $terms ) ) :
         <?php } ?>
     </ul>-->
 	<div class="tab">
+	<?php foreach ( $terms as $term ) { ?>
     <label class="tab-label" for="chck<?php the_ID(); ?>"><?php echo $term->name;?></label>
-    <div class="tab-content">
-    <?php      the_content();      ?>
-    </div>
+    <div class="tab-content">test</div>
+	<?php } ?>
 </div>
 <?php endif;?>
 				
