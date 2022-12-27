@@ -146,7 +146,7 @@ foreach( $taxonomies as $taxonomy ) {
 				}
 				?>
 				</ul>
-                <?php endwhile; ?>
+                <?php endwhile; ?> 
         </div>
 </div>
 </dl>
