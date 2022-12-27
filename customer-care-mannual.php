@@ -53,6 +53,9 @@ div#accordion .card {
 .panel i.fa.fa-file {
     font-size: 12px;
 }
+.panel .card-header.accordion.active h5 a {
+    color: #ed3333;
+}
 </style>
 <div class="top-banner">
 <div class="inner-top">
