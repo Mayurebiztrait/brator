@@ -110,9 +110,9 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 if ( $the_query->have_posts() ) {
     while ( $the_query->have_posts() ) {
         $the_query->the_post(); ?>
-          <div class="panel">
-  <p><?php the_title(); ?></p>
-</div>
+          <ul class="panel">
+		  <li>test</li>
+		  </ul>
          <?php   } } 
    
 /* Restore original Post Data */
