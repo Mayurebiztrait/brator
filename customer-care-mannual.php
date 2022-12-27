@@ -100,6 +100,7 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 	<?php foreach ( $terms as $term ) { ?>
 	
 	<button class="accordion"><?php echo $term->name; ?></button>
+	<ul class="panel">
 	<?php
 				$the_query = new WP_Query( array( 
 				'category_name' => $term->name,  
@@ -110,15 +111,15 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 if ( $the_query->have_posts() ) {
     while ( $the_query->have_posts() ) {
         $the_query->the_post(); ?>
-          <ul class="panel">
+          
 		  <li><?php the_title(); ?></li>
-		  </ul>
+		  
          <?php   } } 
    
 /* Restore original Post Data */
 wp_reset_postdata();
 				?>
-
+</ul>
 	<?php } ?>
 				
 				</div>
