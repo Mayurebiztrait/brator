@@ -91,8 +91,6 @@ endif;
 
 $taxonomy = 'manuals_categories';
 $terms = get_terms($taxonomy); // Get all terms of a taxonomy
-
-if ( $terms && !is_wp_error( $terms ) ) :
 ?>
    <!-- <ul>
         <?php foreach ( $terms as $term ) { ?>
@@ -104,7 +102,7 @@ if ( $terms && !is_wp_error( $terms ) ) :
 	<button class="accordion"><?php echo $term->name; ?></button>
 	<?php
 				$the_query = new WP_Query( array( 
-    'category_name' => 'travel', 
+    'category_name' => $term->name, 
     'posts_per_page' => 5 
 ) ); 
    
@@ -116,8 +114,7 @@ if ( $the_query->have_posts() ) {
           <div class="panel">
   <p><?php the_title(); ?></p>
 </div>
-         <?php   }
-    } 
+         <?php   } } 
    
 /* Restore original Post Data */
 wp_reset_postdata();
