@@ -10,10 +10,10 @@
 
 get_header();
 
-echo "<pre>";
-print_r($_POST);
-print_r($_FILES);
-echo "</pre>";
+// echo "<pre>";
+// print_r($_POST);
+// print_r($_FILES);
+// echo "</pre>";
 
 if(isset($_POST['review_form_submit']) && $_POST['review_form_submit'] == 'SUBMIT'){
    // Gather post data.
@@ -1194,7 +1194,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                 </div>
                             </div>
                         </div>
-                        >>>>>>> acff7c41202c0fa5d41c9c8bc6d5a67e20c0cba0
+                        
                     </div>
                 </div>
             </div>
