@@ -75,8 +75,6 @@ if ( $terms && !is_wp_error( $terms ) ) :
         <?php } ?>
     </ul>
 <?php endif;?>
-
-?>
 				
 				</div>
 			
