@@ -137,7 +137,7 @@ foreach( $taxonomies as $taxonomy ) {
   <div class="card-body">
 
             <?php while( $posts->have_posts() ) : $posts->the_post(); ?>
-                <p><?php the_title(); ?></p><ul>
+                <p><i class="fa fa-folder-open" aria-hidden="true"></i> <?php the_title(); ?></p><ul>
 				<?php $files = get_field('files', get_the_ID());
 				if(!empty($files)){
 					foreach($files as $pdflink){
