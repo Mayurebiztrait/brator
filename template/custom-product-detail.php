@@ -10,9 +10,39 @@
 
 get_header();
 
-// echo "<pre>";
-// print_r($product);
-// exit;
+echo "<pre>";
+print_r($_POST);
+print_r($_FILES);
+echo "</pre>";
+
+if(isset($_POST['review_form_submit']) && $_POST['review_form_submit'] == 'SUBMIT'){
+   // Gather post data.
+    $my_post = array(
+        'post_title'    => $_POST['vehicle_title'].' - '.$_POST['email'],
+        'post_status'   => 'publish',
+        'post_author'   => 1,
+        'post_type'      => 'reviews',
+    );
+
+    // Insert the post into the database.
+    $inserted_id = wp_insert_post( $my_post );
+
+    add_post_meta($inserted_id,'_email',$_POST['email']);
+    add_post_meta($inserted_id,'_password',$_POST['password']);
+    add_post_meta($inserted_id,'_city',$_POST['city']);
+    add_post_meta($inserted_id,'_state',$_POST['state']);
+    add_post_meta($inserted_id,'_review',$_POST['review']);
+    $upload_dir = get_template_directory().'/assets/images/';
+    
+    $ext = pathinfo($_FILES["upload_files"]["name"], PATHINFO_EXTENSION);
+        $file_name = time().'.'.$ext;
+    $target_file =  $upload_dir . $file_name;
+    move_uploaded_file($_FILES["upload_files"]["tmp_name"], $target_file);
+    add_post_meta($inserted_id,'_file',$file_name);
+    $_POST = array();
+    $_FILES = array();
+}
+
 $vehicle_id = $_GET['vehicleid'];
 $base_msrp = get_field('base_msrp', $vehicle_id);
 $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single-post-thumbnail');
@@ -191,7 +221,9 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
+                                        <form method="post" id="review_form_submit_form" enctype="multipart/form-data">
                                         <div class="modal-body">
+                                            
                                             <div class="modal-body-img-title">
                                                 <div class="modal-body-icon">
                                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -233,69 +265,76 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                     <h2>LEAVE A REVIEW</h2>
                                                 </div>
                                             </div>
-                                            <div class="custom-modal-form">
-                                                <form class="row g-3">
-                                                    <div class="col-md-6">
-                                                        <label for="inputEmail4" class="form-label">Email</label>
-                                                        <input type="email" class="form-control" id="inputEmail4">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label for="inputPassword4" class="form-label">Password</label>
-                                                        <input type="password" class="form-control" id="inputPassword4">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label for="inputCity" class="form-label">City</label>
-                                                        <input type="text" class="form-control" id="inputCity">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label for="inputState" class="form-label">State</label>
-                                                        <input type="text" class="form-control" id="inputState">
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <label for="inputStatetext" class="form-label">Review</label>
-                                                        <textarea class="form-control" id="inputStatetext"
-                                                            rows="3"></textarea>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="upload-btn-wrapper">
-                                                            <label class="form-label">Submit Images/Videos for Your
-                                                                Review</label>
-                                                            <button class="btn">
-                                                                <span>
-                                                                    <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/upload.png"
-                                                                        alt="">
-                                                                </span>
-                                                                UPLOAD IMAGE(S)/VIDEO(S)
-                                                            </button>
-                                                            <input type="file" name="myfile" />
+                                            
+                                                <div class="custom-modal-form">
+                                                    <div class="row g-3">
+                                                        <div class="col-md-6">
+                                                            <input type="hidden" name="vehicle_title" value="<?php echo get_the_title($vehicle_id); ?>">
+                                                            <label for="inputEmail4" class="form-label">Email</label>
+                                                            <input type="email" name="email" class="form-control" id="inputEmail4">
                                                         </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputPassword4" class="form-label">Password</label>
+                                                            <input type="password" name="password" class="form-control" id="inputPassword4">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputCity" class="form-label">City</label>
+                                                            <input type="text" name="city" class="form-control" id="inputCity">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputState" class="form-label">State</label>
+                                                            <input type="text" name="state" class="form-control" id="inputState">
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <label for="inputStatetext" class="form-label">Review</label>
+                                                            <textarea class="form-control" name="review" id="inputStatetext"
+                                                                rows="3"></textarea>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="upload-btn-wrapper">
+                                                                <label class="form-label" >Submit Images/Videos for Your
+                                                                    Review</label>
+                                                                <!-- <button class="btn upload_btn">
+                                                                    <span>
+                                                                        <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/upload.png"
+                                                                            alt="">
+                                                                    </span>
+                                                                    UPLOAD IMAGE(S)/VIDEO(S)
+                                                                </button> -->
+                                                                <br>
+                                                                <input type="file" name="upload_files" id="upload_files" style="font-size:15px;opacity:1" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <p class="submit-text">
+                                                                By submitting photographs or video, you: (1) represent to
+                                                                Intimidator UTV that they do not contain the likeness of any
+                                                                person other than your own, and that youare of full legal
+                                                                age and have read and fully understand the terms of this
+                                                                authorization; (2) grant to Intimidator UTV an rrevocable,
+                                                                perpetual, worldwide right and license to use, and to
+                                                                authorize third parties to use and publish, in all media,
+                                                                the photographs and videos. as well as your name, your image
+                                                                and likeness (whether with or without your name), and your
+                                                                statements and endorsements, in any and all forms of media,
+                                                                marketing, and promotional and sales programs, and for any
+                                                                purpose (including publicity for Intimidator UTV and any
+                                                                product or services), and all other lawful uses as may be
+                                                                determined by Intimidator UTV; and (3) waive all rights to
+                                                                review or approve any use of those photographs or videos, or
+                                                                any written copy or finished product containing them.
+                                                            </p>
                                                     </div>
-                                                    <div class="col-md-12">
-                                                        <p class="submit-text">
-                                                            By submitting photographs or video, you: (1) represent to
-                                                            Intimidator UTV that they do not contain the likeness of any
-                                                            person other than your own, and that youare of full legal
-                                                            age and have read and fully understand the terms of this
-                                                            authorization; (2) grant to Intimidator UTV an rrevocable,
-                                                            perpetual, worldwide right and license to use, and to
-                                                            authorize third parties to use and publish, in all media,
-                                                            the photographs and videos. as well as your name, your image
-                                                            and likeness (whether with or without your name), and your
-                                                            statements and endorsements, in any and all forms of media,
-                                                            marketing, and promotional and sales programs, and for any
-                                                            purpose (including publicity for Intimidator UTV and any
-                                                            product or services), and all other lawful uses as may be
-                                                            determined by Intimidator UTV; and (3) waive all rights to
-                                                            review or approve any use of those photographs or videos, or
-                                                            any written copy or finished product containing them.
-                                                        </p>
-                                                </form>
-                                            </div>
+                                                </div>
+                                            
+                                            
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                            <input type="submit" name="review_form_submit" class="btn btn-primary review_form_submit" value="SUBMIT">
 
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">SUBMIT</button>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

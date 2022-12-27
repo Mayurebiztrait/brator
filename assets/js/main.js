@@ -1,7 +1,14 @@
 jQuery( document ).ready(function() {
 
   // download pdf code
-
+  
+  
+  jQuery("body").on("click", ".review_form_submit", function () {
+    jQuery('#review_form_submit_form').trigger('submit');
+  });
+  jQuery("body").on("click", ".upload_btn", function () {
+    jQuery('#upload_files').trigger('click');
+  });
   jQuery("body").on("click", ".print_specifications", function () {
     html2canvas(jQuery('#view_all_specification')[0], {
         onrendered: function (canvas) {
