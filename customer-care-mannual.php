@@ -125,7 +125,7 @@ foreach( $taxonomies as $taxonomy ) {
         // The Loop
         if( $posts->have_posts() ){  ?>
 		<dl id="box-loop-list-<?php echo $term->slug ;?>">    <div id="accordion" role="tablist">    <div class="card">
-<div class="card-header" role="tab" id="heading-<?php the_ID(); ?>">
+<div class="card-header accordion" role="tab" id="heading-<?php the_ID(); ?>">
   <h5 class="mb-0">
     <a data-toggle="collapse" href="#collapse-<?php the_ID(); ?>" aria-expanded="true" aria-controls="collapse-<?php the_ID(); ?>">
       <?php echo $term->name;  ?>
