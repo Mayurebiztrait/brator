@@ -909,56 +909,79 @@ function special_nav_class ($classes, $item) {
 function custom_post_type_custom_care_manuals() {
   
 // Set UI labels for Custom Post Type
-    $labels = array(
-        'name'                => _x( 'Manuals', 'Post Type General Name', 'twentytwentyone' ),
-        'singular_name'       => _x( 'Manual', 'Post Type Singular Name', 'twentytwentyone' ),
-        'menu_name'           => __( 'Manuals', 'twentytwentyone' ),
-        'parent_item_colon'   => __( 'Parent Manual', 'twentytwentyone' ),
-        'all_items'           => __( 'All Manuals', 'twentytwentyone' ),
-        'view_item'           => __( 'View Manual', 'twentytwentyone' ),
-        'add_new_item'        => __( 'Add New Manual', 'twentytwentyone' ),
-        'add_new'             => __( 'Add New', 'twentytwentyone' ),
-        'edit_item'           => __( 'Edit Manual', 'twentytwentyone' ),
-        'update_item'         => __( 'Update Manual', 'twentytwentyone' ),
-        'search_items'        => __( 'Search Manual', 'twentytwentyone' ),
-        'not_found'           => __( 'Not Found', 'twentytwentyone' ),
-        'not_found_in_trash'  => __( 'Not found in Trash', 'twentytwentyone' ),
-    );
+        $labels = array(
+            'name'                => _x( 'Manuals', 'Post Type General Name', 'aodes' ),
+            'singular_name'       => _x( 'Manual', 'Post Type Singular Name', 'aodes' ),
+            'menu_name'           => __( 'Manuals', 'aodes' ),
+            'parent_item_colon'   => __( 'Parent Manual', 'aodes' ),
+            'all_items'           => __( 'All Manuals', 'aodes' ),
+            'view_item'           => __( 'View Manual', 'aodes' ),
+            'add_new_item'        => __( 'Add New Manual', 'aodes' ),
+            'add_new'             => __( 'Add New', 'aodes' ),
+            'edit_item'           => __( 'Edit Manual', 'aodes' ),
+            'update_item'         => __( 'Update Manual', 'aodes' ),
+            'search_items'        => __( 'Search Manual', 'aodes' ),
+            'not_found'           => __( 'Not Found', 'aodes' ),
+            'not_found_in_trash'  => __( 'Not found in Trash', 'aodes' ),
+        );
+          
+    // Set other options for Custom Post Type
+          
+        $args = array(
+            'label'               => __( 'Manuals', 'aodes' ),
+            'description'         => __( 'Manual news and reviews', 'aodes' ),
+            'labels'              => $labels,
+            // Features this CPT supports in Post Editor
+            'supports'            => array( 'title'   ),
+            // You can associate this CPT with a taxonomy or custom taxonomy. 
+            'taxonomies'          => array( 'genres' ),
+            /* A hierarchical CPT is like Pages and can have
+            * Parent and child items. A non-hierarchical CPT
+            * is like Posts.
+            */
+            'hierarchical'        => true,
+            'public'              => true,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'menu_position'       => 5,
+            'can_export'          => true,
+            'has_archive'         => true,
+            'exclude_from_search' => false,
+            'publicly_queryable'  => true,
+            'capability_type'     => 'post',
+            'show_in_rest' => true,
       
-// Set other options for Custom Post Type
-      
-    $args = array(
-        'label'               => __( 'manuals', 'twentytwentyone' ),
-        'description'         => __( 'Manual news and reviews', 'twentytwentyone' ),
-        'labels'              => $labels,
-        // Features this CPT supports in Post Editor
-        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-        // You can associate this CPT with a taxonomy or custom taxonomy. 
-        'taxonomies'          => array( 'genres' ),
-        /* A hierarchical CPT is like Pages and can have
-        * Parent and child items. A non-hierarchical CPT
-        * is like Posts.
-        */
-        'hierarchical'        => false,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => true,
-        'show_in_admin_bar'   => true,
-        'menu_position'       => 5,
-        'can_export'          => true,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'post',
-        'show_in_rest' => true,
-			
-		'taxonomies'  => array( 'category' ),
-  
-    );
-      
-    // Registering your Custom Post Type
-    register_post_type( 'manuals', $args );
+        );
+          
+        // Registering your Custom Post Type
+        register_post_type( 'manuals', $args );
+
+		$labels = array(
+			'name' => 'Categories'  ,
+			'singular_name' => 'Category',
+			'search_items' =>  __( 'Search Categories' ),
+			'all_items' => __( 'All Categories' ),
+			'parent_item' => __( 'Parent Category' ),
+			'parent_item_colon' => __( 'Parent Category:' ),
+			'edit_item' => __( 'Edit Category' ), 
+			'update_item' => __( 'Update Category' ),
+			'add_new_item' => __( 'Add New Category' ),
+			'new_item_name' => __( 'New Category Name' ),
+			'menu_name' => __( 'Categories' ),
+		  );    
+		 
+		// Now register the taxonomy
+		  register_taxonomy('manuals_categories',array('manuals'), array(
+			'hierarchical' => true,
+			'labels' => $labels,
+			'show_ui' => true,
+			'show_in_rest' => true,
+			'show_admin_column' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'manual-categories' ),
+		  ));
   
 }
   
