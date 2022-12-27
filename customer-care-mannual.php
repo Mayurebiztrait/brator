@@ -141,7 +141,7 @@ foreach( $taxonomies as $taxonomy ) {
 				<?php $files = get_field('files', get_the_ID());
 				if(!empty($files)){
 					foreach($files as $pdflink){
-						echo '<li><i class="fa fa-file" aria-hidden="true"></i> <a href="'.$pdflink['url'].'">'.$pdflink['title'].'</a></li>';
+						echo '<li><i class="fa fa-file" aria-hidden="true"></i> <a href="'.$pdflink['url'].'" target="_blank">'.$pdflink['title'].'</a></li>';
 					}
 				}
 				?>
