@@ -20,20 +20,19 @@ endif;
 </style>
 <style>
 .accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border-bottom: 1px solid darkgray;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
 }
-
-.active, .accordion:hover {
-  background-color: #ccc; 
+div#accordion .card {
+    border: none;
 }
 
 .panel {
@@ -42,17 +41,27 @@ endif;
   background-color: white;
   overflow: hidden;
 }
+.panel .card-body ul li a {
+    font-size: 14px;
+}
+.panel .card-body ul {
+    margin-top: 0;
+}
+.panel .card-body p {
+    margin-bottom: 0;
+}
+.panel i.fa.fa-file {
+    font-size: 12px;
+}
+.panel .card-header.accordion.active h5 a {
+    color: #ed3333;
+}
 </style>
 <div class="top-banner">
 <div class="inner-top">
-<div class="row section-top-1">
-<div class="col-sm-2"></div>
-<div class="col-sm-8"><h3>AODES</h3></div>
-<div class="col-sm-2"></div>
-</div>
 <div class="row section-top-2">
 <div class="col-sm-2"></div>
-<div class="col-sm-8"><p>CATALOGS & <?php single_term_title();?></p></div>
+<div class="col-sm-8"><p>OWNER'S MANUALS</p></div>
 <div class="col-sm-2"></div>
 </div>
 </div>
@@ -76,22 +85,13 @@ endif;
 </div>
 <div class="brator-manuals">
 	<div class="container-xxxl container-xxl container">
-		<div class="row main-title-catalog">
-			<div class="col-lg-12">
-				<div class="brator-breadcrumb">
-					<h1 class="text-center">Download <span><?php single_term_title();?> Catalog</span></h1>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container-xxxl container-xxl container">
 		
-				<div class="brator-blog-post bottom-catalog">
+<div class="brator-blog-post bottom-catalog">
 <?php
 $post_type = 'manuals';
 // Get all the taxonomies for this post type
 $taxonomies = get_object_taxonomies( (object) array( 'post_type' => $post_type ) );
-foreach( $taxonomies as $taxonomy ) :
+foreach( $taxonomies as $taxonomy ) {
 
     // Gets every "category" (term) in this taxonomy to get the respective posts
     $terms = get_terms( $taxonomy,
@@ -102,7 +102,7 @@ foreach( $taxonomies as $taxonomy ) :
         )
     );
 
-        foreach( $terms as $term ) : 
+        foreach( $terms as $term ) {
             // WP_Query arguments
         $args = array (
             'post_type'   => $post_type,
@@ -123,9 +123,9 @@ foreach( $taxonomies as $taxonomy ) :
         $posts = new WP_Query( $args );
 
         // The Loop
-        if( $posts->have_posts() ) : ?>
-            <dl id="box-loop-list-<?php echo $term->slug ;?>">    <div id="accordion" role="tablist">    <div class="card">
-<div class="card-header" role="tab" id="heading-<?php the_ID(); ?>">
+        if( $posts->have_posts() ){  ?>
+		<dl id="box-loop-list-<?php echo $term->slug ;?>">    <div id="accordion" role="tablist">    <div class="card">
+<div class="card-header accordion" role="tab" id="heading-<?php the_ID(); ?>">
   <h5 class="mb-0">
     <a data-toggle="collapse" href="#collapse-<?php the_ID(); ?>" aria-expanded="true" aria-controls="collapse-<?php the_ID(); ?>">
       <?php echo $term->name;  ?>
@@ -133,18 +133,24 @@ foreach( $taxonomies as $taxonomy ) :
   </h5>
 </div>
 
-<div id="collapse-<?php the_ID(); ?>" class="collapse<?php echo ($the_query->current_post == 0 ? ' in' : ''); ?>" role="tabpanel" aria-labelledby="heading-<?php the_ID(); ?>" data-parent="#accordion">
+<div id="collapse-<?php the_ID(); ?>" class="collapse<?php echo ($the_query->current_post == 0 ? ' in' : ''); ?> panel" role="tabpanel" aria-labelledby="heading-<?php the_ID(); ?>" data-parent="#accordion">
   <div class="card-body">
 
             <?php while( $posts->have_posts() ) : $posts->the_post(); ?>
-                <p><?php the_title(); ?></p>
-                <?php endwhile; ?>
+                <p><i class="fa fa-folder-open" aria-hidden="true"></i> <?php the_title(); ?></p><ul>
+				<?php $files = get_field('files', get_the_ID());
+				if(!empty($files)){
+					foreach($files as $pdflink){
+						echo '<li><i class="fa fa-file" aria-hidden="true"></i> <a href="'.$pdflink['url'].'" target="_blank">'.$pdflink['title'].'</a></li>';
+					}
+				}
+				?> 
+				</ul>
+                <?php endwhile; ?> 
         </div>
 </div>
-				
-				</div>
-			
-	</div>
+</dl>
+<?php }}} ?>
 </div>
 <script>
 var acc = document.getElementsByClassName("accordion");

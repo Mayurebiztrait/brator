@@ -33,7 +33,14 @@ if (isset($_POST['review_form_submit']) && $_POST['review_form_submit'] == 'SUBM
     add_post_meta($inserted_id, '_state', $_POST['state']);
     add_post_meta($inserted_id, '_review', $_POST['review']);
     $upload_dir = get_template_directory() . '/assets/images/';
+    add_post_meta($inserted_id, '_email', $_POST['email']);
+    add_post_meta($inserted_id, '_password', $_POST['password']);
+    add_post_meta($inserted_id, '_city', $_POST['city']);
+    add_post_meta($inserted_id, '_state', $_POST['state']);
+    add_post_meta($inserted_id, '_review', $_POST['review']);
+    add_post_meta($inserted_id, '_vehicle_id', $_POST['vehicle_id']);
 
+    $upload_dir = get_template_directory() . '/assets/images/';
     $ext = pathinfo($_FILES["upload_files"]["name"], PATHINFO_EXTENSION);
     $file_name = time() . '.' . $ext;
     $target_file = $upload_dir . $file_name;
@@ -272,6 +279,10 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                         <div class="col-md-6">
                                                             <input type="hidden" name="vehicle_title"
                                                                 value="<?php echo get_the_title($vehicle_id); ?>">
+                                                            <input type="hidden" name="vehicle_title"
+                                                                value="<?php echo get_the_title($vehicle_id); ?>">
+                                                            <input type="hidden" name="vehicle_id"
+                                                                value="<?php echo $vehicle_id; ?>">
                                                             <label for="inputEmail4" class="form-label">Email</label>
                                                             <input type="email" name="email" class="form-control"
                                                                 id="inputEmail4">
