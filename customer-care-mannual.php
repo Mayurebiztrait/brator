@@ -138,6 +138,11 @@ foreach( $taxonomies as $taxonomy ) {
 
             <?php while( $posts->have_posts() ) : $posts->the_post(); ?>
                 <p><?php the_title(); ?></p>
+				<?php $files = get_field('files', the_ID());
+					echo '<pre>';
+					print_r($files);
+					echo '</pre>';
+				?>
                 <?php endwhile; ?>
         </div>
 </div>
