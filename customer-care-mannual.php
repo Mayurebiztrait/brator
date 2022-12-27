@@ -41,6 +41,18 @@ div#accordion .card {
   background-color: white;
   overflow: hidden;
 }
+.panel .card-body ul li a {
+    font-size: 14px;
+}
+.panel .card-body ul {
+    margin-top: 0;
+}
+.panel .card-body p {
+    margin-bottom: 0;
+}
+.panel i.fa.fa-file {
+    font-size: 12px;
+}
 </style>
 <div class="top-banner">
 <div class="inner-top">
