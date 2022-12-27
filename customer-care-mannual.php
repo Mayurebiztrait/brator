@@ -121,7 +121,6 @@ wp_reset_postdata();
 				?>
 
 	<?php } ?>
-<?php endif;?>
 				
 				</div>
 			
