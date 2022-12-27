@@ -20,20 +20,19 @@ endif;
 </style>
 <style>
 .accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border-bottom: 1px solid darkgray;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
 }
-
-.active, .accordion:hover {
-  background-color: #ccc; 
+div#accordion .card {
+    border: none;
 }
 
 .panel {
