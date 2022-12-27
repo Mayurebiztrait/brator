@@ -101,24 +101,22 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 	
 	<button class="accordion"><?php echo $term->name; ?></button>
 	<?php
-$args = array(
-    'tax_query' => array(
-        array(
-            $term->slug
-        )
-    )
-);
-
-//  assigning variables to the loop
-global $wp_query;
-$wp_query = new WP_Query($args);
-
-// starting loop
-while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-          <div class="panel">
-  <p><?php the_title(); ?></p>
-</div>
-         <?php   endwhile;
+				$the_query = new WP_Query( array( 
+				'category_name' => $term->name,  
+				'post_type' => 'manuals'
+) ); 
+   
+// The Loop
+if ( $the_query->have_posts() ) {
+    while ( $the_query->have_posts() ) {
+        $the_query->the_post(); ?>
+          <ul class="panel">
+		  <li><?php the_title(); ?></li>
+		  </ul>
+         <?php   } } 
+   
+/* Restore original Post Data */
+wp_reset_postdata();
 				?>
 
 	<?php } ?>
