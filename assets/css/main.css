@@ -3716,6 +3716,71 @@ ul#menu-left-sidebar li a {
     background-color: #1f1f1f;
 }
 
+.custom-view-all-specification .modal-header {
+    background-color: #ed3333;
+}
+
+.custom-view-all-specification .modal-body {
+    background-color: #f6f6f6;
+    padding: 2.5rem 7rem;
+}
+
+.custom-view-all-specification h2.title {
+    padding: 20px;
+    color: #ed3333;
+    font-family: 'League Gothic', sans-serif;
+    font-size: 70px;
+    letter-spacing: 1.5px;
+}
+
+.custom-view-all-specification .modal-footer {
+    justify-content: flex-start;
+}
+
+.custom-view-all-specification .modal-footer button.print_specifications {
+    background-color: #0f1423;
+    border-radius: 0;
+    padding: 5px 50px;
+    border: 1px solid #000;
+    font-size: 30px;
+    font-family: 'League Gothic', sans-serif;
+}
+
+.mcard-iteam {
+    margin: 0 0 30px 0;
+}
+
+.mcard-iteam h3 {
+    font-size: 30px;
+}
+
+.mcard-iteam p {
+    font-size: 20px;
+}
+
+.custom-view-all-specification h2.title:after {
+    display: none;
+}
+
+.custom-view-all-specification .modal-header #exampleModalLabel {
+    font-size: 70px;
+    color: #fff;
+    font-family: 'League Gothic', sans-serif;
+    letter-spacing: 2.5px;
+}
+
+.mcard {
+    background: #fff;
+    padding: 50px;
+    margin-bottom: 30px;
+}
+
+.custom-view-all-specification .modal-header .btn-close {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>");
+    opacity: 1;
+    font-size: 34px;
+}
+
 .custom-features-description-modal:nth-child(2n+1) {}
 
 .custom-features-description-modal .m_description h2.m_title {

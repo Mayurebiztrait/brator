@@ -15,30 +15,30 @@ get_header();
 // print_r($_FILES);
 // echo "</pre>";
 
-if(isset($_POST['review_form_submit']) && $_POST['review_form_submit'] == 'SUBMIT'){
-   // Gather post data.
+if (isset($_POST['review_form_submit']) && $_POST['review_form_submit'] == 'SUBMIT') {
+    // Gather post data.
     $my_post = array(
-        'post_title'    => $_POST['vehicle_title'].' - '.$_POST['email'],
-        'post_status'   => 'publish',
-        'post_author'   => 1,
-        'post_type'      => 'reviews',
+        'post_title' => $_POST['vehicle_title'] . ' - ' . $_POST['email'],
+        'post_status' => 'publish',
+        'post_author' => 1,
+        'post_type' => 'reviews',
     );
 
     // Insert the post into the database.
-    $inserted_id = wp_insert_post( $my_post );
+    $inserted_id = wp_insert_post($my_post);
 
-    add_post_meta($inserted_id,'_email',$_POST['email']);
-    add_post_meta($inserted_id,'_password',$_POST['password']);
-    add_post_meta($inserted_id,'_city',$_POST['city']);
-    add_post_meta($inserted_id,'_state',$_POST['state']);
-    add_post_meta($inserted_id,'_review',$_POST['review']);
-    $upload_dir = get_template_directory().'/assets/images/';
-    
+    add_post_meta($inserted_id, '_email', $_POST['email']);
+    add_post_meta($inserted_id, '_password', $_POST['password']);
+    add_post_meta($inserted_id, '_city', $_POST['city']);
+    add_post_meta($inserted_id, '_state', $_POST['state']);
+    add_post_meta($inserted_id, '_review', $_POST['review']);
+    $upload_dir = get_template_directory() . '/assets/images/';
+
     $ext = pathinfo($_FILES["upload_files"]["name"], PATHINFO_EXTENSION);
-        $file_name = time().'.'.$ext;
-    $target_file =  $upload_dir . $file_name;
+    $file_name = time() . '.' . $ext;
+    $target_file = $upload_dir . $file_name;
     move_uploaded_file($_FILES["upload_files"]["tmp_name"], $target_file);
-    add_post_meta($inserted_id,'_file',$file_name);
+    add_post_meta($inserted_id, '_file', $file_name);
     $_POST = array();
     $_FILES = array();
 }
@@ -222,77 +222,85 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                 aria-label="Close"></button>
                                         </div>
                                         <form method="post" id="review_form_submit_form" enctype="multipart/form-data">
-                                        <div class="modal-body">
-                                            
-                                            <div class="modal-body-img-title">
-                                                <div class="modal-body-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
-                                                        y="0px" viewBox="0 0 500 500"
-                                                        style="enable-background:new 0 0 500 500;" xml:space="preserve">
-                                                        <g id="Layer_1" style="display:none;">
-                                                            <ellipse style="display:inline;fill:#ED3333;" cx="250"
-                                                                cy="250.5" rx="250" ry="248.5" />
-                                                            <ellipse style="display:inline;fill:#FFFFFF;" cx="245.883"
-                                                                cy="73.705" rx="27.657" ry="27.023" />
-                                                            <path style="display:inline;fill:#FFFFFF;"
-                                                                d="M168.314,184.065c0,0-1.027-24.073,23.098-27.082h59.029   c0,0,18.479,2.006,22.072,24.073s0,193.589,0,193.589h44.656c0,0,17.538,9.362,19.248,27.25s-22.328,26.748-22.328,26.748H178.067   c0,0-24.039-7.523-22.756-26.999c0,0-1.882-19.309,21.729-27.333l41.063,0.418l-0.342-163.915   C217.761,210.813,177.04,219.506,168.314,184.065z" />
-                                                        </g>
-                                                        <g id="Layer_2">
-                                                            <path style="fill:#ED3333;"
-                                                                d="M437.5,396h-375C29.639,396,3,369.361,3,336.5V83c0-32.861,26.639-59.5,59.5-59.5h375   c32.861,0,59.5,26.639,59.5,59.5v253.5C497,369.361,470.361,396,437.5,396z" />
-                                                            <polygon style="fill:#ED3333;"
-                                                                points="247.864,479.485 312.991,392.346 184.657,390.943  " />
+                                            <div class="modal-body">
 
-                                                            <image style="display:none;overflow:visible;" width="100"
-                                                                height="92"
-                                                                xlink:href="../../../xampp/htdocs/aodesbiz/wp-content/themes/brator/assets/images/New folder/review-icon.png"
-                                                                transform="matrix(4.94 0 0 4.9239 3 23.5)">
-                                                            </image>
-                                                            <circle
-                                                                style="fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;"
-                                                                cx="115.174" cy="213" r="29.957" />
-                                                            <circle
-                                                                style="fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;"
-                                                                cx="250" cy="213" r="29.957" />
-                                                            <circle
-                                                                style="fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;"
-                                                                cx="384.609" cy="213" r="29.957" />
-                                                        </g>
-                                                    </svg>
+                                                <div class="modal-body-img-title">
+                                                    <div class="modal-body-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                                                            x="0px" y="0px" viewBox="0 0 500 500"
+                                                            style="enable-background:new 0 0 500 500;"
+                                                            xml:space="preserve">
+                                                            <g id="Layer_1" style="display:none;">
+                                                                <ellipse style="display:inline;fill:#ED3333;" cx="250"
+                                                                    cy="250.5" rx="250" ry="248.5" />
+                                                                <ellipse style="display:inline;fill:#FFFFFF;"
+                                                                    cx="245.883" cy="73.705" rx="27.657" ry="27.023" />
+                                                                <path style="display:inline;fill:#FFFFFF;"
+                                                                    d="M168.314,184.065c0,0-1.027-24.073,23.098-27.082h59.029   c0,0,18.479,2.006,22.072,24.073s0,193.589,0,193.589h44.656c0,0,17.538,9.362,19.248,27.25s-22.328,26.748-22.328,26.748H178.067   c0,0-24.039-7.523-22.756-26.999c0,0-1.882-19.309,21.729-27.333l41.063,0.418l-0.342-163.915   C217.761,210.813,177.04,219.506,168.314,184.065z" />
+                                                            </g>
+                                                            <g id="Layer_2">
+                                                                <path style="fill:#ED3333;"
+                                                                    d="M437.5,396h-375C29.639,396,3,369.361,3,336.5V83c0-32.861,26.639-59.5,59.5-59.5h375   c32.861,0,59.5,26.639,59.5,59.5v253.5C497,369.361,470.361,396,437.5,396z" />
+                                                                <polygon style="fill:#ED3333;"
+                                                                    points="247.864,479.485 312.991,392.346 184.657,390.943  " />
+
+                                                                <image style="display:none;overflow:visible;"
+                                                                    width="100" height="92"
+                                                                    xlink:href="../../../xampp/htdocs/aodesbiz/wp-content/themes/brator/assets/images/New folder/review-icon.png"
+                                                                    transform="matrix(4.94 0 0 4.9239 3 23.5)">
+                                                                </image>
+                                                                <circle
+                                                                    style="fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;"
+                                                                    cx="115.174" cy="213" r="29.957" />
+                                                                <circle
+                                                                    style="fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;"
+                                                                    cx="250" cy="213" r="29.957" />
+                                                                <circle
+                                                                    style="fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;"
+                                                                    cx="384.609" cy="213" r="29.957" />
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="modal-body-text">
+                                                        <h2>LEAVE A REVIEW</h2>
+                                                    </div>
                                                 </div>
-                                                <div class="modal-body-text">
-                                                    <h2>LEAVE A REVIEW</h2>
-                                                </div>
-                                            </div>
-                                            
+
                                                 <div class="custom-modal-form">
                                                     <div class="row g-3">
                                                         <div class="col-md-6">
-                                                            <input type="hidden" name="vehicle_title" value="<?php echo get_the_title($vehicle_id); ?>">
+                                                            <input type="hidden" name="vehicle_title"
+                                                                value="<?php echo get_the_title($vehicle_id); ?>">
                                                             <label for="inputEmail4" class="form-label">Email</label>
-                                                            <input type="email" name="email" class="form-control" id="inputEmail4">
+                                                            <input type="email" name="email" class="form-control"
+                                                                id="inputEmail4">
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <label for="inputPassword4" class="form-label">Password</label>
-                                                            <input type="password" name="password" class="form-control" id="inputPassword4">
+                                                            <label for="inputPassword4"
+                                                                class="form-label">Password</label>
+                                                            <input type="password" name="password" class="form-control"
+                                                                id="inputPassword4">
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="inputCity" class="form-label">City</label>
-                                                            <input type="text" name="city" class="form-control" id="inputCity">
+                                                            <input type="text" name="city" class="form-control"
+                                                                id="inputCity">
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="inputState" class="form-label">State</label>
-                                                            <input type="text" name="state" class="form-control" id="inputState">
+                                                            <input type="text" name="state" class="form-control"
+                                                                id="inputState">
                                                         </div>
                                                         <div class="col-md-12">
-                                                            <label for="inputStatetext" class="form-label">Review</label>
-                                                            <textarea class="form-control" name="review" id="inputStatetext"
-                                                                rows="3"></textarea>
+                                                            <label for="inputStatetext"
+                                                                class="form-label">Review</label>
+                                                            <textarea class="form-control" name="review"
+                                                                id="inputStatetext" rows="3"></textarea>
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="upload-btn-wrapper">
-                                                                <label class="form-label" >Submit Images/Videos for Your
+                                                                <label class="form-label">Submit Images/Videos for Your
                                                                     Review</label>
                                                                 <!-- <button class="btn upload_btn">
                                                                     <span>
@@ -302,38 +310,52 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                                     UPLOAD IMAGE(S)/VIDEO(S)
                                                                 </button> -->
                                                                 <br>
-                                                                <input type="file" name="upload_files" id="upload_files" style="font-size:15px;opacity:1" />
+                                                                <input type="file" name="upload_files" id="upload_files"
+                                                                    style="font-size:15px;opacity:1" />
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
                                                             <p class="submit-text">
-                                                                By submitting photographs or video, you: (1) represent to
-                                                                Intimidator UTV that they do not contain the likeness of any
-                                                                person other than your own, and that youare of full legal
+                                                                By submitting photographs or video, you: (1) represent
+                                                                to
+                                                                Intimidator UTV that they do not contain the likeness of
+                                                                any
+                                                                person other than your own, and that youare of full
+                                                                legal
                                                                 age and have read and fully understand the terms of this
-                                                                authorization; (2) grant to Intimidator UTV an rrevocable,
+                                                                authorization; (2) grant to Intimidator UTV an
+                                                                rrevocable,
                                                                 perpetual, worldwide right and license to use, and to
-                                                                authorize third parties to use and publish, in all media,
-                                                                the photographs and videos. as well as your name, your image
-                                                                and likeness (whether with or without your name), and your
-                                                                statements and endorsements, in any and all forms of media,
-                                                                marketing, and promotional and sales programs, and for any
+                                                                authorize third parties to use and publish, in all
+                                                                media,
+                                                                the photographs and videos. as well as your name, your
+                                                                image
+                                                                and likeness (whether with or without your name), and
+                                                                your
+                                                                statements and endorsements, in any and all forms of
+                                                                media,
+                                                                marketing, and promotional and sales programs, and for
+                                                                any
                                                                 purpose (including publicity for Intimidator UTV and any
-                                                                product or services), and all other lawful uses as may be
-                                                                determined by Intimidator UTV; and (3) waive all rights to
-                                                                review or approve any use of those photographs or videos, or
+                                                                product or services), and all other lawful uses as may
+                                                                be
+                                                                determined by Intimidator UTV; and (3) waive all rights
+                                                                to
+                                                                review or approve any use of those photographs or
+                                                                videos, or
                                                                 any written copy or finished product containing them.
                                                             </p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            
-                                            
-                                        </div>
-                                        
-                                        <div class="modal-footer">
-                                            <input type="submit" name="review_form_submit" class="btn btn-primary review_form_submit" value="SUBMIT">
 
-                                        </div>
+
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <input type="submit" name="review_form_submit"
+                                                        class="btn btn-primary review_form_submit" value="SUBMIT">
+
+                                                </div>
                                         </form>
                                     </div>
                                 </div>
@@ -970,13 +992,11 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                             <div class="custom-specification-card">
                                 <div class="custom-specification-card-content">
                                     <div class="custom-specification-card-img">
-
                                         <img src="<?php echo $s_e_image; ?>" alt="img" class="img-fluid">
                                     </div class="custom-specification-card-content">
                                     <h4 class="custom-specification-card-title"><?php echo $s_e_title; ?></h4>
                                     <p class="custom-specification-card-subtitle">
                                         <?php echo $s_e_short_title; ?>
-
                                     </p>
                                 </div>
 
@@ -1075,126 +1095,129 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                         </a>
                     </div>
                     <div id="editor"></div>
-                    <div class="modal fade" id="view_all_specification" tabindex="-1"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-fullscreen">
-                            <div class=" modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title text-uppercase" id="exampleModalLabel">Specifications</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <?php
-                                    $s_e_show = get_field('s_e_show', $vehicle_id);
-                                    $s_e_title = get_field('s_e_title', $vehicle_id);
-                                    $s_e_short_title = get_field('s_e_short_title', $vehicle_id);
-                                    $s_e_popup_content = get_field('s_e_popup_content', $vehicle_id);
+                    <div class="custom-view-all-specification">
+                        <div class="modal fade" id="view_all_specification" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-fullscreen">
+                                <div class=" modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-uppercase" id="exampleModalLabel">Specifications
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <?php
+                                        $s_e_show = get_field('s_e_show', $vehicle_id);
+                                        $s_e_title = get_field('s_e_title', $vehicle_id);
+                                        $s_e_short_title = get_field('s_e_short_title', $vehicle_id);
+                                        $s_e_popup_content = get_field('s_e_popup_content', $vehicle_id);
 
-                                    if ($s_e_show == true) {
-                                    ?>
-                                    <div class="row">
-                                        <div class="col-md-12 mscontent">
-                                            <h2 class="title">ENGINE</h2>
-                                            <div class="mcard">
-                                                <?php echo $s_e_popup_content; ?>
+                                        if ($s_e_show == true) {
+                                        ?>
+                                        <div class="row">
+                                            <div class="col-md-12 mscontent">
+                                                <h2 class="title">ENGINE</h2>
+                                                <div class="mcard">
+                                                    <?php echo $s_e_popup_content; ?>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <?php } ?>
-                                    <?php
-                                    $s_d_show = get_field('s_d_show', $vehicle_id);
-                                    $s_d_title = get_field('s_d_title', $vehicle_id);
-                                    $s_d_short_title = get_field('s_d_short_title', $vehicle_id);
-                                    $s_d_popup_content = get_field('s_d_popup_content', $vehicle_id);
+                                        <?php } ?>
+                                        <?php
+                                        $s_d_show = get_field('s_d_show', $vehicle_id);
+                                        $s_d_title = get_field('s_d_title', $vehicle_id);
+                                        $s_d_short_title = get_field('s_d_short_title', $vehicle_id);
+                                        $s_d_popup_content = get_field('s_d_popup_content', $vehicle_id);
 
-                                    if ($s_d_show == true) {
-                                    ?>
-                                    <div class="row">
-                                        <div class="col-md-12 mscontent">
-                                            <h2 class="title">DRIVE TRAIN</h2>
-                                            <div class="mcard">
-                                                <?php echo $s_d_popup_content; ?>
+                                        if ($s_d_show == true) {
+                                        ?>
+                                        <div class="row">
+                                            <div class="col-md-12 mscontent">
+                                                <h2 class="title">DRIVE TRAIN</h2>
+                                                <div class="mcard">
+                                                    <?php echo $s_d_popup_content; ?>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <?php } ?>
-                                    <?php
-                                    $s_c_show = get_field('s_c_show', $vehicle_id);
-                                    $s_c_title = get_field('s_c_title', $vehicle_id);
-                                    $s_c_short_title = get_field('s_c_short_title', $vehicle_id);
-                                    $s_c_popup_content = get_field('s_c_popup_content', $vehicle_id);
+                                        <?php } ?>
+                                        <?php
+                                        $s_c_show = get_field('s_c_show', $vehicle_id);
+                                        $s_c_title = get_field('s_c_title', $vehicle_id);
+                                        $s_c_short_title = get_field('s_c_short_title', $vehicle_id);
+                                        $s_c_popup_content = get_field('s_c_popup_content', $vehicle_id);
 
-                                    if ($s_c_show == true) {
-                                    ?>
-                                    <div class="row">
-                                        <div class="col-md-12 mscontent">
-                                            <h2 class="title">CHASSIS/SUSPENSION/BRAKES</h2>
-                                            <div class="mcard">
-                                                <?php echo $s_c_popup_content; ?>
+                                        if ($s_c_show == true) {
+                                        ?>
+                                        <div class="row">
+                                            <div class="col-md-12 mscontent">
+                                                <h2 class="title">CHASSIS/SUSPENSION/BRAKES</h2>
+                                                <div class="mcard">
+                                                    <?php echo $s_c_popup_content; ?>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <?php } ?>
-                                    <?php
-                                    $dms_show = get_field('dms_show', $vehicle_id);
-                                    $dms_title = get_field('dms_title', $vehicle_id);
-                                    $dms_short_title = get_field('dms_short_title', $vehicle_id);
-                                    $dms_popup_content = get_field('dms_popup_content', $vehicle_id);
+                                        <?php } ?>
+                                        <?php
+                                        $dms_show = get_field('dms_show', $vehicle_id);
+                                        $dms_title = get_field('dms_title', $vehicle_id);
+                                        $dms_short_title = get_field('dms_short_title', $vehicle_id);
+                                        $dms_popup_content = get_field('dms_popup_content', $vehicle_id);
 
-                                    if ($dms_show == true) {
-                                    ?>
-                                    <div class="row">
-                                        <div class="col-md-12 mscontent">
-                                            <h2 class="title">DIMENSIONS</h2>
-                                            <div class="mcard">
-                                                <?php echo $dms_popup_content; ?>
+                                        if ($dms_show == true) {
+                                        ?>
+                                        <div class="row">
+                                            <div class="col-md-12 mscontent">
+                                                <h2 class="title">DIMENSIONS</h2>
+                                                <div class="mcard">
+                                                    <?php echo $dms_popup_content; ?>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <?php } ?>
-                                    <?php
-                                    $other_show = get_field('other_show', $vehicle_id);
+                                        <?php } ?>
+                                        <?php
+                                        $other_show = get_field('other_show', $vehicle_id);
 
-                                    $other_popup_content = get_field('other_popup_content', $vehicle_id);
+                                        $other_popup_content = get_field('other_popup_content', $vehicle_id);
 
-                                    if ($other_show == true) {
-                                    ?>
-                                    <div class="row">
-                                        <div class="col-md-12 mscontent">
-                                            <h2 class="title">OTHER</h2>
-                                            <div class="mcard">
-                                                <?php echo $other_popup_content; ?>
+                                        if ($other_show == true) {
+                                        ?>
+                                        <div class="row">
+                                            <div class="col-md-12 mscontent">
+                                                <h2 class="title">OTHER</h2>
+                                                <div class="mcard">
+                                                    <?php echo $other_popup_content; ?>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <?php } ?>
-                                    <?php
-                                    $fwi_show = get_field('fwi_show', $vehicle_id);
+                                        <?php } ?>
+                                        <?php
+                                        $fwi_show = get_field('fwi_show', $vehicle_id);
 
-                                    $fwi_popup_content = get_field('fwi_popup_content', $vehicle_id);
+                                        $fwi_popup_content = get_field('fwi_popup_content', $vehicle_id);
 
-                                    if ($fwi_show == true) {
-                                    ?>
-                                    <div class="row">
-                                        <div class="col-md-12 mscontent">
-                                            <h2 class="title">FACTORY WARRANTY INFORMATION</h2>
-                                            <div class="mcard">
-                                                <?php echo $fwi_popup_content; ?>
+                                        if ($fwi_show == true) {
+                                        ?>
+                                        <div class="row">
+                                            <div class="col-md-12 mscontent">
+                                                <h2 class="title">FACTORY WARRANTY INFORMATION</h2>
+                                                <div class="mcard">
+                                                    <?php echo $fwi_popup_content; ?>
+                                                </div>
                                             </div>
                                         </div>
+                                        <?php } ?>
+
                                     </div>
-                                    <?php } ?>
+                                    <div class="modal-footer">
 
-                                </div>
-                                <div class="modal-footer">
-
-                                    <button type="button" class="print_specifications btn btn-primary">PRINT YOUR
-                                        ATV</button>
+                                        <button type="button" class="print_specifications btn btn-primary">PRINT YOUR
+                                            ATV</button>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
-                        
                     </div>
                 </div>
             </div>
