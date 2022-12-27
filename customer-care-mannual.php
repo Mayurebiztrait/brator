@@ -65,7 +65,7 @@ endif;
 				<?php 
 				
 				$args = array(
-               'post_type' => 'manuals',
+               'taxonomy' => 'manuals_categories',
                'orderby' => 'name',
                'order'   => 'ASC'
            );
