@@ -11,8 +11,38 @@
 get_header();
 
 // echo "<pre>";
-// print_r($product);
-// exit;
+// print_r($_POST);
+// print_r($_FILES);
+// echo "</pre>";
+
+if(isset($_POST['review_form_submit']) && $_POST['review_form_submit'] == 'SUBMIT'){
+   // Gather post data.
+    $my_post = array(
+        'post_title'    => $_POST['vehicle_title'].' - '.$_POST['email'],
+        'post_status'   => 'publish',
+        'post_author'   => 1,
+        'post_type'      => 'reviews',
+    );
+
+    // Insert the post into the database.
+    $inserted_id = wp_insert_post( $my_post );
+
+    add_post_meta($inserted_id,'_email',$_POST['email']);
+    add_post_meta($inserted_id,'_password',$_POST['password']);
+    add_post_meta($inserted_id,'_city',$_POST['city']);
+    add_post_meta($inserted_id,'_state',$_POST['state']);
+    add_post_meta($inserted_id,'_review',$_POST['review']);
+    $upload_dir = get_template_directory().'/assets/images/';
+    
+    $ext = pathinfo($_FILES["upload_files"]["name"], PATHINFO_EXTENSION);
+        $file_name = time().'.'.$ext;
+    $target_file =  $upload_dir . $file_name;
+    move_uploaded_file($_FILES["upload_files"]["tmp_name"], $target_file);
+    add_post_meta($inserted_id,'_file',$file_name);
+    $_POST = array();
+    $_FILES = array();
+}
+
 $vehicle_id = $_GET['vehicleid'];
 $base_msrp = get_field('base_msrp', $vehicle_id);
 $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single-post-thumbnail');
@@ -191,7 +221,9 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
+                                        <form method="post" id="review_form_submit_form" enctype="multipart/form-data">
                                         <div class="modal-body">
+                                            
                                             <div class="modal-body-img-title">
                                                 <div class="modal-body-icon">
                                                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -233,69 +265,76 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                     <h2>LEAVE A REVIEW</h2>
                                                 </div>
                                             </div>
-                                            <div class="custom-modal-form">
-                                                <form class="row g-3">
-                                                    <div class="col-md-6">
-                                                        <label for="inputEmail4" class="form-label">Email</label>
-                                                        <input type="email" class="form-control" id="inputEmail4">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label for="inputPassword4" class="form-label">Password</label>
-                                                        <input type="password" class="form-control" id="inputPassword4">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label for="inputCity" class="form-label">City</label>
-                                                        <input type="text" class="form-control" id="inputCity">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label for="inputState" class="form-label">State</label>
-                                                        <input type="text" class="form-control" id="inputState">
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <label for="inputStatetext" class="form-label">Review</label>
-                                                        <textarea class="form-control" id="inputStatetext"
-                                                            rows="3"></textarea>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="upload-btn-wrapper">
-                                                            <label class="form-label">Submit Images/Videos for Your
-                                                                Review</label>
-                                                            <button class="btn">
-                                                                <span>
-                                                                    <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/upload.png"
-                                                                        alt="">
-                                                                </span>
-                                                                UPLOAD IMAGE(S)/VIDEO(S)
-                                                            </button>
-                                                            <input type="file" name="myfile" />
+                                            
+                                                <div class="custom-modal-form">
+                                                    <div class="row g-3">
+                                                        <div class="col-md-6">
+                                                            <input type="hidden" name="vehicle_title" value="<?php echo get_the_title($vehicle_id); ?>">
+                                                            <label for="inputEmail4" class="form-label">Email</label>
+                                                            <input type="email" name="email" class="form-control" id="inputEmail4">
                                                         </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputPassword4" class="form-label">Password</label>
+                                                            <input type="password" name="password" class="form-control" id="inputPassword4">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputCity" class="form-label">City</label>
+                                                            <input type="text" name="city" class="form-control" id="inputCity">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="inputState" class="form-label">State</label>
+                                                            <input type="text" name="state" class="form-control" id="inputState">
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <label for="inputStatetext" class="form-label">Review</label>
+                                                            <textarea class="form-control" name="review" id="inputStatetext"
+                                                                rows="3"></textarea>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="upload-btn-wrapper">
+                                                                <label class="form-label" >Submit Images/Videos for Your
+                                                                    Review</label>
+                                                                <!-- <button class="btn upload_btn">
+                                                                    <span>
+                                                                        <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/upload.png"
+                                                                            alt="">
+                                                                    </span>
+                                                                    UPLOAD IMAGE(S)/VIDEO(S)
+                                                                </button> -->
+                                                                <br>
+                                                                <input type="file" name="upload_files" id="upload_files" style="font-size:15px;opacity:1" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <p class="submit-text">
+                                                                By submitting photographs or video, you: (1) represent to
+                                                                Intimidator UTV that they do not contain the likeness of any
+                                                                person other than your own, and that youare of full legal
+                                                                age and have read and fully understand the terms of this
+                                                                authorization; (2) grant to Intimidator UTV an rrevocable,
+                                                                perpetual, worldwide right and license to use, and to
+                                                                authorize third parties to use and publish, in all media,
+                                                                the photographs and videos. as well as your name, your image
+                                                                and likeness (whether with or without your name), and your
+                                                                statements and endorsements, in any and all forms of media,
+                                                                marketing, and promotional and sales programs, and for any
+                                                                purpose (including publicity for Intimidator UTV and any
+                                                                product or services), and all other lawful uses as may be
+                                                                determined by Intimidator UTV; and (3) waive all rights to
+                                                                review or approve any use of those photographs or videos, or
+                                                                any written copy or finished product containing them.
+                                                            </p>
                                                     </div>
-                                                    <div class="col-md-12">
-                                                        <p class="submit-text">
-                                                            By submitting photographs or video, you: (1) represent to
-                                                            Intimidator UTV that they do not contain the likeness of any
-                                                            person other than your own, and that youare of full legal
-                                                            age and have read and fully understand the terms of this
-                                                            authorization; (2) grant to Intimidator UTV an rrevocable,
-                                                            perpetual, worldwide right and license to use, and to
-                                                            authorize third parties to use and publish, in all media,
-                                                            the photographs and videos. as well as your name, your image
-                                                            and likeness (whether with or without your name), and your
-                                                            statements and endorsements, in any and all forms of media,
-                                                            marketing, and promotional and sales programs, and for any
-                                                            purpose (including publicity for Intimidator UTV and any
-                                                            product or services), and all other lawful uses as may be
-                                                            determined by Intimidator UTV; and (3) waive all rights to
-                                                            review or approve any use of those photographs or videos, or
-                                                            any written copy or finished product containing them.
-                                                        </p>
-                                                </form>
-                                            </div>
+                                                </div>
+                                            
+                                            
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                            <input type="submit" name="review_form_submit" class="btn btn-primary review_form_submit" value="SUBMIT">
 
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">SUBMIT</button>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -696,7 +735,6 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                 </div>
                 <?php } ?>
             </div>
-
             <div class="row">
                 <div class="col-md-12 container-xxxl container-xxl container">
                     <div class="custom-button-modal">
@@ -714,269 +752,311 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                     </div>
                 </div>
                 <!-- Modal -->
-                <div class="modal fade" id="View_all_features" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-fullscreen">
-                        <div class=" modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title text-uppercase" id="exampleModalLabel">Features</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                    <?php if ($e_show == true) { ?>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" data-bs-toggle="pill"
-                                            data-bs-target="#modal-pills-Engine" type="button" role="tab"
-                                            aria-controls="pills-Engine" aria-selected="true">Engine</button>
-                                    </li>
-                                    <?php } ?>
-                                    <?php if ($c_show == true) { ?>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" data-bs-toggle="pill"
-                                            data-bs-target="#modal-pills-chassis" type="button" role="tab"
-                                            aria-controls="pills-chassis" aria-selected="false">chassis</button>
-                                    </li>
-                                    <?php } ?>
-                                    <?php if ($d_show == true) { ?>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" data-bs-toggle="pill"
-                                            data-bs-target="#modal-pills-drivetrain" type="button" role="tab"
-                                            aria-controls="pills-drivetrain" aria-selected="false">Drivetrain</button>
-                                    </li>
-                                    <?php } ?>
-                                    <?php if ($ds_show == true) { ?>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" data-bs-toggle="pill"
-                                            data-bs-target="#modal-pills-Design" type="button" role="tab"
-                                            aria-controls="pills-Design" aria-selected="false">Design</button>
-                                    </li>
-                                    <?php } ?>
-                                </ul>
-                                <div class="row">
-                                    <?php if ($e_show == true) { ?>
-                                    <div class="col-md-6">
-                                        <img class="img img-fluid" src="<?php echo $e_show_modal_image; ?>">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="m_description">
-                                            <h2 class="m_title">Engine</h2>
-                                            <?php foreach ($e_description as $content) {
+                <div class="custom-features-modal">
+                    <div class="modal fade" id="View_all_features" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class=" modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-uppercase" id="exampleModalLabel">Features</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div>
+                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                            <?php if ($e_show == true) { ?>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" data-bs-toggle="pill"
+                                                    data-bs-target="#modal-pills-Engine" type="button" role="tab"
+                                                    aria-controls="pills-Engine" aria-selected="true">Engine</button>
+                                            </li>
+                                            <?php } ?>
+                                            <?php if ($c_show == true) { ?>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" data-bs-toggle="pill"
+                                                    data-bs-target="#modal-pills-chassis" type="button" role="tab"
+                                                    aria-controls="pills-chassis" aria-selected="false">chassis
+                                                </button>
+                                            </li>
+                                            <?php } ?>
 
-                                            if ($content['title']) {
-                                                echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                            }
-                                            if ($content['description']) {
-                                                echo $content['description'];
-                                            }
-                                        } ?>
+                                            <?php if ($d_show == true) { ?>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" data-bs-toggle="pill"
+                                                    data-bs-target="#modal-pills-drivetrain" type="button" role="t b" a
+                                                    aria-controls="pills-drivetrain"
+                                                    aria-selected="false">Drivetrain</button>
+                                            </li>
+                                            <?php } ?>
+                                            <?php if ($ds_show == true) { ?>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" data-bs-toggle="pill"
+                                                    data-bs-target="#modal-pills-Design" type="button" role="tab"
+                                                    aria-controls="pills-Design" aria-selected="false">Design</button>
+                                            </li>
+                                            <?php } ?>
+                                        </ul>
+                                    </div>
+                                    <div class="custom-features-description-modal">
+                                        <div class="row">
+                                            <?php if ($e_show == true) { ?>
+                                            <div class="col-md-6">
+                                                <div class="custom-features-description-img">
+                                                    <img class="img img-fluid" src="<?php echo $e_show_modal_image; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="m_description">
+                                                    <h2 class="m_title">Engine</h2>
+                                                    <div class="description-some-text">
+                                                        <?php foreach ($e_description as $content) {
+                                                    if ($content['title']) {
+                                                        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+                                                    }
+                                                    if ($content['description']) {
+                                                        echo "<div>";
+                                                        echo $content['description'];
+                                                        echo "</div>";
+                                                    }
+                                                } ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
-                                    <?php } ?>
-                                    <?php if ($c_show == true) { ?>
-                                    <div class="col-md-6">
-                                        <img class="img img-fluid" src="<?php echo $c_show_modal_image; ?>">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="m_description">
-                                            <h2 class="m_title">Chassis</h2>
-                                            <?php foreach ($c_description as $content) {
-                                            if ($content['title']) {
-                                                echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                            }
-                                            if ($content['description']) {
-                                                echo $content['description'];
-                                            }
-                                        } ?>
-                                        </div>
-                                    </div>
-                                    <?php } ?>
-                                    <?php if ($d_show == true) { ?>
-                                    <div class="col-md-6">
-                                        <img class="img img-fluid" src="<?php echo $d_show_modal_image; ?>">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="m_description">
-                                            <h2 class="m_title">Drivetrain</h2>
-                                            <?php foreach ($d_description as $content) {
-                                            if ($content['title']) {
-                                                echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                            }
-                                            if ($content['description']) {
-                                                echo $content['description'];
-                                            }
+                                    <div class="custom-features-description-modal">
+                                        <div class="row">
+                                            <?php if ($d_show == true) { ?>
+                                            <div class="col-md-6">
+                                                <div class="custom-features-description-img">
+                                                    <img class="img img-fluid" src="<?php echo $d_show_modal_image; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="m_description">
+                                                    <h2 class="m_title">Drivetrain</h2>
+                                                    <div class="description-some-text">
+                                                        <?php foreach ($d_description as $content) {
+                                                    if ($content['title']) {
+                                                        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+                                                    }
+                                                    if ($content['description']) {
+                                                        echo "<div>";
+                                                        echo $content['description'];
+                                                        echo "</div>";
+                                                    }
 
-                                        } ?>
+                                                } ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
-                                    <?php } ?>
-                                    <?php if ($ds_show == true) { ?>
-                                    <div class="col-md-6">
-                                        <img class="img img-fluid" src="<?php echo $ds_show_modal_image; ?>">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="m_description">
-                                            <h2 class="m_title">Design</h2>
-                                            <?php foreach ($ds_description as $content) {
-                                            if ($content['title']) {
-                                                echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                            }
-                                            if ($content['description']) {
-                                                echo $content['description'];
-                                            }
-                                        } ?>
+                                    <div class="custom-features-description-modal">
+                                        <div class="row">
+                                            <?php if ($d_show == true) { ?>
+                                            <div class="col-md-6">
+                                                <div class="custom-features-description-img">
+                                                    <img class="img img-fluid" src="<?php echo $d_show_modal_image; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="m_description">
+                                                    <h2 class="m_title">Drivetrain</h2>
+                                                    <?php foreach ($d_description as $content) {
+                                                    if ($content['title']) {
+                                                        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+                                                    }
+                                                    if ($content['description']) {
+                                                        echo $content['description'];
+                                                    }
+
+                                                } ?>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
-                                    <?php } ?>
+                                    <div class="custom-features-description-modal">
+                                        <div class="row">
+                                            <?php if ($ds_show == true) { ?>
+                                            <div class="col-md-6">
+                                                <div class="custom-features-description-img">
+                                                    <img class="img img-fluid"
+                                                        src="<?php echo $ds_show_modal_image; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="m_description">
+                                                    <h2 class="m_title">Design</h2>
+                                                    <div class="description-some-text">
+                                                        <?php foreach ($ds_description as $content) {
+                                                    if ($content['title']) {
+                                                        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+                                                    }
+                                                    if ($content['description']) {
+                                                        echo "<div>";
+                                                        echo $content['description'];
+                                                        echo "</div>";
+                                                    }
+                                                } ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="modal fade" id="view_feature" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-fullscreen">
-                        <div class=" modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-6 mcontent">
-                                    </div>
-                                    <div class="col-md-6 mimage">
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div> -->
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div> -->
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- specifications section -->
-    <section class="specifications-section">
-        <div class="container-xxxl container-xxl container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="specifications-title">
-                        <hr>
-                        <h2 class="specifications-section-title">specifications</h2>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="custom-specification-wrapper">
-                        <div class="row">
-                        <?php 
-                        $s_e_show = get_field('s_e_show',$vehicle_id);
-                        $s_e_image = get_field('s_e_image',$vehicle_id);
-                        $s_e_title = get_field('s_e_title',$vehicle_id);
-                        $s_e_short_title = get_field('s_e_short_title',$vehicle_id);
-                        if($s_e_show == true){
-                        ?>
-                            <div class="col-md-3 p-0">
-                                <div class="custom-specification-card">
-                                    <div class="custom-specification-card-content">
-                                        <div class="custom-specification-card-img">
-                                            
-                                            <img src="<?php echo $s_e_image;?>" alt="img" class="img-fluid">
-                                            </div class="custom-specification-card-content">
-                                            <h4 class="custom-specification-card-title"><?php echo $s_e_title;?></h4>
-                                            <p class="custom-specification-card-subtitle">
-                                                <?php echo $s_e_short_title;?>
-
-                                            </p>
-                                        </div>
-                                
+            <div class="modal fade" id="view_feature" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class=" modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6 mcontent">
+                                </div>
+                                <div class="col-md-6 mimage">
                                 </div>
                             </div>
-                        <?php } 
-                        $s_d_show = get_field('s_d_show',$vehicle_id);
-                        $s_d_image = get_field('s_d_image',$vehicle_id);
-                        $s_d_title = get_field('s_d_title',$vehicle_id);
-                        $s_d_short_title = get_field('s_d_short_title',$vehicle_id);
-                        if($s_d_show == true){
-                            ?>
+                        </div>
+                        <!-- <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</section>
+
+<!-- specifications section -->
+<section class="specifications-section">
+    <div class="container-xxxl container-xxl container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="specifications-title">
+                    <hr>
+                    <h2 class="specifications-section-title">specifications</h2>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="custom-specification-wrapper">
+                    <div class="row">
+                        <?php
+                        $s_e_show = get_field('s_e_show', $vehicle_id);
+                        $s_e_image = get_field('s_e_image', $vehicle_id);
+                        $s_e_title = get_field('s_e_title', $vehicle_id);
+                        $s_e_short_title = get_field('s_e_short_title', $vehicle_id);
+                        if ($s_e_show == true) {
+                        ?>
                         <div class="col-md-3 p-0">
                             <div class="custom-specification-card">
                                 <div class="custom-specification-card-content">
                                     <div class="custom-specification-card-img">
-                                        
-                                        <img src="<?php echo $s_d_image;?>" alt="img" class="img-fluid">
-                                        </div class="custom-specification-card-content">
-                                        <h4 class="custom-specification-card-title"><?php echo $s_d_title;?></h4>
-                                        <p class="custom-specification-card-subtitle">
-                                            <?php echo $s_d_short_title;?>
 
-                                        </p>
-                                    </div>
-                            
+                                        <img src="<?php echo $s_e_image; ?>" alt="img" class="img-fluid">
+                                    </div class="custom-specification-card-content">
+                                    <h4 class="custom-specification-card-title"><?php echo $s_e_title; ?></h4>
+                                    <p class="custom-specification-card-subtitle">
+                                        <?php echo $s_e_short_title; ?>
+
+                                    </p>
+                                </div>
+
                             </div>
                         </div>
-                    <?php }
-                    $s_c_show = get_field('s_c_show',$vehicle_id);
-                    $s_c_image = get_field('s_c_image',$vehicle_id);
-                    $s_c_title = get_field('s_c_title',$vehicle_id);
-                    $s_c_short_title = get_field('s_c_short_title',$vehicle_id);
-                    if($s_c_show == true){
+                        <?php }
+                        $s_d_show = get_field('s_d_show', $vehicle_id);
+                        $s_d_image = get_field('s_d_image', $vehicle_id);
+                        $s_d_title = get_field('s_d_title', $vehicle_id);
+                        $s_d_short_title = get_field('s_d_short_title', $vehicle_id);
+                        if ($s_d_show == true) {
                         ?>
-                            <div class="col-md-3 p-0">
-                                <div class="custom-specification-card">
-                                    <div class="custom-specification-card-content">
-                                        <div class="custom-specification-card-img">
-                                            
-                                            <img src="<?php echo $s_c_image;?>" alt="img" class="img-fluid">
-                                            </div class="custom-specification-card-content">
-                                            <h4 class="custom-specification-card-title"><?php echo $s_c_title;?></h4>
-                                            <p class="custom-specification-card-subtitle">
-                                                <?php echo $s_c_short_title;?>
+                        <div class="col-md-3 p-0">
+                            <div class="custom-specification-card">
+                                <div class="custom-specification-card-content">
+                                    <div class="custom-specification-card-img">
 
-                                            </p>
-                                        </div>
-                                
+                                        <img src="<?php echo $s_d_image; ?>" alt="img" class="img-fluid">
+                                    </div class="custom-specification-card-content">
+                                    <h4 class="custom-specification-card-title"><?php echo $s_d_title; ?></h4>
+                                    <p class="custom-specification-card-subtitle">
+                                        <?php echo $s_d_short_title; ?>
+
+                                    </p>
                                 </div>
+
                             </div>
-                    <?php }
-                    $dms_show = get_field('dms_show',$vehicle_id);
-                    $dms_image = get_field('dms_image',$vehicle_id);
-                    $dms_title = get_field('dms_title',$vehicle_id);
-                    $dms_short_title = get_field('dms_short_title',$vehicle_id);
-                    if($dms_show == true){
+                        </div>
+                        <?php }
+                        $s_c_show = get_field('s_c_show', $vehicle_id);
+                        $s_c_image = get_field('s_c_image', $vehicle_id);
+                        $s_c_title = get_field('s_c_title', $vehicle_id);
+                        $s_c_short_title = get_field('s_c_short_title', $vehicle_id);
+                        if ($s_c_show == true) {
                         ?>
-                            <div class="col-md-3 p-0">
-                                <div class="custom-specification-card">
-                                    <div class="custom-specification-card-content">
-                                        <div class="custom-specification-card-img">
-                                            
-                                            <img src="<?php echo $dms_image;?>" alt="img" class="img-fluid">
-                                            </div class="custom-specification-card-content">
-                                            <h4 class="custom-specification-card-title"><?php echo $dms_title;?></h4>
-                                            <p class="custom-specification-card-subtitle">
-                                                <?php echo $dms_short_title;?>
+                        <div class="col-md-3 p-0">
+                            <div class="custom-specification-card">
+                                <div class="custom-specification-card-content">
+                                    <div class="custom-specification-card-img">
 
-                                            </p>
-                                        </div>
-                                
+                                        <img src="<?php echo $s_c_image; ?>" alt="img" class="img-fluid">
+                                    </div class="custom-specification-card-content">
+                                    <h4 class="custom-specification-card-title"><?php echo $s_c_title; ?></h4>
+                                    <p class="custom-specification-card-subtitle">
+                                        <?php echo $s_c_short_title; ?>
+
+                                    </p>
                                 </div>
+
                             </div>
+                        </div>
+                        <?php }
+                        $dms_show = get_field('dms_show', $vehicle_id);
+                        $dms_image = get_field('dms_image', $vehicle_id);
+                        $dms_title = get_field('dms_title', $vehicle_id);
+                        $dms_short_title = get_field('dms_short_title', $vehicle_id);
+                        if ($dms_show == true) {
+                        ?>
+                        <div class="col-md-3 p-0">
+                            <div class="custom-specification-card">
+                                <div class="custom-specification-card-content">
+                                    <div class="custom-specification-card-img">
+
+                                        <img src="<?php echo $dms_image; ?>" alt="img" class="img-fluid">
+                                    </div class="custom-specification-card-content">
+                                    <h4 class="custom-specification-card-title"><?php echo $dms_title; ?></h4>
+                                    <p class="custom-specification-card-subtitle">
+                                        <?php echo $dms_short_title; ?>
+
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
                         <?php } ?>
-                       
 
-                        
 
-                   
+
+
+
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -1005,144 +1085,128 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <?php 
-                                    $s_e_show = get_field('s_e_show',$vehicle_id);
-                                    $s_e_title = get_field('s_e_title',$vehicle_id);
-                                    $s_e_short_title = get_field('s_e_short_title',$vehicle_id);
-                                    $s_e_popup_content = get_field('s_e_popup_content',$vehicle_id);
-                                    
-                                    if($s_e_show == true){
+                                    <?php
+                                    $s_e_show = get_field('s_e_show', $vehicle_id);
+                                    $s_e_title = get_field('s_e_title', $vehicle_id);
+                                    $s_e_short_title = get_field('s_e_short_title', $vehicle_id);
+                                    $s_e_popup_content = get_field('s_e_popup_content', $vehicle_id);
+
+                                    if ($s_e_show == true) {
                                     ?>
                                     <div class="row">
                                         <div class="col-md-12 mscontent">
                                             <h2 class="title">ENGINE</h2>
                                             <div class="mcard">
-                                                <?php echo $s_e_popup_content;?>
+                                                <?php echo $s_e_popup_content; ?>
                                             </div>
                                         </div>
                                     </div>
-                                    <?php }?>
-                                    <?php 
-                                    $s_d_show = get_field('s_d_show',$vehicle_id);
-                                    $s_d_title = get_field('s_d_title',$vehicle_id);
-                                    $s_d_short_title = get_field('s_d_short_title',$vehicle_id);
-                                    $s_d_popup_content = get_field('s_d_popup_content',$vehicle_id);
-                                    
-                                    if($s_d_show == true){
+                                    <?php } ?>
+                                    <?php
+                                    $s_d_show = get_field('s_d_show', $vehicle_id);
+                                    $s_d_title = get_field('s_d_title', $vehicle_id);
+                                    $s_d_short_title = get_field('s_d_short_title', $vehicle_id);
+                                    $s_d_popup_content = get_field('s_d_popup_content', $vehicle_id);
+
+                                    if ($s_d_show == true) {
                                     ?>
                                     <div class="row">
                                         <div class="col-md-12 mscontent">
                                             <h2 class="title">DRIVE TRAIN</h2>
                                             <div class="mcard">
-                                                <?php echo $s_d_popup_content;?>
+                                                <?php echo $s_d_popup_content; ?>
                                             </div>
                                         </div>
                                     </div>
-                                    <?php }?>
-                                    <?php 
-                                    $s_c_show = get_field('s_c_show',$vehicle_id);
-                                    $s_c_title = get_field('s_c_title',$vehicle_id);
-                                    $s_c_short_title = get_field('s_c_short_title',$vehicle_id);
-                                    $s_c_popup_content = get_field('s_c_popup_content',$vehicle_id);
-                                    
-                                    if($s_c_show == true){
+                                    <?php } ?>
+                                    <?php
+                                    $s_c_show = get_field('s_c_show', $vehicle_id);
+                                    $s_c_title = get_field('s_c_title', $vehicle_id);
+                                    $s_c_short_title = get_field('s_c_short_title', $vehicle_id);
+                                    $s_c_popup_content = get_field('s_c_popup_content', $vehicle_id);
+
+                                    if ($s_c_show == true) {
                                     ?>
                                     <div class="row">
                                         <div class="col-md-12 mscontent">
                                             <h2 class="title">CHASSIS/SUSPENSION/BRAKES</h2>
                                             <div class="mcard">
-                                                <?php echo $s_c_popup_content;?>
+                                                <?php echo $s_c_popup_content; ?>
                                             </div>
                                         </div>
                                     </div>
-                                    <?php }?>
-                                    <?php 
-                                    $dms_show = get_field('dms_show',$vehicle_id);
-                                    $dms_title = get_field('dms_title',$vehicle_id);
-                                    $dms_short_title = get_field('dms_short_title',$vehicle_id);
-                                    $dms_popup_content = get_field('dms_popup_content',$vehicle_id);
-                                    
-                                    if($dms_show == true){
+                                    <?php } ?>
+                                    <?php
+                                    $dms_show = get_field('dms_show', $vehicle_id);
+                                    $dms_title = get_field('dms_title', $vehicle_id);
+                                    $dms_short_title = get_field('dms_short_title', $vehicle_id);
+                                    $dms_popup_content = get_field('dms_popup_content', $vehicle_id);
+
+                                    if ($dms_show == true) {
                                     ?>
                                     <div class="row">
                                         <div class="col-md-12 mscontent">
                                             <h2 class="title">DIMENSIONS</h2>
                                             <div class="mcard">
-                                                <?php echo $dms_popup_content;?>
+                                                <?php echo $dms_popup_content; ?>
                                             </div>
                                         </div>
                                     </div>
-                                    <?php }?>
-                                    <?php 
-                                    $other_show = get_field('other_show',$vehicle_id);
-                                   
-                                    $other_popup_content = get_field('other_popup_content',$vehicle_id);
-                                    
-                                    if($other_show == true){
+                                    <?php } ?>
+                                    <?php
+                                    $other_show = get_field('other_show', $vehicle_id);
+
+                                    $other_popup_content = get_field('other_popup_content', $vehicle_id);
+
+                                    if ($other_show == true) {
                                     ?>
                                     <div class="row">
                                         <div class="col-md-12 mscontent">
                                             <h2 class="title">OTHER</h2>
                                             <div class="mcard">
-                                                <?php echo $other_popup_content;?>
+                                                <?php echo $other_popup_content; ?>
                                             </div>
                                         </div>
                                     </div>
-                                    <?php }?>
-                                    <?php 
-                                    $fwi_show = get_field('fwi_show',$vehicle_id);
-                                    
-                                    $fwi_popup_content = get_field('fwi_popup_content',$vehicle_id);
-                                    
-                                    if($fwi_show == true){
+                                    <?php } ?>
+                                    <?php
+                                    $fwi_show = get_field('fwi_show', $vehicle_id);
+
+                                    $fwi_popup_content = get_field('fwi_popup_content', $vehicle_id);
+
+                                    if ($fwi_show == true) {
                                     ?>
                                     <div class="row">
                                         <div class="col-md-12 mscontent">
                                             <h2 class="title">FACTORY WARRANTY INFORMATION</h2>
                                             <div class="mcard">
-                                                <?php echo $fwi_popup_content;?>
+                                                <?php echo $fwi_popup_content; ?>
                                             </div>
                                         </div>
                                     </div>
-                                    <?php }?>
-                                    
+                                    <?php } ?>
+
                                 </div>
                                 <div class="modal-footer">
-                                
-                                <button type="button" class="print_specifications btn btn-primary">PRINT YOUR ATV</button>
-                            </div>
+
+                                    <button type="button" class="print_specifications btn btn-primary">PRINT YOUR
+                                        ATV</button>
+                                </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="stay-connected">
-        <div class="container-xxxl container-xxl container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="stay-connected-content-wrapper">
-                        <div class="stay-connected-content">
-                            <h2 class="stay-connected-title">
-                                STAY
-                            </h2>
-                            <h2 class="stay-connected-highlighted-title">
-                                CONNECTED
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="contact-form-wrapper">
-                    <h5 class="contact-form-title">
-                        We'll keep you up to speed on all the latest AODES Talon news. Just fill in your information
-                        here.
-                    </h5>
-                    <?php echo do_shortcode('[contact-form-7 id="8495" title="Category Listing Single Page Form"]'); ?>
-                    <!--<div class="form" action="submit">
+        <div class="col-md-8">
+            <div class="contact-form-wrapper">
+                <h5 class="contact-form-title">
+                    We'll keep you up to speed on all the latest AODES Talon news. Just fill in your information
+                    here.
+                </h5>
+                <?php echo do_shortcode('[contact-form-7 id="8495" title="Category Listing Single Page Form"]'); ?>
+                <!--<div class="form" action="submit">
                     <div class="row">
                         <div class="col">
                           <input type="text" class="form-control" placeholder="First name*" aria-label="First name">
@@ -1168,9 +1232,9 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                       
                       <a href="#" class="form-submit-button">SEND</a>  
                 </div>-->
-                </div>
             </div>
-    </section>
+        </div>
+</section>
 </div>
 
 

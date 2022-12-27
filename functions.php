@@ -6,6 +6,58 @@
  *
  * @package brator  BRATOR_THEME_URI BRATOR
  */
+
+ /**
+ * This function adds a meta box with a callback function of my_metabox_callback()
+ */
+function my_custom_admin_head() {
+	echo '<style>#menu-posts-reviews .wp-submenu li:nth-child(3){
+		display:none;
+	}</style>';
+}
+add_action( 'admin_head', 'my_custom_admin_head' );
+ function global_notice_meta_box() {
+
+    add_meta_box(
+        'review_fields',
+        __( 'Review Data', 'textdomain' ),
+        'review_data_fun',
+        'reviews',
+		'normal',
+		'low',
+    );
+}
+
+add_action( 'add_meta_boxes', 'global_notice_meta_box' );
+
+
+/**
+ * Get post meta in a callback
+ *
+ * @param WP_Post $post    The current post.
+ * @param array   $metabox With metabox id, title, callback, and args elements.
+ */
+
+function review_data_fun( $post, $metabox ) {
+	// Output last time the post was modified.
+	//print_r($post);
+	$email = get_post_meta($post->ID,'_email',true);
+	$password = get_post_meta($post->ID,'_password',true);
+	$city = get_post_meta($post->ID,'_city',true);
+	$state = get_post_meta($post->ID,'_state',true);
+	$review = get_post_meta($post->ID,'_review',true);
+	$filename = get_post_meta($post->ID,'_file',true);
+
+	echo 'Email: ' . $email.'<br>';
+	echo 'Password: ' . $password.'<br>';
+	echo 'City: ' . $city.'<br>';
+	echo 'State: ' . $state.'<br>';
+	echo 'review: ' . $review.'<br>';
+	echo 'File: <a href="'.get_template_directory_uri().'/assets/images/'.$filename.'">' . $filename.'</a><br>';
+
+
+}
+
 function custom_post_type() {
 
 	// Set UI labels for Custom Post Type
@@ -137,7 +189,56 @@ function custom_post_type() {
         register_post_type( 'testimonials', $args );
 
 
-
+		// Set UI labels for Custom Post Type
+        $labels = array(
+            'name'                => _x( 'Reviews', 'Post Type General Name', 'aodes' ),
+            'singular_name'       => _x( 'Review', 'Post Type Singular Name', 'aodes' ),
+            'menu_name'           => __( 'Reviews', 'aodes' ),
+            'parent_item_colon'   => __( 'Parent Review', 'aodes' ),
+            'all_items'           => __( 'All Reviews', 'aodes' ),
+            'view_item'           => __( 'View Review', 'aodes' ),
+            'add_new_item'        => __( 'Add New Review', 'aodes' ),
+            'add_new'             => __( 'Add New', 'aodes' ),
+            'edit_item'           => __( 'Edit Review', 'aodes' ),
+            'update_item'         => __( 'Update Review', 'aodes' ),
+            'search_items'        => __( 'Search Review', 'aodes' ),
+            'not_found'           => __( 'Not Found', 'aodes' ),
+            'not_found_in_trash'  => __( 'Not found in Trash', 'aodes' ),
+        );
+          
+    // Set other options for Custom Post Type
+          
+        $args = array(
+            'label'               => __( 'Reviews', 'aodes' ),
+            'description'         => __( 'Review news and reviews', 'aodes' ),
+            'labels'              => $labels,
+            // Features this CPT supports in Post Editor
+            'supports'            => array( 'title'   ),
+            // You can associate this CPT with a taxonomy or custom taxonomy. 
+            'taxonomies'          => array( 'genres' ),
+            /* A hierarchical CPT is like Pages and can have
+            * Parent and child items. A non-hierarchical CPT
+            * is like Posts.
+            */
+            'hierarchical'        => true,
+            'public'              => true,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'menu_position'       => 5,
+            'can_export'          => true,
+            'has_archive'         => true,
+            'exclude_from_search' => false,
+            'publicly_queryable'  => true,
+            'capability_type'     => 'post',
+            'show_in_rest' => true,
+      
+        );
+          
+        // Registering your Custom Post Type
+        register_post_type( 'Reviews', $args );
+		
         // Set UI labels for Custom Post Type
         $labels = array(
             'name'                => _x( 'Catalogs', 'Post Type General Name', 'aodes' ),
