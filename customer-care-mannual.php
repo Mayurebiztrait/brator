@@ -100,10 +100,29 @@ if ( $terms && !is_wp_error( $terms ) ) :
         <?php } ?>
     </ul>-->
 	<?php foreach ( $terms as $term ) { ?>
+	
 	<button class="accordion"><?php echo $term->name; ?></button>
-<div class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	<?php
+				$the_query = new WP_Query( array( 
+    'category_name' => 'travel', 
+    'posts_per_page' => 5 
+) ); 
+   
+// The Loop
+if ( $the_query->have_posts() ) {
+    $string .= '<ul class="postsbycategory widget_recent_entries">';
+    while ( $the_query->have_posts() ) {
+        $the_query->the_post(); ?>
+          <div class="panel">
+  <p><?php the_title(); ?></p>
 </div>
+         <?php   }
+    } 
+   
+/* Restore original Post Data */
+wp_reset_postdata();
+				?>
+
 	<?php } ?>
 <?php endif;?>
 				
