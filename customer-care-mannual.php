@@ -119,8 +119,6 @@ while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
   <p><?php the_title(); ?></p>
 </div>
          <?php   endwhile;
-
-endforeach;
 				?>
 
 	<?php } ?>
