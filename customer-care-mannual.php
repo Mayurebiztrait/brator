@@ -64,17 +64,11 @@ endif;
 				<div class="brator-blog-post bottom-catalog">
 				<?php
 
-$taxonomy = 'manuals_categories';
-$terms = get_terms($taxonomy); // Get all terms of a taxonomy
-
-if ( $terms && !is_wp_error( $terms ) ) :
+$cats = get_categories('taxonomy=manuals_categories&type=manuals'); 
+echo '<pre>';
+print_r($cats);
+echo '</pre>';
 ?>
-    <ul>
-        <?php foreach ( $terms as $term ) { ?>
-            <li><a href="<?php echo get_term_link($term->slug, $taxonomy); ?>"><?php echo $term->name; ?></a></li>
-        <?php } ?>
-    </ul>
-<?php endif;?>
 				
 				</div>
 			
