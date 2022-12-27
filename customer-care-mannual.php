@@ -89,37 +89,30 @@ endif;
 				<div class="brator-blog-post bottom-catalog">
 				<?php
 
-$taxonomy = 'manuals_categories';
-$terms = get_terms($taxonomy); // Get all terms of a taxonomy
-?>
-   <!-- <ul>
-        <?php foreach ( $terms as $term ) { ?>
-            <li><a href="<?php echo get_term_link($term->slug, $taxonomy); ?>"><?php echo $term->name; ?></a></li>
-        <?php } ?>
-    </ul>-->
-	<?php foreach ( $terms as $term ) { ?>
-	
-	<button class="accordion"><?php echo $term->name; ?></button>
-	<?php
-				$the_query = new WP_Query( array( 
-				'category_name' => $term->name,  
-				'post_type' => 'manuals'
-) ); 
-   
-// The Loop
-if ( $the_query->have_posts() ) {
-    while ( $the_query->have_posts() ) {
-        $the_query->the_post(); ?>
-          <ul class="panel">
-		  <li>test</li>
-		  </ul>
-         <?php   } } 
-   
-/* Restore original Post Data */
-wp_reset_postdata();
-				?>
+    $taxonomy = 'my_taxonomy'; // this is the name of the taxonomy
+     $terms = get_terms($taxonomy);
+     $args = array(
+        'post_type' => 'post',
+        'tax_query' => array(
+                    array(
+                        'taxonomy' => 'updates',
+                        'field' => 'slug',
+                        'terms' => wp_list_pluck($terms,'slug')
+                    )
+                )
+        );
 
-	<?php } ?>
+     $my_query = new WP_Query( $args );
+     if($my_query->have_posts()) :
+         while ($my_query->have_posts()) : $my_query->the_post();
+the_title();
+              // do what you want to do with the queried posts
+
+          endwhile;
+     endif;
+  ?>
+
+
 				
 				</div>
 			
