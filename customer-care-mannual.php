@@ -59,14 +59,9 @@ div#accordion .card {
 </style>
 <div class="top-banner">
 <div class="inner-top">
-<div class="row section-top-1">
-<div class="col-sm-2"></div>
-<div class="col-sm-8"><h3>AODES</h3></div>
-<div class="col-sm-2"></div>
-</div>
 <div class="row section-top-2">
 <div class="col-sm-2"></div>
-<div class="col-sm-8"><p>CATALOGS & <?php single_term_title();?></p></div>
+<div class="col-sm-8"><p>OWNER'S MANUALS</p></div>
 <div class="col-sm-2"></div>
 </div>
 </div>
@@ -89,15 +84,6 @@ div#accordion .card {
 </div>
 </div>
 <div class="brator-manuals">
-	<div class="container-xxxl container-xxl container">
-		<div class="row main-title-catalog">
-			<div class="col-lg-12">
-				<div class="brator-breadcrumb">
-					<h1 class="text-center">Download <span><?php single_term_title();?> Catalog</span></h1>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div class="container-xxxl container-xxl container">
 		
 <div class="brator-blog-post bottom-catalog">
