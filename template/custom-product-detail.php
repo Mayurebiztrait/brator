@@ -1040,19 +1040,255 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
         </div>
     </div>
 </section>
-
-<section class="stay-connected">
+<!-- specifications section -->
+<section class="specifications-section">
     <div class="container-xxxl container-xxl container">
         <div class="row">
-            <div class="col-md-3">
-                <div class="stay-connected-content-wrapper">
-                    <div class="stay-connected-content">
-                        <h2 class="stay-connected-title">
-                            STAY
-                        </h2>
-                        <h2 class="stay-connected-highlighted-title">
-                            CONNECTED
-                        </h2>
+            <div class="col-md-12">
+                <div class="specifications-title">
+                    <hr>
+                    <h2 class="specifications-section-title">specifications</h2>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="custom-specification-wrapper">
+                    <div class="row">
+                        <?php
+                        $s_e_show = get_field('s_e_show', $vehicle_id);
+                        $s_e_image = get_field('s_e_image', $vehicle_id);
+                        $s_e_title = get_field('s_e_title', $vehicle_id);
+                        $s_e_short_title = get_field('s_e_short_title', $vehicle_id);
+                        if ($s_e_show == true) {
+                        ?>
+                        <div class="col-md-3 p-0">
+                            <div class="custom-specification-card">
+                                <div class="custom-specification-card-content">
+                                    <div class="custom-specification-card-img">
+
+                                        <img src="<?php echo $s_e_image; ?>" alt="img" class="img-fluid">
+                                    </div class="custom-specification-card-content">
+                                    <h4 class="custom-specification-card-title"><?php echo $s_e_title; ?></h4>
+                                    <p class="custom-specification-card-subtitle">
+                                        <?php echo $s_e_short_title; ?>
+
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <?php }
+                        $s_d_show = get_field('s_d_show', $vehicle_id);
+                        $s_d_image = get_field('s_d_image', $vehicle_id);
+                        $s_d_title = get_field('s_d_title', $vehicle_id);
+                        $s_d_short_title = get_field('s_d_short_title', $vehicle_id);
+                        if ($s_d_show == true) {
+                        ?>
+                        <div class="col-md-3 p-0">
+                            <div class="custom-specification-card">
+                                <div class="custom-specification-card-content">
+                                    <div class="custom-specification-card-img">
+
+                                        <img src="<?php echo $s_d_image; ?>" alt="img" class="img-fluid">
+                                    </div class="custom-specification-card-content">
+                                    <h4 class="custom-specification-card-title"><?php echo $s_d_title; ?></h4>
+                                    <p class="custom-specification-card-subtitle">
+                                        <?php echo $s_d_short_title; ?>
+
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <?php }
+                        $s_c_show = get_field('s_c_show', $vehicle_id);
+                        $s_c_image = get_field('s_c_image', $vehicle_id);
+                        $s_c_title = get_field('s_c_title', $vehicle_id);
+                        $s_c_short_title = get_field('s_c_short_title', $vehicle_id);
+                        if ($s_c_show == true) {
+                        ?>
+                        <div class="col-md-3 p-0">
+                            <div class="custom-specification-card">
+                                <div class="custom-specification-card-content">
+                                    <div class="custom-specification-card-img">
+
+                                        <img src="<?php echo $s_c_image; ?>" alt="img" class="img-fluid">
+                                    </div class="custom-specification-card-content">
+                                    <h4 class="custom-specification-card-title"><?php echo $s_c_title; ?></h4>
+                                    <p class="custom-specification-card-subtitle">
+                                        <?php echo $s_c_short_title; ?>
+
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <?php }
+                        $dms_show = get_field('dms_show', $vehicle_id);
+                        $dms_image = get_field('dms_image', $vehicle_id);
+                        $dms_title = get_field('dms_title', $vehicle_id);
+                        $dms_short_title = get_field('dms_short_title', $vehicle_id);
+                        if ($dms_show == true) {
+                        ?>
+                        <div class="col-md-3 p-0">
+                            <div class="custom-specification-card">
+                                <div class="custom-specification-card-content">
+                                    <div class="custom-specification-card-img">
+
+                                        <img src="<?php echo $dms_image; ?>" alt="img" class="img-fluid">
+                                    </div class="custom-specification-card-content">
+                                    <h4 class="custom-specification-card-title"><?php echo $dms_title; ?></h4>
+                                    <p class="custom-specification-card-subtitle">
+                                        <?php echo $dms_short_title; ?>
+
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <?php } ?>
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="custom-specification-button-modal">
+                        <!-- Button trigger modal -->
+                        <a href="" type="button" class="" data-bs-toggle="modal"
+                            data-bs-target="#view_all_specification">
+                            View all features
+                            <span class="custom-specification-card-svg">
+                                <svg width="12" height="19" viewBox="0 0 12 19">
+                                    <path class="svg"
+                                        d="M2.081.12L.001 2.332l7.274 7.173L0 16.668l2.081 2.212 8.4-8.274 1.125-1.101-1.125-1.111z"
+                                        fill="#FFF" fill-rule="nonzero"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div id="editor"></div>
+                    <div class="modal fade" id="view_all_specification" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class=" modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-uppercase" id="exampleModalLabel">Specifications</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <?php
+                                    $s_e_show = get_field('s_e_show', $vehicle_id);
+                                    $s_e_title = get_field('s_e_title', $vehicle_id);
+                                    $s_e_short_title = get_field('s_e_short_title', $vehicle_id);
+                                    $s_e_popup_content = get_field('s_e_popup_content', $vehicle_id);
+
+                                    if ($s_e_show == true) {
+                                    ?>
+                                    <div class="row">
+                                        <div class="col-md-12 mscontent">
+                                            <h2 class="title">ENGINE</h2>
+                                            <div class="mcard">
+                                                <?php echo $s_e_popup_content; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                                    <?php
+                                    $s_d_show = get_field('s_d_show', $vehicle_id);
+                                    $s_d_title = get_field('s_d_title', $vehicle_id);
+                                    $s_d_short_title = get_field('s_d_short_title', $vehicle_id);
+                                    $s_d_popup_content = get_field('s_d_popup_content', $vehicle_id);
+
+                                    if ($s_d_show == true) {
+                                    ?>
+                                    <div class="row">
+                                        <div class="col-md-12 mscontent">
+                                            <h2 class="title">DRIVE TRAIN</h2>
+                                            <div class="mcard">
+                                                <?php echo $s_d_popup_content; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                                    <?php
+                                    $s_c_show = get_field('s_c_show', $vehicle_id);
+                                    $s_c_title = get_field('s_c_title', $vehicle_id);
+                                    $s_c_short_title = get_field('s_c_short_title', $vehicle_id);
+                                    $s_c_popup_content = get_field('s_c_popup_content', $vehicle_id);
+
+                                    if ($s_c_show == true) {
+                                    ?>
+                                    <div class="row">
+                                        <div class="col-md-12 mscontent">
+                                            <h2 class="title">CHASSIS/SUSPENSION/BRAKES</h2>
+                                            <div class="mcard">
+                                                <?php echo $s_c_popup_content; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                                    <?php
+                                    $dms_show = get_field('dms_show', $vehicle_id);
+                                    $dms_title = get_field('dms_title', $vehicle_id);
+                                    $dms_short_title = get_field('dms_short_title', $vehicle_id);
+                                    $dms_popup_content = get_field('dms_popup_content', $vehicle_id);
+
+                                    if ($dms_show == true) {
+                                    ?>
+                                    <div class="row">
+                                        <div class="col-md-12 mscontent">
+                                            <h2 class="title">DIMENSIONS</h2>
+                                            <div class="mcard">
+                                                <?php echo $dms_popup_content; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                                    <?php
+                                    $other_show = get_field('other_show', $vehicle_id);
+
+                                    $other_popup_content = get_field('other_popup_content', $vehicle_id);
+
+                                    if ($other_show == true) {
+                                    ?>
+                                    <div class="row">
+                                        <div class="col-md-12 mscontent">
+                                            <h2 class="title">OTHER</h2>
+                                            <div class="mcard">
+                                                <?php echo $other_popup_content; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                                    <?php
+                                    $fwi_show = get_field('fwi_show', $vehicle_id);
+
+                                    $fwi_popup_content = get_field('fwi_popup_content', $vehicle_id);
+
+                                    if ($fwi_show == true) {
+                                    ?>
+                                    <div class="row">
+                                        <div class="col-md-12 mscontent">
+                                            <h2 class="title">FACTORY WARRANTY INFORMATION</h2>
+                                            <div class="mcard">
+                                                <?php echo $fwi_popup_content; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+
+                                </div>
+                                <div class="modal-footer">
+
+                                    <button type="button" class="print_specifications btn btn-primary">PRINT YOUR
+                                        ATV</button>
+                                </div>
+                            </div>
+                        </div>
+                        >>>>>>> acff7c41202c0fa5d41c9c8bc6d5a67e20c0cba0
                     </div>
                 </div>
             </div>

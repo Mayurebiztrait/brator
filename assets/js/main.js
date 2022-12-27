@@ -1,5 +1,22 @@
 jQuery( document ).ready(function() {
 
+  // download pdf code
+
+  jQuery("body").on("click", ".print_specifications", function () {
+    html2canvas(jQuery('#view_all_specification')[0], {
+        onrendered: function (canvas) {
+            var data = canvas.toDataURL();
+            var docDefinition = {
+                content: [{
+                    image: data,
+                    width: 500
+                }]
+            };
+            pdfMake.createPdf(docDefinition).download("specification.pdf");
+        }
+    });
+});
+  // end download
  
     const imgs = document.querySelectorAll('.img-select a');
 const imgBtns = [...imgs];
