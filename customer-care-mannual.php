@@ -89,13 +89,13 @@ endif;
 				<div class="brator-blog-post bottom-catalog">
 				<?php
 
-    $taxonomy = 'my_taxonomy'; // this is the name of the taxonomy
+    $taxonomy = 'manuals_categories'; // this is the name of the taxonomy
      $terms = get_terms($taxonomy);
      $args = array(
         'post_type' => 'post',
         'tax_query' => array(
                     array(
-                        'taxonomy' => 'updates',
+                        'taxonomy' => 'manuals_categories',
                         'field' => 'slug',
                         'terms' => wp_list_pluck($terms,'slug')
                     )
