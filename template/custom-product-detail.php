@@ -320,9 +320,26 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                                     </span>
                                                                     UPLOAD IMAGE(S)/VIDEO(S)
                                                                 </button> -->
-                                                                <br>
-                                                                <input type="file" name="upload_files" id="upload_files"
-                                                                    style="font-size:15px;opacity:1" />
+                                                                <!-- <input type="file" name="upload_files" id="upload_files"
+                                                                    style="font-size:15px;opacity:1" /> -->
+                                                                <div class="custom-upload-btn">
+                                                                    <div class="img-wrapper">
+                                                                        <div>
+                                                                            <label for="image_uploads"
+                                                                                class="img-upload-btn btn upload_btn">
+                                                                                <span>
+                                                                                    <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/upload.png"
+                                                                                        alt="">
+                                                                                </span>
+                                                                                UPLOAD IMAGE(S)/VIDEO(S)
+                                                                            </label>
+                                                                            <input type="file" id="image_uploads"
+                                                                                name="image_uploads"
+                                                                                accept=".jpg, .jpeg, .png"
+                                                                                style="opacity: 0;">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
@@ -365,7 +382,6 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                 <div class="modal-footer">
                                                     <input type="submit" name="review_form_submit"
                                                         class="btn btn-primary review_form_submit" value="SUBMIT">
-
                                                 </div>
                                         </form>
                                     </div>
@@ -1233,14 +1249,18 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                 </div>
             </div>
         </div>
-        <div class="col-md-8">
-            <div class="contact-form-wrapper">
-                <h5 class="contact-form-title">
-                    We'll keep you up to speed on all the latest AODES Talon news. Just fill in your information
-                    here.
-                </h5>
-                <?php echo do_shortcode('[contact-form-7 id="8495" title="Category Listing Single Page Form"]'); ?>
-                <!--<div class="form" action="submit">
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="contact-form-wrapper">
+                    <h5 class="contact-form-title">
+                        We'll keep you up to speed on all the latest AODES Talon news. Just fill in your information
+                        here.
+                    </h5>
+                    <?php echo do_shortcode('[contact-form-7 id="8495" title="Category Listing Single Page Form"]'); ?>
+                    <!--<div class="form" action="submit">
                     <div class="row">
                         <div class="col">
                           <input type="text" class="form-control" placeholder="First name*" aria-label="First name">
@@ -1266,10 +1286,10 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                       
                       <a href="#" class="form-submit-button">SEND</a>  
                 </div>-->
+                </div>
             </div>
         </div>
+    </div>
 </section>
-</div>
-
 
 <?php get_footer(); ?>

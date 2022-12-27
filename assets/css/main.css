@@ -625,7 +625,8 @@ a.product_type_variable {
 
 .custom-leave-review .modal-body .form-control {
     padding: 0.375rem 0.75rem;
-    border: 1px solid #c6c6c6
+    border: 1px solid #c6c6c6;
+    color: #000;
 }
 
 .custom-modal-form {
@@ -679,6 +680,21 @@ a.product_type_variable {
     font-size: 16px;
 }
 
+
+.custom-upload-btn .profile-img {
+    width: 100px;
+    height: 80px;
+}
+
+.custom-upload-btn .img-upload-btn {
+    border: 1px solid black;
+    padding: 10px 20px;
+}
+
+.custom-upload-btn .img-wrapper {
+    padding: 0 0 20px 0;
+}
+
 .custom-leave-review .modal-body .modal-body-icon {
     text-align: center;
 }
@@ -717,8 +733,8 @@ a.product_type_variable {
     align-items: center;
 }
 
-.custom-leave-review .modal-body .modal-footer button {
-    padding: 0.675rem 2.75rem;
+.custom-leave-review .modal-body .modal-footer .review_form_submit {
+    padding: 0.175rem 2.75rem;
     background-color: #ed3333;
     font-family: 'League Gothic', sans-serif;
     font-size: 30px;
@@ -739,6 +755,7 @@ a.product_type_variable {
     left: 0;
     top: 0;
     opacity: 0;
+    height: 52px;
 }
 
 .custom-leave-review .modal-body-img-title .modal-body-text h2:after {
@@ -1035,16 +1052,20 @@ li.pick-modal-right-li a {
     font-weight: 600;
 }
 
-.custom_product_detail_wrap specifications-section {
+.custom_product_detail_wrap .specifications-section {
     padding: 80px 0;
     background-color: #f6f6f6;
 }
 
-.custom_product_detail_wrap specifications-title {
+.custom_product_detail_wrap .specifications-title {
     position: relative;
 }
 
-.custom_product_detail_wrap specifications-title .specifications-section-title {
+.custom_product_detail_wrap .specifications-title .specifications-section-title::after {
+    display: none;
+}
+
+.custom_product_detail_wrap .specifications-title .specifications-section-title {
     font-size: 65px;
     color: #000;
     text-align: center;
@@ -1066,7 +1087,7 @@ h.custom_product_detail_wrap r {
     background-color: #000;
 }
 
-.custom_product_detail_wrap custom-specification-wrapper {
+.custom_product_detail_wrap .custom-specification-wrapper {
     margin-top: 70px;
     background-color: #fff;
     width: 100%;
@@ -3780,8 +3801,6 @@ ul#menu-left-sidebar li a {
     opacity: 1;
     font-size: 34px;
 }
-
-.custom-features-description-modal:nth-child(2n+1) {}
 
 .custom-features-description-modal .m_description h2.m_title {
     font-size: 50px;

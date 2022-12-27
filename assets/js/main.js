@@ -219,4 +219,16 @@ var getUrlParameter = function getUrlParameter(sParam) {
   }
   return false;
 };
-  
+
+
+const input = document.querySelector("input");
+const preview = document.querySelector(".preview");
+const para = document.querySelector(".no-pic");
+const image = document.querySelector(".profile-img");
+input.addEventListener("change", updateImageDisplay);
+function updateImageDisplay() {
+  para.style.display = "none";
+  const curFiles = input.files;
+  image.src = URL.createObjectURL(curFiles[0]);
+  image.style.opacity = 1;
+}
