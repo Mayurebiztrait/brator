@@ -138,7 +138,7 @@ foreach( $taxonomies as $taxonomy ) {
 
             <?php while( $posts->have_posts() ) : $posts->the_post(); ?>
                 <p><?php the_title(); ?></p><ul>
-				<?php $files = get_field('files', get_ID());
+				<?php $files = get_field('files', get_the_ID());
 				if(!empty($files)){
 					foreach($files as $pdflink){
 						echo '<li><a href="'.$pdflink['url'].'">'.$pdflink['title'].'</a></li>';
