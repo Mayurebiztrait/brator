@@ -638,81 +638,104 @@ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $vehicle_id ), 'sin
                 <div class="col-md-12">
                     <div class="custom-specification-wrapper">
                         <div class="row">
+                        <?php 
+                        $s_e_show = get_field('s_e_show',$vehicle_id);
+                        $s_e_image = get_field('s_e_image',$vehicle_id);
+                        $s_e_title = get_field('s_e_title',$vehicle_id);
+                        $s_e_short_title = get_field('s_e_short_title',$vehicle_id);
+                        if($s_e_show == true){
+                        ?>
                             <div class="col-md-3 p-0">
                                 <div class="custom-specification-card">
                                     <div class="custom-specification-card-content">
-                                    <div class="custom-specification-card-img">
-                                        <img src="img/s-1.png" alt="img" class="img-fluid">
-                                    </div class="custom-specification-card-content">
-                                    <h4 class="custom-specification-card-title">ENGINE TYPE</h4>
-                                    <p class="custom-specification-card-subtitle">
-                                        999cc LIQUID-COOLED UNICAM PARALLEL-TWIN
+                                        <div class="custom-specification-card-img">
+                                            
+                                            <img src="<?php echo $s_e_image;?>" alt="img" class="img-fluid">
+                                            </div class="custom-specification-card-content">
+                                            <h4 class="custom-specification-card-title"><?php echo $s_e_title;?></h4>
+                                            <p class="custom-specification-card-subtitle">
+                                                <?php echo $s_e_short_title;?>
 
-                                    </p>
-                                    </div>
-                                <div class="vl">
-
+                                            </p>
+                                        </div>
+                                
                                 </div>
                             </div>
-                            </div>
+                        <?php } 
+                        $s_d_show = get_field('s_d_show',$vehicle_id);
+                        $s_d_image = get_field('s_d_image',$vehicle_id);
+                        $s_d_title = get_field('s_d_title',$vehicle_id);
+                        $s_d_short_title = get_field('s_d_short_title',$vehicle_id);
+                        if($s_d_show == true){
+                            ?>
+                        <div class="col-md-3 p-0">
+                            <div class="custom-specification-card">
+                                <div class="custom-specification-card-content">
+                                    <div class="custom-specification-card-img">
+                                        
+                                        <img src="<?php echo $s_d_image;?>" alt="img" class="img-fluid">
+                                        </div class="custom-specification-card-content">
+                                        <h4 class="custom-specification-card-title"><?php echo $s_d_title;?></h4>
+                                        <p class="custom-specification-card-subtitle">
+                                            <?php echo $s_d_short_title;?>
 
+                                        </p>
+                                    </div>
+                            
+                            </div>
+                        </div>
+                    <?php }
+                    $s_c_show = get_field('s_c_show',$vehicle_id);
+                    $s_c_image = get_field('s_c_image',$vehicle_id);
+                    $s_c_title = get_field('s_c_title',$vehicle_id);
+                    $s_c_short_title = get_field('s_c_short_title',$vehicle_id);
+                    if($s_c_show == true){
+                        ?>
+                            <div class="col-md-3 p-0">
+                                <div class="custom-specification-card">
+                                    <div class="custom-specification-card-content">
+                                        <div class="custom-specification-card-img">
+                                            
+                                            <img src="<?php echo $s_c_image;?>" alt="img" class="img-fluid">
+                                            </div class="custom-specification-card-content">
+                                            <h4 class="custom-specification-card-title"><?php echo $s_c_title;?></h4>
+                                            <p class="custom-specification-card-subtitle">
+                                                <?php echo $s_c_short_title;?>
+
+                                            </p>
+                                        </div>
+                                
+                                </div>
+                            </div>
+                    <?php }
+                    $dms_show = get_field('dms_show',$vehicle_id);
+                    $dms_image = get_field('dms_image',$vehicle_id);
+                    $dms_title = get_field('dms_title',$vehicle_id);
+                    $dms_short_title = get_field('dms_short_title',$vehicle_id);
+                    if($dms_show == true){
+                        ?>
+                            <div class="col-md-3 p-0">
+                                <div class="custom-specification-card">
+                                    <div class="custom-specification-card-content">
+                                        <div class="custom-specification-card-img">
+                                            
+                                            <img src="<?php echo $dms_image;?>" alt="img" class="img-fluid">
+                                            </div class="custom-specification-card-content">
+                                            <h4 class="custom-specification-card-title"><?php echo $dms_title;?></h4>
+                                            <p class="custom-specification-card-subtitle">
+                                                <?php echo $dms_short_title;?>
+
+                                            </p>
+                                        </div>
+                                
+                                </div>
+                            </div>
+                        <?php } ?>
                        
 
-                        <div class="col-md-3 p-0">
-                            <div class="custom-specification-card">
-                                <div class="custom-specification-card-content">
-                                    <div class="custom-specification-card-img">
-                                        <img src="img/s-2.png" alt="img" class="img-fluid">
-                                    </div class="custom-specification-card-content">
-                                    <h4 class="custom-specification-card-title">TRANSMISSION</h4>
-                                    <p class="custom-specification-card-subtitle">
-                                        SIX-SPEED AUTOMATIC DUAL- CLUTCH TRANSMISSION (DCT) WITH HIGH/LOW
-                                        SUBTRANSMISSION
+                        
 
-                                    </p>
-                                </div>
-                                <div class="vl">
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-3 p-0">
-                            <div class="custom-specification-card">
-                                <div class="custom-specification-card-content">
-                                    <div class="custom-specification-card-img">
-                                        <img src="img/s-3.png" alt="img" class="img-fluid">
-                                    </div class="custom-specification-card-content">
-                                    <h4 class="custom-specification-card-title">FRONT SUSPENSION</h4>
-                                    <p class="custom-specification-card-subtitle">
-                                        INDEPENDENT DOUBLE-
-                                        WISHBONE; 14.6 INCHES OF TRAVEL
-                                    </p>
-                                </div>
-                                <div class="vl">
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="col-md-3 p-0">
-                            <div class="custom-specification-card">
-                                <div class="custom-specification-card-content">
-                                    <div class="custom-specification-card-img">
-                                        <img src="img/s-4.png" alt="img" class="img-fluid">
-                                    </div class="custom-specification-card-content">
-                                    <h4 class="custom-specification-card-title">REAR SUSPENSION</h4>
-                                    <p class="custom-specification-card-subtitle">
-                                        3-LINK TRAILING ARM; 15.0 INCHES OF TRAVEL
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
+                   
                     </div>
                 </div>
             </div>
