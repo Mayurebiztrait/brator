@@ -144,7 +144,7 @@ foreach( $taxonomies as $taxonomy ) {
 						echo '<li><i class="fa fa-file" aria-hidden="true"></i> <a href="'.$pdflink['url'].'" target="_blank">'.$pdflink['title'].'</a></li>';
 					}
 				}
-				?>
+				?> 
 				</ul>
                 <?php endwhile; ?> 
         </div>
