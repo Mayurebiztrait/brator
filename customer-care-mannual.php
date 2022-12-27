@@ -87,40 +87,60 @@ endif;
 	<div class="container-xxxl container-xxl container">
 		
 				<div class="brator-blog-post bottom-catalog">
-				<?php
+<?php
+$post_type = 'manuals';
+// Get all the taxonomies for this post type
+$taxonomies = get_object_taxonomies( (object) array( 'post_type' => $post_type ) );
+foreach( $taxonomies as $taxonomy ) :
 
-$taxonomy = 'manuals_categories';
-$terms = get_terms($taxonomy); // Get all terms of a taxonomy
-?>
-   <!-- <ul>
-        <?php foreach ( $terms as $term ) { ?>
-            <li><a href="<?php echo get_term_link($term->slug, $taxonomy); ?>"><?php echo $term->name; ?></a></li>
-        <?php } ?>
-    </ul>-->
-	<?php foreach ( $terms as $term ) { ?>
-	
-	<button class="accordion"><?php echo $term->name; ?></button>
-	<ul class="panel">
-	<?php
-				$the_query = new WP_Query( array( 
-				'category_name' => $term->name,  
-				'post_type' => 'manuals'
-) ); 
-   
-// The Loop
-if ( $the_query->have_posts() ) {
-    while ( $the_query->have_posts() ) {
-        $the_query->the_post(); ?>
-          
-		  <li><?php the_title(); ?></li>
-		  
-         <?php   } } 
-   
-/* Restore original Post Data */
-wp_reset_postdata();
-				?>
-</ul>
-	<?php } ?>
+    // Gets every "category" (term) in this taxonomy to get the respective posts
+    $terms = get_terms( $taxonomy,
+            array(
+                'orderby'   => 'name',
+                'order'     => 'ASC',
+                'hide_empty'    => '1'
+        )
+    );
+
+        foreach( $terms as $term ) : 
+            // WP_Query arguments
+        $args = array (
+            'post_type'   => $post_type,
+            'posts_per_page'  => '-1',
+            'tax_query'       => array(
+                        array(
+                            /**
+                 * For get a specific taxanomy use
+                 *'taxonomy' => 'category',
+                 */
+                            'taxonomy' => $taxonomy,
+                            'field'    => 'slug',
+                            'terms'    => $term->slug,
+                        )
+                    )
+        );
+        // The Query
+        $posts = new WP_Query( $args );
+
+        // The Loop
+        if( $posts->have_posts() ) : ?>
+            <dl id="box-loop-list-<?php echo $term->slug ;?>">    <div id="accordion" role="tablist">    <div class="card">
+<div class="card-header" role="tab" id="heading-<?php the_ID(); ?>">
+  <h5 class="mb-0">
+    <a data-toggle="collapse" href="#collapse-<?php the_ID(); ?>" aria-expanded="true" aria-controls="collapse-<?php the_ID(); ?>">
+      <?php echo $term->name;  ?>
+    </a>
+  </h5>
+</div>
+
+<div id="collapse-<?php the_ID(); ?>" class="collapse<?php echo ($the_query->current_post == 0 ? ' in' : ''); ?>" role="tabpanel" aria-labelledby="heading-<?php the_ID(); ?>" data-parent="#accordion">
+  <div class="card-body">
+
+            <?php while( $posts->have_posts() ) : $posts->the_post(); ?>
+                <p><?php the_title(); ?></p>
+                <?php endwhile; ?>
+        </div>
+</div>
 				
 				</div>
 			
