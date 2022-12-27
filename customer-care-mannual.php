@@ -140,7 +140,7 @@ foreach( $taxonomies as $taxonomy ) {
                 <p><?php the_title(); ?></p><ul>
 				<?php $files = get_field('files', the_ID());
 					foreach($files as $pdflink){
-						echo '<li><a href="'.$pdflink->url.'">'.$pdflink->title.'</a></li>';
+						echo '<li><a href="'.$pdflink['url'].'">'.$pdflink['title'].'</a></li>';
 					}
 				?>
 				</ul>
