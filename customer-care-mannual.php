@@ -34,7 +34,7 @@ endif;
 </div>
 </div>
 <!--===================================-->
-<div class="top-middle-banner">
+<div class="top-middle-banner customercare">
 <div class="inner-section">
 <div class="row section-1">
 <div class="col-sm-2"></div>
