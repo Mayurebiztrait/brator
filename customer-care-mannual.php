@@ -102,13 +102,12 @@ $terms = get_terms($taxonomy); // Get all terms of a taxonomy
 	<button class="accordion"><?php echo $term->name; ?></button>
 	<?php
 				$the_query = new WP_Query( array( 
-    'category_name' => $term->name, 
-    'posts_per_page' => 5 
+				'category_name' => $term->name,  
+				'post_type' => 'manuals'
 ) ); 
    
 // The Loop
 if ( $the_query->have_posts() ) {
-    $string .= '<ul class="postsbycategory widget_recent_entries">';
     while ( $the_query->have_posts() ) {
         $the_query->the_post(); ?>
           <div class="panel">
