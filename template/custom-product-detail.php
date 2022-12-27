@@ -696,7 +696,6 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                 </div>
                 <?php } ?>
             </div>
-
             <div class="row">
                 <div class="col-md-12 container-xxxl container-xxl container">
                     <div class="custom-button-modal">
@@ -714,136 +713,311 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                     </div>
                 </div>
                 <!-- Modal -->
-                <div class="modal fade" id="View_all_features" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-fullscreen">
-                        <div class=" modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title text-uppercase" id="exampleModalLabel">Features</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                    <?php if ($e_show == true) { ?>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" data-bs-toggle="pill"
-                                            data-bs-target="#modal-pills-Engine" type="button" role="tab"
-                                            aria-controls="pills-Engine" aria-selected="true">Engine</button>
-                                    </li>
-                                    <?php } ?>
-                                    <?php if ($c_show == true) { ?>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" data-bs-toggle="pill"
-                                            data-bs-target="#modal-pills-chassis" type="button" role="tab"
-                                            aria-controls="pills-chassis" aria-selected="false">chassis</button>
-                                    </li>
-                                    <?php } ?>
-                                    <?php if ($d_show == true) { ?>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" data-bs-toggle="pill"
-                                            data-bs-target="#modal-pills-drivetrain" type="button" role="tab"
-                                            aria-controls="pills-drivetrain" aria-selected="false">Drivetrain</button>
-                                    </li>
-                                    <?php } ?>
-                                    <?php if ($ds_show == true) { ?>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" data-bs-toggle="pill"
-                                            data-bs-target="#modal-pills-Design" type="button" role="tab"
-                                            aria-controls="pills-Design" aria-selected="false">Design</button>
-                                    </li>
-                                    <?php } ?>
-                                </ul>
-                                <div class="row">
-                                    <?php if ($e_show == true) { ?>
-                                    <div class="col-md-6">
-                                        <img class="img img-fluid" src="<?php echo $e_show_modal_image; ?>">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="m_description">
-                                            <h2 class="m_title">Engine</h2>
-                                            <?php foreach ($e_description as $content) {
+                <div class="custom-features-modal">
+                    <div class="modal fade" id="View_all_features" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class=" modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-uppercase" id="exampleModalLabel">Features</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div>
+                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                            <?php if ($e_show == true) { ?>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" data-bs-toggle="pill"
+                                                    data-bs-target="#modal-pills-Engine" type="button" role="tab"
+                                                    aria-controls="pills-Engine" aria-selected="true">Engine</button>
+                                            </li>
+                                            <?php } ?>
+                                            <?php if ($c_show == true) { ?>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" data-bs-toggle="pill"
+                                                    data-bs-target="#modal-pills-chassis" type="button" role="tab"
+                                                    aria-controls="pills-chassis" aria-selected="false">chassis
+                                                </button>
+                                            </li>
+                                            <?php } ?>
 
-                                            if ($content['title']) {
-                                                echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                            }
-                                            if ($content['description']) {
-                                                echo $content['description'];
-                                            }
-                                        } ?>
+                                            <?php if ($d_show == true) { ?>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" data-bs-toggle="pill"
+                                                    data-bs-target="#modal-pills-drivetrain" type="button" role="t b" a
+                                                    aria-controls="pills-drivetrain"
+                                                    aria-selected="false">Drivetrain</button>
+                                            </li>
+                                            <?php } ?>
+                                            <?php if ($ds_show == true) { ?>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" data-bs-toggle="pill"
+                                                    data-bs-target="#modal-pills-Design" type="button" role="tab"
+                                                    aria-controls="pills-Design" aria-selected="false">Design</button>
+                                            </li>
+                                            <?php } ?>
+                                        </ul>
+                                    </div>
+                                    <div class="custom-features-description-modal">
+                                        <div class="row">
+                                            <?php if ($e_show == true) { ?>
+                                            <div class="col-md-6">
+                                                <div class="custom-features-description-img">
+                                                    <img class="img img-fluid" src="<?php echo $e_show_modal_image; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="m_description">
+                                                    <h2 class="m_title">Engine</h2>
+                                                    <div class="description-some-text">
+                                                        <?php foreach ($e_description as $content) {
+                                                    if ($content['title']) {
+                                                        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+                                                    }
+                                                    if ($content['description']) {
+                                                        echo "<div>";
+                                                        echo $content['description'];
+                                                        echo "</div>";
+                                                    }
+                                                } ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
-                                    <?php } ?>
-                                    <?php if ($c_show == true) { ?>
-                                    <div class="col-md-6">
-                                        <img class="img img-fluid" src="<?php echo $c_show_modal_image; ?>">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="m_description">
-                                            <h2 class="m_title">Chassis</h2>
-                                            <?php foreach ($c_description as $content) {
-                                            if ($content['title']) {
-                                                echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                            }
-                                            if ($content['description']) {
-                                                echo $content['description'];
-                                            }
-                                        } ?>
-                                        </div>
-                                    </div>
-                                    <?php } ?>
-                                    <?php if ($d_show == true) { ?>
-                                    <div class="col-md-6">
-                                        <img class="img img-fluid" src="<?php echo $d_show_modal_image; ?>">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="m_description">
-                                            <h2 class="m_title">Drivetrain</h2>
-                                            <?php foreach ($d_description as $content) {
-                                            if ($content['title']) {
-                                                echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                            }
-                                            if ($content['description']) {
-                                                echo $content['description'];
-                                            }
+                                    <div class="custom-features-description-modal">
+                                        <div class="row">
+                                            <?php if ($d_show == true) { ?>
+                                            <div class="col-md-6">
+                                                <div class="custom-features-description-img">
+                                                    <img class="img img-fluid" src="<?php echo $d_show_modal_image; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="m_description">
+                                                    <h2 class="m_title">Drivetrain</h2>
+                                                    <div class="description-some-text">
+                                                        <?php foreach ($d_description as $content) {
+                                                    if ($content['title']) {
+                                                        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+                                                    }
+                                                    if ($content['description']) {
+                                                        echo "<div>";
+                                                        echo $content['description'];
+                                                        echo "</div>";
+                                                    }
 
-                                        } ?>
+                                                } ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
-                                    <?php } ?>
-                                    <?php if ($ds_show == true) { ?>
-                                    <div class="col-md-6">
-                                        <img class="img img-fluid" src="<?php echo $ds_show_modal_image; ?>">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="m_description">
-                                            <h2 class="m_title">Design</h2>
-                                            <?php foreach ($ds_description as $content) {
-                                            if ($content['title']) {
-                                                echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                            }
-                                            if ($content['description']) {
-                                                echo $content['description'];
-                                            }
-                                        } ?>
+                                    <div class="custom-features-description-modal">
+                                        <div class="row">
+                                            <?php if ($d_show == true) { ?>
+                                            <div class="col-md-6">
+                                                <div class="custom-features-description-img">
+                                                    <img class="img img-fluid" src="<?php echo $d_show_modal_image; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="m_description">
+                                                    <h2 class="m_title">Drivetrain</h2>
+                                                    <?php foreach ($d_description as $content) {
+                                                    if ($content['title']) {
+                                                        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+                                                    }
+                                                    if ($content['description']) {
+                                                        echo $content['description'];
+                                                    }
+
+                                                } ?>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
-                                    <?php } ?>
+                                    <div class="custom-features-description-modal">
+                                        <div class="row">
+                                            <?php if ($ds_show == true) { ?>
+                                            <div class="col-md-6">
+                                                <div class="custom-features-description-img">
+                                                    <img class="img img-fluid"
+                                                        src="<?php echo $ds_show_modal_image; ?>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="m_description">
+                                                    <h2 class="m_title">Design</h2>
+                                                    <div class="description-some-text">
+                                                        <?php foreach ($ds_description as $content) {
+                                                    if ($content['title']) {
+                                                        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+                                                    }
+                                                    if ($content['description']) {
+                                                        echo "<div>";
+                                                        echo $content['description'];
+                                                        echo "</div>";
+                                                    }
+                                                } ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div> -->
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div> -->
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="view_feature" tabindex="-1" aria-labelledby="exampleModalLabel"
+            </div>
+            <div class="modal fade" id="view_feature" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class=" modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6 mcontent">
+                                </div>
+                                <div class="col-md-6 mimage">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</section>
+
+<!-- specifications section -->
+<section class="specifications-section">
+    <div class="container-xxxl container-xxl container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="specifications-title">
+                    <hr>
+                    <h2 class="specifications-section-title">specifications</h2>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="custom-specification-wrapper">
+                    <div class="row">
+                        <div class="col-md-3 p-0">
+                            <div class="custom-specification-card">
+                                <div class="custom-specification-card-content">
+                                    <div class="custom-specification-card-img">
+                                        <img src="img/s-1.png" alt="img" class="img-fluid">
+                                    </div class="custom-specification-card-content">
+                                    <h4 class="custom-specification-card-title">ENGINE TYPE</h4>
+                                    <p class="custom-specification-card-subtitle">
+                                        999cc LIQUID-COOLED UNICAM PARALLEL-TWIN
+
+                                    </p>
+                                </div>
+                                <div class="vl">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-3 p-0">
+                            <div class="custom-specification-card">
+                                <div class="custom-specification-card-content">
+                                    <div class="custom-specification-card-img">
+                                        <img src="img/s-2.png" alt="img" class="img-fluid">
+                                    </div class="custom-specification-card-content">
+                                    <h4 class="custom-specification-card-title">TRANSMISSION</h4>
+                                    <p class="custom-specification-card-subtitle">
+                                        SIX-SPEED AUTOMATIC DUAL- CLUTCH TRANSMISSION (DCT) WITH HIGH/LOW
+                                        SUBTRANSMISSION
+
+                                    </p>
+                                </div>
+                                <div class="vl">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 p-0">
+                            <div class="custom-specification-card">
+                                <div class="custom-specification-card-content">
+                                    <div class="custom-specification-card-img">
+                                        <img src="img/s-3.png" alt="img" class="img-fluid">
+                                    </div class="custom-specification-card-content">
+                                    <h4 class="custom-specification-card-title">FRONT SUSPENSION</h4>
+                                    <p class="custom-specification-card-subtitle">
+                                        INDEPENDENT DOUBLE-
+                                        WISHBONE; 14.6 INCHES OF TRAVEL
+                                    </p>
+                                </div>
+                                <div class="vl">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-3 p-0">
+                            <div class="custom-specification-card">
+                                <div class="custom-specification-card-content">
+                                    <div class="custom-specification-card-img">
+                                        <img src="img/s-4.png" alt="img" class="img-fluid">
+                                    </div class="custom-specification-card-content">
+                                    <h4 class="custom-specification-card-title">REAR SUSPENSION</h4>
+                                    <p class="custom-specification-card-subtitle">
+                                        3-LINK TRAILING ARM; 15.0 INCHES OF TRAVEL
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="custom-specification-button-modal">
+                    <!-- Button trigger modal -->
+                    <a href="" type="button" class="" data-bs-toggle="modal" data-bs-target="#view_all_specification">
+                        View all features
+                        <span class="custom-specification-card-svg">
+                            <svg width="12" height="19" viewBox="0 0 12 19">
+                                <path class="svg"
+                                    d="M2.081.12L.001 2.332l7.274 7.173L0 16.668l2.081 2.212 8.4-8.274 1.125-1.101-1.125-1.111z"
+                                    fill="#FFF" fill-rule="nonzero"></path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+                <div class="modal fade" id="view_all_specification" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog modal-fullscreen">
                         <div class=" modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <h5 class="modal-title text-uppercase" id="exampleModalLabel">Specifications</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -864,167 +1038,33 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- specifications section -->
-    <section class="specifications-section">
-        <div class="container-xxxl container-xxl container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="specifications-title">
-                        <hr>
-                        <h2 class="specifications-section-title">specifications</h2>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="custom-specification-wrapper">
-                        <div class="row">
-                            <div class="col-md-3 p-0">
-                                <div class="custom-specification-card">
-                                    <div class="custom-specification-card-content">
-                                        <div class="custom-specification-card-img">
-                                            <img src="img/s-1.png" alt="img" class="img-fluid">
-                                        </div class="custom-specification-card-content">
-                                        <h4 class="custom-specification-card-title">ENGINE TYPE</h4>
-                                        <p class="custom-specification-card-subtitle">
-                                            999cc LIQUID-COOLED UNICAM PARALLEL-TWIN
-
-                                        </p>
-                                    </div>
-                                    <div class="vl">
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="col-md-3 p-0">
-                                <div class="custom-specification-card">
-                                    <div class="custom-specification-card-content">
-                                        <div class="custom-specification-card-img">
-                                            <img src="img/s-2.png" alt="img" class="img-fluid">
-                                        </div class="custom-specification-card-content">
-                                        <h4 class="custom-specification-card-title">TRANSMISSION</h4>
-                                        <p class="custom-specification-card-subtitle">
-                                            SIX-SPEED AUTOMATIC DUAL- CLUTCH TRANSMISSION (DCT) WITH HIGH/LOW
-                                            SUBTRANSMISSION
-
-                                        </p>
-                                    </div>
-                                    <div class="vl">
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-3 p-0">
-                                <div class="custom-specification-card">
-                                    <div class="custom-specification-card-content">
-                                        <div class="custom-specification-card-img">
-                                            <img src="img/s-3.png" alt="img" class="img-fluid">
-                                        </div class="custom-specification-card-content">
-                                        <h4 class="custom-specification-card-title">FRONT SUSPENSION</h4>
-                                        <p class="custom-specification-card-subtitle">
-                                            INDEPENDENT DOUBLE-
-                                            WISHBONE; 14.6 INCHES OF TRAVEL
-                                        </p>
-                                    </div>
-                                    <div class="vl">
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="col-md-3 p-0">
-                                <div class="custom-specification-card">
-                                    <div class="custom-specification-card-content">
-                                        <div class="custom-specification-card-img">
-                                            <img src="img/s-4.png" alt="img" class="img-fluid">
-                                        </div class="custom-specification-card-content">
-                                        <h4 class="custom-specification-card-title">REAR SUSPENSION</h4>
-                                        <p class="custom-specification-card-subtitle">
-                                            3-LINK TRAILING ARM; 15.0 INCHES OF TRAVEL
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="custom-specification-button-modal">
-                        <!-- Button trigger modal -->
-                        <a href="" type="button" class="" data-bs-toggle="modal"
-                            data-bs-target="#view_all_specification">
-                            View all features
-                            <span class="custom-specification-card-svg">
-                                <svg width="12" height="19" viewBox="0 0 12 19">
-                                    <path class="svg"
-                                        d="M2.081.12L.001 2.332l7.274 7.173L0 16.668l2.081 2.212 8.4-8.274 1.125-1.101-1.125-1.111z"
-                                        fill="#FFF" fill-rule="nonzero"></path>
-                                </svg>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="modal fade" id="view_all_specification" tabindex="-1"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-fullscreen">
-                            <div class=" modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title text-uppercase" id="exampleModalLabel">Specifications</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-6 mcontent">
-                                        </div>
-                                        <div class="col-md-6 mimage">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div> -->
-                            </div>
-                        </div>
+<section class="stay-connected">
+    <div class="container-xxxl container-xxl container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="stay-connected-content-wrapper">
+                    <div class="stay-connected-content">
+                        <h2 class="stay-connected-title">
+                            STAY
+                        </h2>
+                        <h2 class="stay-connected-highlighted-title">
+                            CONNECTED
+                        </h2>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="stay-connected">
-        <div class="container-xxxl container-xxl container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="stay-connected-content-wrapper">
-                        <div class="stay-connected-content">
-                            <h2 class="stay-connected-title">
-                                STAY
-                            </h2>
-                            <h2 class="stay-connected-highlighted-title">
-                                CONNECTED
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="contact-form-wrapper">
-                    <h5 class="contact-form-title">
-                        We'll keep you up to speed on all the latest AODES Talon news. Just fill in your information
-                        here.
-                    </h5>
-                    <?php echo do_shortcode('[contact-form-7 id="8495" title="Category Listing Single Page Form"]'); ?>
-                    <!--<div class="form" action="submit">
+        <div class="col-md-8">
+            <div class="contact-form-wrapper">
+                <h5 class="contact-form-title">
+                    We'll keep you up to speed on all the latest AODES Talon news. Just fill in your information
+                    here.
+                </h5>
+                <?php echo do_shortcode('[contact-form-7 id="8495" title="Category Listing Single Page Form"]'); ?>
+                <!--<div class="form" action="submit">
                     <div class="row">
                         <div class="col">
                           <input type="text" class="form-control" placeholder="First name*" aria-label="First name">
@@ -1050,9 +1090,9 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                       
                       <a href="#" class="form-submit-button">SEND</a>  
                 </div>-->
-                </div>
             </div>
-    </section>
+        </div>
+</section>
 </div>
 
 

@@ -942,6 +942,7 @@ a.product_type_variable {
     min-height: 442px;
     -webkit-box-align: stretch;
     align-items: stretch;
+    width: 100%;
 }
 
 .custom_product_detail_wrap .custom-card-img {
@@ -3676,10 +3677,14 @@ ul#menu-left-sidebar li a {
 
 .product-details-content h2 {
     font-size: 1.4rem;
-    color: red;
-    border-bottom: 1px solid red;
+    color: #ed3333;
+    border-bottom: 1px solid #ed3333;
     margin-bottom: 20px;
-    padding-bottom: 15px;
+    padding: 15px 0 15px 0px;
+}
+
+.product-details-content h2::after {
+    display: none;
 }
 
 .product-details-content h3 {
@@ -3699,13 +3704,97 @@ ul#menu-left-sidebar li a {
 }
 
 .product-details-content {
-    padding: 0 15px;
+    padding: 0;
+}
+
+.custom-features-description-modal {
+    padding: 80px;
+    background: #f6f6f6;
+}
+
+.custom-features-description-modal:nth-child(2n+1) {
+    background-color: #1f1f1f;
+}
+
+.custom-features-description-modal:nth-child(2n+1) {}
+
+.custom-features-description-modal .m_description h2.m_title {
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #ef4848;
+    font-family: 'League Gothic', sans-serif;
+    letter-spacing: 4.5px;
+    text-transform: uppercase;
+}
+
+.custom-features-description-modal .m_description h3.p_title {
+    font-size: 30px;
+    color: #0f1423;
+}
+
+.description-some-text p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.custom-features-description-modal .m_description h2.m_title::after {
+    display: none;
+}
+
+.custom-features-modal .modal-body {
+    padding: 0;
 }
 
 .product-details-wrapper {
     /* box-shadow: 0 0 5px 5px #00000024; */
     margin: 30px 0 30px 0;
     /* border-radius: 20px; */
+}
+
+.custom-features-description-img {
+    padding: 0 110px;
+}
+
+.custom-features-modal .modal-header #exampleModalLabel {
+    font-size: 70px;
+    background-color: #ed3333;
+    color: #fff;
+    font-family: 'League Gothic', sans-serif;
+    letter-spacing: 2.5px;
+}
+
+.custom-features-modal .modal-header {
+    background-color: #ed3333;
+}
+
+.custom-features-modal .modal-header .btn-close {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>");
+    opacity: 1;
+    font-size: 34px;
+}
+
+.custom_product_detail_wrap .feature-section .custom-features-modal .nav-pills .nav-link {
+    padding: 0.5rem 3rem;
+    margin: 0 1rem;
+    border: 1px solid #0f1423;
+    color: #fff;
+    text-transform: uppercase;
+    justify-content: center;
+    height: auto;
+    color: black;
+    width: auto;
+    letter-spacing: 0.36px;
+    opacity: 0.9;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.custom_product_detail_wrap .feature-section .custom-features-modal .nav-pills button.nav-link.active {
+    color: #fff;
+    border: 1px solid #fff;
+
 }
 
 /********** 23 DEC 2022 *************/
