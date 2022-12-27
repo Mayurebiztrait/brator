@@ -137,12 +137,13 @@ foreach( $taxonomies as $taxonomy ) {
   <div class="card-body">
 
             <?php while( $posts->have_posts() ) : $posts->the_post(); ?>
-                <p><?php the_title(); ?></p>
+                <p><?php the_title(); ?></p><ul>
 				<?php $files = get_field('files', the_ID());
-					echo '<pre>';
-					print_r($files);
-					echo '</pre>';
+					foreach($files as $pdflink){
+						echo '<li><a href="'.$pdflink->url.'">'.$pdflink->title.'</a></li>';
+					}
 				?>
+				</ul>
                 <?php endwhile; ?>
         </div>
 </div>
