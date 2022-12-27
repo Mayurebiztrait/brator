@@ -38,13 +38,13 @@ endif;
 <div class="inner-section">
 <div class="row section-1">
 <div class="col-sm-2"></div>
-<div class="col-sm-8 ct"><h3>AODES IS EDGING INTO THE ADVANCED RANKED RANKS IN THE WORLD IN THE POWERSPORTS INDUSTRY</h3></div>
+<div class="col-sm-8"><h3>AODES IS EDGING INTO THE ADVANCED RANKED RANKS IN THE WORLD IN THE POWERSPORTS INDUSTRY</h3></div>
 <div class="col-sm-2"></div>
 </div>
 <div class="row section-2">
-<div class="col-sm-2"></div>
-<div class="col-sm-8"><p>ABD AIMS TO SUPPLY SUPERIOR PRODUCTS TO DEALERS AND FANS GLOBALLY</p></div>
-<div class="col-sm-2"></div>
+<div class="col-sm-3"></div>
+<div class="col-sm-6 ct"><p>ABD AIMS TO SUPPLY SUPERIOR PRODUCTS TO DEALERS AND FANS GLOBALLY</p></div>
+<div class="col-sm-3"></div>
 </div>
 
 </div>
