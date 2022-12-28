@@ -334,7 +334,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                                                 UPLOAD IMAGE(S)/VIDEO(S)
                                                                             </label>
                                                                             <input type="file" id="image_uploads"
-                                                                                name="image_uploads"
+                                                                                name="upload_files"
                                                                                 accept=".jpg, .jpeg, .png"
                                                                                 style="opacity: 0;">
                                                                         </div>
