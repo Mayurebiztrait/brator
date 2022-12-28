@@ -1296,9 +1296,9 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                     </div>
                                     <div class="modal-footer">
 
-                                        <!--<button type="button" class="print_specifications btn btn-primary">PRINT YOUR
-                                            ATV</button>-->
-											<?php echo do_shortcode("[save_as_pdf_pdfcrowd page_size='letter' button_background_color='red']"); ?>
+                                        <button type="button" class="print_specifications btn btn-primary">PRINT YOUR
+                                            ATV</button>
+											
                                     </div>
                                 </div>
                             </div>
