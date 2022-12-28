@@ -79,7 +79,7 @@ endif;
                                 the_post();
                                 ?>
                                 
-                                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                                <div class="col-md-3 col-sm-6 col-12 mb-4">
                                     <?php
                                     get_template_part( 'template-parts/blog-layout/blog-catalog-content' );
                                 ?>
