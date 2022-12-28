@@ -58,6 +58,15 @@ jQuery(".custom-card-main .custom-learn-svg").click(function(){
   
 });
 
+
+jQuery("body").on("click", ".product-detail .change_slide", function () {
+  var slide = jQuery(this).data('slide');
+  imgId = slide;
+        slideImage();
+
+});
+
+
   jQuery(".menu-icon").click(function(){
     jQuery(".header-nav").slideToggle();
     

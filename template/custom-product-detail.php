@@ -64,42 +64,82 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                     <div class="product-imgs">
                         <div class="img-display">
                             <div class="img-showcase">
-                                <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                                    alt="shoe image">
-                                <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                                    alt="shoe image">
-                                <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                                    alt="shoe image">
-                                <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                                    alt="shoe image">
+
+                            <?php
+                          
+                            while (have_rows('variations_images', $vehicle_id)):
+                            the_row();
+                          
+                            ?>
+                                <?php 
+                                $images = get_sub_field('images');
+                                $color_image = get_sub_field('color_image');
+                              
+                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                if( $images ): ?>
+                                
+                                        <?php foreach( $images as $image_id ): ?>
+                                            <?php echo wp_get_attachment_image( $image_id['id'], $size ); ?>
+                                            
+                                        <?php endforeach; ?>
+                                    
+                                <?php endif; ?>
+                            
+                            <?php endwhile; ?>
+                                
+                                
                             </div>
+                            
                         </div>
                         <div class="img-select">
-                            <div class="img-item">
-                                <a href="#" data-id="1">
-                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                                        alt="shoe image">
-                                </a>
-                            </div>
-                            <div class="img-item">
-                                <a href="#" data-id="2">
-                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                                        alt="shoe image">
-                                </a>
-                            </div>
-                            <div class="img-item">
-                                <a href="#" data-id="3">
-                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                                        alt="shoe image">
-                                </a>
-                            </div>
-                            <div class="img-item">
-                                <a href="#" data-id="4">
-                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                                        alt="shoe image">
-                                </a>
-                            </div>
+                        <?php
+                        $color_image_array = array();
+                        
+                        
+                            $image_color_count = 0;
+                            $image_count = 1;
+                            $c_count = 0;
+                            while (have_rows('variations_images', $vehicle_id)):
+                            the_row();
+                           
+                           
+                            ?>
+                                <?php 
+                                
+                                $images = get_sub_field('images');
+                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                if( $images ):
+                                
+                                     ?>
+                                
+                                        <?php foreach( $images as $image_id ): ?>
+                                            <div class="img-item">
+                                                <a href="#" data-id="<?php echo $image_count;?>">
+                                                    <?php echo wp_get_attachment_image( $image_id['id'], $size ); ?>
+                                                </a>
+                                            </div>
+                                            
+                                            
+                                        <?php $image_count++; $c_count++;
+                                    endforeach; ?>
+                                    
+                                <?php endif; ?>
+                            
+                            <?php 
+                            if($image_color_count == 0){
+                                $color_image_array[$image_color_count] = $c_count;
+                            }else{
+                                $color_image_array[$image_color_count] = 0;
+                                $color_image_array[$image_color_count] = $color_image_array[$image_color_count] + $c_count;
+                            }
+                            
+                            $image_color_count++;
+                         endwhile; ?>
+                            
+                     
                         </div>
+                       
+                        
                     </div>
 
                     <!-- card right -->
@@ -112,7 +152,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
 
                         <div class="product-price">
                             <p class="new-price">
-                                <span><?php echo $base_msrp; ?></span>
+                                <span>$<?php echo $base_msrp; ?></span>
                             </p>
                             <div class="base-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -132,41 +172,51 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                 <?php echo get_the_content('', '', $vehicle_id); ?>
                             </p>
                         </div>
+                        <?php 
+                        $pick_colot_set = 0;
+                         while (have_rows('variations_images', $vehicle_id)):
+                            the_row();
+                            $pick_colot_set = 1;
+                            ?>
+                        <?php  endwhile; 
+                            if($pick_colot_set == 1){
+                        ?>
+                            <div class="product-detail">
+                                <h2>PICK YOUR COLOR</h2>
 
-                        <div class="product-detail">
-                            <h2>PICK YOUR COLOR</h2>
-                            <ul class="product-details-ul">
-                                <li>
-                                    <a>
-                                        <img src="<?php echo get_template_directory_uri().'/assets/images/';?>pick-1.png"
-                                            alt="">
-                                    </a>
-                                    <span>Black</span>
-                                </li>
-                                <li>
-                                    <a>
-                                        <img src="<?php echo get_template_directory_uri().'/assets/images/';?>pick-2.png"
-                                            alt="">
-                                    </a>
-                                    <span>Black</span>
-                                </li>
-                                <li>
-                                    <a>
-                                        <img src="<?php echo get_template_directory_uri().'/assets/images/';?>pick-3.png"
-                                            alt="">
-                                    </a>
-                                    <span>Black</span>
-                                </li>
-                                <li>
-                                    <a>
-                                        <img src="<?php echo get_template_directory_uri().'/assets/images/';?>pick-4.png"
-                                            alt="">
-                                    </a>
-                                    <span>Black</span>
-                                </li>
-                            </ul>
-                        </div>
-
+                                <ul class="product-details-ul">
+                                <?php
+                        
+                                $color_count = 0;
+                                while (have_rows('variations_images', $vehicle_id)):
+                                the_row();
+                                
+                                ?>
+                                    <?php 
+                                    $images = get_sub_field('images');
+                                    $color_image = get_sub_field('color_image');
+                                    $color_name = get_sub_field('color_name');
+                
+                                    $size = 'full'; // (thumbnail, medium, large, full or custom size)
+                                    ?>
+                                    
+                                        
+                                                
+                                        <li>
+                                            <a href="javascript:void(0)" class="change_slide" data-slide="<?php  if($color_count == 0){ echo '1';}else{  $final_slide = $color_image_array[$color_count-1]; $final_slide++; echo $final_slide;}   ?>">
+                                            <?php echo wp_get_attachment_image( $color_image['id'], $size ); ?>
+                                            </a>
+                                            <span><?php echo $color_name;?></span>
+                                        </li>
+                                            
+                                        
+                                
+                                
+                                    <?php $color_count++; endwhile; ?>
+                                    
+                                </ul>
+                            </div>
+                        <?php } ?>
                         <div class="modal-right">
                             <ul class="pick-modal-right-ul">
                                 <li class="pick-modal-right-li">
