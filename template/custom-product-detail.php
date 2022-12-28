@@ -1111,7 +1111,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                         <!-- Button trigger modal -->
                         <a href="" type="button" class="" data-bs-toggle="modal"
                             data-bs-target="#view_all_specification">
-                            View all features
+                            View all specification
                             <span class="custom-specification-card-svg">
                                 <svg width="12" height="19" viewBox="0 0 12 19">
                                     <path class="svg"
