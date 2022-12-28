@@ -20,7 +20,7 @@ get_header(); ?>
                 'hide_empty' => true
             );
             foreach( get_categories( $args ) as $category ) { ?>
-                <div class="row">
+                <div class="row" id="<?php echo $category->slug;?>">
                     <div class="col-md-12">
                         <div class="product-details-title">
                             <h3><?php echo $category->name;?></h3>
