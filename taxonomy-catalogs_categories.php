@@ -83,7 +83,7 @@ endif;
                                     <?php
                                     get_template_part( 'template-parts/blog-layout/blog-catalog-content' );
                                 ?>
-                                </div>
+                                </div> 
                     
                             
                             <?php
