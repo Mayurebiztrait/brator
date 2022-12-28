@@ -152,6 +152,9 @@ foreach( $taxonomies as $taxonomy ) {
 </dl>
 <?php }}} ?>
 </div>
+</div>
+</div>
+</div>
 <script>
 var acc = document.getElementsByClassName("accordion");
 var i;
