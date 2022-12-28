@@ -133,7 +133,7 @@ foreach( $taxonomies as $taxonomy ) {
   </h5>
 </div>
 
-<div id="collapse-<?php the_ID(); ?>" class="collapse<?php echo ($the_query->current_post == 0 ? ' in' : ''); ?> panel" role="tabpanel" aria-labelledby="heading-<?php the_ID(); ?>" data-parent="#accordion">
+<div id="collapse-<?php the_ID(); ?>" class="collapse<?php echo ($posts->current_post == 0 ? ' in' : ''); ?> panel" role="tabpanel" aria-labelledby="heading-<?php the_ID(); ?>" data-parent="#accordion">
   <div class="card-body">
 
             <?php while( $posts->have_posts() ) : $posts->the_post(); ?>
