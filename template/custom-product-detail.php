@@ -65,81 +65,80 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                         <div class="img-display">
                             <div class="img-showcase">
 
-                            <?php
-                          
-                            while (have_rows('variations_images', $vehicle_id)):
-                            the_row();
-                          
-                            ?>
-                                <?php 
-                                $images = get_sub_field('images');
-                                $color_image = get_sub_field('color_image');
-                              
-                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
-                                if( $images ): ?>
-                                
-                                        <?php foreach( $images as $image_id ): ?>
-                                            <?php echo wp_get_attachment_image( $image_id['id'], $size ); ?>
-                                            
-                                        <?php endforeach; ?>
-                                    
-                                <?php endif; ?>
-                            
-                            <?php endwhile; ?>
-                                
-                                
+                                <?php
+
+while (have_rows('variations_images', $vehicle_id)):
+    the_row();
+
+    ?>
+                                <?php
+    $images = get_sub_field('images');
+    $color_image = get_sub_field('color_image');
+
+    $size = 'full'; // (thumbnail, medium, large, full or custom size)
+    if ($images): ?>
+
+                                <?php foreach ($images as $image_id): ?>
+                                <?php echo wp_get_attachment_image($image_id['id'], $size); ?>
+
+                                <?php endforeach;?>
+
+                                <?php endif;?>
+
+                                <?php endwhile;?>
+
+
                             </div>
-                            
+
                         </div>
                         <div class="img-select">
-                        <?php
-                        $color_image_array = array();
-                        
-                        
-                            $image_color_count = 0;
-                            $image_count = 1;
-                            $c_count = 0;
-                            while (have_rows('variations_images', $vehicle_id)):
-                            the_row();
-                           
-                           
-                            ?>
-                                <?php 
-                                
-                                $images = get_sub_field('images');
-                                $size = 'full'; // (thumbnail, medium, large, full or custom size)
-                                if( $images ):
-                                
-                                     ?>
-                                
-                                        <?php foreach( $images as $image_id ): ?>
-                                            <div class="img-item">
-                                                <a href="#" data-id="<?php echo $image_count;?>">
-                                                    <?php echo wp_get_attachment_image( $image_id['id'], $size ); ?>
-                                                </a>
-                                            </div>
-                                            
-                                            
-                                        <?php $image_count++; $c_count++;
-                                    endforeach; ?>
-                                    
-                                <?php endif; ?>
-                            
-                            <?php 
-                            if($image_color_count == 0){
-                                $color_image_array[$image_color_count] = $c_count;
-                            }else{
-                                $color_image_array[$image_color_count] = 0;
-                                $color_image_array[$image_color_count] = $color_image_array[$image_color_count] + $c_count;
-                            }
-                            
-                            $image_color_count++;
-                         endwhile; ?>
-                            
-                     
+                            <?php
+$color_image_array = array();
+
+$image_color_count = 0;
+$image_count = 1;
+$c_count = 0;
+while (have_rows('variations_images', $vehicle_id)):
+    the_row();
+
+    ?>
+                            <?php
+
+    $images = get_sub_field('images');
+    $size = 'full'; // (thumbnail, medium, large, full or custom size)
+    if ($images):
+
+    ?>
+
+                            <?php foreach ($images as $image_id): ?>
+                            <div class="img-item">
+                                <a href="#" data-id="<?php echo $image_count; ?>">
+                                    <?php echo wp_get_attachment_image($image_id['id'], $size); ?>
+                                </a>
+                            </div>
+
+
+                            <?php $image_count++;
+    $c_count++;
+endforeach;?>
+
+                            <?php endif;?>
+
+                            <?php
+if ($image_color_count == 0) {
+    $color_image_array[$image_color_count] = $c_count;
+} else {
+    $color_image_array[$image_color_count] = 0;
+    $color_image_array[$image_color_count] = $color_image_array[$image_color_count] + $c_count;
+}
+
+$image_color_count++;
+endwhile;?>
+
+
                         </div>
-                       
-                        
+
+
                     </div>
 
                     <!-- card right -->
@@ -172,57 +171,59 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                 <?php echo get_the_content('', '', $vehicle_id); ?>
                             </p>
                         </div>
-                        <?php 
-                        $pick_colot_set = 0;
-                         while (have_rows('variations_images', $vehicle_id)):
-                            the_row();
-                            $pick_colot_set = 1;
-                            ?>
-                        <?php  endwhile; 
-                            if($pick_colot_set == 1){
-                        ?>
-                            <div class="product-detail">
-                                <h2>PICK YOUR COLOR</h2>
+                        <?php
+$pick_colot_set = 0;
+while (have_rows('variations_images', $vehicle_id)):
+    the_row();
+    $pick_colot_set = 1;
+    ?>
+                        <?php endwhile;
+if ($pick_colot_set == 1) {
+    ?>
+                        <div class="product-detail">
+                            <h2>PICK YOUR COLOR</h2>
 
-                                <ul class="product-details-ul">
+                            <ul class="product-details-ul">
                                 <?php
-                        
-                                $color_count = 0;
-                                while (have_rows('variations_images', $vehicle_id)):
-                                the_row();
-                                
-                                ?>
-                                    <?php 
-                                    $images = get_sub_field('images');
-                                    $color_image = get_sub_field('color_image');
-                                    $color_name = get_sub_field('color_name');
-                
-                                    $size = 'full'; // (thumbnail, medium, large, full or custom size)
-                                    ?>
-                                    
-                                        
-                                                
-                                        <li>
-                                            <a href="javascript:void(0)" class="change_slide" data-slide="<?php  if($color_count == 0){ echo '1';}else{  $final_slide = $color_image_array[$color_count-1]; $final_slide++; echo $final_slide;}   ?>">
-                                            <?php echo wp_get_attachment_image( $color_image['id'], $size ); ?>
-                                            </a>
-                                            <span><?php echo $color_name;?></span>
-                                        </li>
-                                            
-                                        
-                                
-                                
-                                    <?php $color_count++; endwhile; ?>
-                                    
-                                </ul>
-                            </div>
-                        <?php } ?>
+
+    $color_count = 0;
+    while (have_rows('variations_images', $vehicle_id)):
+        the_row();
+
+        ?>
+                                <?php
+    $images = get_sub_field('images');
+        $color_image = get_sub_field('color_image');
+        $color_name = get_sub_field('color_name');
+
+        $size = 'full'; // (thumbnail, medium, large, full or custom size)
+        ?>
+
+
+
+                                <li>
+                                    <a href="javascript:void(0)" class="change_slide" data-slide="<?php if ($color_count == 0) {echo '1';} else { $final_slide = $color_image_array[$color_count - 1];
+            $final_slide++;
+            echo $final_slide;}?>">
+                                        <?php echo wp_get_attachment_image($color_image['id'], $size); ?>
+                                    </a>
+                                    <span><?php echo $color_name; ?></span>
+                                </li>
+
+
+
+
+                                <?php $color_count++;endwhile;?>
+
+                            </ul>
+                        </div>
+                        <?php }?>
                         <div class="modal-right">
                             <ul class="pick-modal-right-ul">
                                 <li class="pick-modal-right-li">
                                     <a href="#">
                                         <div class="pick-modal-right-img">
-                                            <img src="<?php echo get_template_directory_uri().'/assets/images/';?>location.png"
+                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/'; ?>location.png"
                                                 alt="">
                                         </div>
                                         <span>
@@ -233,7 +234,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                 <li class="pick-modal-right-li">
                                     <a href="#">
                                         <div class="pick-modal-right-img">
-                                            <img src="<?php echo get_template_directory_uri().'/assets/images/';?>info.png"
+                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/'; ?>info.png"
                                                 alt="">
                                         </div>
                                         <span>
@@ -246,7 +247,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                         data-bs-target="#ReviewModal">
 
                                         <div class="pick-modal-right-img">
-                                            <img src="<?php echo get_template_directory_uri().'/assets/images/';?>review.png"
+                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/'; ?>review.png"
                                                 alt="">
                                         </div>
                                         <span>
@@ -257,7 +258,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                 <li class="pick-modal-right-li">
                                     <a href="#">
                                         <div class="pick-modal-right-img">
-                                            <img src="<?php echo get_template_directory_uri().'/assets/images/';?>dealer.png"
+                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/'; ?>dealer.png"
                                                 alt="">
                                         </div>
                                         <span>
@@ -365,7 +366,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                                     Review</label>
                                                                 <!-- <button class="btn upload_btn">
                                                                     <span>
-                                                                        <img src="<?php echo get_template_directory_uri().'/assets/images/';?>upload.png"
+                                                                        <img src="<?php echo get_template_directory_uri() . '/assets/images/'; ?>upload.png"
                                                                             alt="">
                                                                     </span>
                                                                     UPLOAD IMAGE(S)/VIDEO(S)
@@ -378,7 +379,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                                             <label for="image_uploads"
                                                                                 class="img-upload-btn btn upload_btn">
                                                                                 <span>
-                                                                                    <img src="<?php echo get_template_directory_uri().'/assets/images/';?>upload.png"
+                                                                                    <img src="<?php echo get_template_directory_uri() . '/assets/images/'; ?>upload.png"
                                                                                         alt="">
                                                                                 </span>
                                                                                 UPLOAD IMAGE(S)/VIDEO(S)
@@ -495,76 +496,76 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
                         <?php
-                        $active_tab = '';
-                        $e_show_modal_image = '';
-                        $c_show_modal_image = '';
-                        $d_show_modal_image = '';
-                        $ds_show_modal_image = '';
+$active_tab = '';
+$e_show_modal_image = '';
+$c_show_modal_image = '';
+$d_show_modal_image = '';
+$ds_show_modal_image = '';
 
-                        $e_show = get_field('e_show', $vehicle_id);
-                        $c_show = get_field('c_show', $vehicle_id);
-                        $d_show = get_field('d_show', $vehicle_id);
-                        $ds_show = get_field('ds_show', $vehicle_id);
+$e_show = get_field('e_show', $vehicle_id);
+$c_show = get_field('c_show', $vehicle_id);
+$d_show = get_field('d_show', $vehicle_id);
+$ds_show = get_field('ds_show', $vehicle_id);
 
-                        if ($e_show == true) {
-                            $active_tab = 'e_show';
-                        } else if ($e_show == true) {
-                            $active_tab = 'c_show';
-                        } else if ($e_show == true) {
-                            $active_tab = 'd_show';
-                        } else if ($e_show == true) {
-                            $active_tab = 'ds_show';
-                        }
+if ($e_show == true) {
+    $active_tab = 'e_show';
+} else if ($e_show == true) {
+    $active_tab = 'c_show';
+} else if ($e_show == true) {
+    $active_tab = 'd_show';
+} else if ($e_show == true) {
+    $active_tab = 'ds_show';
+}
 
-                        if ($e_show == true) { ?>
+if ($e_show == true) {?>
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link <?php if ($active_tab == 'e_show') {
-                                echo "active";
-                            } ?>" data-bs-toggle="pill" data-bs-target="#e_show" type="button" role="tab"
-                                aria-controls="e_show" aria-selected="true">ENGINE</button>
+    echo "active";
+}?>" data-bs-toggle="pill" data-bs-target="#e_show" type="button" role="tab" aria-controls="e_show"
+                                aria-selected="true">ENGINE</button>
                         </li>
 
-                        <?php } ?>
+                        <?php }?>
 
                         <?php
 
-                        if ($c_show == true) { ?>
+if ($c_show == true) {?>
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link <?php if ($active_tab == 'c_show') {
-                                echo "active";
-                            } ?>" data-bs-toggle="pill" data-bs-target="#c_show" type="button" role="tab"
-                                aria-controls="c_show" aria-selected="true">CHASSIS</button>
+    echo "active";
+}?>" data-bs-toggle="pill" data-bs-target="#c_show" type="button" role="tab" aria-controls="c_show"
+                                aria-selected="true">CHASSIS</button>
                         </li>
 
-                        <?php } ?>
+                        <?php }?>
 
                         <?php
 
-                        if ($d_show == true) { ?>
+if ($d_show == true) {?>
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link <?php if ($active_tab == 'd_show') {
-                                echo "active";
-                            } ?>" data-bs-toggle="pill" data-bs-target="#d_show" type="button" role="tab"
-                                aria-controls="d_show" aria-selected="true">DRIVETRAIN</button>
+    echo "active";
+}?>" data-bs-toggle="pill" data-bs-target="#d_show" type="button" role="tab" aria-controls="d_show"
+                                aria-selected="true">DRIVETRAIN</button>
                         </li>
 
-                        <?php } ?>
+                        <?php }?>
 
                         <?php
 
-                        if ($ds_show == true) { ?>
+if ($ds_show == true) {?>
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link <?php if ($active_tab == 'ds_show') {
-                                echo "active";
-                            } ?>" data-bs-toggle="pill" data-bs-target="#ds_show" type="button" role="tab"
-                                aria-controls="ds_show" aria-selected="true">DESIGN</button>
+    echo "active";
+}?>" data-bs-toggle="pill" data-bs-target="#ds_show" type="button" role="tab" aria-controls="ds_show"
+                                aria-selected="true">DESIGN</button>
                         </li>
 
-                        <?php } ?>
+                        <?php }?>
 
 
 
@@ -576,31 +577,31 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
             </div>
             <div class="tab-content" id="pills-tabContent">
                 <?php
-                $e_description = [];
-                $ed_count = 0;
-                if (have_rows('engine_posts_content', $vehicle_id)) { ?>
+$e_description = [];
+$ed_count = 0;
+if (have_rows('engine_posts_content', $vehicle_id)) {?>
                 <div class="tab-pane fade <?php if ($active_tab == 'e_show') {
-                        echo "show active";
-                    } ?>" id="e_show" role="tabpanel">
+    echo "show active";
+}?>" id="e_show" role="tabpanel">
                     <?php
-                    $e_count = 1;
-                    while (have_rows('engine_posts_content', $vehicle_id)):
-                        the_row();
-                        $title = get_sub_field('title');
-                        $image = get_sub_field('image');
-                        if ($e_show_modal_image == '') {
-                            $e_show_modal_image = $image;
-                        }
-                        $description = get_sub_field('description');
-                        $e_description[$ed_count]['title'] = $title;
-                        $e_description[$ed_count]['description'] = $description;
-                    ?>
-                    <?php if ($e_count == 1) { ?>
+$e_count = 1;
+    while (have_rows('engine_posts_content', $vehicle_id)):
+        the_row();
+        $title = get_sub_field('title');
+        $image = get_sub_field('image');
+        if ($e_show_modal_image == '') {
+            $e_show_modal_image = $image;
+        }
+        $description = get_sub_field('description');
+        $e_description[$ed_count]['title'] = $title;
+        $e_description[$ed_count]['description'] = $description;
+        ?>
+                    <?php if ($e_count == 1) {?>
                     <div class="row">
-                        <?php } ?>
+                        <?php }?>
                         <?php $show_in_list = get_sub_field('show_in_list');
-                        if ($show_in_list == true) { ?>
-                        <div class="col-md-4">
+        if ($show_in_list == true) {?>
+                        <div class="col-12 col-sm-12 col-md-6 col-xl-4 col-lg-4">
                             <div class="custom-card-main">
                                 <button class="custom-card-button">
                                     <div class="custom-card-img">
@@ -627,43 +628,43 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                 </button>
                             </div>
                         </div>
-                        <?php } ?>
-                        <?php if ($e_count == 3) { ?>
+                        <?php }?>
+                        <?php if ($e_count == 3) {?>
                     </div>
                     <?php $e_count = 0;
-                            $show_in_list = false;
-                            break;
-                        } ?>
+            $show_in_list = false;
+            break;
+        }?>
                     <?php $e_count++;
-                        $ed_count++;
-                    endwhile; ?>
+        $ed_count++;
+    endwhile;?>
                 </div>
-                <?php } ?>
+                <?php }?>
                 <?php
-                $cd_count = 0;
-                $c_description = [];
-                if (have_rows('chassis_posts_content_copy', $vehicle_id)) { ?>
+$cd_count = 0;
+$c_description = [];
+if (have_rows('chassis_posts_content_copy', $vehicle_id)) {?>
                 <div class="tab-pane fade <?php if ($active_tab == 'c_show') {
-                        echo "show active";
-                    } ?>" id="c_show" role="tabpanel">
+    echo "show active";
+}?>" id="c_show" role="tabpanel">
                     <?php
-                    $e_count = 1;
-                    while (have_rows('chassis_posts_content_copy', $vehicle_id)):
-                        the_row();
-                        $title = get_sub_field('title');
-                        $image = get_sub_field('image');
-                        if ($_show_modal_image == '') {
-                            $c_show_modal_image = $image;
-                        }
-                        $description = get_sub_field('description');
-                        $c_description[$cd_count]['title'] = $title;
-                        $c_description[$cd_count]['description'] = $description;
-                    ?>
-                    <?php if ($e_count == 1) { ?>
+$e_count = 1;
+    while (have_rows('chassis_posts_content_copy', $vehicle_id)):
+        the_row();
+        $title = get_sub_field('title');
+        $image = get_sub_field('image');
+        if ($_show_modal_image == '') {
+            $c_show_modal_image = $image;
+        }
+        $description = get_sub_field('description');
+        $c_description[$cd_count]['title'] = $title;
+        $c_description[$cd_count]['description'] = $description;
+        ?>
+                    <?php if ($e_count == 1) {?>
                     <div class="row">
                         <?php }
-                        $show_in_list = get_sub_field('show_in_list');
-                        if ($show_in_list == true) { ?>
+        $show_in_list = get_sub_field('show_in_list');
+        if ($show_in_list == true) {?>
                         <div class="col-md-4">
                             <div class="custom-card-main">
                                 <button class="custom-card-button">
@@ -693,42 +694,42 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                             </div>
                         </div>
                         <?php }
-                        if ($e_count == 3) { ?>
+        if ($e_count == 3) {?>
                     </div>
                     <?php $e_count = 0;
-                            $show_in_list = false;
-                            break;
-                        } ?>
+            $show_in_list = false;
+            break;
+        }?>
                     <?php $e_count++;
-                        $cd_count++;
-                    endwhile; ?>
+        $cd_count++;
+    endwhile;?>
                 </div>
-                <?php } ?>
+                <?php }?>
                 <?php
-                $d_description = [];
-                $dd_count = 0;
-                if (have_rows('drivetrain_posts_content', $vehicle_id)) { ?>
+$d_description = [];
+$dd_count = 0;
+if (have_rows('drivetrain_posts_content', $vehicle_id)) {?>
                 <div class="tab-pane fade <?php if ($active_tab == 'd_show') {
-                        echo "show active";
-                    } ?>" id="d_show" role="tabpanel">
+    echo "show active";
+}?>" id="d_show" role="tabpanel">
                     <?php
-                    $e_count = 1;
-                    while (have_rows('drivetrain_posts_content', $vehicle_id)):
-                        the_row();
-                        $title = get_sub_field('title');
-                        $image = get_sub_field('image');
-                        if ($d_show_modal_image == '') {
-                            $d_show_modal_image = $image;
-                        }
-                        $description = get_sub_field('description');
-                        $d_description[$dd_count]['title'] = $title;
-                        $d_description[$dd_count]['description'] = $description;
-                    ?>
-                    <?php if ($e_count == 1) { ?>
+$e_count = 1;
+    while (have_rows('drivetrain_posts_content', $vehicle_id)):
+        the_row();
+        $title = get_sub_field('title');
+        $image = get_sub_field('image');
+        if ($d_show_modal_image == '') {
+            $d_show_modal_image = $image;
+        }
+        $description = get_sub_field('description');
+        $d_description[$dd_count]['title'] = $title;
+        $d_description[$dd_count]['description'] = $description;
+        ?>
+                    <?php if ($e_count == 1) {?>
                     <div class="row">
                         <?php }
-                        $show_in_list = get_sub_field('show_in_list');
-                        if ($show_in_list == true) { ?>
+        $show_in_list = get_sub_field('show_in_list');
+        if ($show_in_list == true) {?>
                         <div class="col-md-4">
                             <div class="custom-card-main">
                                 <button class="custom-card-button">
@@ -758,42 +759,42 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                             </div>
                         </div>
                         <?php }
-                        if ($e_count == 3) { ?>
+        if ($e_count == 3) {?>
                     </div>
                     <?php $e_count = 0;
-                            $show_in_list = false;
-                            break;
-                        } ?>
+            $show_in_list = false;
+            break;
+        }?>
                     <?php $e_count++;
-                        $dd_count++;
-                    endwhile; ?>
+        $dd_count++;
+    endwhile;?>
                 </div>
-                <?php } ?>
+                <?php }?>
                 <?php
-                $ds_description = [];
-                $dds_count = 0;
-                if (have_rows('design_posts_content', $vehicle_id)) { ?>
+$ds_description = [];
+$dds_count = 0;
+if (have_rows('design_posts_content', $vehicle_id)) {?>
                 <div class="tab-pane fade <?php if ($active_tab == 'ds_show') {
-                        echo "show active";
-                    } ?>" id="ds_show" role="tabpanel">
+    echo "show active";
+}?>" id="ds_show" role="tabpanel">
                     <?php
-                    $e_count = 1;
-                    while (have_rows('design_posts_content', $vehicle_id)):
-                        the_row();
-                        $title = get_sub_field('title');
-                        $image = get_sub_field('image');
-                        if ($ds_show_modal_image == '') {
-                            $ds_show_modal_image = $image;
-                        }
-                        $description = get_sub_field('description');
-                        $ds_description[$dds_count]['title'] = $title;
-                        $ds_description[$dds_count]['description'] = $description;
-                    ?>
-                    <?php if ($e_count == 1) { ?>
+$e_count = 1;
+    while (have_rows('design_posts_content', $vehicle_id)):
+        the_row();
+        $title = get_sub_field('title');
+        $image = get_sub_field('image');
+        if ($ds_show_modal_image == '') {
+            $ds_show_modal_image = $image;
+        }
+        $description = get_sub_field('description');
+        $ds_description[$dds_count]['title'] = $title;
+        $ds_description[$dds_count]['description'] = $description;
+        ?>
+                    <?php if ($e_count == 1) {?>
                     <div class="row">
                         <?php }
-                        $show_in_list = get_sub_field('show_in_list');
-                        if ($show_in_list == true) { ?>
+        $show_in_list = get_sub_field('show_in_list');
+        if ($show_in_list == true) {?>
                         <div class="col-md-4">
                             <div class="custom-card-main">
                                 <button class="custom-card-button">
@@ -822,17 +823,17 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                             </div>
                         </div>
                         <?php }
-                        if ($e_count == 3) { ?>
+        if ($e_count == 3) {?>
                     </div>
                     <?php $e_count = 0;
-                            $show_in_list = false;
-                            break;
-                        } ?>
+            $show_in_list = false;
+            break;
+        }?>
                     <?php $e_count++;
-                        $dds_count++;
-                    endwhile; ?>
+        $dds_count++;
+    endwhile;?>
                 </div>
-                <?php } ?>
+                <?php }?>
             </div>
             <div class="row">
                 <div class="col-md-12 container-xxxl container-xxl container">
@@ -864,43 +865,43 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                 <div class="modal-body">
                                     <div>
                                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                            <?php if ($e_show == true) { ?>
+                                            <?php if ($e_show == true) {?>
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" data-bs-toggle="pill"
                                                     data-bs-target="#modal-pills-Engine" type="button" role="tab"
                                                     aria-controls="pills-Engine" aria-selected="true">Engine</button>
                                             </li>
-                                            <?php } ?>
-                                            <?php if ($c_show == true) { ?>
+                                            <?php }?>
+                                            <?php if ($c_show == true) {?>
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link" data-bs-toggle="pill"
                                                     data-bs-target="#modal-pills-chassis" type="button" role="tab"
                                                     aria-controls="pills-chassis" aria-selected="false">chassis
                                                 </button>
                                             </li>
-                                            <?php } ?>
+                                            <?php }?>
 
-                                            <?php if ($d_show == true) { ?>
+                                            <?php if ($d_show == true) {?>
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link" data-bs-toggle="pill"
                                                     data-bs-target="#modal-pills-drivetrain" type="button" role="t b" a
                                                     aria-controls="pills-drivetrain"
                                                     aria-selected="false">Drivetrain</button>
                                             </li>
-                                            <?php } ?>
-                                            <?php if ($ds_show == true) { ?>
+                                            <?php }?>
+                                            <?php if ($ds_show == true) {?>
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link" data-bs-toggle="pill"
                                                     data-bs-target="#modal-pills-Design" type="button" role="tab"
                                                     aria-controls="pills-Design" aria-selected="false">Design</button>
                                             </li>
-                                            <?php } ?>
+                                            <?php }?>
                                         </ul>
                                     </div>
-                                    <?php if ($e_show == true) { ?>
+                                    <?php if ($e_show == true) {?>
                                     <div class="custom-features-description-modal">
                                         <div class="row">
-                                            
+
                                             <div class="col-md-6">
                                                 <div class="custom-features-description-img">
                                                     <img class="img img-fluid" src="<?php echo $e_show_modal_image; ?>">
@@ -911,26 +912,26 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                     <h2 class="m_title">Engine</h2>
                                                     <div class="description-some-text">
                                                         <?php foreach ($e_description as $content) {
-                                                    if ($content['title']) {
-                                                        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                                    }
-                                                    if ($content['description']) {
-                                                        echo "<div>";
-                                                        echo $content['description'];
-                                                        echo "</div>";
-                                                    }
-                                                } ?>
+    if ($content['title']) {
+        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+    }
+    if ($content['description']) {
+        echo "<div>";
+        echo $content['description'];
+        echo "</div>";
+    }
+}?>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
-                                    <?php } ?>
-                                    <?php if ($c_show == true) { ?>
+                                    <?php }?>
+                                    <?php if ($c_show == true) {?>
                                     <div class="custom-features-description-modal">
                                         <div class="row">
-                                            
+
                                             <div class="col-md-6">
                                                 <div class="custom-features-description-img">
                                                     <img class="img img-fluid" src="<?php echo $c_show_modal_image; ?>">
@@ -941,27 +942,27 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                     <h2 class="m_title">Chassis</h2>
                                                     <div class="description-some-text">
                                                         <?php foreach ($c_description as $content) {
-                                                    if ($content['title']) {
-                                                        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                                    }
-                                                    if ($content['description']) {
-                                                        echo "<div>";
-                                                        echo $content['description'];
-                                                        echo "</div>";
-                                                    }
+    if ($content['title']) {
+        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+    }
+    if ($content['description']) {
+        echo "<div>";
+        echo $content['description'];
+        echo "</div>";
+    }
 
-                                                } ?>
+}?>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
-                                    <?php } ?>
-                                    <?php if ($d_show == true) { ?>
+                                    <?php }?>
+                                    <?php if ($d_show == true) {?>
                                     <div class="custom-features-description-modal">
                                         <div class="row">
-                                            
+
                                             <div class="col-md-6">
                                                 <div class="custom-features-description-img">
                                                     <img class="img img-fluid" src="<?php echo $d_show_modal_image; ?>">
@@ -971,24 +972,24 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                 <div class="m_description">
                                                     <h2 class="m_title">Drivetrain</h2>
                                                     <?php foreach ($d_description as $content) {
-                                                    if ($content['title']) {
-                                                        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                                    }
-                                                    if ($content['description']) {
-                                                        echo $content['description'];
-                                                    }
+    if ($content['title']) {
+        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+    }
+    if ($content['description']) {
+        echo $content['description'];
+    }
 
-                                                } ?>
+}?>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
-                                    <?php } ?>
-                                    <?php if ($ds_show == true) { ?>
+                                    <?php }?>
+                                    <?php if ($ds_show == true) {?>
                                     <div class="custom-features-description-modal">
                                         <div class="row">
-                                            
+
                                             <div class="col-md-6">
                                                 <div class="custom-features-description-img">
                                                     <img class="img img-fluid"
@@ -1000,22 +1001,22 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                     <h2 class="m_title">Design</h2>
                                                     <div class="description-some-text">
                                                         <?php foreach ($ds_description as $content) {
-                                                    if ($content['title']) {
-                                                        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                                    }
-                                                    if ($content['description']) {
-                                                        echo "<div>";
-                                                        echo $content['description'];
-                                                        echo "</div>";
-                                                    }
-                                                } ?>
+    if ($content['title']) {
+        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+    }
+    if ($content['description']) {
+        echo "<div>";
+        echo $content['description'];
+        echo "</div>";
+    }
+}?>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
-                                    <?php } ?>
+                                    <?php }?>
                                 </div>
                             </div>
                             <!-- <div class="modal-footer">
@@ -1067,12 +1068,12 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                 <div class="custom-specification-wrapper">
                     <div class="row">
                         <?php
-                        $s_e_show = get_field('s_e_show', $vehicle_id);
-                        $s_e_image = get_field('s_e_image', $vehicle_id);
-                        $s_e_title = get_field('s_e_title', $vehicle_id);
-                        $s_e_short_title = get_field('s_e_short_title', $vehicle_id);
-                        if ($s_e_show == true) {
-                        ?>
+$s_e_show = get_field('s_e_show', $vehicle_id);
+$s_e_image = get_field('s_e_image', $vehicle_id);
+$s_e_title = get_field('s_e_title', $vehicle_id);
+$s_e_short_title = get_field('s_e_short_title', $vehicle_id);
+if ($s_e_show == true) {
+    ?>
                         <div class="col-md-3 p-0">
                             <div class="custom-specification-card">
                                 <div class="custom-specification-card-content">
@@ -1088,12 +1089,12 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                             </div>
                         </div>
                         <?php }
-                        $s_d_show = get_field('s_d_show', $vehicle_id);
-                        $s_d_image = get_field('s_d_image', $vehicle_id);
-                        $s_d_title = get_field('s_d_title', $vehicle_id);
-                        $s_d_short_title = get_field('s_d_short_title', $vehicle_id);
-                        if ($s_d_show == true) {
-                        ?>
+$s_d_show = get_field('s_d_show', $vehicle_id);
+$s_d_image = get_field('s_d_image', $vehicle_id);
+$s_d_title = get_field('s_d_title', $vehicle_id);
+$s_d_short_title = get_field('s_d_short_title', $vehicle_id);
+if ($s_d_show == true) {
+    ?>
                         <div class="col-md-3 p-0">
                             <div class="custom-specification-card">
                                 <div class="custom-specification-card-content">
@@ -1111,12 +1112,12 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                             </div>
                         </div>
                         <?php }
-                        $s_c_show = get_field('s_c_show', $vehicle_id);
-                        $s_c_image = get_field('s_c_image', $vehicle_id);
-                        $s_c_title = get_field('s_c_title', $vehicle_id);
-                        $s_c_short_title = get_field('s_c_short_title', $vehicle_id);
-                        if ($s_c_show == true) {
-                        ?>
+$s_c_show = get_field('s_c_show', $vehicle_id);
+$s_c_image = get_field('s_c_image', $vehicle_id);
+$s_c_title = get_field('s_c_title', $vehicle_id);
+$s_c_short_title = get_field('s_c_short_title', $vehicle_id);
+if ($s_c_show == true) {
+    ?>
                         <div class="col-md-3 p-0">
                             <div class="custom-specification-card">
                                 <div class="custom-specification-card-content">
@@ -1134,12 +1135,12 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                             </div>
                         </div>
                         <?php }
-                        $dms_show = get_field('dms_show', $vehicle_id);
-                        $dms_image = get_field('dms_image', $vehicle_id);
-                        $dms_title = get_field('dms_title', $vehicle_id);
-                        $dms_short_title = get_field('dms_short_title', $vehicle_id);
-                        if ($dms_show == true) {
-                        ?>
+$dms_show = get_field('dms_show', $vehicle_id);
+$dms_image = get_field('dms_image', $vehicle_id);
+$dms_title = get_field('dms_title', $vehicle_id);
+$dms_short_title = get_field('dms_short_title', $vehicle_id);
+if ($dms_show == true) {
+    ?>
                         <div class="col-md-3 p-0">
                             <div class="custom-specification-card">
                                 <div class="custom-specification-card-content">
@@ -1156,7 +1157,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
 
                             </div>
                         </div>
-                        <?php } ?>
+                        <?php }?>
 
 
 
@@ -1193,13 +1194,13 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                     </div>
                                     <div class="modal-body">
                                         <?php
-                                        $s_e_show = get_field('s_e_show', $vehicle_id);
-                                        $s_e_title = get_field('s_e_title', $vehicle_id);
-                                        $s_e_short_title = get_field('s_e_short_title', $vehicle_id);
-                                        $s_e_popup_content = get_field('s_e_popup_content', $vehicle_id);
+$s_e_show = get_field('s_e_show', $vehicle_id);
+$s_e_title = get_field('s_e_title', $vehicle_id);
+$s_e_short_title = get_field('s_e_short_title', $vehicle_id);
+$s_e_popup_content = get_field('s_e_popup_content', $vehicle_id);
 
-                                        if ($s_e_show == true) {
-                                        ?>
+if ($s_e_show == true) {
+    ?>
                                         <div class="row">
                                             <div class="col-md-12 mscontent">
                                                 <h2 class="title">ENGINE</h2>
@@ -1208,15 +1209,15 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php } ?>
+                                        <?php }?>
                                         <?php
-                                        $s_d_show = get_field('s_d_show', $vehicle_id);
-                                        $s_d_title = get_field('s_d_title', $vehicle_id);
-                                        $s_d_short_title = get_field('s_d_short_title', $vehicle_id);
-                                        $s_d_popup_content = get_field('s_d_popup_content', $vehicle_id);
+$s_d_show = get_field('s_d_show', $vehicle_id);
+$s_d_title = get_field('s_d_title', $vehicle_id);
+$s_d_short_title = get_field('s_d_short_title', $vehicle_id);
+$s_d_popup_content = get_field('s_d_popup_content', $vehicle_id);
 
-                                        if ($s_d_show == true) {
-                                        ?>
+if ($s_d_show == true) {
+    ?>
                                         <div class="row">
                                             <div class="col-md-12 mscontent">
                                                 <h2 class="title">DRIVE TRAIN</h2>
@@ -1225,15 +1226,15 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php } ?>
+                                        <?php }?>
                                         <?php
-                                        $s_c_show = get_field('s_c_show', $vehicle_id);
-                                        $s_c_title = get_field('s_c_title', $vehicle_id);
-                                        $s_c_short_title = get_field('s_c_short_title', $vehicle_id);
-                                        $s_c_popup_content = get_field('s_c_popup_content', $vehicle_id);
+$s_c_show = get_field('s_c_show', $vehicle_id);
+$s_c_title = get_field('s_c_title', $vehicle_id);
+$s_c_short_title = get_field('s_c_short_title', $vehicle_id);
+$s_c_popup_content = get_field('s_c_popup_content', $vehicle_id);
 
-                                        if ($s_c_show == true) {
-                                        ?>
+if ($s_c_show == true) {
+    ?>
                                         <div class="row">
                                             <div class="col-md-12 mscontent">
                                                 <h2 class="title">CHASSIS/SUSPENSION/BRAKES</h2>
@@ -1242,15 +1243,15 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php } ?>
+                                        <?php }?>
                                         <?php
-                                        $dms_show = get_field('dms_show', $vehicle_id);
-                                        $dms_title = get_field('dms_title', $vehicle_id);
-                                        $dms_short_title = get_field('dms_short_title', $vehicle_id);
-                                        $dms_popup_content = get_field('dms_popup_content', $vehicle_id);
+$dms_show = get_field('dms_show', $vehicle_id);
+$dms_title = get_field('dms_title', $vehicle_id);
+$dms_short_title = get_field('dms_short_title', $vehicle_id);
+$dms_popup_content = get_field('dms_popup_content', $vehicle_id);
 
-                                        if ($dms_show == true) {
-                                        ?>
+if ($dms_show == true) {
+    ?>
                                         <div class="row">
                                             <div class="col-md-12 mscontent">
                                                 <h2 class="title">DIMENSIONS</h2>
@@ -1259,14 +1260,14 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php } ?>
+                                        <?php }?>
                                         <?php
-                                        $other_show = get_field('other_show', $vehicle_id);
+$other_show = get_field('other_show', $vehicle_id);
 
-                                        $other_popup_content = get_field('other_popup_content', $vehicle_id);
+$other_popup_content = get_field('other_popup_content', $vehicle_id);
 
-                                        if ($other_show == true) {
-                                        ?>
+if ($other_show == true) {
+    ?>
                                         <div class="row">
                                             <div class="col-md-12 mscontent">
                                                 <h2 class="title">OTHER</h2>
@@ -1275,14 +1276,14 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php } ?>
+                                        <?php }?>
                                         <?php
-                                        $fwi_show = get_field('fwi_show', $vehicle_id);
+$fwi_show = get_field('fwi_show', $vehicle_id);
 
-                                        $fwi_popup_content = get_field('fwi_popup_content', $vehicle_id);
+$fwi_popup_content = get_field('fwi_popup_content', $vehicle_id);
 
-                                        if ($fwi_show == true) {
-                                        ?>
+if ($fwi_show == true) {
+    ?>
                                         <div class="row">
                                             <div class="col-md-12 mscontent">
                                                 <h2 class="title">FACTORY WARRANTY INFORMATION</h2>
@@ -1291,14 +1292,14 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php } ?>
+                                        <?php }?>
 
                                     </div>
                                     <div class="modal-footer">
 
                                         <button type="button" class="print_specifications btn btn-primary">PRINT YOUR
                                             ATV</button>
-											
+
                                     </div>
                                 </div>
                             </div>
@@ -1342,8 +1343,8 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                             <p class="confirmation-text">By checking this box, I agree to: (1) receive recurring automated marketing and non-marketing calls, texts, and emails from American AODES Motor Co., Inc. and participating AODES and Acura dealers at any phone numbers and email addresses provided above (consent not required to make a purchase, msg & data rates apply, reply STOP to opt-out of texts or HELP for help); (2) the <a href="#" class="highlighted-text">SMS Terms</a> (including arbitration provision); and (3) the <a href="#" class="highlighted-text">Privacy Policy</a> (which describes how AODES collects and uses personal information and any privacy rights I may have).</p>
                         </label>
                       </div>
-                      
-                      <a href="#" class="form-submit-button">SEND</a>  
+
+                      <a href="#" class="form-submit-button">SEND</a>
                 </div>-->
                 </div>
             </div>
@@ -1351,4 +1352,4 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
     </div>
 </section>
 
-<?php get_footer(); ?>
+<?php get_footer();?>

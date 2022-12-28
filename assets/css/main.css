@@ -3915,7 +3915,9 @@ ul#menu-left-sidebar li a {
     font-family: 'Robinson';
 }
 
-
+.custom-card-main {
+    margin: 0 0 30px 0;
+}
 
 
 
@@ -4871,6 +4873,10 @@ ul#menu-left-sidebar li a {
 }
 
 @media screen and (max-width:992px) {
+    .custom_product_detail_wrap .specifications-title .specifications-section-title {
+        left: 7%;
+    }
+
     .blog-details-content .woocommerce-MyAccount-content {
         padding: 0 16px;
     }
@@ -5481,6 +5487,10 @@ ul#menu-left-sidebar li a {
 }
 
 @media screen and (max-width:767px) {
+    .custom_product_detail_wrap .specifications-title .specifications-section-title {
+        left: 6%;
+    }
+
     .tinv-wishlist.woocommerce.tinv-wishlist-clear {
         padding: 0 15px;
     }
@@ -5536,6 +5546,10 @@ ul#menu-left-sidebar li a {
 }
 
 @media screen and (max-width:576px) {
+    .custom_product_detail_wrap .specifications-title .specifications-section-title {
+        left: 6%;
+    }
+
     .blog-details-content .woocommerce-MyAccount-content {
         padding: 0 16px;
     }
