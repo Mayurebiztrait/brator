@@ -138,28 +138,28 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                             <ul class="product-details-ul">
                                 <li>
                                     <a>
-                                        <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/pick-1.png"
+                                        <img src="<?php echo get_template_directory_uri().'/assets/images/';?>pick-1.png"
                                             alt="">
                                     </a>
                                     <span>Black</span>
                                 </li>
                                 <li>
                                     <a>
-                                        <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/pick-2.png"
+                                        <img src="<?php echo get_template_directory_uri().'/assets/images/';?>pick-2.png"
                                             alt="">
                                     </a>
                                     <span>Black</span>
                                 </li>
                                 <li>
                                     <a>
-                                        <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/pick-3.png"
+                                        <img src="<?php echo get_template_directory_uri().'/assets/images/';?>pick-3.png"
                                             alt="">
                                     </a>
                                     <span>Black</span>
                                 </li>
                                 <li>
                                     <a>
-                                        <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/pick-4.png"
+                                        <img src="<?php echo get_template_directory_uri().'/assets/images/';?>pick-4.png"
                                             alt="">
                                     </a>
                                     <span>Black</span>
@@ -172,7 +172,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                 <li class="pick-modal-right-li">
                                     <a href="#">
                                         <div class="pick-modal-right-img">
-                                            <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/location.png"
+                                            <img src="<?php echo get_template_directory_uri().'/assets/images/';?>location.png"
                                                 alt="">
                                         </div>
                                         <span>
@@ -183,7 +183,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                 <li class="pick-modal-right-li">
                                     <a href="#">
                                         <div class="pick-modal-right-img">
-                                            <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/info.png"
+                                            <img src="<?php echo get_template_directory_uri().'/assets/images/';?>info.png"
                                                 alt="">
                                         </div>
                                         <span>
@@ -196,7 +196,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                         data-bs-target="#ReviewModal">
 
                                         <div class="pick-modal-right-img">
-                                            <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/review.png"
+                                            <img src="<?php echo get_template_directory_uri().'/assets/images/';?>review.png"
                                                 alt="">
                                         </div>
                                         <span>
@@ -207,7 +207,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                 <li class="pick-modal-right-li">
                                     <a href="#">
                                         <div class="pick-modal-right-img">
-                                            <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/dealer.png"
+                                            <img src="<?php echo get_template_directory_uri().'/assets/images/';?>dealer.png"
                                                 alt="">
                                         </div>
                                         <span>
@@ -315,7 +315,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                                     Review</label>
                                                                 <!-- <button class="btn upload_btn">
                                                                     <span>
-                                                                        <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/upload.png"
+                                                                        <img src="<?php echo get_template_directory_uri().'/assets/images/';?>upload.png"
                                                                             alt="">
                                                                     </span>
                                                                     UPLOAD IMAGE(S)/VIDEO(S)
@@ -328,7 +328,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                                             <label for="image_uploads"
                                                                                 class="img-upload-btn btn upload_btn">
                                                                                 <span>
-                                                                                    <img src="http://localhost:8080/aodesbiz/wp-content/uploads/2022/12/upload.png"
+                                                                                    <img src="<?php echo get_template_directory_uri().'/assets/images/';?>upload.png"
                                                                                         alt="">
                                                                                 </span>
                                                                                 UPLOAD IMAGE(S)/VIDEO(S)
@@ -847,9 +847,10 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                             <?php } ?>
                                         </ul>
                                     </div>
+                                    <?php if ($e_show == true) { ?>
                                     <div class="custom-features-description-modal">
                                         <div class="row">
-                                            <?php if ($e_show == true) { ?>
+                                            
                                             <div class="col-md-6">
                                                 <div class="custom-features-description-img">
                                                     <img class="img img-fluid" src="<?php echo $e_show_modal_image; ?>">
@@ -872,22 +873,24 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                     </div>
                                                 </div>
                                             </div>
-                                            <?php } ?>
+                                            
                                         </div>
                                     </div>
+                                    <?php } ?>
+                                    <?php if ($c_show == true) { ?>
                                     <div class="custom-features-description-modal">
                                         <div class="row">
-                                            <?php if ($d_show == true) { ?>
+                                            
                                             <div class="col-md-6">
                                                 <div class="custom-features-description-img">
-                                                    <img class="img img-fluid" src="<?php echo $d_show_modal_image; ?>">
+                                                    <img class="img img-fluid" src="<?php echo $c_show_modal_image; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="m_description">
-                                                    <h2 class="m_title">Drivetrain</h2>
+                                                    <h2 class="m_title">Chassis</h2>
                                                     <div class="description-some-text">
-                                                        <?php foreach ($d_description as $content) {
+                                                        <?php foreach ($c_description as $content) {
                                                     if ($content['title']) {
                                                         echo '<h3 class="p_title">' . $content['title'] . '</h3>';
                                                     }
@@ -901,12 +904,14 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                     </div>
                                                 </div>
                                             </div>
-                                            <?php } ?>
+                                            
                                         </div>
                                     </div>
+                                    <?php } ?>
+                                    <?php if ($d_show == true) { ?>
                                     <div class="custom-features-description-modal">
                                         <div class="row">
-                                            <?php if ($d_show == true) { ?>
+                                            
                                             <div class="col-md-6">
                                                 <div class="custom-features-description-img">
                                                     <img class="img img-fluid" src="<?php echo $d_show_modal_image; ?>">
@@ -926,12 +931,14 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                 } ?>
                                                 </div>
                                             </div>
-                                            <?php } ?>
+                                            
                                         </div>
                                     </div>
+                                    <?php } ?>
+                                    <?php if ($ds_show == true) { ?>
                                     <div class="custom-features-description-modal">
                                         <div class="row">
-                                            <?php if ($ds_show == true) { ?>
+                                            
                                             <div class="col-md-6">
                                                 <div class="custom-features-description-img">
                                                     <img class="img img-fluid"
@@ -955,9 +962,10 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                                                     </div>
                                                 </div>
                                             </div>
-                                            <?php } ?>
+                                            
                                         </div>
                                     </div>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <!-- <div class="modal-footer">
@@ -1111,7 +1119,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
                         <!-- Button trigger modal -->
                         <a href="" type="button" class="" data-bs-toggle="modal"
                             data-bs-target="#view_all_specification">
-                            View all specification
+                            View all specifications
                             <span class="custom-specification-card-svg">
                                 <svg width="12" height="19" viewBox="0 0 12 19">
                                     <path class="svg"
