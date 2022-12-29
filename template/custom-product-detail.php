@@ -449,36 +449,182 @@ if ($pick_colot_set == 1) {
     <section class="gallary-section-main">
         <div class="container-xxxl container-xxl container">
             <div class="row">
-                <div class="gallary-wrapper">
-                    <div class="gallary-wrapper-iteam">
-                        <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                            alt="">
-                    </div>
-                    <div class="gallary-wrapper-iteam">
-                        <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                            alt="">
-                    </div>
-                </div>
-                <div class="gallary-wrapper-main">
-                    <div class="gallary-wrapper-iteam">
-                        <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                            alt="">
-                    </div>
-                    <div class="gallary-wrapper-iteam">
-                        <div class="gellary-middal-part">
-                            <div class="gellary-middal-part-item">
-                                <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                                    alt="">
+                <div class="responsive">
+                    <div>
+                        <div class="gallary-wrapper">
+                            <div class="gallary-wrapper-iteam">
+                                <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                    data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                    data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+
+                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                        alt="">
+                                </a>
                             </div>
-                            <div class="gellary-middal-part-item">
-                                <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                                    alt="">
+                            <div class="gallary-wrapper-iteam">
+                                <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                    data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                    data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="gallary-wrapper-main">
+                            <div class="gallary-wrapper-iteam">
+                                <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                    data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                    data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="gallary-wrapper-iteam">
+                                <div class="gellary-middal-part">
+                                    <div class="gellary-middal-part-item">
+                                        <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                            data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                            data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                            <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                    <div class="gellary-middal-part-item">
+                                        <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                            data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                            data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                            <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallary-wrapper-iteam">
+                                <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                    data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                    data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                        alt="">
+                                </a>
+
                             </div>
                         </div>
                     </div>
-                    <div class="gallary-wrapper-iteam">
-                        <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
-                            alt="">
+                    <div>
+                        <div class="gallary-wrapper">
+                            <div class="gallary-wrapper-iteam">
+                                <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                    data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                    data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="gallary-wrapper-iteam">
+                                <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                    data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                    data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="gallary-wrapper-main">
+                            <div class="gallary-wrapper-iteam">
+                                <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                    data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                    data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="gallary-wrapper-iteam">
+                                <div class="gellary-middal-part">
+                                    <div class="gellary-middal-part-item">
+                                        <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                            data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                            data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                            <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                    <div class="gellary-middal-part-item">
+                                        <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                            data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                            data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                            <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallary-wrapper-iteam">
+                                <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                    data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                    data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="gallary-wrapper">
+                            <div class="gallary-wrapper-iteam">
+                                <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                    data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                    data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="gallary-wrapper-iteam">
+                                <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                    data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                    data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="gallary-wrapper-main">
+                            <div class="gallary-wrapper-iteam">
+                                <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                    data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                    data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="gallary-wrapper-iteam">
+                                <div class="gellary-middal-part">
+                                    <div class="gellary-middal-part-item">
+                                        <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                            data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                            data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                            <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                    <div class="gellary-middal-part-item">
+                                        <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                            data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                            data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                            <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallary-wrapper-iteam">
+                                <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
+                                    data-src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                    data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
+                                    <img src="https://powersports.honda.com/legacy/talon/assets/hl7/top-features/2022/2022-Talon-1000X-4-Twin-Cylinder-Engine-774x548.jpg"
+                                        alt="">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -665,7 +811,7 @@ $e_count = 1;
                         <?php }
         $show_in_list = get_sub_field('show_in_list');
         if ($show_in_list == true) {?>
-                        <div class="col-md-4">
+                        <div class="col-12 col-sm-12 col-md-6 col-xl-4 col-lg-4">
                             <div class="custom-card-main">
                                 <button class="custom-card-button">
                                     <div class="custom-card-img">
@@ -730,7 +876,7 @@ $e_count = 1;
                         <?php }
         $show_in_list = get_sub_field('show_in_list');
         if ($show_in_list == true) {?>
-                        <div class="col-md-4">
+                        <div class="col-12 col-sm-12 col-md-6 col-xl-4 col-lg-4">
                             <div class="custom-card-main">
                                 <button class="custom-card-button">
                                     <div class="custom-card-img">
@@ -795,7 +941,7 @@ $e_count = 1;
                         <?php }
         $show_in_list = get_sub_field('show_in_list');
         if ($show_in_list == true) {?>
-                        <div class="col-md-4">
+                        <div class="col-12 col-sm-12 col-md-6 col-xl-4 col-lg-4">
                             <div class="custom-card-main">
                                 <button class="custom-card-button">
                                     <div class="custom-card-img">
