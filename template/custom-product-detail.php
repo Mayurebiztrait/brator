@@ -1456,7 +1456,7 @@ if ($fwi_show == true) {
             </div>
         </div>
 </section>
-<section>
+<section style="background-image:('https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/contact-banner.png')">
     <div class="container">
         <div class="row">
 		<div class="col-md-4">
