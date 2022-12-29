@@ -63,13 +63,14 @@ var specialElementHandlers = {
         return true;
     }
 };
-
-$('#print_specifications').click(function () {
+jQuery(document).ready(function(){
+jQuery('#print_specifications').click(function () {
     doc.fromHTML($('#view_all_specification').html(), 15, 15, {
         'width': 170,
             'elementHandlers': specialElementHandlers
     });
     doc.save('sample-file.pdf');
+});
 });
 </script>
 <div class="custom_product_detail_wrap">
