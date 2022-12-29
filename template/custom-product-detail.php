@@ -60,7 +60,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
 <div id="editor"></div>
 
 <script>
-    var doc = new jsPDF();
+    var doc = new jsPDF('p', 'pt', 'letter');
     var specialElementHandlers = {
         '#editor': function (element, renderer) {
             return true;
