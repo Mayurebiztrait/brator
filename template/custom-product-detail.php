@@ -1313,6 +1313,11 @@ if ($fwi_show == true) {
 <section>
     <div class="container">
         <div class="row">
+		<div class="col-md-4">
+		<div class="inner-connent">
+		<h2>Stay<br>Connected</h2>
+		</div>
+		</div>
             <div class="col-md-8">
                 <div class="contact-form-wrapper">
                     <h5 class="contact-form-title">
