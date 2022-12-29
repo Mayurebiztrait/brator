@@ -68,7 +68,7 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
     };
 jQuery(document).ready(function(){
     jQuery('.print_specifications').click(function () {
-        doc.fromHTML(jQuery('#view_all_specification').html(), 15, 15, {
+        doc.addHTML(jQuery('#view_all_specification').html(), 15, 15, {
             'width': 170,
                 'elementHandlers': specialElementHandlers
         });
