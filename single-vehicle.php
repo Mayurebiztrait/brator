@@ -731,7 +731,7 @@ if ($pick_colot_set == 1) {
                                 the_row();
                                 $title = get_sub_field('title');
                                 $image = get_sub_field('image');
-                                if ($_show_modal_image == '') {
+                                if ($c_show_modal_image == '') {
                                     $c_show_modal_image = $image;
                                 }
                                 $description = get_sub_field('description');
