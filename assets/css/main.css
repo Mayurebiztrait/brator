@@ -3738,6 +3738,7 @@ ul#menu-left-sidebar li a {
     width: auto;
     margin: 0 auto;
     display: inline-block;
+    text-transform: uppercase;
 }
 
 .product-details-content {

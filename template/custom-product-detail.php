@@ -55,6 +55,29 @@ $base_msrp = get_field('base_msrp', $vehicle_id);
 $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single-post-thumbnail');
 
 ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+
+<div id="editor"></div>
+
+<script>
+    var doc = new jsPDF();
+    var specialElementHandlers = {
+        '#editor': function (element, renderer) {
+            return true;
+        }
+    };
+jQuery(document).ready(function(){
+    jQuery('.print_specifications').click(function () {
+        doc.fromHTML(jQuery('#view_all_specification').html(), 15, 15, {
+            'width': 170,
+                'elementHandlers': specialElementHandlers
+        });
+        doc.save('sample-file.pdf');
+    });
+	});
+
+    // This code is collected but useful, click below to jsfiddle link.
+</script>
 <div class="custom_product_detail_wrap">
     <section class="">
         <div class="container-xxxl container-xxl container">
@@ -1379,14 +1402,14 @@ if ($fwi_show == true) {
             </div>
         </div>
 </section>
-<section>
+<section class="main-section-contact">
     <div class="container">
         <div class="row">
 		<div class="col-md-4">
 		<div class="inner-connent">
 		<h2>Stay<br>Connected</h2>
 		</div>
-		</div>
+		</div> 
             <div class="col-md-8">
                 <div class="contact-form-wrapper">
                     <h5 class="contact-form-title">
