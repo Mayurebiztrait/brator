@@ -46,7 +46,7 @@ get_header(); ?>
                     ?>
                     <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
                         <div class="product-details-wrapper">
-                            <a href="<?php echo site_url('/simple-product-detail').'?vehicleid='.$vehicle_id;?>">
+                            <a href="<?php echo get_permalink();?>">
                             <?php if(isset($image[0])){ ?>    
                                 <div class="product-details-main-img">
                                     <img src="<?php echo $image[0];?>" alt="<?php the_title(); ?>" >
