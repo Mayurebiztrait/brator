@@ -1456,14 +1456,14 @@ if ($fwi_show == true) {
             </div>
         </div>
 </section>
-<section style="background-image:('https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/contact-banner.png')">
+<section style="background-image:url('https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/contact-banner.png')">
     <div class="container">
         <div class="row">
 		<div class="col-md-4">
 		<div class="inner-connent">
 		<h2>Stay<br>Connected</h2>
 		</div>
-		</div>
+		</div> 
             <div class="col-md-8">
                 <div class="contact-form-wrapper">
                     <h5 class="contact-form-title">
