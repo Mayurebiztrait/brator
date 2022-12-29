@@ -55,7 +55,7 @@ $base_msrp = get_field('base_msrp', $vehicle_id);
 $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single-post-thumbnail');
 
 ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
 
 <div id="editor"></div>
 
@@ -66,14 +66,15 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
             return true;
         }
     };
-
-    $('#cmd').click(function () {
-        doc.fromHTML($('#view_all_specification').html(), 15, 15, {
+jQuery(document).ready(function(){
+    jQuery('#cmd').click(function () {
+        doc.fromHTML(jQuery('#view_all_specification').html(), 15, 15, {
             'width': 170,
                 'elementHandlers': specialElementHandlers
         });
         doc.save('sample-file.pdf');
     });
+	});
 
     // This code is collected but useful, click below to jsfiddle link.
 </script>
