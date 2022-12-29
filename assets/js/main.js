@@ -9,7 +9,7 @@ jQuery( document ).ready(function() {
   jQuery("body").on("click", ".upload_btn", function () {
     jQuery('#upload_files').trigger('click');
   });
-  jQuery("body").on("click", ".print_specifications", function () {
+  /*jQuery("body").on("click", ".print_specifications", function () {
     html2canvas(jQuery('#view_all_specification')[0], {
         onrendered: function (canvas) {
             var data = canvas.toDataURL();
@@ -22,7 +22,7 @@ jQuery( document ).ready(function() {
             pdfMake.createPdf(docDefinition).download("specification.pdf");
         }
     });
-});
+});*/
   // end download
  
     const imgs = document.querySelectorAll('.img-select a');

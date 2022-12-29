@@ -55,6 +55,27 @@ $base_msrp = get_field('base_msrp', $vehicle_id);
 $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single-post-thumbnail');
 
 ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<div id="editor"></div>
+
+<script>
+    var doc = new jsPDF();
+    var specialElementHandlers = {
+        '#editor': function (element, renderer) {
+            return true;
+        }
+    };
+
+    $('#cmd').click(function () {
+        doc.fromHTML($('#view_all_specification').html(), 15, 15, {
+            'width': 170,
+                'elementHandlers': specialElementHandlers
+        });
+        doc.save('sample-file.pdf');
+    });
+
+    // This code is collected but useful, click below to jsfiddle link.
+</script>
 <div class="custom_product_detail_wrap">
     <section class="">
         <div class="container-xxxl container-xxl container">
