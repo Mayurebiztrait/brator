@@ -1189,12 +1189,14 @@ h.custom_product_detail_wrap r {
 }
 .stay-connected .stay-connected-highlighted-title,
 .stay-connected .stay-connected-title{
-    font-size: 52 !important;
+    font-size: 52px !important;
 }
 .custom_product_detail_wrap .stay-connected {
     background-image: url(../img/bg-form.jpg);
     padding: 50px 0px;
+    background-size: cover;
 }
+
 
 .custom_product_detail_wrap .form-submit-button {
     padding: 19px 120px;
