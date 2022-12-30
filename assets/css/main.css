@@ -1197,7 +1197,9 @@ h.custom_product_detail_wrap r {
     background-size: cover;
 }
 
-
+.middle-content .row .col-md-12.col-xl-6{
+    width: 100% !important;
+}
 .custom_product_detail_wrap .form-submit-button {
     padding: 19px 120px;
     background-color: #ed3333;
