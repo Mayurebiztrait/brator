@@ -713,7 +713,9 @@ if ($pick_colot_set == 1) {
                             <?php $e_count++;
                                 $ed_count++;
                             endwhile;?>
-                            
+                            <?php if($e_count != 0){ ?>
+                                </div>
+                            <?php }?>
                         </div>
                         <?php }?>
                         <?php
@@ -780,6 +782,9 @@ if ($pick_colot_set == 1) {
                                 <?php $e_count++;
                                 $cd_count++;
                             endwhile;?>
+                            <?php if($e_count != 0){ ?>
+                                </div>
+                            <?php }?>
                             
                         </div>
                         <?php }?>
@@ -847,6 +852,9 @@ if ($pick_colot_set == 1) {
                             <?php $e_count++;
                                 $dd_count++;
                             endwhile;?>
+                            <?php if($e_count != 0){ ?>
+                                </div>
+                            <?php }?>
                             
                         </div>
                         <?php }?>
@@ -912,6 +920,9 @@ if ($pick_colot_set == 1) {
                             <?php $e_count++;
                                 $dds_count++;
                             endwhile;?>
+                            <?php if($e_count != 0){ ?>
+                                </div>
+                            <?php }?>
                             
                         </div>
                         <?php }?>
