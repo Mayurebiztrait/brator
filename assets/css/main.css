@@ -3217,7 +3217,7 @@ li.cat-item.cat-parent.sub-cat.current .children {
 .bumper {
     position: absolute;
     top: 70%;
-    color: #fff;
+    color: #d7291c;
     font-size: 54px;
     font-family: 'Robinson';
     left: 20px;
@@ -3237,7 +3237,7 @@ li.cat-item.cat-parent.sub-cat.current .children {
     position: absolute;
     top: 70%;
     right: 0;
-    color: #fff;
+    color: #d7291c;
     font-size: 54px;
     font-family: 'Robinson';
     right: 20px;

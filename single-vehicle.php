@@ -244,7 +244,7 @@ if ($pick_colot_set == 1) {
                         <div class="modal-right">
                             <ul class="pick-modal-right-ul">
                                 <li class="pick-modal-right-li">
-                                    <a href="#">
+                                    <a href="<?php echo site_url().'/stores';?>">
                                         <div class="pick-modal-right-img">
                                             <img src="<?php echo get_template_directory_uri() . '/assets/images/'; ?>location.png"
                                                 alt="">
@@ -255,7 +255,7 @@ if ($pick_colot_set == 1) {
                                     </a>
                                 </li>
                                 <li class="pick-modal-right-li">
-                                    <a href="#">
+                                    <a href="<?php echo site_url().'/catalog-categories/warranty-policy';?>">
                                         <div class="pick-modal-right-img">
                                             <img src="<?php echo get_template_directory_uri() . '/assets/images/'; ?>info.png"
                                                 alt="">
@@ -279,7 +279,7 @@ if ($pick_colot_set == 1) {
                                     </a>
                                 </li>
                                 <li class="pick-modal-right-li">
-                                    <a href="#">
+                                    <a href="<?php echo site_url().'/become-a-dealer';?>">
                                         <div class="pick-modal-right-img">
                                             <img src="<?php echo get_template_directory_uri() . '/assets/images/'; ?>dealer.png"
                                                 alt="">
@@ -1402,48 +1402,36 @@ if ($fwi_show == true) {
             </div>
         </div>
 </section>
-<section class="main-section-contact">
+<section class="stay-connected">
     <div class="container">
         <div class="row">
-		<div class="col-md-4">
-		<div class="inner-connent">
-		<h2>Stay<br>Connected</h2>
-		</div>
-		</div> 
+            <div class="col-md-3">
+                <div class="stay-connected-content-wrapper">
+                    <div class="stay-connected-content">
+                        <h2 class="stay-connected-title">
+                            STAY 
+                        </h2>
+                        <h2 class="stay-connected-highlighted-title">
+                            CONNECTED
+                        </h2>
+                    </div>
+            
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="vl-form-wrapper">
+                    <div class="vl-form">
+
+                    </div>
+                </div>
+            </div>   
             <div class="col-md-8">
                 <div class="contact-form-wrapper">
                     <h5 class="contact-form-title">
-                        We'll keep you up to speed on all the latest AODES Talon news. Just fill in your information
-                        here.
+                        We'll keep you up to speed on all the latest AODES Talon news. Just fill in your information here.
                     </h5>
                     <?php echo do_shortcode('[contact-form-7 id="8495" title="Category Listing Single Page Form"]'); ?>
-                    <!--<div class="form" action="submit">
-                    <div class="row">
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="First name*" aria-label="First name">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="Last name*" aria-label="Last name">
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="E-MAIL*" aria-label="E-MAIL">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" placeholder="ZIP CODE*" aria-label="ZIP CODE">
-                        </div>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            <p class="confirmation-text">By checking this box, I agree to: (1) receive recurring automated marketing and non-marketing calls, texts, and emails from American AODES Motor Co., Inc. and participating AODES and Acura dealers at any phone numbers and email addresses provided above (consent not required to make a purchase, msg & data rates apply, reply STOP to opt-out of texts or HELP for help); (2) the <a href="#" class="highlighted-text">SMS Terms</a> (including arbitration provision); and (3) the <a href="#" class="highlighted-text">Privacy Policy</a> (which describes how AODES collects and uses personal information and any privacy rights I may have).</p>
-                        </label>
-                      </div>
-
-                      <a href="#" class="form-submit-button">SEND</a>
-                </div>-->
-                </div>
+                
             </div>
         </div>
     </div>
