@@ -1169,7 +1169,28 @@ h.custom_product_detail_wrap r {
 .custom_product_detail_wrap .custom-specification-card-svg {
     margin-left: 15px;
 }
-
+.stay-connected .wpcf7-submit{
+    padding: 19px 120px;
+    background-color: #ed3333;
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    border: none !important;
+    display: inline-block;
+}
+.stay-connected .wpcf7-form-control {
+    border: 1px solid #ced4da;
+}
+.stay-connected .contact-form-title{
+    margin-bottom: 0px !important;
+}
+.stay-connected h2:after{
+    border: none !important;
+}
+.stay-connected .stay-connected-highlighted-title,
+.stay-connected .stay-connected-title{
+    font-size: 52 !important;
+}
 .custom_product_detail_wrap .stay-connected {
     background-image: url(../img/bg-form.jpg);
     padding: 50px 0px;
