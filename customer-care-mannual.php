@@ -130,6 +130,7 @@ foreach( $taxonomies as $taxonomy ) {
     <a data-toggle="collapse" href="#collapse-<?php the_ID(); ?>" aria-expanded="true" aria-controls="collapse-<?php the_ID(); ?>">
       <?php echo $term->name;  ?>
     </a>
+    <span class="arrow_span">></span>
   </h5>
 </div>
 
@@ -137,16 +138,19 @@ foreach( $taxonomies as $taxonomy ) {
   <div class="card-body">
 
             <?php while( $posts->have_posts() ) : $posts->the_post(); ?>
-                <p><i class="fa fa-folder-open" aria-hidden="true"></i> <?php the_title(); ?></p><ul>
-				<?php $files = get_field('files', get_the_ID());
-				if(!empty($files)){
-					foreach($files as $pdflink){
-						echo '<li><i class="fa fa-file" aria-hidden="true"></i> <a href="'.$pdflink['url'].'" target="_blank">'.$pdflink['title'].'</a></li>';
-					}
-				}
-				?> 
-				</ul> 
-                <?php endwhile; ?> 
+                <div class="sub_categories">
+                  <p class="c_title"><i class="fa fa-folder-open" aria-hidden="true"></i> <?php the_title(); ?></p>
+                  <ul class="c_ul" style="display:none">
+                  <?php $files = get_field('files', get_the_ID());
+                  if(!empty($files)){
+                    foreach($files as $pdflink){
+                      echo '<li><i class="fa fa-file" aria-hidden="true"></i> <a href="'.$pdflink['url'].'" target="_blank">'.$pdflink['title'].'</a></li>';
+                    }
+                  }
+                  ?> 
+                  </ul> 
+                </div>
+            <?php endwhile; ?> 
         </div>
 </div>
 </dl>
@@ -156,20 +160,20 @@ foreach( $taxonomies as $taxonomy ) {
 </div>
 </div>
 <script>
-var acc = document.getElementsByClassName("accordion");
-var i;
+// var acc = document.getElementsByClassName("accordion");
+// var i;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
+// for (i = 0; i < acc.length; i++) {
+//   acc[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var panel = this.nextElementSibling;
+//     if (panel.style.display === "block") {
+//       panel.style.display = "none";
+//     } else {
+//       panel.style.display = "block";
+//     }
+//   });
+// }
 </script>
 <?php
 get_footer();
