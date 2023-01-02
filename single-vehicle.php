@@ -60,24 +60,34 @@ $image = wp_get_attachment_image_src(get_post_thumbnail_id($vehicle_id), 'single
 <div id="editor"></div>
 
 <script>
-    var doc = new jsPDF();
-    var specialElementHandlers = {
-        '#editor': function (element, renderer) {
-            return true;
-        }
-    };
-jQuery(document).ready(function(){
-    jQuery('.print_specifications').click(function () {
+var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function(element, renderer) {
+        return true;
+    }
+};
+jQuery(document).ready(function() {
+    jQuery('.print_specifications').click(function() {
         doc.fromHTML(jQuery('#view_all_specification').html(), 15, 15, {
             'width': 170,
-                'elementHandlers': specialElementHandlers
+            'elementHandlers': specialElementHandlers
         });
         doc.save('sample-file.pdf');
     });
-	});
+});
 
-    // This code is collected but useful, click below to jsfiddle link.
+// This code is collected but useful, click below to jsfiddle link.
 </script>
+<section class="custom-top-tabbing">
+    <div class="container-xxxl container-xxl container">
+        <div class="row">
+            <div class="custom-header-tabbing">
+                <p>Hello world</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="custom_product_detail_wrap">
     <section class="">
         <div class="container-xxxl container-xxl container">
@@ -126,13 +136,10 @@ while (have_rows('variations_images', $vehicle_id)):
 
     ?>
                             <?php
-
     $images = get_sub_field('images');
     $size = 'full'; // (thumbnail, medium, large, full or custom size)
     if ($images):
-
     ?>
-
                             <?php foreach ($images as $image_id): ?>
                             <div class="img-item">
                                 <a href="#" data-id="<?php echo $image_count; ?>">
@@ -144,9 +151,7 @@ while (have_rows('variations_images', $vehicle_id)):
                             <?php $image_count++;
     $c_count++;
 endforeach;?>
-
                             <?php endif;?>
-
                             <?php
 if ($image_color_count == 0) {
     $color_image_array[$image_color_count] = $c_count;
@@ -154,16 +159,10 @@ if ($image_color_count == 0) {
     $color_image_array[$image_color_count] = 0;
     $color_image_array[$image_color_count] = $color_image_array[$image_color_count] + $c_count;
 }
-
 $image_color_count++;
 endwhile;?>
-
-
                         </div>
-
-
                     </div>
-
                     <!-- card right -->
                     <div class="product-content">
                         <div class="">
@@ -244,7 +243,7 @@ if ($pick_colot_set == 1) {
                         <div class="modal-right">
                             <ul class="pick-modal-right-ul">
                                 <li class="pick-modal-right-li">
-                                    <a href="<?php echo site_url().'/stores';?>">
+                                    <a href="<?php echo site_url() . '/stores'; ?>">
                                         <div class="pick-modal-right-img">
                                             <img src="<?php echo get_template_directory_uri() . '/assets/images/'; ?>location.png"
                                                 alt="">
@@ -255,7 +254,7 @@ if ($pick_colot_set == 1) {
                                     </a>
                                 </li>
                                 <li class="pick-modal-right-li">
-                                    <a href="<?php echo site_url().'/catalog-categories/warranty-policy';?>">
+                                    <a href="<?php echo site_url() . '/catalog-categories/warranty-policy'; ?>">
                                         <div class="pick-modal-right-img">
                                             <img src="<?php echo get_template_directory_uri() . '/assets/images/'; ?>info.png"
                                                 alt="">
@@ -279,7 +278,7 @@ if ($pick_colot_set == 1) {
                                     </a>
                                 </li>
                                 <li class="pick-modal-right-li">
-                                    <a href="<?php echo site_url().'/become-a-dealer';?>">
+                                    <a href="<?php echo site_url() . '/become-a-dealer'; ?>">
                                         <div class="pick-modal-right-img">
                                             <img src="<?php echo get_template_directory_uri() . '/assets/images/'; ?>dealer.png"
                                                 alt="">
@@ -467,7 +466,7 @@ if ($pick_colot_set == 1) {
             </div>
         </div>
     </section>
-<?php if (have_rows('image_gallery', $vehicle_id)) {?>
+    <?php if (have_rows('image_gallery', $vehicle_id)) {?>
     <!-- gallery section -->
     <section class="gallary-section-main">
         <div class="container-xxxl container-xxl container">
@@ -475,94 +474,88 @@ if ($pick_colot_set == 1) {
                 <div class="responsive">
                     <?php
 
-                    while (have_rows('image_gallery', $vehicle_id)):
-                        the_row();
-                        $image1 = get_sub_field('image_1');
-                        $image2 = get_sub_field('image_2');
-                        $image3 = get_sub_field('image_3');
-                        $image4 = get_sub_field('image_4');
-                        $image5 = get_sub_field('image_5');
-                        $image6 = get_sub_field('image_6');
-                        ?>
+    while (have_rows('image_gallery', $vehicle_id)):
+        the_row();
+        $image1 = get_sub_field('image_1');
+        $image2 = get_sub_field('image_2');
+        $image3 = get_sub_field('image_3');
+        $image4 = get_sub_field('image_4');
+        $image5 = get_sub_field('image_5');
+        $image6 = get_sub_field('image_6');
+        ?>
 
                     <div>
                         <div class="gallary-wrapper">
                             <div class="gallary-wrapper-iteam">
-                                <?php if($image1){ ?>
+                                <?php if ($image1) {?>
                                 <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
-                                    data-src="<?php echo $image1;?>"
+                                    data-src="<?php echo $image1; ?>"
                                     data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
 
-                                    <img src="<?php echo $image1;?>"
-                                        alt="">
+                                    <img src="<?php echo $image1; ?>" alt="">
                                 </a>
                                 <?php }?>
                             </div>
                             <div class="gallary-wrapper-iteam">
-                                <?php if($image2){ ?>
+                                <?php if ($image2) {?>
                                 <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
-                                    data-src="<?php echo $image2;?>"
+                                    data-src="<?php echo $image2; ?>"
                                     data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
-                                    <img src="<?php echo $image2;?>"
-                                        alt="">
+                                    <img src="<?php echo $image2; ?>" alt="">
                                 </a>
                                 <?php }?>
                             </div>
                         </div>
                         <div class="gallary-wrapper-main">
                             <div class="gallary-wrapper-iteam">
-                                <?php if($image3){ ?>
+                                <?php if ($image3) {?>
                                 <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
-                                    data-src="<?php echo $image3;?>"
+                                    data-src="<?php echo $image3; ?>"
                                     data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
-                                    <img src="<?php echo $image3;?>"
-                                        alt="">
+                                    <img src="<?php echo $image3; ?>" alt="">
                                 </a>
                                 <?php }?>
                             </div>
                             <div class="gallary-wrapper-iteam">
                                 <div class="gellary-middal-part">
                                     <div class="gellary-middal-part-item">
-                                        <?php if($image4){ ?>
+                                        <?php if ($image4) {?>
                                         <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
-                                            data-src="<?php echo $image4;?>"
+                                            data-src="<?php echo $image4; ?>"
                                             data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
-                                            <img src="<?php echo $image4;?>"
-                                                alt="">
+                                            <img src="<?php echo $image4; ?>" alt="">
                                         </a>
                                         <?php }?>
                                     </div>
                                     <div class="gellary-middal-part-item">
-                                        <?php if($image5){ ?>
+                                        <?php if ($image5) {?>
                                         <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
-                                            data-src="<?php echo $image5;?>"
+                                            data-src="<?php echo $image5; ?>"
                                             data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
-                                            <img src="<?php echo $image5;?>"
-                                                alt="">
+                                            <img src="<?php echo $image5; ?>" alt="">
                                         </a>
                                         <?php }?>
                                     </div>
                                 </div>
                             </div>
                             <div class="gallary-wrapper-iteam">
-                                <?php if($image6){ ?>
+                                <?php if ($image6) {?>
                                 <a class="gallary-wrapper-iteam-link" data-fancybox="gallery"
-                                    data-src="<?php echo $image6;?>"
+                                    data-src="<?php echo $image6; ?>"
                                     data-caption="Optional caption,&lt;br /&gt;that can contain &lt;em&gt;HTML&lt;/em&gt; code">
-                                    <img src="<?php echo $image6;?>"
-                                        alt="">
+                                    <img src="<?php echo $image6; ?>" alt="">
                                 </a>
-                                <?php } ?>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
-                    
-                    <?php endwhile; ?>
+
+                    <?php endwhile;?>
                 </div>
             </div>
         </div>
     </section>
-<?php }?>
+    <?php }?>
     <!-- feature section -->
     <section class="feature-section">
         <div class="container-xxxl container-xxl container">
@@ -574,33 +567,33 @@ if ($pick_colot_set == 1) {
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
                         <?php
-                        $active_tab = '';
-                        $e_show_modal_image = '';
-                        $c_show_modal_image = '';
-                        $d_show_modal_image = '';
-                        $ds_show_modal_image = '';
+$active_tab = '';
+$e_show_modal_image = '';
+$c_show_modal_image = '';
+$d_show_modal_image = '';
+$ds_show_modal_image = '';
 
-                        $e_show = get_field('e_show', $vehicle_id);
-                        $c_show = get_field('c_show', $vehicle_id);
-                        $d_show = get_field('d_show', $vehicle_id);
-                        $ds_show = get_field('ds_show', $vehicle_id);
+$e_show = get_field('e_show', $vehicle_id);
+$c_show = get_field('c_show', $vehicle_id);
+$d_show = get_field('d_show', $vehicle_id);
+$ds_show = get_field('ds_show', $vehicle_id);
 
-                        if ($e_show == true) {
-                            $active_tab = 'e_show';
-                        } else if ($e_show == true) {
-                            $active_tab = 'c_show';
-                        } else if ($e_show == true) {
-                            $active_tab = 'd_show';
-                        } else if ($e_show == true) {
-                            $active_tab = 'ds_show';
-                        }
+if ($e_show == true) {
+    $active_tab = 'e_show';
+} else if ($e_show == true) {
+    $active_tab = 'c_show';
+} else if ($e_show == true) {
+    $active_tab = 'd_show';
+} else if ($e_show == true) {
+    $active_tab = 'ds_show';
+}
 
-                        if ($e_show == true) {?>
+if ($e_show == true) {?>
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link <?php if ($active_tab == 'e_show') {
-                                echo "active";
-                            }?>" data-bs-toggle="pill" data-bs-target="#e_show" type="button" role="tab" aria-controls="e_show"
+    echo "active";
+}?>" data-bs-toggle="pill" data-bs-target="#e_show" type="button" role="tab" aria-controls="e_show"
                                 aria-selected="true">ENGINE</button>
                         </li>
 
@@ -608,12 +601,12 @@ if ($pick_colot_set == 1) {
 
                         <?php
 
-                        if ($c_show == true) {?>
+if ($c_show == true) {?>
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link <?php if ($active_tab == 'c_show') {
-                                    echo "active";
-                                }?>" data-bs-toggle="pill" data-bs-target="#c_show" type="button" role="tab" aria-controls="c_show"
+    echo "active";
+}?>" data-bs-toggle="pill" data-bs-target="#c_show" type="button" role="tab" aria-controls="c_show"
                                 aria-selected="true">CHASSIS</button>
                         </li>
 
@@ -621,12 +614,12 @@ if ($pick_colot_set == 1) {
 
                         <?php
 
-                        if ($d_show == true) {?>
+if ($d_show == true) {?>
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link <?php if ($active_tab == 'd_show') {
-                                    echo "active";
-                                }?>" data-bs-toggle="pill" data-bs-target="#d_show" type="button" role="tab" aria-controls="d_show"
+    echo "active";
+}?>" data-bs-toggle="pill" data-bs-target="#d_show" type="button" role="tab" aria-controls="d_show"
                                 aria-selected="true">DRIVETRAIN</button>
                         </li>
 
@@ -634,12 +627,12 @@ if ($pick_colot_set == 1) {
 
                         <?php
 
-                        if ($ds_show == true) {?>
+if ($ds_show == true) {?>
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link <?php if ($active_tab == 'ds_show') {
-                                    echo "active";
-                                }?>" data-bs-toggle="pill" data-bs-target="#ds_show" type="button" role="tab" aria-controls="ds_show"
+    echo "active";
+}?>" data-bs-toggle="pill" data-bs-target="#ds_show" type="button" role="tab" aria-controls="ds_show"
                                 aria-selected="true">DESIGN</button>
                         </li>
 
@@ -651,30 +644,30 @@ if ($pick_colot_set == 1) {
 
                     <div class="tab-content" id="pills-tabContent">
                         <?php
-                        $e_description = [];
-                        $ed_count = 0;
-                        if (have_rows('engine_posts_content', $vehicle_id)) {?>
+$e_description = [];
+$ed_count = 0;
+if (have_rows('engine_posts_content', $vehicle_id)) {?>
                         <div class="tab-pane fade <?php if ($active_tab == 'e_show') {
-                            echo "show active";
-                            }?>" id="e_show" role="tabpanel">
+    echo "show active";
+}?>" id="e_show" role="tabpanel">
                             <?php
-                            $e_count = 1;
-                            while (have_rows('engine_posts_content', $vehicle_id)):
-                                the_row();
-                                $title = get_sub_field('title');
-                                $image = get_sub_field('image');
-                                if ($e_show_modal_image == '') {
-                                    $e_show_modal_image = $image;
-                                }
-                                $description = get_sub_field('description');
-                                $e_description[$ed_count]['title'] = $title;
-                                $e_description[$ed_count]['description'] = $description;
-                                ?>
+$e_count = 1;
+    while (have_rows('engine_posts_content', $vehicle_id)):
+        the_row();
+        $title = get_sub_field('title');
+        $image = get_sub_field('image');
+        if ($e_show_modal_image == '') {
+            $e_show_modal_image = $image;
+        }
+        $description = get_sub_field('description');
+        $e_description[$ed_count]['title'] = $title;
+        $e_description[$ed_count]['description'] = $description;
+        ?>
                             <?php if ($e_count == 1) {?>
                             <div class="row">
                                 <?php }?>
                                 <?php $show_in_list = get_sub_field('show_in_list');
-                                if ($show_in_list == true) {?>
+        if ($show_in_list == true) {?>
                                 <div class="col-12 col-sm-12 col-md-6 col-xl-4 col-lg-4">
                                     <div class="custom-card-main">
                                         <button class="custom-card-button">
@@ -706,445 +699,440 @@ if ($pick_colot_set == 1) {
                                 <?php if ($e_count == 3) {?>
                             </div>
                             <?php $e_count = 0;
-                                $show_in_list = false;
-                                break;
-                            }?>
-                            
+            $show_in_list = false;
+            break;
+        }?>
+
                             <?php $e_count++;
-                                $ed_count++;
-                            endwhile;?>
-                            <?php if($e_count != 0){ ?>
-                                    </div>
-                            <?php }?>
-                        </div>
-                        <?php }?>
-                        <?php
-                        $cd_count = 0;
-                        $c_description = [];
-                        if (have_rows('chassis_posts_content', $vehicle_id)) {?>
-                        <div class="tab-pane fade <?php if ($active_tab == 'c_show') {
-                            echo "show active";
-                                }?>" id="c_show" role="tabpanel">
-                            <?php
-                            $e_count = 1;
-                            while (have_rows('chassis_posts_content', $vehicle_id)):
-                                the_row();
-                                $title = get_sub_field('title');
-                                $image = get_sub_field('image');
-                                if ($c_show_modal_image == '') {
-                                    $c_show_modal_image = $image;
-                                }
-                                $description = get_sub_field('description');
-                                $c_description[$cd_count]['title'] = $title;
-                                $c_description[$cd_count]['description'] = $description;
-                                ?>
-                                <?php if ($e_count == 1) {?>
-                                <div class="row">
-                                    <?php }
-                                    $show_in_list = get_sub_field('show_in_list');
-                                    if ($show_in_list == true) {?>
-                                    <div class="col-12 col-sm-12 col-md-6 col-xl-4 col-lg-4">
-                                        <div class="custom-card-main">
-                                            <button class="custom-card-button">
-                                                <div class="custom-card-img">
-
-                                                    <img alt="" class="card-imgage" src="<?php echo $image; ?>">
-                                                </div>
-                                                <div class="custom-card-text-wrapper">
-                                                    <h4 class="custom-card-text"><?php echo $title; ?></h4>
-                                                    <div class="custom-learn-svg" data-bs-toggle="modal"
-                                                        data-bs-target="#view_feature">
-                                                        <span class="custom-learn-more">Learn More</span>
-                                                        <div class="custom-card-svg">
-                                                            <svg width="12" height="19" viewBox="0 0 12 19">
-                                                                <path class="svg"
-                                                                    d="M2.081.12L.001 2.332l7.274 7.173L0 16.668l2.081 2.212 8.4-8.274 1.125-1.101-1.125-1.111z"
-                                                                    fill="#FFF" fill-rule="nonzero"></path>
-                                                            </svg>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-description" style="display:none">
-                                                        <?php echo $description; ?>
-                                                    </div>
-                                                </div>
-
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <?php }
-                                    if ($e_count == 3) {?>
-                                </div>
-                                <?php $e_count = 0;
-                                    $show_in_list = false;
-                                    break;
-                                }?>
-                                
-                                <?php $e_count++;
-                                $cd_count++;
-                            endwhile;?>
-                            <?php  if($e_count != 0){ ?>
-                                </div>
-                            <?php }?>
-                        </div>
-                        <?php }?>
-                        <?php
-                        $d_description = [];
-                        $dd_count = 0;
-                        if (have_rows('drivetrain_posts_content', $vehicle_id)) {?>
-                        <div class="tab-pane fade <?php if ($active_tab == 'd_show') {
-                            echo "show active";
-                            }?>" id="d_show" role="tabpanel">
-                            <?php
-                            $e_count = 1;
-                            while (have_rows('drivetrain_posts_content', $vehicle_id)):
-                            the_row();
-                            $title = get_sub_field('title');
-                            $image = get_sub_field('image');
-                            if ($d_show_modal_image == '') {
-                                $d_show_modal_image = $image;
-                            }
-                            $description = get_sub_field('description');
-                            $d_description[$dd_count]['title'] = $title;
-                            $d_description[$dd_count]['description'] = $description;
-                            ?>
-                            <?php if ($e_count == 1) {?>
-                            <div class="row">
-                                <?php }
-                                $show_in_list = get_sub_field('show_in_list');
-                                if ($show_in_list == true) {?>
-                                <div class="col-12 col-sm-12 col-md-6 col-xl-4 col-lg-4">
-                                    <div class="custom-card-main">
-                                        <button class="custom-card-button">
-                                            <div class="custom-card-img">
-
-                                                <img alt="" class="card-imgage" src="<?php echo $image; ?>">
-                                            </div>
-                                            <div class="custom-card-text-wrapper">
-                                                <h4 class="custom-card-text"><?php echo $title; ?></h4>
-                                                <div class="custom-learn-svg" data-bs-toggle="modal"
-                                                    data-bs-target="#view_feature">
-                                                    <span class="custom-learn-more">Learn More</span>
-                                                    <div class="custom-card-svg">
-                                                        <svg width="12" height="19" viewBox="0 0 12 19">
-                                                            <path class="svg"
-                                                                d="M2.081.12L.001 2.332l7.274 7.173L0 16.668l2.081 2.212 8.4-8.274 1.125-1.101-1.125-1.111z"
-                                                                fill="#FFF" fill-rule="nonzero"></path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="card-description" style="display:none">
-                                                    <?php echo $description; ?>
-                                                </div>
-                                            </div>
-
-                                        </button>
-                                    </div>
-                                </div>
-                                <?php }
-                                
-                                if ($e_count == 3) {?>
-                            </div >
-                            <?php $e_count = 0;
-                                $show_in_list = false;
-                                break;
-                            }?>
-                            <?php $e_count++;
-                                $dd_count++;
-                            endwhile;?>
-                            <?php if($e_count != 0){ ?>
-                                </div>
-                            <?php }?>
-                        </div>
-                        <?php }?>
-                        <?php
-                        $ds_description = [];
-                        $dds_count = 0;
-                        if (have_rows('design_posts_content', $vehicle_id)) {?>
-                        <div class="tab-pane fade <?php if ($active_tab == 'ds_show') {
-                            echo "show active";
-                            }?>" id="ds_show" role="tabpanel">
-                            <?php
-                            $e_count = 1;
-                            while (have_rows('design_posts_content', $vehicle_id)):
-                                the_row();
-                                $title = get_sub_field('title');
-                                $image = get_sub_field('image');
-                                if ($ds_show_modal_image == '') {
-                                    $ds_show_modal_image = $image;
-                                }
-                                $description = get_sub_field('description');
-                                $ds_description[$dds_count]['title'] = $title;
-                                $ds_description[$dds_count]['description'] = $description;
-                                ?>
-                            <?php if ($e_count == 1) {?>
-                            <div class="row">
-                                <?php }
-                                $show_in_list = get_sub_field('show_in_list');
-                                if ($show_in_list == true) {?>
-                                <div class="col-12 col-sm-12 col-md-6 col-xl-4 col-lg-4">
-                                    <div class="custom-card-main">
-                                        <button class="custom-card-button">
-                                            <div class="custom-card-img">
-
-                                                <img alt="" class="card-imgage" src="<?php echo $image; ?>">
-                                            </div>
-                                            <div class="custom-card-text-wrapper">
-                                                <h4 class="custom-card-text"><?php echo $title; ?></h4>
-                                                <div class="custom-learn-svg" data-bs-toggle="modal"
-                                                    data-bs-target="#view_feature">
-                                                    <span class="custom-learn-more">Learn More</span>
-                                                    <div class="custom-card-svg">
-                                                        <svg width="12" height="19" viewBox="0 0 12 19">
-                                                            <path class="svg"
-                                                                d="M2.081.12L.001 2.332l7.274 7.173L0 16.668l2.081 2.212 8.4-8.274 1.125-1.101-1.125-1.111z"
-                                                                fill="#FFF" fill-rule="nonzero"></path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="card-description" style="display:none">
-                                                    <?php echo $description; ?>
-                                                </div>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-                                <?php }
-                                if ($e_count == 3) {?>
-                            </div>
-                            <?php $e_count = 0;
-                                $show_in_list = false;
-                                break;
-                            }?>
-                            <?php $e_count++;
-                                $dds_count++;
-                            endwhile;?>
-                            <?php  if($e_count != 0){ ?>
-                                </div>
-                            <?php }?>
+        $ed_count++;
+    endwhile;?>
+                            <?php if ($e_count != 0) {?>
                         </div>
                         <?php }?>
                     </div>
+                    <?php }?>
+                    <?php
+$cd_count = 0;
+$c_description = [];
+if (have_rows('chassis_posts_content', $vehicle_id)) {?>
+                    <div class="tab-pane fade <?php if ($active_tab == 'c_show') {
+    echo "show active";
+}?>" id="c_show" role="tabpanel">
+                        <?php
+$e_count = 1;
+    while (have_rows('chassis_posts_content', $vehicle_id)):
+        the_row();
+        $title = get_sub_field('title');
+        $image = get_sub_field('image');
+        if ($c_show_modal_image == '') {
+            $c_show_modal_image = $image;
+        }
+        $description = get_sub_field('description');
+        $c_description[$cd_count]['title'] = $title;
+        $c_description[$cd_count]['description'] = $description;
+        ?>
+                        <?php if ($e_count == 1) {?>
+                        <div class="row">
+                            <?php }
+        $show_in_list = get_sub_field('show_in_list');
+        if ($show_in_list == true) {?>
+                            <div class="col-12 col-sm-12 col-md-6 col-xl-4 col-lg-4">
+                                <div class="custom-card-main">
+                                    <button class="custom-card-button">
+                                        <div class="custom-card-img">
 
+                                            <img alt="" class="card-imgage" src="<?php echo $image; ?>">
+                                        </div>
+                                        <div class="custom-card-text-wrapper">
+                                            <h4 class="custom-card-text"><?php echo $title; ?></h4>
+                                            <div class="custom-learn-svg" data-bs-toggle="modal"
+                                                data-bs-target="#view_feature">
+                                                <span class="custom-learn-more">Learn More</span>
+                                                <div class="custom-card-svg">
+                                                    <svg width="12" height="19" viewBox="0 0 12 19">
+                                                        <path class="svg"
+                                                            d="M2.081.12L.001 2.332l7.274 7.173L0 16.668l2.081 2.212 8.4-8.274 1.125-1.101-1.125-1.111z"
+                                                            fill="#FFF" fill-rule="nonzero"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="card-description" style="display:none">
+                                                <?php echo $description; ?>
+                                            </div>
+                                        </div>
+
+                                    </button>
+                                </div>
+                            </div>
+                            <?php }
+        if ($e_count == 3) {?>
+                        </div>
+                        <?php $e_count = 0;
+            $show_in_list = false;
+            break;
+        }?>
+
+                        <?php $e_count++;
+        $cd_count++;
+    endwhile;?>
+                        <?php if ($e_count != 0) {?>
+                    </div>
+                    <?php }?>
                 </div>
+                <?php }?>
+                <?php
+$d_description = [];
+$dd_count = 0;
+if (have_rows('drivetrain_posts_content', $vehicle_id)) {?>
+                <div class="tab-pane fade <?php if ($active_tab == 'd_show') {
+    echo "show active";
+}?>" id="d_show" role="tabpanel">
+                    <?php
+$e_count = 1;
+    while (have_rows('drivetrain_posts_content', $vehicle_id)):
+        the_row();
+        $title = get_sub_field('title');
+        $image = get_sub_field('image');
+        if ($d_show_modal_image == '') {
+            $d_show_modal_image = $image;
+        }
+        $description = get_sub_field('description');
+        $d_description[$dd_count]['title'] = $title;
+        $d_description[$dd_count]['description'] = $description;
+        ?>
+                    <?php if ($e_count == 1) {?>
+                    <div class="row">
+                        <?php }
+        $show_in_list = get_sub_field('show_in_list');
+        if ($show_in_list == true) {?>
+                        <div class="col-12 col-sm-12 col-md-6 col-xl-4 col-lg-4">
+                            <div class="custom-card-main">
+                                <button class="custom-card-button">
+                                    <div class="custom-card-img">
+
+                                        <img alt="" class="card-imgage" src="<?php echo $image; ?>">
+                                    </div>
+                                    <div class="custom-card-text-wrapper">
+                                        <h4 class="custom-card-text"><?php echo $title; ?></h4>
+                                        <div class="custom-learn-svg" data-bs-toggle="modal"
+                                            data-bs-target="#view_feature">
+                                            <span class="custom-learn-more">Learn More</span>
+                                            <div class="custom-card-svg">
+                                                <svg width="12" height="19" viewBox="0 0 12 19">
+                                                    <path class="svg"
+                                                        d="M2.081.12L.001 2.332l7.274 7.173L0 16.668l2.081 2.212 8.4-8.274 1.125-1.101-1.125-1.111z"
+                                                        fill="#FFF" fill-rule="nonzero"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="card-description" style="display:none">
+                                            <?php echo $description; ?>
+                                        </div>
+                                    </div>
+
+                                </button>
+                            </div>
+                        </div>
+                        <?php }
+
+        if ($e_count == 3) {?>
+                    </div>
+                    <?php $e_count = 0;
+            $show_in_list = false;
+            break;
+        }?>
+                    <?php $e_count++;
+        $dd_count++;
+    endwhile;?>
+                    <?php if ($e_count != 0) {?>
+                </div>
+                <?php }?>
             </div>
-            
-            <div class="row">
-                <div class="col-md-12 container-xxxl container-xxl container">
-                    <div class="custom-button-modal">
-                        <!-- Button trigger modal -->
-                        <a href="" type="button" class="" data-bs-toggle="modal" data-bs-target="#View_all_features">
-                            View all features
-                            <span class="custom-card-svg">
-                                <svg width="12" height="19" viewBox="0 0 12 19">
-                                    <path class="svg"
-                                        d="M2.081.12L.001 2.332l7.274 7.173L0 16.668l2.081 2.212 8.4-8.274 1.125-1.101-1.125-1.111z"
-                                        fill="#FFF" fill-rule="nonzero"></path>
-                                </svg>
-                            </span>
-                        </a>
+            <?php }?>
+            <?php
+$ds_description = [];
+$dds_count = 0;
+if (have_rows('design_posts_content', $vehicle_id)) {?>
+            <div class="tab-pane fade <?php if ($active_tab == 'ds_show') {
+    echo "show active";
+}?>" id="ds_show" role="tabpanel">
+                <?php
+$e_count = 1;
+    while (have_rows('design_posts_content', $vehicle_id)):
+        the_row();
+        $title = get_sub_field('title');
+        $image = get_sub_field('image');
+        if ($ds_show_modal_image == '') {
+            $ds_show_modal_image = $image;
+        }
+        $description = get_sub_field('description');
+        $ds_description[$dds_count]['title'] = $title;
+        $ds_description[$dds_count]['description'] = $description;
+        ?>
+                <?php if ($e_count == 1) {?>
+                <div class="row">
+                    <?php }
+        $show_in_list = get_sub_field('show_in_list');
+        if ($show_in_list == true) {?>
+                    <div class="col-12 col-sm-12 col-md-6 col-xl-4 col-lg-4">
+                        <div class="custom-card-main">
+                            <button class="custom-card-button">
+                                <div class="custom-card-img">
+
+                                    <img alt="" class="card-imgage" src="<?php echo $image; ?>">
+                                </div>
+                                <div class="custom-card-text-wrapper">
+                                    <h4 class="custom-card-text"><?php echo $title; ?></h4>
+                                    <div class="custom-learn-svg" data-bs-toggle="modal" data-bs-target="#view_feature">
+                                        <span class="custom-learn-more">Learn More</span>
+                                        <div class="custom-card-svg">
+                                            <svg width="12" height="19" viewBox="0 0 12 19">
+                                                <path class="svg"
+                                                    d="M2.081.12L.001 2.332l7.274 7.173L0 16.668l2.081 2.212 8.4-8.274 1.125-1.101-1.125-1.111z"
+                                                    fill="#FFF" fill-rule="nonzero"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="card-description" style="display:none">
+                                        <?php echo $description; ?>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <?php }
+        if ($e_count == 3) {?>
+                </div>
+                <?php $e_count = 0;
+            $show_in_list = false;
+            break;
+        }?>
+                <?php $e_count++;
+        $dds_count++;
+    endwhile;?>
+                <?php if ($e_count != 0) {?>
+            </div>
+            <?php }?>
+        </div>
+        <?php }?>
+</div>
+
+</div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 container-xxxl container-xxl container">
+        <div class="custom-button-modal">
+            <!-- Button trigger modal -->
+            <a href="" type="button" class="" data-bs-toggle="modal" data-bs-target="#View_all_features">
+                View all features
+                <span class="custom-card-svg">
+                    <svg width="12" height="19" viewBox="0 0 12 19">
+                        <path class="svg"
+                            d="M2.081.12L.001 2.332l7.274 7.173L0 16.668l2.081 2.212 8.4-8.274 1.125-1.101-1.125-1.111z"
+                            fill="#FFF" fill-rule="nonzero"></path>
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="custom-features-modal">
+        <div class="modal fade" id="View_all_features" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class=" modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-uppercase" id="exampleModalLabel">Features</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <?php if ($e_show == true) {?>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" data-bs-toggle="pill"
+                                        data-bs-target="#modal-pills-Engine" type="button" role="tab"
+                                        aria-controls="pills-Engine" aria-selected="true">Engine</button>
+                                </li>
+                                <?php }?>
+                                <?php if ($c_show == true) {?>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#modal-pills-chassis"
+                                        type="button" role="tab" aria-controls="pills-chassis"
+                                        aria-selected="false">chassis
+                                    </button>
+                                </li>
+                                <?php }?>
+
+                                <?php if ($d_show == true) {?>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" data-bs-toggle="pill"
+                                        data-bs-target="#modal-pills-drivetrain" type="button" role="t b" a
+                                        aria-controls="pills-drivetrain" aria-selected="false">Drivetrain</button>
+                                </li>
+                                <?php }?>
+                                <?php if ($ds_show == true) {?>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#modal-pills-Design"
+                                        type="button" role="tab" aria-controls="pills-Design"
+                                        aria-selected="false">Design</button>
+                                </li>
+                                <?php }?>
+                            </ul>
+                        </div>
+                        <?php if ($e_show == true) {?>
+                        <div class="custom-features-description-modal">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="custom-features-description-img">
+                                        <img class="img img-fluid" src="<?php echo $e_show_modal_image; ?>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="m_description">
+                                        <h2 class="m_title">Engine</h2>
+                                        <div class="description-some-text">
+                                            <?php foreach ($e_description as $content) {
+    if ($content['title']) {
+        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+    }
+    if ($content['description']) {
+        echo "<div>";
+        echo $content['description'];
+        echo "</div>";
+    }
+}?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <?php }?>
+                        <?php if ($c_show == true) {?>
+                        <div class="custom-features-description-modal">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="custom-features-description-img">
+                                        <img class="img img-fluid" src="<?php echo $c_show_modal_image; ?>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="m_description">
+                                        <h2 class="m_title">Chassis</h2>
+                                        <div class="description-some-text">
+                                            <?php foreach ($c_description as $content) {
+    if ($content['title']) {
+        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+    }
+    if ($content['description']) {
+        echo "<div>";
+        echo $content['description'];
+        echo "</div>";
+    }
+
+}?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <?php }?>
+                        <?php if ($d_show == true) {?>
+                        <div class="custom-features-description-modal">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="custom-features-description-img">
+                                        <img class="img img-fluid" src="<?php echo $d_show_modal_image; ?>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="m_description">
+                                        <h2 class="m_title">Drivetrain</h2>
+                                        <?php foreach ($d_description as $content) {
+    if ($content['title']) {
+        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+    }
+    if ($content['description']) {
+        echo $content['description'];
+    }
+
+}?>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <?php }?>
+                        <?php if ($ds_show == true) {?>
+                        <div class="custom-features-description-modal">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="custom-features-description-img">
+                                        <img class="img img-fluid" src="<?php echo $ds_show_modal_image; ?>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="m_description">
+                                        <h2 class="m_title">Design</h2>
+                                        <div class="description-some-text">
+                                            <?php foreach ($ds_description as $content) {
+    if ($content['title']) {
+        echo '<h3 class="p_title">' . $content['title'] . '</h3>';
+    }
+    if ($content['description']) {
+        echo "<div>";
+        echo $content['description'];
+        echo "</div>";
+    }
+}?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <?php }?>
                     </div>
                 </div>
-                <!-- Modal -->
-                <div class="custom-features-modal">
-                    <div class="modal fade" id="View_all_features" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-fullscreen">
-                            <div class=" modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title text-uppercase" id="exampleModalLabel">Features</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div>
-                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                            <?php if ($e_show == true) {?>
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link active" data-bs-toggle="pill"
-                                                    data-bs-target="#modal-pills-Engine" type="button" role="tab"
-                                                    aria-controls="pills-Engine" aria-selected="true">Engine</button>
-                                            </li>
-                                            <?php }?>
-                                            <?php if ($c_show == true) {?>
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link" data-bs-toggle="pill"
-                                                    data-bs-target="#modal-pills-chassis" type="button" role="tab"
-                                                    aria-controls="pills-chassis" aria-selected="false">chassis
-                                                </button>
-                                            </li>
-                                            <?php }?>
-
-                                            <?php if ($d_show == true) {?>
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link" data-bs-toggle="pill"
-                                                    data-bs-target="#modal-pills-drivetrain" type="button" role="t b" a
-                                                    aria-controls="pills-drivetrain"
-                                                    aria-selected="false">Drivetrain</button>
-                                            </li>
-                                            <?php }?>
-                                            <?php if ($ds_show == true) {?>
-                                            <li class="nav-item" role="presentation">
-                                                <button class="nav-link" data-bs-toggle="pill"
-                                                    data-bs-target="#modal-pills-Design" type="button" role="tab"
-                                                    aria-controls="pills-Design" aria-selected="false">Design</button>
-                                            </li>
-                                            <?php }?>
-                                        </ul>
-                                    </div>
-                                    <?php if ($e_show == true) {?>
-                                    <div class="custom-features-description-modal">
-                                        <div class="row">
-
-                                            <div class="col-md-6">
-                                                <div class="custom-features-description-img">
-                                                    <img class="img img-fluid" src="<?php echo $e_show_modal_image; ?>">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="m_description">
-                                                    <h2 class="m_title">Engine</h2>
-                                                    <div class="description-some-text">
-                                                        <?php foreach ($e_description as $content) {
-                                                            if ($content['title']) {
-                                                                echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                                            }
-                                                            if ($content['description']) {
-                                                                echo "<div>";
-                                                                echo $content['description'];
-                                                                echo "</div>";
-                                                            }
-                                                        }?>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <?php }?>
-                                    <?php if ($c_show == true) {?>
-                                    <div class="custom-features-description-modal">
-                                        <div class="row">
-
-                                            <div class="col-md-6">
-                                                <div class="custom-features-description-img">
-                                                    <img class="img img-fluid" src="<?php echo $c_show_modal_image; ?>">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="m_description">
-                                                    <h2 class="m_title">Chassis</h2>
-                                                    <div class="description-some-text">
-                                                        <?php foreach ($c_description as $content) {
-                                                            if ($content['title']) {
-                                                                echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                                            }
-                                                            if ($content['description']) {
-                                                                echo "<div>";
-                                                                echo $content['description'];
-                                                                echo "</div>";
-                                                            }
-
-                                                        }?>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <?php }?>
-                                    <?php if ($d_show == true) {?>
-                                    <div class="custom-features-description-modal">
-                                        <div class="row">
-
-                                            <div class="col-md-6">
-                                                <div class="custom-features-description-img">
-                                                    <img class="img img-fluid" src="<?php echo $d_show_modal_image; ?>">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="m_description">
-                                                    <h2 class="m_title">Drivetrain</h2>
-                                                    <?php foreach ($d_description as $content) {
-                                                            if ($content['title']) {
-                                                                echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                                            }
-                                                            if ($content['description']) {
-                                                                echo $content['description'];
-                                                            }
-
-                                                        }?>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <?php }?>
-                                    <?php if ($ds_show == true) {?>
-                                    <div class="custom-features-description-modal">
-                                        <div class="row">
-
-                                            <div class="col-md-6">
-                                                <div class="custom-features-description-img">
-                                                    <img class="img img-fluid"
-                                                        src="<?php echo $ds_show_modal_image; ?>">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="m_description">
-                                                    <h2 class="m_title">Design</h2>
-                                                    <div class="description-some-text">
-                                                        <?php foreach ($ds_description as $content) {
-                                                            if ($content['title']) {
-                                                                echo '<h3 class="p_title">' . $content['title'] . '</h3>';
-                                                            }
-                                                            if ($content['description']) {
-                                                                echo "<div>";
-                                                                echo $content['description'];
-                                                                echo "</div>";
-                                                            }
-                                                        }?>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <?php }?>
-                                </div>
-                            </div>
-                            <!-- <div class="modal-footer">
+                <!-- <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     <button type="button" class="btn btn-primary">Save changes</button>
                                 </div> -->
-                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="view_feature" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class=" modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 mcontent">
+                    </div>
+                    <div class="col-md-6 mimage">
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="view_feature" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen">
-                    <div class=" modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-6 mcontent">
-                                </div>
-                                <div class="col-md-6 mimage">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="modal-footer">
+            <!-- <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary">Save changes</button>
                             </div> -->
-                    </div>
-                </div>
-            </div>
         </div>
-    </section>
+    </div>
+</div>
+</div>
+</section>
 
 <!-- specifications section -->
 <section class="specifications-section">
@@ -1409,13 +1397,13 @@ if ($fwi_show == true) {
                 <div class="stay-connected-content-wrapper">
                     <div class="stay-connected-content">
                         <h2 class="stay-connected-title">
-                            STAY 
+                            STAY
                         </h2>
                         <h2 class="stay-connected-highlighted-title">
                             CONNECTED
                         </h2>
                     </div>
-            
+
                 </div>
             </div>
             <div class="col-md-1">
@@ -1424,17 +1412,18 @@ if ($fwi_show == true) {
 
                     </div>
                 </div>
-            </div>   
+            </div>
             <div class="col-md-8">
                 <div class="contact-form-wrapper">
                     <h5 class="contact-form-title">
-                        We'll keep you up to speed on all the latest AODES Talon news. Just fill in your information here.
+                        We'll keep you up to speed on all the latest AODES Talon news. Just fill in your information
+                        here.
                     </h5>
                     <?php echo do_shortcode('[contact-form-7 id="8495" title="Category Listing Single Page Form"]'); ?>
-                
+
+                </div>
             </div>
         </div>
-    </div>
 </section>
 
 <?php get_footer();?>
