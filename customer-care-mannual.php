@@ -130,7 +130,7 @@ foreach( $taxonomies as $taxonomy ) {
     <a data-toggle="collapse" href="#collapse-<?php the_ID(); ?>" aria-expanded="true" aria-controls="collapse-<?php the_ID(); ?>">
       <?php echo $term->name;  ?>
     </a>
-    <span class="arrow_span">></span>
+    <span class="arrow_span"><i class="fa-solid fa-greater-than"></i></span>
   </h5>
 </div>
 
