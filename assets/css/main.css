@@ -1552,6 +1552,26 @@ h.custom_product_detail_wrap r {
     display: none;
 }
 
+#accordion .accordion.active .arrow_span{
+    transform: rotate(270deg);
+}
+#accordion .accordion.active h5 a{
+    color: #ed3333 !important;
+}
+#accordion .accordion .arrow_span{
+    color: #fff !important;
+    background: #ed3333;
+    padding: 2px 9px !important;
+    float: right;
+    transform: rotate(90deg);
+    font-size: 17px;
+}
+.brator-manuals .panel .sub_categories p.c_title.active{
+    color: #ed3333 !important;
+}
+.brator-manuals .panel .sub_categories .c_title{
+    cursor: pointer;
+}
 .single-product .brator-product-header-layout .flex-viewport {
     order: 1 !important;
 }
