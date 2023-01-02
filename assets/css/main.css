@@ -1538,6 +1538,7 @@ h.custom_product_detail_wrap r {
     padding: 2px 9px !important;
     float: right;
     transform: rotate(90deg);
+    font-size: 17px;
 }
 .brator-manuals .panel .sub_categories p.c_title.active{
     color: #ed3333 !important;
