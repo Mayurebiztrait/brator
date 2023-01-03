@@ -1938,6 +1938,126 @@ h.custom_product_detail_wrap r {
     left: -16px;
     top: -11px;
 }
+.c_radio_wrap .wpcf7-list-item {
+    display: inline-block !important;
+    margin-left: 0px;
+}
+.c_radio_wrap .wpcf7-list-item.last {
+    margin-left: 15px;
+}
+.c_radio_wrap,.dealership_wrap{
+    min-height: unset !important;
+}
+.dealership_wrap .wpcf7-list-item, .strategy_wrap .wpcf7-list-item, .interested_wrap .wpcf7-list-item,.dealership_aodes .wpcf7-list-item{
+    display: inline-block !important;
+    width: 150px;
+    margin-bottom: 10px;
+}
+div.dealership_wrap input[type="checkbox"], div.strategy_wrap input[type="checkbox"],.interested_wrap input[type="checkbox"]{
+    width: 23% !important;
+    height: 18px !important;
+}
+
+.dealership_wrap .wpcf7-form-control-wrap {
+    /* margin-top: 43px !important; */
+}
+
+.dealership_wrap .checkbox,.strategy_wrap  .checkbox {
+    margin-top: 10px;
+    margin-left: -20px;
+}
+
+.strategy_wrap .wpcf7-list-item {
+    width: 224px !important;
+}
+
+.interested_wrap .wpcf7-list-item {
+    width: 202px !important;
+}
+
+.interested_wrap 
+ input[type="checkbox"] {
+    width: 15% !important;
+}
+
+.interested_wrap 
+ .checkbox {
+    margin-left: -20px;
+    margin-top: 10px;
+}
+
+.dealership_aodes .wpcf7-list-item {
+    width: 100%;
+}
+
+.dealership_aodes 
+ input[type="checkbox"] {
+    width: 3% !important;
+    height: 20px;
+}
+
+.dealership_aodes 
+ .checkbox {
+    margin-top: 15px;
+    margin-left: -20px;
+}
+
+.dealership_aodes 
+ span.wpcf7-list-item-label {
+    font-size: 14px;
+}
+
+.dealer_title 
+ .elementor-heading-title {
+    font-size: 44px;
+    letter-spacing: 10px;
+    border: 0px !important;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.dealer_title .elementor-heading-title::after {
+    border-bottom: unset !important;
+}
+
+li {}
+
+ul.dealer_conditions li {
+    font-size: 15px !important;
+}
+
+.become_dealer_form h2.formtitle {color: #ed3333;margin-bottom: 14px;font-size: 27px;}
+
+.become_dealer_form label {
+    font-size: 16px;
+}
+
+.become_dealer_form input[type="search"], .become_dealer_form input[type="text"], .become_dealer_form input[type="number"], .become_dealer_form input[type="email"],.become_dealer_form input[type="tel"] {
+    padding: 3px !important;
+}
+
+.page-id-2202 .become_dealer_form .brator-contact-form-field {
+    min-height: 81px;
+}
+
+.become_dealer_form h2.formtitle:last-child {
+    margin-top: 30px;
+}
+
+.become_dealer_form 
+ span.wpcf7-list-item-label {
+    font-size: 15px;
+}
+
+.brator-contact-form-field.submit {text-align: center;}
+
+.brator-contact-form-field.submit .submit_form {
+    text-transform: uppercase;
+    float: unset !important;
+    width: 212px !important;
+    font-size: 23px !important;
+    margin: 0 auto !important;
+}
 
 .brator-cart-item-list .brator-cart-item-list-item .brator-cart-item-list-item-title .brator-cart-item-list-item-title-one .price .amount * {
     color: #ed3333 !important;
