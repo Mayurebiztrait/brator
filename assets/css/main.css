@@ -921,7 +921,7 @@ a.product_type_variable {
 }
 
 .custom_product_detail_wrap .feature-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background-image: url(../images/bg-img-feature.png);
     background-position: center center;
     background-size: cover;
@@ -929,11 +929,17 @@ a.product_type_variable {
     background-repeat: no-repeat;
 }
 
+.custom_product_detail_wrap .feature-section h2.section-title::after {
+    display: none;
+}
+
 .custom_product_detail_wrap .feature-section h2.section-title {
-    font-size: 65px;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
+    font-family: 'League Gothic', sans-serif;
+    letter-spacing: 5px;
+    font-size: 80px;
 }
 
 .custom_product_detail_wrap .feature-section ul#pills-tab {
@@ -956,6 +962,7 @@ a.product_type_variable {
     opacity: 0.9;
     text-align: center;
     white-space: nowrap;
+    border-radius: 10px;
 }
 
 .custom_product_detail_wrap .unsure-wrapper svg#Layer_1 {
@@ -967,6 +974,7 @@ a.product_type_variable {
     color: #fff;
     background-color: #ed3333;
     border: 1px solid #ed3333;
+    border-radius: 10px;
 }
 
 .custom_product_detail_wrap .custom-card-main .custom-card-button {
@@ -998,7 +1006,7 @@ a.product_type_variable {
     flex-direction: column;
     -webkit-box-flex: 1;
     flex-grow: 1;
-    padding: 35px 25px 0px;
+    padding: 25px 0 0;
 }
 
 .custom_product_detail_wrap .custom-card-text-wrapper .custom-card-text {
@@ -1056,7 +1064,7 @@ li.pick-modal-right-li a {
 }
 
 .custom_product_detail_wrap .custom-button-modal {
-    margin-top: 50px;
+    margin-top: 0;
     text-align: right;
 }
 
@@ -1077,21 +1085,31 @@ li.pick-modal-right-li a {
     position: relative;
 }
 
+.specifications-title hr {
+    background-color: #0f1423;
+    height: 2px;
+    border-color: #0f1423;
+    opacity: 1;
+}
+
 .custom_product_detail_wrap .specifications-title .specifications-section-title::after {
     display: none;
 }
 
 .custom_product_detail_wrap .specifications-title .specifications-section-title {
-    font-size: 65px;
+    font-size: 80px;
     color: #000;
     text-align: center;
     text-transform: uppercase;
     position: absolute;
-    top: -40px;
+    top: 50%;
     background: #f6f6f6;
-    left: 26%;
+    left: 50%;
     padding: 0 45px;
     margin: 0;
+    font-family: 'League Gothic', sans-serif;
+    letter-spacing: 5px;
+    transform: translate(-50%, -50%);
 }
 
 h.custom_product_detail_wrap r {
@@ -1169,7 +1187,8 @@ h.custom_product_detail_wrap r {
 .custom_product_detail_wrap .custom-specification-card-svg {
     margin-left: 15px;
 }
-.stay-connected .wpcf7-submit{
+
+.stay-connected .wpcf7-submit {
     padding: 19px 120px;
     background-color: #ed3333;
     color: #fff;
@@ -1178,28 +1197,34 @@ h.custom_product_detail_wrap r {
     border: none !important;
     display: inline-block;
 }
+
 .stay-connected .wpcf7-form-control {
     border: 1px solid #ced4da;
 }
-.stay-connected .contact-form-title{
+
+.stay-connected .contact-form-title {
     margin-bottom: 0px !important;
 }
-.stay-connected h2:after{
+
+.stay-connected h2:after {
     border: none !important;
 }
+
 .stay-connected .stay-connected-highlighted-title,
-.stay-connected .stay-connected-title{
+.stay-connected .stay-connected-title {
     font-size: 52px !important;
 }
+
 .custom_product_detail_wrap .stay-connected {
     background-image: url(../img/bg-form.jpg);
     padding: 50px 0px;
     background-size: cover;
 }
 
-.middle-content .row .col-md-12.col-xl-6{
+.middle-content .row .col-md-12.col-xl-6 {
     width: 100% !important;
 }
+
 .custom_product_detail_wrap .form-submit-button {
     padding: 19px 120px;
     background-color: #ed3333;
@@ -1218,6 +1243,7 @@ h.custom_product_detail_wrap r {
     color: #fff;
     margin-bottom: 50px;
 }
+
 /* comment */
 .custom_product_detail_wrap .form-control {
     padding: 20px;
@@ -3763,6 +3789,12 @@ ul#menu-left-sidebar li a {
     border-bottom: 1px solid #ed3333;
     margin-bottom: 20px;
     padding: 15px 0 15px 0px;
+    text-transform: uppercase;
+}
+
+.product-details-content p {
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
 .product-details-content h2::after {
@@ -4064,7 +4096,16 @@ ul#menu-left-sidebar li a {
     letter-spacing: 15px;
 }
 
+.custom-top-tabbing {
+    background-color: red;
+}
+
+.product-details-content h3 span {
+    font-size: 30px;
+}
+
 /*************************************/
+
 /*=======================*/
 /* medai quary start here*/
 /*=======================*/

@@ -54,7 +54,7 @@ get_header(); ?>
                             <?php }?>
                                 <div class="product-details-content">
                                     <h2><?php the_title(); ?></h2>
-                                    <h3>Starting at <span>$<?php echo $base_msrp; ?></span> us MSRP</h3>
+                                    <h3>Starting at <span>$<?php echo $base_msrp; ?></span> US MSRP</h3>
                                     <p>
                                         <?php echo get_the_excerpt(); ?>
                                     </p>
