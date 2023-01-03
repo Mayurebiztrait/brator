@@ -68,18 +68,38 @@ jQuery("body").on("click", ".product-detail .change_slide", function () {
 
 jQuery("body").on("click", ".brator-manuals .accordion", function () {
   jQuery('.brator-manuals .accordion').removeClass('active');
-  jQuery(this).addClass('active');
   jQuery(".brator-manuals .panel").slideUp();
-  jQuery(this).siblings('.panel').slideDown();
+
+  if(jQuery(this).hasClass('active')){
+    
+    jQuery(this).removeClass('active');
+    jQuery(this).siblings('.panel').slideUp();
+  }else{
+    jQuery(this).addClass('active');
+    
+    jQuery(this).siblings('.panel').slideDown();
+
+  }
+  
+  
  
 
 });
 jQuery("body").on("click", ".brator-manuals .panel .sub_categories .c_title", function () {
   jQuery('.brator-manuals .panel .sub_categories .c_title').removeClass('active');
-  jQuery(this).addClass('active');
+
   jQuery(".brator-manuals .panel .sub_categories .c_ul").slideUp();
-  jQuery(this).siblings('.c_ul').slideDown();
+
  
+  if(jQuery(this).hasClass('active')){
+    jQuery(this).removeClass('active');
+    jQuery(this).siblings('.c_ul').slideUp();
+  }else{
+    jQuery(this).addClass('active');
+    
+    jQuery(this).siblings('.c_ul').slideDown();
+
+  }
 
 });
 
