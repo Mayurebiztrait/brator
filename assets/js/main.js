@@ -2,7 +2,7 @@ jQuery( document ).ready(function() {
 
   // download pdf code
   
-  
+  jQuery('.find-dealer-page .map-image').after('<p class="map_description">Need help finding a Aodes dealer near you? Find a dealer nearest to you with our locator map. Simply enter your address and select the type of equipment you\' are looking for.</p>');
   jQuery("body").on("click", ".review_form_submit", function () {
     jQuery('#review_form_submit_form').trigger('submit');
   });
