@@ -1139,7 +1139,7 @@ h.custom_product_detail_wrap r {
 
 .custom_product_detail_wrap .custom-specification-card-img {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 15px;
 }
 
 .custom_product_detail_wrap .custom-specification-card {
@@ -1149,7 +1149,7 @@ h.custom_product_detail_wrap r {
 }
 
 .custom_product_detail_wrap .custom-specification-card-title {
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     font-size: 13px;
     color: #ed3333;
     font-weight: 700;
@@ -1552,13 +1552,15 @@ h.custom_product_detail_wrap r {
     display: none;
 }
 
-#accordion .accordion.active .arrow_span{
+#accordion .accordion.active .arrow_span {
     transform: rotate(270deg);
 }
-#accordion .accordion.active h5 a{
+
+#accordion .accordion.active h5 a {
     color: #ed3333 !important;
 }
-#accordion .accordion .arrow_span{
+
+#accordion .accordion .arrow_span {
     color: #fff !important;
     background: #ed3333;
     padding: 2px 9px !important;
@@ -1566,12 +1568,15 @@ h.custom_product_detail_wrap r {
     transform: rotate(90deg);
     font-size: 17px;
 }
-.brator-manuals .panel .sub_categories p.c_title.active{
+
+.brator-manuals .panel .sub_categories p.c_title.active {
     color: #ed3333 !important;
 }
-.brator-manuals .panel .sub_categories .c_title{
+
+.brator-manuals .panel .sub_categories .c_title {
     cursor: pointer;
 }
+
 .single-product .brator-product-header-layout .flex-viewport {
     order: 1 !important;
 }
