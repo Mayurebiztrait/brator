@@ -1683,7 +1683,7 @@ h.custom_product_detail_wrap r {
     padding-top: 25px !important;
 }
 #asl-storelocator.asl-cont .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box .sl-list-wrapper .sl-list .sl-item{
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #000 !important;
 }
 .Num_of_store span{
     font-size: 15px !important;
