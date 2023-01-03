@@ -1626,7 +1626,88 @@ h.custom_product_detail_wrap r {
     color: #fff !important;
     padding: 10px 10px;
 }
+.find-dealer-page{
+    margin: 50px 0px;
+}
+.map_description {
+    margin-top: 35px !important;
+}
+.find-dealer-page .f_title{
+    margin-bottom: 45px;
+    border-bottom: 1px solid;
+    padding-bottom: 15px;
+}
+.find-dealer-page .sl-container{
+    width: 100% !important;
+    max-width: 100% !important;
+}
+#asl-storelocator.asl-cont .agile-modal 
+{
+    left: 40px !important;
+    
+    bottom: 71px !important;
 
+}
+#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter .asl-store-search .asl-search-address{
+    border-radius: none !important;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+}
+#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter .asl-store-search .asl-search-clr{
+    right: 1px !important;
+}
+#asl-storelocator.asl-cont .sl-main-cont .asl-panel{
+    border: unset !important;
+    border-radius: unset !important;
+}
+#asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner{
+    top: 116px !important;
+}
+#asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-direction,
+#asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-visit-website{
+    border-radius: unset !important;
+    font-weight: 600 !important;
+}
+#asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-visit-website{
+    color:#000 !important;
+    border: 1px solid #000 !important;
+}
+#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter{
+    padding: 0px !important;
+}
+#asl-storelocator.asl-cont .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box .sl-list-wrapper .sl-list .sl-item{
+    padding-bottom: 35px !important;
+    padding-top: 35px !important;
+}
+#asl-storelocator.asl-cont .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box .sl-list-wrapper .sl-list .sl-item:first-child{
+    padding-top: 25px !important;
+}
+#asl-storelocator.asl-cont .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box .sl-list-wrapper .sl-list .sl-item{
+    border-bottom: 1px solid #000;
+}
+.Num_of_store span{
+    font-size: 15px !important;
+}
+#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter p {
+    color: #000 !important;
+    font-weight: 800;
+    font-size: 15px;
+    margin-top: 0px !important;
+    padding-bottom: 10px !important;
+}
+.asl-map {
+    
+    padding-left: 40px !important;
+}
+#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter .asl-store-search .span-geo{
+    left: 0px;
+    right: unset !important;
+    background: transparent !important;
+    color: #000 !important;
+}
+#asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .Num_of_store{
+    background-color: #000 !important;
+}
 .brator-header-area.header-one .brator-info-right {
     padding-top: 0;
 }
@@ -5060,7 +5141,9 @@ ul#menu-left-sidebar li a {
     .custom_product_detail_wrap .specifications-title .specifications-section-title {
         left: 7%;
     }
-
+    #asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner {
+        top: 35px !important;
+    }
     .blog-details-content .woocommerce-MyAccount-content {
         padding: 0 16px;
     }
@@ -5674,7 +5757,17 @@ ul#menu-left-sidebar li a {
     .custom_product_detail_wrap .specifications-title .specifications-section-title {
         left: 6%;
     }
-
+    .pol-md-7.pol-lg-8.asl-map {
+        padding-left: 0px !important;
+        padding-top: 40px !important;
+    }
+    #asl-storelocator.asl-cont .agile-modal {
+        left: 0px !important;
+        bottom: 86px !important;
+        top: 40px !important;
+    }
+    
+    
     .tinv-wishlist.woocommerce.tinv-wishlist-clear {
         padding: 0 15px;
     }
