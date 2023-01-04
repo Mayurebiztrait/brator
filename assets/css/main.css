@@ -4318,7 +4318,7 @@ ul#menu-left-sidebar li a {
     line-height: 1.5em;
     line-height: 28px;
     margin: 0 0 15px;
-    color: #666666;
+    color: #000;
     font-family: 'League Gothic', sans-serif;
 }
 
@@ -4343,7 +4343,7 @@ ul#menu-left-sidebar li a {
 
 .top-banner .inner-top h3 {
     font-size: 160px;
-    padding: 90px 0 0 120px;
+    padding: 90px 0 0 220px;
     line-height: 170px;
     color: #ed3333;
     font-family: 'League Gothic', sans-serif;
@@ -4351,12 +4351,13 @@ ul#menu-left-sidebar li a {
 }
 
 .top-banner .inner-top p {
-    font-size: 100px;
-    padding: 0 0 0 120px;
+    font-size: 80px;
+    padding: 0 0 0 220px;
     line-height: 100px;
     color: #fff;
     font-family: 'League Gothic', sans-serif;
     letter-spacing: 15px;
+    text-transform: uppercase;
 }
 
 .custom-top-tabbing {
@@ -5266,6 +5267,16 @@ ul#menu-left-sidebar li a {
 }
 
 @media screen and (max-width:1024px) {
+    .top-banner .inner-top h3 {
+        text-align: center;
+        padding: 90px 0 0 0;
+    }
+
+    .top-banner .inner-top p {
+        padding: 0 0 0 0;
+        text-align: center;
+    }
+
     /* .product-details-content h2 {
         font-size: 1rem;
     }
@@ -5320,6 +5331,16 @@ ul#menu-left-sidebar li a {
 }
 
 @media screen and (max-width:992px) {
+    .top-banner .inner-top p {
+        padding: 0 0 0 0;
+        text-align: center;
+    }
+
+    .top-banner .inner-top h3 {
+        padding: 90px 0 0 0;
+        text-align: center;
+    }
+
     .custom_product_detail_wrap .feature-section .nav-pills .nav-link {
         height: auto;
     }
@@ -6053,6 +6074,31 @@ ul#menu-left-sidebar li a {
 }
 
 @media screen and (max-width:576px) {
+    .top-middle-banner .inner-section h3 {
+        font-size: 30px;
+    }
+
+    .top-middle-banner .inner-section p {
+        font-size: 39px;
+    }
+
+    .top-banner .inner-top h3 {
+        font-size: 40px;
+        line-height: 52px;
+        color: #ed3333;
+        letter-spacing: 7px;
+        text-align: center;
+        padding: 90px 0 0 0px;
+    }
+
+    .top-banner .inner-top p {
+        font-size: 37px;
+        padding: 0 0 0 10px;
+        line-height: 63px;
+        letter-spacing: 3px;
+        text-align: center;
+    }
+
     .custom_product_detail_wrap .specifications-title .specifications-section-title {
         left: -32px;
         font-size: 60px;
