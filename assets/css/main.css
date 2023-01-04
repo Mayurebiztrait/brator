@@ -948,6 +948,8 @@ a.product_type_variable {
     padding: 0 0 30px 0;
 }
 
+
+
 .custom_product_detail_wrap .feature-section .nav-pills .nav-link {
     padding: 0.5rem 3rem;
     margin: 0 1rem;
@@ -1135,6 +1137,12 @@ h.custom_product_detail_wrap r {
 
 .custom_product_detail_wrap .custom-specification-card-content {
     padding: 20px 30px;
+    height: 250px;
+    border-right: 1px solid;
+}
+
+.custom-specification-wrapper .row .col-md-3.p-0:last-child .custom-specification-card .custom-specification-card-content {
+    border-right: 0;
 }
 
 .custom_product_detail_wrap .custom-specification-card-img {
@@ -1631,68 +1639,84 @@ h.custom_product_detail_wrap r {
     color: #fff !important;
     padding: 10px 10px;
 }
-.find-dealer-page{
+
+.find-dealer-page {
     margin: 50px 0px;
 }
+
 .map_description {
     margin-top: 35px !important;
 }
-.find-dealer-page .f_title{
+
+.find-dealer-page .f_title {
     margin-bottom: 45px;
     border-bottom: 1px solid;
     padding-bottom: 15px;
 }
-.find-dealer-page .sl-container{
+
+.find-dealer-page .sl-container {
     width: 100% !important;
     max-width: 100% !important;
 }
-#asl-storelocator.asl-cont .agile-modal 
-{
+
+#asl-storelocator.asl-cont .agile-modal {
     left: 40px !important;
-    
+
     bottom: 71px !important;
 
 }
-#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter .asl-store-search .asl-search-address{
+
+#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter .asl-store-search .asl-search-address {
     border-radius: none !important;
     padding-left: 36px !important;
     padding-right: 36px !important;
 }
-#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter .asl-store-search .asl-search-clr{
+
+#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter .asl-store-search .asl-search-clr {
     right: 1px !important;
 }
-#asl-storelocator.asl-cont .sl-main-cont .asl-panel{
+
+#asl-storelocator.asl-cont .sl-main-cont .asl-panel {
     border: unset !important;
     border-radius: unset !important;
 }
-#asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner{
+
+#asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner {
     top: 116px !important;
 }
+
 #asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-direction,
-#asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-visit-website{
+#asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-visit-website {
     border-radius: unset !important;
     font-weight: 600 !important;
 }
-#asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-visit-website{
-    color:#000 !important;
+
+#asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-visit-website {
+    color: #000 !important;
     border: 1px solid #000 !important;
 }
-#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter{
+
+#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter {
     padding: 0px !important;
 }
-#asl-storelocator.asl-cont .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box .sl-list-wrapper .sl-list .sl-item{
+
+#asl-storelocator.asl-cont .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box .sl-list-wrapper .sl-list .sl-item {
     padding-bottom: 35px !important;
     padding-top: 35px !important;
 }
-#asl-storelocator.asl-cont .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box .sl-list-wrapper .sl-list .sl-item:first-child{
+
+#asl-storelocator.asl-cont .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box .sl-list-wrapper .sl-list .sl-item:first-child {
     padding-top: 25px !important;
 }
-#asl-storelocator.asl-cont .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box .sl-list-wrapper .sl-list .sl-item{
+
+#asl-storelocator.asl-cont .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box .sl-list-wrapper .sl-list .sl-item {
     border-bottom: 1px solid #000 !important;
 }
-.Num_of_store span{
+
+.Num_of_store span {
     font-size: 15px !important;
 }
+
 #asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter p {
     color: #000 !important;
     font-weight: 800;
@@ -1700,19 +1724,23 @@ h.custom_product_detail_wrap r {
     margin-top: 0px !important;
     padding-bottom: 10px !important;
 }
+
 .asl-map {
-    
+
     padding-left: 40px !important;
 }
-#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter .asl-store-search .span-geo{
+
+#asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter .asl-store-search .span-geo {
     left: 0px;
     right: unset !important;
     background: transparent !important;
     color: #000 !important;
 }
-#asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .Num_of_store{
+
+#asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .Num_of_store {
     background-color: #000 !important;
 }
+
 .brator-header-area.header-one .brator-info-right {
     padding-top: 0;
 }
@@ -1943,22 +1971,33 @@ h.custom_product_detail_wrap r {
     left: -16px;
     top: -11px;
 }
+
 .c_radio_wrap .wpcf7-list-item {
     display: inline-block !important;
     margin-left: 0px;
 }
+
 .c_radio_wrap .wpcf7-list-item.last {
     margin-left: 15px;
 }
-.c_radio_wrap,.dealership_wrap{
+
+.c_radio_wrap,
+.dealership_wrap {
     min-height: unset !important;
 }
-.dealership_wrap .wpcf7-list-item, .strategy_wrap .wpcf7-list-item, .interested_wrap .wpcf7-list-item,.dealership_aodes .wpcf7-list-item{
+
+.dealership_wrap .wpcf7-list-item,
+.strategy_wrap .wpcf7-list-item,
+.interested_wrap .wpcf7-list-item,
+.dealership_aodes .wpcf7-list-item {
     display: inline-block !important;
     width: 150px;
     margin-bottom: 10px;
 }
-div.dealership_wrap input[type="checkbox"], div.strategy_wrap input[type="checkbox"],.interested_wrap input[type="checkbox"]{
+
+div.dealership_wrap input[type="checkbox"],
+div.strategy_wrap input[type="checkbox"],
+.interested_wrap input[type="checkbox"] {
     width: 23% !important;
     height: 18px !important;
 }
@@ -1967,7 +2006,8 @@ div.dealership_wrap input[type="checkbox"], div.strategy_wrap input[type="checkb
     /* margin-top: 43px !important; */
 }
 
-.dealership_wrap .checkbox,.strategy_wrap  .checkbox {
+.dealership_wrap .checkbox,
+.strategy_wrap .checkbox {
     margin-top: 10px;
     margin-left: -10px;
 }
@@ -1980,13 +2020,11 @@ div.dealership_wrap input[type="checkbox"], div.strategy_wrap input[type="checkb
     width: 202px !important;
 }
 
-.interested_wrap 
- input[type="checkbox"] {
+.interested_wrap input[type="checkbox"] {
     width: 15% !important;
 }
 
-.interested_wrap 
- .checkbox {
+.interested_wrap .checkbox {
     margin-left: -4px;
     margin-top: 10px;
 }
@@ -1995,25 +2033,21 @@ div.dealership_wrap input[type="checkbox"], div.strategy_wrap input[type="checkb
     width: 100%;
 }
 
-.dealership_aodes 
- input[type="checkbox"] {
+.dealership_aodes input[type="checkbox"] {
     width: 3% !important;
     height: 18px;
 }
 
-.dealership_aodes 
- .checkbox {
+.dealership_aodes .checkbox {
     margin-top: 15px;
     margin-left: -7px;
 }
 
-.dealership_aodes 
- span.wpcf7-list-item-label {
+.dealership_aodes span.wpcf7-list-item-label {
     font-size: 14px;
 }
 
-.dealer_title 
- .elementor-heading-title {
+.dealer_title .elementor-heading-title {
     font-size: 44px;
     letter-spacing: 10px;
     border: 0px !important;
@@ -2031,13 +2065,21 @@ ul.dealer_conditions li {
     font-size: 15px !important;
 }
 
-.become_dealer_form h2.formtitle {color: #ed3333;margin-bottom: 14px;font-size: 27px;}
+.become_dealer_form h2.formtitle {
+    color: #ed3333;
+    margin-bottom: 14px;
+    font-size: 27px;
+}
 
 .become_dealer_form label {
     font-size: 16px;
 }
 
-.become_dealer_form input[type="search"], .become_dealer_form input[type="text"], .become_dealer_form input[type="number"], .become_dealer_form input[type="email"],.become_dealer_form input[type="tel"] {
+.become_dealer_form input[type="search"],
+.become_dealer_form input[type="text"],
+.become_dealer_form input[type="number"],
+.become_dealer_form input[type="email"],
+.become_dealer_form input[type="tel"] {
     padding: 3px !important;
 }
 
@@ -2049,18 +2091,21 @@ ul.dealer_conditions li {
     margin-top: 0px;
 }
 
-.wpcf7 .screen-reader-response ul{
+.wpcf7 .screen-reader-response ul {
     margin: 0px;
 }
+
 ul.dealer_conditions {
     margin-bottom: 0px;
 }
-.become_dealer_form 
- span.wpcf7-list-item-label {
+
+.become_dealer_form span.wpcf7-list-item-label {
     font-size: 15px;
 }
 
-.brator-contact-form-field.submit {text-align: center;}
+.brator-contact-form-field.submit {
+    text-align: center;
+}
 
 .brator-contact-form-field.submit .submit_form {
     text-transform: uppercase;
@@ -4043,6 +4088,10 @@ ul#menu-left-sidebar li a {
     background-color: #1f1f1f;
 }
 
+.custom-features-description-modal:nth-child(2n+1) .m_description h3.p_title {
+    color: #fff;
+}
+
 .custom-view-all-specification .modal-header {
     background-color: #ed3333;
 }
@@ -4115,6 +4164,7 @@ ul#menu-left-sidebar li a {
     font-family: 'League Gothic', sans-serif;
     letter-spacing: 4.5px;
     text-transform: uppercase;
+    line-height: 43px;
 }
 
 .custom-features-description-modal .m_description h3.p_title {
@@ -4155,6 +4205,7 @@ ul#menu-left-sidebar li a {
 
 .custom-features-modal .modal-header {
     background-color: #ed3333;
+    padding: 1rem 2rem;
 }
 
 .custom-features-modal .modal-header .btn-close {
@@ -5269,12 +5320,26 @@ ul#menu-left-sidebar li a {
 }
 
 @media screen and (max-width:992px) {
-    .custom_product_detail_wrap .specifications-title .specifications-section-title {
-        left: 7%;
+    .custom_product_detail_wrap .feature-section .nav-pills .nav-link {
+        height: auto;
     }
+
+    .custom_product_detail_wrap .custom-learn-more {
+        width: 39%;
+    }
+
+    .custom_product_detail_wrap .custom-learn-more {
+        width: 34%;
+    }
+
+    .custom_product_detail_wrap .specifications-title .specifications-section-title {
+        left: 47%;
+    }
+
     #asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner {
         top: 35px !important;
     }
+
     .blog-details-content .woocommerce-MyAccount-content {
         padding: 0 16px;
     }
@@ -5885,34 +5950,54 @@ ul#menu-left-sidebar li a {
 }
 
 @media screen and (max-width:767px) {
+    .custom_product_detail_wrap .feature-section h2.section-title {
+        font-size: 60px;
+    }
+
+    .custom_product_detail_wrap .custom-learn-more {
+        width: 30%;
+    }
+
+    .custom_product_detail_wrap .feature-section ul#pills-tab .nav-item {
+        margin-bottom: 20px;
+    }
+
     .custom_product_detail_wrap .specifications-title .specifications-section-title {
         left: 6%;
     }
-    .dealership_wrap .checkbox, .strategy_wrap .checkbox,.interested_wrap .checkbox,
-    .dealership_aodes .checkbox{
+
+    .dealership_wrap .checkbox,
+    .strategy_wrap .checkbox,
+    .interested_wrap .checkbox,
+    .dealership_aodes .checkbox {
         margin-left: 0px;
     }
+
     .dealership_aodes input[type="checkbox"] {
         width: 8% !important;
     }
-    .screen-reader-response{
+
+    .screen-reader-response {
         display: none;
     }
-    .dealer_title .elementor-heading-title{
+
+    .dealer_title .elementor-heading-title {
         margin-top: 0px;
         font-size: 33px;
     }
+
     .pol-md-7.pol-lg-8.asl-map {
         padding-left: 0px !important;
         padding-top: 40px !important;
     }
+
     #asl-storelocator.asl-cont .agile-modal {
         left: 0px !important;
         bottom: 86px !important;
         top: 40px !important;
     }
-    
-    
+
+
     .tinv-wishlist.woocommerce.tinv-wishlist-clear {
         padding: 0 15px;
     }
@@ -5969,7 +6054,9 @@ ul#menu-left-sidebar li a {
 
 @media screen and (max-width:576px) {
     .custom_product_detail_wrap .specifications-title .specifications-section-title {
-        left: 6%;
+        left: -32px;
+        font-size: 60px;
+        transform: unset;
     }
 
     .blog-details-content .woocommerce-MyAccount-content {

@@ -356,31 +356,31 @@ if ($pick_colot_set == 1) {
                                                                 value="<?php echo get_the_title($vehicle_id); ?>">
                                                             <input type="hidden" name="vehicle_id"
                                                                 value="<?php echo $vehicle_id; ?>">
-                                                            <label for="inputEmail4" class="form-label">Email</label>
-                                                            <input type="email" name="email" class="form-control"
+                                                            <label for="inputEmail4" class="form-label"><span>*</span>Name</label>
+                                                            <input type="text" name="email" class="form-control"
                                                                 id="inputEmail4">
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <label for="inputPassword4"
-                                                                class="form-label">Password</label>
-                                                            <input type="password" name="password" class="form-control"
-                                                                id="inputPassword4">
+                                                            <label for="Email4"
+                                                                class="form-label"><span>*</span>Email</label>
+                                                            <input type="email" name="password" class="form-control"
+                                                                id="Email4">
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <label for="inputCity" class="form-label">City</label>
+                                                            <label for="States" class="form-label"><span>*</span>States</label>
                                                             <input type="text" name="city" class="form-control"
-                                                                id="inputCity">
+                                                                id="States">
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <label for="inputState" class="form-label">State</label>
+                                                            <label for="Model" class="form-label"><span>*</span>Model</label>
                                                             <input type="text" name="state" class="form-control"
-                                                                id="inputState">
+                                                                id="Model">
                                                         </div>
                                                         <div class="col-md-12">
-                                                            <label for="inputStatetext"
+                                                            <label for="Review"
                                                                 class="form-label">Review</label>
                                                             <textarea class="form-control" name="review"
-                                                                id="inputStatetext" rows="3"></textarea>
+                                                                id="Review" rows="3"></textarea>
                                                         </div>
                                                         <div class="col-md-12">
                                                             <div class="upload-btn-wrapper">

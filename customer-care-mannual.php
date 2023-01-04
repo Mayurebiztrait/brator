@@ -58,16 +58,29 @@ div#accordion .card {
 }
 </style>
 <div class="top-banner">
+    <div class="inner-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>AODESssss</h3>
+                    <p>OWNER'S MANUALS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="top-banner">
 <div class="inner-top">
 <div class="row section-top-2">
 <div class="col-sm-2"></div>
-<div class="col-sm-8"><p>OWNER'S MANUALS</p></div>
+<div class="col-sm-8"><p></p></div>
 <div class="col-sm-2"></div>
 </div>
 </div>
 </div>
-</div>
+</div> -->
 <!--===================================-->
+
 <div class="top-middle-banner customercare">
 <div class="inner-section">
 <div class="row section-1">
