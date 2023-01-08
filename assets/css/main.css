@@ -1296,6 +1296,7 @@ h.custom_product_detail_wrap r {
     letter-spacing: 7.2px;
 }
 
+
 .custom_product_detail_wrap .stay-connected {
     background-image: url(../img/bg-form.jpg);
     padding: 50px 0px;
@@ -4118,14 +4119,34 @@ section.brator-blog-post-area .woocommerce-MyAccount-navigation ul {
     padding-left: 0px;
 }
 
-.contact-bottom .brator-contact-list-header h2 {
-    margin-bottom: 15px !important;
+.contact-bottom .brator-contact-list-header h2,
+.brator-contact-form-area .brator-contact-form-header h2 {
+    font-family: 'DIN Next LT Pro' !important;
+    margin-bottom: 29px !important;
+    font-size: 47px !important;
+    font-weight: 100 !important;
+    letter-spacing: 2px;
 }
-
+.brator-contact-list-area .brator-contact-sub-header h3{
+    font-family: 'DIN Next LT Pro' !important;
+}
 .contact-bottom .brator-contact-form-header h2 {
     margin-bottom: 15px !important;
+    font-size: 47px !important;
+    font-weight: 100 !important;
+    letter-spacing: 2px;
 }
-
+.brator-contact-form-area .brator-contact-form span.info-text{
+    margin-bottom: 5px !important;
+}
+.brator-contact-area .brator-contact-list-area {
+    padding-right: 15px !important;
+}
+.brator-contact-list-area .brator-contact-list-items span{
+    font-size: 15px !important;
+    text-transform: uppercase;
+    color: #bbb7b7 !important;
+}
 ul#menu-left-sidebar li.active a {
     color: #ed3333 !important;
 }
@@ -4138,7 +4159,7 @@ ul#menu-left-sidebar li a {
     text-transform: uppercase;
     font-size: 24px;
     font-weight: 500;
-    color: gray;
+    color: #ccc;
 }
 
 .contact-heading::after {
@@ -4151,7 +4172,7 @@ ul#menu-left-sidebar li a {
     left: 50%;
 }
 
-.contact-left-side::before {
+/* .contact-left-side::before {
     position: absolute;
     content: '';
     border-left: 1px solid darkgray;
@@ -4159,8 +4180,43 @@ ul#menu-left-sidebar li a {
     transform: translateX(-50%);
     left: -13px;
     left: 50%;
+} */
+.page-id-235 .contact-left-side{
+    border-right: 1px solid darkgray;
 }
 
+.contact-heading h2,.contact-left-side ul li a{
+    font-family: 'League Gothic', sans-serif !important;
+}
+.brator-contact-form-fields .wpcf7-submit {
+    text-transform: uppercase !important;
+    font-family: 'League Gothic', sans-serif !important;
+    letter-spacing: 2px;
+    padding: 15px 55px !important;
+    font-size: 22px !important;
+}
+.brator-contact-header-area .contact-header *,
+.brator-contact-list-area .brator-contact-list-items p,
+.brator-contact-list-area .brator-contact-list-items a,
+.brator-contact-form-fields .brator-contact-form-field-info span{
+    font-family: 'DIN Next LT Pro' !important;
+}
+.brator-contact-list-area .brator-contact-list-items p,
+.brator-contact-list-area .brator-contact-list-items a{
+    font-size: 15px !important;
+}
+.brator-contact-header-area .contact-header h4{
+    font-size: 72px !important;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    line-height: 70px;
+}
+
+.page-id-235 .contact-left-side{
+    border-right: 1px solid darkgray;
+    margin-right: 31px;
+}
 .product-details-content h2 {
     font-size: 1.4rem;
     color: #ed3333;
@@ -4380,7 +4436,7 @@ ul#menu-left-sidebar li a {
     margin-top: 40px;
 }
 
-h2:after {
+/* h2:after {
     position: absolute;
     content: '';
     border-bottom: 1px solid darkgray;
@@ -4388,7 +4444,7 @@ h2:after {
     transform: translateX(-50%);
     bottom: -13px;
     left: 50%;
-}
+} */
 
 .row.bottom {
     margin-top: 28px;
@@ -4405,7 +4461,7 @@ h2:after {
 }
 
 ul#menu-left-sidebar li a {
-    font-size: 41px !important;
+    font-size: 35px !important;
     font-family: 'Robinson';
 }
 
