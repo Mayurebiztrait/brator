@@ -63,7 +63,8 @@ endif;
 		color: #ed3333;
 	}
 </style>
-<div class="top-banner customer-care-manuals-top-banner">
+
+<div class="top-banner ">
 	<div class="inner-top">
 		<div class="container">
 			<div class="row">
@@ -79,13 +80,14 @@ endif;
 <div class="inner-top">
 <div class="row section-top-2">
 <div class="col-sm-2"></div>
-<div class="col-sm-8"><p>OWNER'S MANUALS</p></div>
+<div class="col-sm-8"><p></p></div>
 <div class="col-sm-2"></div>
 </div>
 </div>
 </div>
 </div> -->
 <!--===================================-->
+
 <div class="top-middle-banner customer-care-manuals">
 	<div class="inner-section">
 		<div class="container">
@@ -101,6 +103,10 @@ endif;
 	</div>
 </div>
 <!-- <div class="top-middle-banner customercare">
+=======
+
+<div class="top-middle-banner customercare">
+>>>>>>> c11f2c66a41d342ec4ed18efc0b9c3657210b06b
 <div class="inner-section">
 <div class="row section-1">
 <div class="col-sm-2"></div>

@@ -1184,6 +1184,7 @@ h.custom_product_detail_wrap r {
 
 .custom_product_detail_wrap .custom-specification-card-content {
     padding: 20px 30px;
+
     height: auto;
     border-right: 1px solid;
 }
@@ -1209,6 +1210,7 @@ h.custom_product_detail_wrap r {
     flex-direction: column;
     justify-content: center;
 }
+
 
 .custom-specification-wrapper .row .col-md-3.p-0:last-child .custom-specification-card .custom-specification-card-content {
     border-right: 0;
@@ -1789,6 +1791,7 @@ h.custom_product_detail_wrap r {
 }
 
 .Num_of_store span {
+
     font-size: 18px !important;
     font-family: 'DIN Next LT Pro' !important;
 }
@@ -1802,6 +1805,7 @@ h.custom_product_detail_wrap r {
 #asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .addr-loc ul li a {
     font-size: 18px !important;
     font-family: 'DIN Next LT Pro' !important;
+    font-size: 15px !important;
 }
 
 #asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter p {
@@ -1811,8 +1815,10 @@ h.custom_product_detail_wrap r {
     margin-top: 0px !important;
     padding-bottom: 10px !important;
     font-family: 'DIN Next LT Pro' !important;
+
     font-size: 24px !important;
     font-weight: bold !important;
+
 }
 
 .asl-map {
@@ -1832,6 +1838,7 @@ h.custom_product_detail_wrap r {
     padding: 17px 20px !important;
 }
 
+
 #asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .addr-loc ul li i {
     font-size: 20px !important;
 }
@@ -1849,6 +1856,7 @@ h.custom_product_detail_wrap r {
     font-family: 'DIN Next LT Pro';
     font-weight: 300;
 }
+
 
 .brator-header-area.header-one .brator-info-right {
     padding-top: 0;
@@ -5580,6 +5588,7 @@ h4.brator-blog-listing-single-item-title {
 }
 
 @media screen and (max-width:1024px) {
+
     .custom_product_detail_wrap .custom-learn-more {
         width: 44%;
     }
@@ -5609,6 +5618,7 @@ h4.brator-blog-listing-single-item-title {
     .stay-connected .stay-connected-title {
         font-size: 50px !important;
     }
+
 
     .top-banner .inner-top h3 {
         text-align: center;
@@ -5671,9 +5681,10 @@ h4.brator-blog-listing-single-item-title {
         padding-top: 80px;
         padding-bottom: 0px;
     }
-}
 
+}
 @media screen and (max-width:992px) {
+
     h4.brator-blog-listing-single-item-title {
         font-size: 30px;
     }
@@ -5894,6 +5905,13 @@ h4.brator-blog-listing-single-item-title {
         text-align: center;
     }
 
+
+    .top-banner .inner-top p {
+        padding: 0 0 0 0;
+        text-align: center;
+    }
+
+
     .top-banner .inner-top h3 {
         padding: 90px 0 0 0;
         text-align: center;
@@ -5909,6 +5927,11 @@ h4.brator-blog-listing-single-item-title {
 
     .custom_product_detail_wrap .custom-learn-more {
         width: 34%;
+    }
+
+
+    .custom_product_detail_wrap .specifications-title .specifications-section-title {
+        left: 47%;
     }
 
 
@@ -6526,6 +6549,7 @@ h4.brator-blog-listing-single-item-title {
 }
 
 @media screen and (max-width:767px) {
+
     .custom-view-all-specification h2.title {
         padding: 0;
         font-size: 35px;
@@ -6723,6 +6747,7 @@ h4.brator-blog-listing-single-item-title {
         display: none;
     }
 
+
     .custom_product_detail_wrap .feature-section h2.section-title {
         font-size: 60px;
     }
@@ -6826,6 +6851,7 @@ h4.brator-blog-listing-single-item-title {
 }
 
 @media screen and (max-width:576px) {
+
     .brator-blog-post.bottom-catalog {
         margin-top: 30px;
     }
@@ -7022,6 +7048,7 @@ h4.brator-blog-listing-single-item-title {
         justify-content: space-between;
     }
 
+
     .top-middle-banner .inner-section h3 {
         font-size: 30px;
     }
@@ -7048,6 +7075,7 @@ h4.brator-blog-listing-single-item-title {
     }
 
     .custom_product_detail_wrap .specifications-title .specifications-section-title {
+
         left: -11px;
         font-size: 47px;
         transform: unset;
@@ -7055,6 +7083,11 @@ h4.brator-blog-listing-single-item-title {
 
     .specifications-title hr {
         display: none;
+
+        left: -32px;
+        font-size: 60px;
+        transform: unset;
+
     }
 
     .blog-details-content .woocommerce-MyAccount-content {
