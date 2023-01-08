@@ -4193,8 +4193,9 @@ ul#menu-left-sidebar li a {
     border-right: 1px solid darkgray;
 }
 
-.contact-heading h2,.contact-left-side ul li a{
+.contact-heading h2,#menu-left-sidebar li a{
     font-family: 'League Gothic', sans-serif !important;
+    padding-left: 0px !important;
 }
 .brator-contact-form-fields .wpcf7-submit {
     text-transform: uppercase !important;
