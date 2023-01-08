@@ -4670,7 +4670,10 @@ li.custom-tabbing-item {
     justify-content: center;
     align-items: center;
 }
-
+.contact-left-side {
+    margin-top: 30px !important;
+    padding-top: 0px !important;
+}
 li.custom-tabbing-item.active::after {
     content: "";
     position: absolute;
