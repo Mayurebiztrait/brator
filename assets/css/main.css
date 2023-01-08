@@ -2550,6 +2550,10 @@ ul.dealer_conditions {
     background: #d7291c;
 }
 
+.prd-grid-custom-svg-loader{
+    display:none;
+}
+
 .brator-header-menu-area.scroll-menu.open .menu-item:hover {
     background: #d7291c;
 }
