@@ -7334,6 +7334,9 @@ h4.brator-blog-listing-single-item-title {
 }
 
 @media screen and (max-width:480px) {
+    .brator-contact-form-fields .brator-contact-form-field-two-items{
+        display: block !important;
+    }
     .page-id-2202 .become_dealer_form .brator-contact-form-field {
         min-height: unset !important;
         width: 100%;
