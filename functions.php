@@ -681,6 +681,23 @@ function brator_track_post_views( $post_id ) {
 			brator_set_post_views_count( $post_id );
 		}
 	}
+
+	$user = wp_get_current_user();
+	if ( in_array( 'Dealer', (array) $user->roles ) ) {
+		?>
+		<style>
+			.brator-header-menu .mega-menu-item{
+				display:none !important;
+			}
+			.brator-header-menu .mega-menu-item.dealer-menu{
+				display:inline-block !important;
+			}
+			.brator-header-menu .mega-menu-item.dealer-menu .mega-menu-item{
+				display:block !important;
+			}
+		</style>
+		<?php 
+	}
 }
 add_action( 'wp_head', 'brator_track_post_views' );
 
