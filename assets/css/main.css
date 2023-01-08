@@ -1964,7 +1964,7 @@ div.dealership_wrap input[type="checkbox"], div.strategy_wrap input[type="checkb
 
 .dealership_wrap .checkbox,.strategy_wrap  .checkbox {
     margin-top: 10px;
-    margin-left: -20px;
+    margin-left: -10px;
 }
 
 .strategy_wrap .wpcf7-list-item {
@@ -1982,7 +1982,7 @@ div.dealership_wrap input[type="checkbox"], div.strategy_wrap input[type="checkb
 
 .interested_wrap 
  .checkbox {
-    margin-left: -20px;
+    margin-left: -4px;
     margin-top: 10px;
 }
 
@@ -1993,13 +1993,13 @@ div.dealership_wrap input[type="checkbox"], div.strategy_wrap input[type="checkb
 .dealership_aodes 
  input[type="checkbox"] {
     width: 3% !important;
-    height: 20px;
+    height: 18px;
 }
 
 .dealership_aodes 
  .checkbox {
     margin-top: 15px;
-    margin-left: -20px;
+    margin-left: -7px;
 }
 
 .dealership_aodes 
@@ -2041,9 +2041,15 @@ ul.dealer_conditions li {
 }
 
 .become_dealer_form h2.formtitle:last-child {
-    margin-top: 30px;
+    margin-top: 0px;
 }
 
+.wpcf7 .screen-reader-response ul{
+    margin: 0px;
+}
+ul.dealer_conditions {
+    margin-bottom: 0px;
+}
 .become_dealer_form 
  span.wpcf7-list-item-label {
     font-size: 15px;
@@ -5876,6 +5882,20 @@ ul#menu-left-sidebar li a {
 @media screen and (max-width:767px) {
     .custom_product_detail_wrap .specifications-title .specifications-section-title {
         left: 6%;
+    }
+    .dealership_wrap .checkbox, .strategy_wrap .checkbox,.interested_wrap .checkbox,
+    .dealership_aodes .checkbox{
+        margin-left: 0px;
+    }
+    .dealership_aodes input[type="checkbox"] {
+        width: 8% !important;
+    }
+    .screen-reader-response{
+        display: none;
+    }
+    .dealer_title .elementor-heading-title{
+        margin-top: 0px;
+        font-size: 33px;
     }
     .pol-md-7.pol-lg-8.asl-map {
         padding-left: 0px !important;
