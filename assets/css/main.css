@@ -4123,18 +4123,18 @@ section.brator-blog-post-area .woocommerce-MyAccount-navigation ul {
 .brator-contact-form-area .brator-contact-form-header h2 {
     font-family: 'DIN Next LT Pro' !important;
     margin-bottom: 29px !important;
-    font-size: 47px !important;
-    font-weight: 100 !important;
-    letter-spacing: 2px;
+    font-size: 26px !important;
+    font-weight: 500 !important;
+   
 }
 .brator-contact-list-area .brator-contact-sub-header h3{
     font-family: 'DIN Next LT Pro' !important;
 }
 .contact-bottom .brator-contact-form-header h2 {
     margin-bottom: 15px !important;
-    font-size: 47px !important;
-    font-weight: 100 !important;
-    letter-spacing: 2px;
+    font-size: 46px !important;
+    font-weight: 500 !important;
+    
 }
 .brator-contact-form-area .brator-contact-form span.info-text{
     margin-bottom: 5px !important;
@@ -4142,10 +4142,18 @@ section.brator-blog-post-area .woocommerce-MyAccount-navigation ul {
 .brator-contact-area .brator-contact-list-area {
     padding-right: 15px !important;
 }
+.contact-bottom .container-xxxl.container-xxl.container{
+    width: 100% !important;
+    max-width: 100% !important;
+}
 .brator-contact-list-area .brator-contact-list-items span{
     font-size: 15px !important;
     text-transform: uppercase;
     color: #bbb7b7 !important;
+    margin-bottom: 3px !important;
+}
+.brator-contact-list-area{
+    margin-right: 58px !important;
 }
 ul#menu-left-sidebar li.active a {
     color: #ed3333 !important;
@@ -4194,6 +4202,7 @@ ul#menu-left-sidebar li a {
     letter-spacing: 2px;
     padding: 15px 55px !important;
     font-size: 22px !important;
+    font-weight: 200 !important;
 }
 .brator-contact-header-area .contact-header *,
 .brator-contact-list-area .brator-contact-list-items p,
@@ -4206,11 +4215,11 @@ ul#menu-left-sidebar li a {
     font-size: 15px !important;
 }
 .brator-contact-header-area .contact-header h4{
-    font-size: 72px !important;
+    font-size: 58px !important;
     font-weight: 400 !important;
     text-transform: uppercase;
     margin-bottom: 0px;
-    line-height: 70px;
+    line-height: 60px;
 }
 
 .page-id-235 .contact-left-side{
@@ -6615,7 +6624,14 @@ h4.brator-blog-listing-single-item-title {
         font-size: 35px;
         letter-spacing: 1.5px;
     }
-
+    .page-id-235 .elementor-element .elementor-element-f95b601{
+        order:2;
+    }
+    .page-id-235 .elementor-element .elementor-element-c1d257e {
+        order:1;
+        border: unset !important;
+    margin-right: 0px !important;
+    }
     .custom-view-all-specification .modal-header #exampleModalLabel {
         font-size: 40px;
     }
