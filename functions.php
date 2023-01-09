@@ -697,6 +697,14 @@ function brator_track_post_views( $post_id ) {
 			}
 		</style>
 		<?php 
+	}else{
+		?>
+		<style>
+			.brator-header-menu .mega-menu-item.dealer-menu{
+				display:none !important;
+			}
+		</style>
+		<?php
 	}
 }
 add_action( 'wp_head', 'brator_track_post_views' );
