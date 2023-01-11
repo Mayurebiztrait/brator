@@ -8,7 +8,7 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 		<div class="type-post">
 		<div class="row">
 		
-		<div class="col-sm-6">
+		<div class="col-sm-8">
 		<h3 class="brator-blog-listing-single-item-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3>
 		<div class="brator-blog-listing-single-item-content">
 				<?php
@@ -53,7 +53,7 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-4">
 		<?php if ( has_post_thumbnail() ) : ?>
 			
 			<div class="brator-blog-listing-single-item-thumbnail">
