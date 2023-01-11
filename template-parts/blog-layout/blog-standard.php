@@ -1,6 +1,6 @@
 <?php
 if ( is_active_sidebar( 'sidebar-1' ) ) :
-	$blog_post_list_class = 'col-xl-8';
+	$blog_post_list_class = 'col-xl-9';
 else :
 	$blog_post_list_class = 'col-xl-12';
 endif;
@@ -26,7 +26,7 @@ endif;
 	<div class="container-xxxl container-xxl container">
 	<div class="row"><div class="col-sm-12"><h2><?php echo 'News'; ?></h2></div></div>
 		<div class="row bottom">
-		<div class="col-xl-3 col-lg-12">
+		<div class="col-xl-2 col-lg-12">
 		<?php echo do_shortcode('[sh_custom_menu_display]'); ?>
 		</div>
 			<div class="<?php echo esc_attr( $blog_post_list_class ); ?> col-lg-12 middlesec">
