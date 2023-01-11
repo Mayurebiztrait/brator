@@ -1,6 +1,6 @@
 <?php
 if ( is_active_sidebar( 'sidebar-1' ) ) :
-	$blog_post_list_class = 'col-xl-12';
+	$blog_post_list_class = 'col-xl-8';
 else :
 	$blog_post_list_class = 'col-xl-12';
 endif;
