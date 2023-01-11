@@ -6,12 +6,18 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 <div class="brator-blog-listing-single-item-area list-type-one">
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="type-post">
-			<?php if ( has_post_thumbnail() ) : ?>
+		<div class="row">
+		<div class="col-sm-6">
+		<?php if ( has_post_thumbnail() ) : ?>
+			
 			<div class="brator-blog-listing-single-item-thumbnail">
+			<h3 class="brator-blog-listing-single-item-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3>
 				<a class="blog-listing-single-item-thumbnail-link" href="<?php esc_url( the_permalink() ); ?>"><?php the_post_thumbnail( 'brator-blog-list' ); ?></a>
 			</div>
 			<?php endif; ?>
-			<div class="brator-blog-listing-single-item-content">
+		</div>
+		<div class="col-sm-6">
+		<div class="brator-blog-listing-single-item-content">
 				<?php
 				if ( is_sticky() ) {
 					echo '<div class="sticky_post_icon " title="' . esc_attr__( 'Sticky Post', 'brator' ) . '"><span class="dashicons dashicons-admin-post"></span></div>';
@@ -21,7 +27,7 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 					<?php brator_category_only(); ?>
 					<?php brator_posted_on(); ?>
 				</div>
-				<h3 class="brator-blog-listing-single-item-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3>
+				
 				<div class="brator-blog-listing-single-item-excerpt">
 				<?php
 				if ( ! empty( get_the_excerpt() ) ) {
@@ -53,6 +59,10 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 					</a> -->
 				</div>
 			</div>
+		</div>
+		</div>
+			
+			
 		</div>
 	</div>
 </div>
