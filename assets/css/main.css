@@ -147,7 +147,12 @@ body {
     font-family: 'Montserrat';
 }
 
-
+.top-bar span {
+    display: inline-block;
+}
+.top-bar .dates{
+	float:right;
+}
 .login {
     background-color: #5d5d5d;
     color: #fff;
