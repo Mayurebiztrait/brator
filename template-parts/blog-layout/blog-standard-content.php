@@ -5,11 +5,11 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 ?>
 <div class="brator-blog-listing-single-item-area list-type-one">
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<div class="type-post">
-		<div class="row">
+			<div class="row">
 		<div class="col-sm-6">wewew</div>
 		<div class="col-sm-6">wewew</div>
 		</div>
+		<div class="type-post">
 		<div class="row">
 		<div class="col-sm-8">
 		<div class="top-bar">
