@@ -9,7 +9,10 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 		<div class="row">
 		
 		<div class="col-sm-8">
+		<div class="top-bar">
 		<h3 class="brator-blog-listing-single-item-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3>
+		<?php brator_posted_on(); ?>
+		</div>
 		<div class="brator-blog-listing-single-item-content">
 				<?php
 				if ( is_sticky() ) {
@@ -18,7 +21,7 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 				?>
 				<div class="brator-blog-listing-single-item-info">
 					<?php brator_category_only(); ?>
-					<?php brator_posted_on(); ?>
+					
 				</div>
 				
 				<div class="brator-blog-listing-single-item-excerpt">
