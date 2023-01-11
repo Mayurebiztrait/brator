@@ -192,6 +192,18 @@ body {
     font-family: 'Montserrat';
 }
 
+<<<<<<< HEAD
+=======
+.top-bar span {
+    display: inline-block;
+}
+span.dates {
+    float: right;
+}
+.type-post.news{
+	display:block!important;
+}
+>>>>>>> 2ef77a3c7e4bcd4d40f01bda4768a2e65ac35bf1
 .login {
     background-color: #5d5d5d;
     color: #fff;

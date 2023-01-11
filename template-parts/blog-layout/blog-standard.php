@@ -1,6 +1,6 @@
 <?php
 if ( is_active_sidebar( 'sidebar-1' ) ) :
-	$blog_post_list_class = 'col-xl-6';
+	$blog_post_list_class = 'col-xl-8';
 else :
 	$blog_post_list_class = 'col-xl-12';
 endif;
@@ -59,13 +59,13 @@ endif;
 					<?php endif; ?>
 				</div>
 			</div>
-			<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
+		<!--	<?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
 				<div class="col-xl-3 col-lg-5 col-md-6 col-12">
 					<div class="brator-blog-post-sidebar">
 						<?php get_sidebar(); ?>
 					</div>
 				</div>
-			<?php } ?>
+			<?php } ?>-->
 		</div>
 	</div>
-</div>
+</div> 

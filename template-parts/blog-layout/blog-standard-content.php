@@ -5,13 +5,16 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 ?>
 <div class="brator-blog-listing-single-item-area list-type-one">
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<div class="type-post">
-			<?php if ( has_post_thumbnail() ) : ?>
-			<div class="brator-blog-listing-single-item-thumbnail">
-				<a class="blog-listing-single-item-thumbnail-link" href="<?php esc_url( the_permalink() ); ?>"><?php the_post_thumbnail( 'brator-blog-list' ); ?></a>
-			</div>
-			<?php endif; ?>
-			<div class="brator-blog-listing-single-item-content">
+		<div class="type-post news">
+		<div class="row">
+		<div class="col-sm-12">
+		<div class="row">
+		<div class="col-sm-6"><span><h3 class="brator-blog-listing-single-item-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3></span></div>
+		<div class="col-sm-6"><span class="dates"><p><?php brator_posted_on(); ?></p></span></div>
+		</div>
+		<div class="row">
+		<div class="col-sm-8">
+		<div class="brator-blog-listing-single-item-content">
 				<?php
 				if ( is_sticky() ) {
 					echo '<div class="sticky_post_icon " title="' . esc_attr__( 'Sticky Post', 'brator' ) . '"><span class="dashicons dashicons-admin-post"></span></div>';
@@ -19,9 +22,9 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 				?>
 				<div class="brator-blog-listing-single-item-info">
 					<?php brator_category_only(); ?>
-					<?php brator_posted_on(); ?>
+					
 				</div>
-				<h3 class="brator-blog-listing-single-item-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3>
+				
 				<div class="brator-blog-listing-single-item-excerpt">
 				<?php
 				if ( ! empty( get_the_excerpt() ) ) {
@@ -39,6 +42,7 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 						<path class="st0" d="M-9.5,69.7"></path><g><path d="M32,36.3c8.5,0,15.4-6.9,15.4-15.4S40.5,5.6,32,5.6c-8.5,0-15.4,6.9-15.4,15.4S23.5,36.3,32,36.3z M32,8.6c6.8,0,12.4,5.5,12.4,12.4S38.8,33.3,32,33.3c-6.8,0-12.4-5.5-12.4-12.4S25.2,8.6,32,8.6z"></path><path d="M63.5,55.8C54.8,48.4,43.6,44.4,32,44.4S9.2,48.4,0.5,55.8c-0.6,0.5-0.7,1.5-0.2,2.1s1.5,0.7,2.1,0.2c8.2-6.9,18.6-10.7,29.5-10.7c10.9,0,21.4,3.8,29.5,10.7c0.3,0.2,0.6,0.4,1,0.4c0.4,0,0.8-0.2,1.1-0.5    C64.2,57.3,64.1,56.3,63.5,55.8z"></path></g></svg>
 						<?php brator_posted_by_auth(); ?>
 					</a>
+					
 					<?php if ( $count > 0 ) { ?>
 					<!-- <a class="post-view-count" href="<?php esc_url( the_permalink() ); ?>">
 						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64">
@@ -52,7 +56,27 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 						<span><?php brator_comments_count(); ?></span>
 					</a> -->
 				</div>
+				<div class="brator-blog-listing-single-item-info-2 readmore">
+				<a href="<?php the_permalink(); ?>" class="permalinks-news">READ THE REST OF ENTERY >></a>
+				</div>
 			</div>
+		</div>
+		<div class="col-sm-4">
+		<?php if ( has_post_thumbnail() ) : ?>
+			
+			<div class="brator-blog-listing-single-item-thumbnail">
+				<a class="blog-listing-single-item-thumbnail-link" href="<?php esc_url( the_permalink() ); ?>"><?php the_post_thumbnail( 'brator-blog-list' ); ?></a>
+			</div>
+			<?php endif; ?>
+		</div>
+		
+		</div>
+		
+		</div>
+		
+		</div>
+			
+			
 		</div>
 	</div>
 </div>
