@@ -150,8 +150,11 @@ body {
 .top-bar span {
     display: inline-block;
 }
-.top-bar .dates{
-	float:right;
+span.dates {
+    float: right;
+}
+.type-post.news{
+	display:block!important;
 }
 .login {
     background-color: #5d5d5d;
