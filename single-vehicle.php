@@ -328,8 +328,10 @@ while (have_rows('variations_images', $vehicle_id)):
                                 <div class="modal-dialog modal-xl">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
+                                            <button type="button" class="close-btn-modal-leave">
+                                                <span class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></span>
+                                            </button>
                                         </div>
                                         <form method="post" id="review_form_submit_form" enctype="multipart/form-data">
                                             <div class="modal-body">
@@ -408,7 +410,7 @@ while (have_rows('variations_images', $vehicle_id)):
                                                         </div>
                                                         <div class="col-md-12">
                                                             <label for="Review"
-                                                                class="form-label">Review</label>
+                                                                class="form-label"><span>*</span>Review</label>
                                                             <textarea class="form-control" name="review"
                                                                 id="Review" rows="3"></textarea>
                                                         </div>
@@ -1005,7 +1007,7 @@ while (have_rows('variations_images', $vehicle_id)):
                                         aria-controls="pills-drivetrain" aria-selected="false">Drivetrain
                                     </button> -->
 
-                                    <a href="#drivetrain_section" class="nav-link active" type="button">Drivetrain</a>
+                                    <a href="#drivetrain_section" class="nav-link" type="button">Drivetrain</a>
                                 </li>
                                 <?php }?>
                                 <?php if ($ds_show == true) {?>
@@ -1430,7 +1432,7 @@ if ($fwi_show == true) {
         </div>
 </section>
 <section class="stay-connected">
-    <div class="container">
+    <div class="container-xxxl container-xxl container">
         <div class="row">
             <div class="col-md-3">
                 <div class="stay-connected-content-wrapper">

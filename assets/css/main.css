@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat-Light.eot');
-    src: url('Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Montserrat-Light.woff2') format('woff2'),
         url('../fonts/Montserrat-Light.woff') format('woff');
     font-weight: 300;
@@ -10,28 +10,9 @@
 }
 
 @font-face {
-    font-family: 'Robinson Rough';
-    src: url('../fonts/RobinsonRough.eot');
-    src: url('RobinsonRough.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/RobinsonRough.woff') format('woff2'),
-        url('../fonts/RobinsonRough.woff') format('woff'),
-        url('../fonts/RobinsonRough.ttf') format('truetype'),
-        url('../fonts/RobinsonRough.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-
-:root {
-    --color-high-dark: #ed3333;
-
-}
-
-@font-face {
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat-Medium.eot');
-    src: url('Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Montserrat-Medium.woff2') format('woff2'),
         url('../fonts/Montserrat-Medium.woff') format('woff');
     font-weight: 500;
@@ -42,7 +23,7 @@
 @font-face {
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat-Regular.eot');
-    src: url('Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Montserrat-Regular.woff2') format('woff2'),
         url('../fonts/Montserrat-Regular.woff') format('woff');
     font-weight: normal;
@@ -53,7 +34,7 @@
 @font-face {
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat-SemiBold.eot');
-    src: url('Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/Montserrat-SemiBold.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Montserrat-SemiBold.woff2') format('woff2'),
         url('../fonts/Montserrat-SemiBold.woff') format('woff');
     font-weight: 600;
@@ -61,14 +42,23 @@
     font-display: swap;
 }
 
-
-
-
+@font-face {
+    font-family: 'Robinson Rough';
+    src: url('../fonts/RobinsonRough.eot');
+    src: url('../fonts/RobinsonRough.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/RobinsonRough.woff') format('woff2'),
+        url('../fonts/RobinsonRough.woff') format('woff'),
+        url('../fonts/RobinsonRough.ttf') format('truetype'),
+        url('../fonts/RobinsonRough.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 @font-face {
     font-family: 'Robinson';
     src: url('../fonts/RobinsonRegular.eot');
-    src: url('RobinsonRegular.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/RobinsonRegular.eot?#iefix') format('embedded-opentype'),
         url('../fonts/RobinsonRegular.woff2') format('woff2'),
         url('../fonts/RobinsonRegular.woff') format('woff');
     font-weight: normal;
@@ -79,7 +69,7 @@
 @font-face {
     font-family: 'Robinson InLine Oblique';
     src: url('../fonts/RobinsonInLineOblique.eot');
-    src: url('RobinsonInLineOblique.eot?#iefix') format('embedded-opentype'),
+    src: url('../fonts/RobinsonInLineOblique.eot?#iefix') format('embedded-opentype'),
         url('../fonts/RobinsonInLineOblique.woff2') format('woff2'),
         url('../fonts/RobinsonRegular.woff') format('woff'),
         url('../fonts/RobinsonInLineOblique.ttf') format('truetype'),
@@ -141,12 +131,66 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'League Gothic';
+    src: url('../fonts/LeagueGothic-Regular.eot');
+    src: url('../fonts/LeagueGothic-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/LeagueGothic-Regular.woff2') format('woff2'),
+        url('../fonts/LeagueGothic-Regular.woff') format('woff'),
+        url('../fonts/LeagueGothic-Regular.ttf') format('truetype'),
+        url('../fonts/LeagueGothic-Regular.svg#LeagueGothic-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'League Gothic';
+    src: url('../fonts/LeagueGothic-CondensedRegular.eot');
+    src: url('../fonts/LeagueGothic-CondensedRegular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/LeagueGothic-CondensedRegular.woff2') format('woff2'),
+        url('../fonts/LeagueGothic-CondensedRegular.woff') format('woff'),
+        url('../fonts/LeagueGothic-CondensedRegular.ttf') format('truetype'),
+        url('../fonts/LeagueGothic-CondensedRegular.svg#LeagueGothic-CondensedRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'League Gothic';
+    src: url('../fonts/LeagueGothic-CondensedItalic.eot');
+    src: url('../fonts/LeagueGothic-CondensedItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/LeagueGothic-CondensedItalic.woff2') format('woff2'),
+        url('../fonts/LeagueGothic-CondensedItalic.woff') format('woff'),
+        url('../fonts/LeagueGothic-CondensedItalic.ttf') format('truetype'),
+        url('../fonts/LeagueGothic-CondensedItalic.svg#LeagueGothic-CondensedItalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'League Gothic';
+    src: url('../fonts/LeagueGothic-Italic.eot');
+    src: url('../fonts/LeagueGothic-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/LeagueGothic-Italic.woff2') format('woff2'),
+        url('../fonts/LeagueGothic-Italic.woff') format('woff'),
+        url('../fonts/LeagueGothic-Italic.ttf') format('truetype'),
+        url('../fonts/LeagueGothic-Italic.svg#LeagueGothic-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    --color-high-dark: #ed3333;
+}
 
 body {
     margin-top: 0px;
     font-family: 'Montserrat';
 }
-
 
 .login {
     background-color: #5d5d5d;
@@ -593,7 +637,7 @@ a.product_type_variable {
 .custom_product_detail_wrap .product-title {
     font-size: 3rem;
     text-transform: capitalize;
-    font-weight: 700;
+    font-weight: 500;
     position: relative;
     color: #ed3333;
     margin: 1rem 0;
@@ -663,6 +707,7 @@ a.product_type_variable {
 .base-icon span {
     font-style: italic;
     color: #666666;
+    font-family: 'DIN Next LT Pro';
 }
 
 .base-icon svg {
@@ -677,20 +722,23 @@ a.product_type_variable {
 }
 
 .custom-modal-form {
-    padding: 0 100px;
+    margin: 0 100px;
+    border-bottom: 1px solid #000;
 }
 
 .custom_product_detail_wrap .product-detail h2 {
     text-transform: capitalize;
     color: #0f1423;
     padding-bottom: 0.6rem;
-    font-family: 'League Gothic', sans-serif;
+    font-family: 'League Gothic';
     letter-spacing: 3.2px;
     font-size: 60px;
 }
 
 .custom-leave-review .modal-footer {
-    border-top: 1px solid #0f1423;
+    border-top: 0px solid #0f1423;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .custom_product_detail_wrap .product-detail h2::after {
@@ -724,7 +772,15 @@ a.product_type_variable {
 .custom-card-svg svg {
     width: 1em;
     height: 1em;
-    font-size: 16px;
+    font-size: 20px;
+}
+
+.custom_product_detail_wrap .custom-specification-card-svg svg {
+    font-size: 20px;
+}
+
+.custom-card-svg svg path {
+    fill: rgb(222, 28, 33);
 }
 
 
@@ -739,7 +795,11 @@ a.product_type_variable {
 }
 
 .custom-upload-btn .img-wrapper {
-    padding: 0 0 20px 0;
+    padding: 0 0 5px 0;
+}
+
+.custom-features-description-modal:nth-child(2n+1) .m_description .description-some-text * {
+    color: #fff !important;
 }
 
 .custom-leave-review .modal-body .modal-body-icon {
@@ -748,9 +808,14 @@ a.product_type_variable {
 
 .custom-leave-review .modal-body-img-title .modal-body-text h2 {
     text-align: center;
-    font-size: 100px;
+    font-size: 120px;
     font-family: 'League Gothic', sans-serif;
     color: #0f1423;
+    font-weight: 500;
+}
+
+.custom-modal-form .form-label span {
+    color: #ed3333;
 }
 
 .custom-leave-review .custom-modal-form .submit-text {
@@ -758,6 +823,7 @@ a.product_type_variable {
     line-height: 20px;
     font-size: 16px;
     text-align: justify;
+    margin-bottom: 30px;
 }
 
 .upload-btn-wrapper {
@@ -781,7 +847,7 @@ a.product_type_variable {
 }
 
 .custom-leave-review .modal-body .modal-footer .review_form_submit {
-    padding: 0.175rem 2.75rem;
+    padding: 0.175rem 5.75rem;
     background-color: #ed3333;
     font-family: 'League Gothic', sans-serif;
     font-size: 30px;
@@ -810,13 +876,9 @@ a.product_type_variable {
 }
 
 .custom-leave-review .modal-body .modal-body-icon svg {
-    width: 6em;
-    height: 6em;
+    width: 4em;
+    height: 4em;
     font-size: 26px;
-}
-
-.custom-leave-review .modal-footer {
-    justify-content: center;
 }
 
 .custom_product_detail_wrap .product-detail ul li {
@@ -986,13 +1048,15 @@ a.product_type_variable {
     text-transform: uppercase;
     font-family: 'League Gothic', sans-serif;
     letter-spacing: 5px;
-    font-size: 80px;
+    font-size: 120px;
+    font-weight: 500;
 }
 
 .custom_product_detail_wrap .feature-section ul#pills-tab {
     justify-content: center;
-    margin: 30px 0 0 0;
-    padding: 0 0 30px 0;
+    margin: 0;
+    padding: 30px 0 30px 0;
+    margin-bottom: 0 !important;
 }
 
 
@@ -1146,7 +1210,7 @@ li.pick-modal-right-li a {
 }
 
 .custom_product_detail_wrap .specifications-title .specifications-section-title {
-    font-size: 80px;
+    font-size: 120px;
     color: #000;
     text-align: center;
     text-transform: uppercase;
@@ -1159,6 +1223,7 @@ li.pick-modal-right-li a {
     font-family: 'League Gothic', sans-serif;
     letter-spacing: 5px;
     transform: translate(-50%, -50%);
+    font-weight: 500;
 }
 
 h.custom_product_detail_wrap r {
@@ -1196,6 +1261,7 @@ h.custom_product_detail_wrap r {
 .learn-modal .modal-fullscreen .modal-header {
     border-radius: 0;
     background: red;
+    padding: 2rem 2rem;
 }
 
 .learn-modal .modal-fullscreen .modal-header .btn-close {
@@ -1235,7 +1301,7 @@ h.custom_product_detail_wrap r {
 }
 
 .custom_product_detail_wrap .custom-specification-card-subtitle {
-    font-size: 18px;
+    font-size: 16px;
     color: #0f1423;
     font-weight: 600;
 }
@@ -1264,7 +1330,7 @@ h.custom_product_detail_wrap r {
 }
 
 .custom_product_detail_wrap .custom-specification-card-svg {
-    margin-left: 15px;
+    margin-left: 3px;
 }
 
 .stay-connected .wpcf7-submit {
@@ -1275,6 +1341,8 @@ h.custom_product_detail_wrap r {
     font-size: 30px;
     border: none !important;
     display: inline-block;
+    text-transform: uppercase;
+    font-family: 'League Gothic', sans-serif;
 }
 
 .stay-connected .wpcf7-form-control {
@@ -1291,7 +1359,7 @@ h.custom_product_detail_wrap r {
 
 .stay-connected .stay-connected-highlighted-title,
 .stay-connected .stay-connected-title {
-    font-size: 120px !important;
+    font-size: 110px !important;
     font-family: 'League Gothic', sans-serif;
     letter-spacing: 7.2px;
 }
@@ -1321,7 +1389,7 @@ h.custom_product_detail_wrap r {
 }
 
 .custom_product_detail_wrap .contact-form-title {
-    font-size: 20px;
+    font-size: 21.5px;
     color: #fff;
     margin-bottom: 30px !important;
 }
@@ -1358,15 +1426,17 @@ h.custom_product_detail_wrap r {
 .custom_product_detail_wrap .stay-connected-title {
     font-size: 70px;
     color: #fff;
+    font-weight: 500;
 }
 
 .custom_product_detail_wrap .stay-connected-highlighted-title {
     color: #ed3333;
+    font-weight: 500;
 }
 
 .custom_product_detail_wrap .vl-form {
     border-left: 1px solid #fff;
-    height: 500px;
+    height: 550px;
     text-align: center;
 }
 
@@ -1724,12 +1794,14 @@ h.custom_product_detail_wrap r {
 }
 
 .find-dealer-page .f_title {
-    margin-bottom: 45px;
+    margin-bottom: 26px;
     border-bottom: 1px solid;
     padding-bottom: 15px;
     font-family: 'League Gothic', sans-serif;
     font-size: 75px;
     letter-spacing: 5px;
+    font-weight: 500;
+    line-height: 75px;
 }
 
 .find-dealer-page .sl-container {
@@ -1767,6 +1839,26 @@ h.custom_product_detail_wrap r {
 #asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-visit-website {
     border-radius: unset !important;
     font-weight: 600 !important;
+}
+
+#asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-direction {
+    width: 140px;
+    padding: 13px 15px !important;
+    background-color: #ed3333;
+}
+
+#asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner .Num_of_store .asl-print-btn {
+    flex-direction: row-reverse;
+}
+
+#asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner .Num_of_store .asl-print-btn span {
+    margin-left: 10px;
+}
+
+#asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-visit-website {
+    width: 260px;
+    padding: 12px 41px !important;
+    background-color: red;
 }
 
 #asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-visit-website {
@@ -1878,6 +1970,18 @@ h.custom_product_detail_wrap r {
     line-height: 0;
 }
 
+button.button.single_add_to_cart_button {
+    width: 180px !important;
+}
+
+.brator-product-header-layout-area .brator-product-header-layout {
+    padding: 50px 10px 0 50px;
+}
+
+.brator-product-single-cart-count .brator-brator-cart-list-items-qty input {
+    margin-left: 29px !important;
+}
+
 .product-template-default a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart.tinvwl-product-already-on-wishlist.tinvwl-position-after {
     font-size: 16px;
     font-weight: 700;
@@ -1887,9 +1991,13 @@ h.custom_product_detail_wrap r {
     color: #fff;
     padding: 15px 20px;
     border-radius: 4px;
-    height: 52px;
+    height: auto;
     text-transform: capitalize;
     transition: 0.3s;
+    margin-left: 142px;
+    padding: 15px 14px !important;
+    width: auto !important;
+    text-align: center;
 }
 
 .brator-header-area.header-one .brator-info-right a.login {
@@ -2551,8 +2659,8 @@ ul.dealer_conditions {
     background: #d7291c;
 }
 
-.prd-grid-custom-svg-loader{
-    display:none;
+.prd-grid-custom-svg-loader {
+    display: none;
 }
 
 .brator-header-menu-area.scroll-menu.open .menu-item:hover {
@@ -2589,6 +2697,13 @@ ul.dealer_conditions {
     color: #fff;
 }
 
+.sl-act-btns.mt-3 {
+    padding: 0 15px;
+}
+
+#asl-storelocator.asl-cont .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box .sl-list-wrapper .sl-list .sl-item .sl-direction {
+    flex: 0 !important;
+}
 
 .brator-header-menu-area.scroll-menu.open .menu-item a,
 .brator-header-menu-area.red-variant .menu-item a {
@@ -3172,7 +3287,7 @@ input.submit {
 .find-deal {
     background-color: #d7291c;
     color: #fff;
-    padding: 23px 28px;
+    padding: 5px 28px;
     transform: skew(-10deg);
     display: inline-block;
     text-decoration: none;
@@ -3193,7 +3308,7 @@ input.submit {
 .contact-us {
     background-color: #5d5d5d;
     color: #fff;
-    padding: 23px 28px;
+    padding: 6px 28px;
     transform: skew(-10deg);
     display: inline-block;
     text-decoration: none;
@@ -3404,9 +3519,9 @@ input.submit {
 
 }
 
-.elementor-top-section {
+/* .elementor-top-section {
     padding: 0px 275px;
-}
+} */
 
 .brator-footer-area {
     padding: 50px 275px;
@@ -3787,7 +3902,7 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
 .discover-your {
     background-color: transparent;
     color: #fff;
-    padding: 23px 28px;
+    padding: 10px 28px;
     transform: skew(-10deg);
     display: inline-block;
     text-decoration: none;
@@ -3833,7 +3948,7 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
     color: #d7291c;
     text-decoration: none;
     background-color: #fff;
-    padding: 23px 48px;
+    padding: 10px 48px;
     transform: skew(-10deg);
     display: inline-block;
     margin-bottom: 50px;
@@ -3841,7 +3956,7 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
     font-weight: 600;
     border: 1px solid transparent;
     transition: all 0.5s ease-in-out;
-    text-transform: uppercase;
+    text-transform: u ppercase;
     font-family: 'Montserrat';
 }
 
@@ -3856,7 +3971,7 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
     color: #d7291c;
     text-decoration: none;
     background-color: #fff;
-    padding: 23px 28px;
+    padding: 10px 28px;
     transform: skew(-10deg);
     display: inline-block;
     margin-left: 20px;
@@ -3873,8 +3988,10 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
     color: #fff;
 }
 
-
-
+/* #mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-item>a.mega-menu-link {
+    font-size: 17px;
+    font-family: 'Montserrat';
+} */
 
 .accessories-link {
     text-align: center;
@@ -3882,7 +3999,7 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
     text-decoration: none;
     background-color: #d7291c;
     border: 1px solid transparent;
-    padding: 23px 28px;
+    padding: 10px 28px;
     transform: skew(-10deg);
     display: inline-block;
     text-transform: uppercase;
@@ -3894,7 +4011,6 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
     background-color: transparent;
     border: 1px solid #d7291c;
     color: #d7291c;
-
 }
 
 .accessories-button {
@@ -4038,6 +4154,16 @@ a.button.track-button {
 
 }
 
+.vehicle-trial .carousel-control-next,
+.vehicle-trial .carousel-control-prev {
+    width: 7%;
+}
+
+.vehicle-trial button.carousel-control-next,
+.vehicle-trial .carousel-control-prev {
+    opacity: 1;
+}
+
 .carousel-control-prev-icon {
     background-image: url(../images/previous.png);
 }
@@ -4125,36 +4251,44 @@ section.brator-blog-post-area .woocommerce-MyAccount-navigation ul {
     margin-bottom: 29px !important;
     font-size: 26px !important;
     font-weight: 500 !important;
-   
+
 }
-.brator-contact-list-area .brator-contact-sub-header h3{
+
+.brator-contact-list-area .brator-contact-sub-header h3 {
     font-family: 'DIN Next LT Pro' !important;
 }
+
 .contact-bottom .brator-contact-form-header h2 {
     margin-bottom: 15px !important;
     font-size: 46px !important;
     font-weight: 500 !important;
-    
+
 }
-.brator-contact-form-area .brator-contact-form span.info-text{
+
+.brator-contact-form-area .brator-contact-form span.info-text {
     margin-bottom: 5px !important;
 }
+
 .brator-contact-area .brator-contact-list-area {
     padding-right: 15px !important;
 }
-.contact-bottom .container-xxxl.container-xxl.container{
+
+.contact-bottom .container-xxxl.container-xxl.container {
     width: 100% !important;
     max-width: 100% !important;
 }
-.brator-contact-list-area .brator-contact-list-items span{
+
+.brator-contact-list-area .brator-contact-list-items span {
     font-size: 15px !important;
     text-transform: uppercase;
     color: #bbb7b7 !important;
     margin-bottom: 3px !important;
 }
-.brator-contact-list-area{
+
+.brator-contact-list-area {
     margin-right: 58px !important;
 }
+
 ul#menu-left-sidebar li.active a {
     color: #ed3333 !important;
 }
@@ -4189,14 +4323,18 @@ ul#menu-left-sidebar li a {
     left: -13px;
     left: 50%;
 } */
-.page-id-235 .contact-left-side{
+.page-id-235 .contact-left-side {
     border-right: 1px solid darkgray;
 }
 
-.contact-heading h2,#menu-left-sidebar li a{
+.contact-heading h2,
+#menu-left-sidebar li a {
     font-family: 'League Gothic', sans-serif !important;
     padding-left: 0px !important;
+    font-size: 80px !important;
+    font-weight: 500 !important;
 }
+
 .brator-contact-form-fields .wpcf7-submit {
     text-transform: uppercase !important;
     font-family: 'League Gothic', sans-serif !important;
@@ -4205,17 +4343,20 @@ ul#menu-left-sidebar li a {
     font-size: 22px !important;
     font-weight: 200 !important;
 }
+
 .brator-contact-header-area .contact-header *,
 .brator-contact-list-area .brator-contact-list-items p,
 .brator-contact-list-area .brator-contact-list-items a,
-.brator-contact-form-fields .brator-contact-form-field-info span{
+.brator-contact-form-fields .brator-contact-form-field-info span {
     font-family: 'DIN Next LT Pro' !important;
 }
+
 .brator-contact-list-area .brator-contact-list-items p,
-.brator-contact-list-area .brator-contact-list-items a{
+.brator-contact-list-area .brator-contact-list-items a {
     font-size: 15px !important;
 }
-.brator-contact-header-area .contact-header h4{
+
+.brator-contact-header-area .contact-header h4 {
     font-size: 58px !important;
     font-weight: 400 !important;
     text-transform: uppercase;
@@ -4223,12 +4364,13 @@ ul#menu-left-sidebar li a {
     line-height: 60px;
 }
 
-.page-id-235 .contact-left-side{
+.page-id-235 .contact-left-side {
     border-right: 1px solid darkgray;
     margin-right: 31px;
 }
+
 .product-details-content h2 {
-    font-size: 1.4rem;
+    font-size: 50px;
     color: #ed3333;
     border-bottom: 1px solid #ed3333;
     margin-bottom: 20px;
@@ -4237,8 +4379,11 @@ ul#menu-left-sidebar li a {
 }
 
 .product-details-content p {
-    font-weight: bold;
+    /* font-weight: bold; */
     text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f1423;
 }
 
 .product-details-content h2::after {
@@ -4247,6 +4392,9 @@ ul#menu-left-sidebar li a {
 
 .product-details-content h3 {
     font-size: 18px;
+    color: #0f1423;
+    font-family: 'DIN Next LT Pro';
+    font-weight: 400;
 }
 
 .product-listing-page .row {
@@ -4254,7 +4402,7 @@ ul#menu-left-sidebar li a {
 }
 
 .product-listing-page .product-details-title h3 {
-    font-size: 30px;
+    font-size: 50px;
     border-bottom: 3px solid #000;
     width: auto;
     margin: 0 auto;
@@ -4279,6 +4427,10 @@ ul#menu-left-sidebar li a {
     color: #fff;
 }
 
+.custom-features-description-modal:nth-child(2n+1) .m_description p {
+    color: #fff;
+}
+
 .custom-view-all-specification .modal-header {
     background-color: #ed3333;
 }
@@ -4294,6 +4446,8 @@ ul#menu-left-sidebar li a {
     font-family: 'League Gothic', sans-serif;
     font-size: 70px;
     letter-spacing: 1.5px;
+    line-height: 70px;
+    font-weight: 500;
 }
 
 .custom-view-all-specification .modal-footer {
@@ -4307,6 +4461,8 @@ ul#menu-left-sidebar li a {
     border: 1px solid #000;
     font-size: 30px;
     font-family: 'League Gothic', sans-serif;
+    font-weight: 500;
+    letter-spacing: 3px;
 }
 
 .mcard-iteam {
@@ -4330,12 +4486,38 @@ ul#menu-left-sidebar li a {
     color: #fff;
     font-family: 'League Gothic', sans-serif;
     letter-spacing: 2.5px;
+    font-weight: 500;
+    line-height: 70px;
+}
+
+.close-btn-modal-leave {
+    margin-left: auto;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.custom-leave-review .modal-header .close-btn-modal-leave .btn-close {
+    padding: 0.1rem 0.1rem;
+    margin: 0;
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>");
+    opacity: 1;
+    width: 10px;
 }
 
 .mcard {
     background: #fff;
-    padding: 50px;
+    padding: 50px 20px;
     margin-bottom: 30px;
+}
+
+.custom-leave-review .modal-header {
+    border-bottom: 0;
 }
 
 .custom-view-all-specification .modal-header .btn-close {
@@ -4352,6 +4534,7 @@ ul#menu-left-sidebar li a {
     letter-spacing: 4.5px;
     text-transform: uppercase;
     line-height: 43px;
+    font-weight: 500;
 }
 
 .custom-features-description-modal .m_description h3.p_title {
@@ -4370,10 +4553,14 @@ ul#menu-left-sidebar li a {
     color: #0f1423;
 }
 
-.custom-features-description-modal:nth-child(2n+1) .description-some-text .description-title-text h3 {
+.custom-features-description-modal:nth-child(2n+1) .description-some-text .description-title-text {
     font-size: 30px;
     color: #fff;
 }
+
+/* .custom-features-description-modal:nth-child(2n+1) .description-some-text .description-title-text h3 {
+    font-size: 30px;
+} */
 
 .custom-features-description-modal:nth-child(2n+1) .description-some-text .description-title-text p {
     font-size: 20px;
@@ -4403,7 +4590,9 @@ ul#menu-left-sidebar li a {
     background-color: #ed3333;
     color: #fff;
     font-family: 'League Gothic', sans-serif;
-    letter-spacing: 2.5px;
+    letter-spacing: 5px;
+    font-weight: 500;
+    line-height: 70px;
 }
 
 .custom-features-modal .modal-header {
@@ -4465,18 +4654,18 @@ ul#menu-left-sidebar li a {
 }
 
 .newspage h2 {
-    font-family: 'Robinson';
+    font-family: 'League Gothic';
     font-weight: 500 !important;
     font-size: 50px;
 }
 
 ul#menu-left-sidebar li a {
     font-size: 35px !important;
-    font-family: 'Robinson';
+    font-family: 'League Gothic';
 }
 
 .custom-card-main {
-    margin: 0 0 30px 0;
+    margin: 0 0 50px 0;
     background: #fff;
 }
 
@@ -4614,6 +4803,7 @@ ul#menu-left-sidebar li a {
     color: #ed3333;
     font-family: 'League Gothic', sans-serif;
     letter-spacing: 20px;
+    font-weight: 500;
 }
 
 .top-banner .inner-top p {
@@ -4633,6 +4823,8 @@ ul#menu-left-sidebar li a {
 
 .product-details-content h3 span {
     font-size: 30px;
+    font-family: 'DIN Next LT Pro';
+    font-weight: 500;
 }
 
 .custom-tabbing-design {
@@ -4671,10 +4863,12 @@ li.custom-tabbing-item {
     justify-content: center;
     align-items: center;
 }
+
 .contact-left-side {
     margin-top: 30px !important;
     padding-top: 0px !important;
 }
+
 li.custom-tabbing-item.active::after {
     content: "";
     position: absolute;
@@ -4756,6 +4950,267 @@ h4.brator-blog-listing-single-item-title {
 
 #asl-storelocator.asl-cont.no-asl-filters .asl-wrapper .sl-main-cont .sl-main-row .asl-panel .search_filter .asl-store-search .asl-search-address {
     border: 1px solid #b7b7b7 !important;
+}
+
+/* BECOME A AODES DEALER PAGE CSS
+---------------------------------*/
+.banner-text-wrapper {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-text-wrapper p {
+    font-size: 150px;
+    color: #fff;
+    margin: 0;
+    font-family: 'League Gothic';
+    letter-spacing: 21px;
+    line-height: 130px;
+    font-weight: 500;
+}
+
+.custom-become-section {
+    background-color: #1f1f1f;
+    padding: 50px;
+}
+
+section#overview_section {
+    margin-top: 50px;
+}
+
+.custom-become-text h3 {
+    font-size: 70px;
+    color: #fff;
+    font-family: 'League Gothic';
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 400;
+    line-height: 70px;
+    text-align: center;
+}
+
+.custom-become-text p span {
+    font-family: 'League Gothic' !important;
+    font-size: 120px !important;
+    line-height: 120px !important;
+    color: #ed3333 !important;
+    margin-right: 20px;
+}
+
+.custom-box-img {
+    line-height: 0;
+}
+
+.custom-become-text p {
+    text-align: center;
+    font-size: 120px;
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'League Gothic';
+    line-height: 120px;
+    letter-spacing: 8px;
+}
+
+.box-dealer-section {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+}
+
+.custom-box-title {
+    background-color: #1f1f1f;
+    padding: 10px;
+    text-align: center;
+}
+
+.custom-box-title h3 {
+    color: #ed3333;
+    margin: 0;
+    font-size: 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1;
+    font-family: 'League Gothic';
+    letter-spacing: 2px;
+}
+
+.custom-box-text p {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #212529;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.custom-box-text ul {
+    list-style-type: disc;
+}
+
+.custom-box-img img {
+    width: 100%;
+}
+
+.togather-section {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    padding: 80px 0;
+}
+
+.text-togather-wrapper h3 {
+    font-size: 70px;
+    font-family: 'League Gothic';
+    font-weight: 500;
+    letter-spacing: 7px;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+.text-togather-wrapper p {
+    font-family: 'DIN Next LT Pro' !important;
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 300;
+}
+
+.fill-out-btn {
+    text-align: center;
+    background: #000;
+    display: inline-block;
+    width: auto;
+    margin: 0 auto;
+}
+
+.fill-out-btn a {
+    font-size: 40px;
+    font-family: 'League Gothic';
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    padding: 6px 33px;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+
+ul.need-shop-wrapper-ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.need-shop-section {
+    padding: 80px 0 20px;
+}
+
+.need-shop-wrapper h3 {
+    font-size: 40px;
+    color: #1f1f1f;
+    font-family: 'League Gothic';
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+li.need-shop-wrapper-li {
+    color: #666666;
+    font-size: 30px;
+    font-family: 'DIN Next LT Pro';
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.dealers-black-box {
+    background-color: #1f1f1f;
+}
+
+.dealers-black-box p {
+    font-size: 40px;
+    color: #fff;
+    font-family: 'League Gothic';
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin: 0;
+}
+
+.dealers-black-box {
+    background-color: #1f1f1f;
+    padding: 24px 20px 24px;
+}
+
+.need-shop-section-two {
+    padding: 0 0 50px 0;
+}
+
+.need-shop-img {
+    line-height: 0;
+}
+
+section.faq-section {
+    padding: 0 0 100px 0;
+}
+
+.faq-section .faq-wrapper {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    padding: 30px 50px;
+}
+
+.faq-wrapper h3 {
+    font-size: 80px;
+    color: #fff;
+    text-align: right;
+    font-family: 'League Gothic';
+    letter-spacing: 6px;
+    text-transform: capitalize;
+    margin-bottom: 60px;
+    font-weight: 500;
+}
+
+.faq-list-question {
+    display: flex;
+    width: 70%;
+    margin: 0 0 0 33%;
+}
+
+.faq-question-list-li p {
+    font-size: 24px;
+    color: #fff;
+    font-family: 'DIN Next LT Pro';
+    text-transform: capitalize;
+}
+
+.faq-question-list-li h4 {
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 25px;
+    font-family: 'DIN Next LT Pro';
+}
+
+ul.faq-question-list-ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.faq-question-list-one {
+    width: 70%;
 }
 
 /*=======================*/
@@ -5661,6 +6116,19 @@ h4.brator-blog-listing-single-item-title {
 }
 
 @media screen and (max-width:1024px) {
+    #asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-direction {
+        width: 120px;
+        padding: 13px 0 !important;
+    }
+
+    #asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-visit-website {
+        width: 180px;
+        padding: 12px 30px !important;
+    }
+
+    .mcontent {
+        padding: 80px 20px 0;
+    }
 
     .custom_product_detail_wrap .custom-learn-more {
         width: 44%;
@@ -5756,7 +6224,39 @@ h4.brator-blog-listing-single-item-title {
     }
 
 }
+
 @media screen and (max-width:992px) {
+    #asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-direction {
+        width: 127px;
+        padding: 13px 0 !important;
+    }
+
+    #asl-storelocator.asl-cont.asl-template-0 .asl-wrapper .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-visit-website {
+        width: 180px;
+        padding: 12px 30px !important;
+    }
+
+    .custom-leave-review .modal-dialog {
+        max-width: 720px;
+        margin: 1.75rem auto;
+    }
+
+    .custom-modal-form {
+        margin: 0;
+        text-align: left;
+    }
+
+    .custom-leave-review .modal-body-img-title .modal-body-text h2 {
+        font-size: 70px;
+    }
+
+    .product-listing-page .row {
+        padding: 30px 0;
+    }
+
+    .custom_product_detail_wrap .custom-card-main .custom-card-button {
+        min-height: auto;
+    }
 
     h4.brator-blog-listing-single-item-title {
         font-size: 30px;
@@ -5947,8 +6447,8 @@ h4.brator-blog-listing-single-item-title {
     }
 
     .top-banner .inner-top h3 {
-        font-size: 40px;
-        line-height: 52px;
+        font-size: 82px;
+        line-height: 102px;
         color: #ed3333;
         letter-spacing: 7px;
         text-align: center;
@@ -5956,8 +6456,8 @@ h4.brator-blog-listing-single-item-title {
     }
 
     .top-banner .inner-top p {
-        font-size: 37px;
-        padding: 0 0 0 10px;
+        font-size: 67px;
+        padding: 0 0 0 0;
         line-height: 63px;
         letter-spacing: 3px;
         text-align: center;
@@ -5970,24 +6470,6 @@ h4.brator-blog-listing-single-item-title {
 
     .specifications-title hr {
         display: block;
-    }
-
-
-    .top-banner .inner-top p {
-        padding: 0 0 0 0;
-        text-align: center;
-    }
-
-
-    .top-banner .inner-top p {
-        padding: 0 0 0 0;
-        text-align: center;
-    }
-
-
-    .top-banner .inner-top h3 {
-        padding: 90px 0 0 0;
-        text-align: center;
     }
 
     .custom_product_detail_wrap .feature-section .nav-pills .nav-link {
@@ -6004,7 +6486,7 @@ h4.brator-blog-listing-single-item-title {
 
 
     .custom_product_detail_wrap .specifications-title .specifications-section-title {
-        left: 47%;
+        left: 49%;
     }
 
 
@@ -6388,13 +6870,16 @@ h4.brator-blog-listing-single-item-title {
 
 
     .accessories-title {
-        font-size: 27px;
+        font-size: 70px;
     }
 
     .verticle-line {
         display: none;
     }
 
+    .mobile-accesories img {
+        width: 100%;
+    }
 
     .elementor-top-section .elementor-container {
         display: block
@@ -6622,20 +7107,35 @@ h4.brator-blog-listing-single-item-title {
 }
 
 @media screen and (max-width:767px) {
+    .custom-modal-form {
+        margin: 0;
+        text-align: left;
+    }
+
+    .custom-leave-review .modal-body-img-title .modal-body-text h2 {
+        font-size: 70px;
+    }
+
+    .product-listing-page .row {
+        padding: 30px 0;
+    }
 
     .custom-view-all-specification h2.title {
         padding: 0;
         font-size: 35px;
         letter-spacing: 1.5px;
     }
-    .page-id-235 .elementor-element .elementor-element-f95b601{
-        order:2;
+
+    .page-id-235 .elementor-element .elementor-element-f95b601 {
+        order: 2;
     }
+
     .page-id-235 .elementor-element .elementor-element-c1d257e {
-        order:1;
+        order: 1;
         border: unset !important;
-    margin-right: 0px !important;
+        margin-right: 0px !important;
     }
+
     .custom-view-all-specification .modal-header #exampleModalLabel {
         font-size: 40px;
     }
@@ -6931,6 +7431,31 @@ h4.brator-blog-listing-single-item-title {
 }
 
 @media screen and (max-width:576px) {
+    .custom_product_detail_wrap .specifications-section {
+        padding: 50px 0;
+    }
+
+    .custom_product_detail_wrap .custom-specification-wrapper {
+        margin-top: 100px;
+    }
+
+    .custom-modal-form {
+        margin: 0;
+        text-align: left;
+    }
+
+    .custom-leave-review .modal-body-img-title .modal-body-text h2 {
+        font-size: 70px;
+    }
+
+    .product-listing-page .row {
+        padding: 30px 0;
+    }
+
+    .top-banner {
+        background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/mobile-banner.png) !important;
+        padding: 0 !important;
+    }
 
     .brator-blog-post.bottom-catalog {
         margin-top: 30px;
@@ -7155,8 +7680,7 @@ h4.brator-blog-listing-single-item-title {
     }
 
     .custom_product_detail_wrap .specifications-title .specifications-section-title {
-
-        left: -11px;
+        left: -7px;
         font-size: 47px;
         transform: unset;
     }
@@ -7334,9 +7858,10 @@ h4.brator-blog-listing-single-item-title {
 }
 
 @media screen and (max-width:480px) {
-    .brator-contact-form-fields .brator-contact-form-field-two-items{
+    .brator-contact-form-fields .brator-contact-form-field-two-items {
         display: block !important;
     }
+
     .page-id-2202 .become_dealer_form .brator-contact-form-field {
         min-height: unset !important;
         width: 100%;
@@ -7425,6 +7950,121 @@ h4.brator-blog-listing-single-item-title {
         background: #0f1423;
         padding: 35px 0px;
         top: 209px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .faq-wrapper h3 {
+        text-align: center;
+    }
+
+    .faq-wrapper h3 {
+        text-align: center;
+    }
+
+    .faq-wrapper h3 {
+        font-size: 70px;
+        color: #fff;
+        text-align: center;
+        font-family: 'League Gothic';
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        margin-bottom: 60px;
+    }
+
+    .faq-question-list-one {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .faq-list-question {
+        width: 100%;
+        margin: 0 0 0 0;
+        flex-direction: column;
+    }
+
+    .banner-text-wrapper p {
+        font-size: 170px;
+        letter-spacing: 8px;
+        text-align: center;
+    }
+
+    .dealers-black-box {
+        padding: 40px 20px 40px;
+        margin-top: 24px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .banner-text-wrapper p {
+        font-size: 123px;
+        color: #fff;
+        letter-spacing: 6px;
+        line-height: 122px;
+    }
+
+    .custom-box-title h3 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .custom-become-text p {
+        font-size: 50px;
+        text-align: center;
+        letter-spacing: 7px;
+    }
+
+    .custom-become-text p span {
+        font-size: 50px !important;
+        text-align: center;
+    }
+
+    .custom-become-section {
+        background-color: #1f1f1f;
+        padding: 50px 0;
+    }
+
+    .custom-become-text h3 {
+        letter-spacing: 7px;
+    }
+
+    .banner-text-wrapper p {
+        font-size: 70px;
+        line-height: 82px;
+    }
+
+    .fill-out-btn a {
+        font-size: 30px;
+    }
+
+    .text-togather-wrapper h3 {
+        font-size: 50px;
+        letter-spacing: 3px;
+    }
+
+    li.need-shop-wrapper-li {
+        font-size: 16px;
+    }
+
+    .dealers-black-box p {
+        font-size: 27px;
+    }
+
+    .faq-section .faq-wrapper {
+        padding: 30px 0;
+    }
+
+    .faq-question-list-li h4 {
+        font-size: 25px;
+    }
+
+    .faq-question-list-li p {
+        font-size: 18px;
+    }
+
+    .box-dealer-section {
+        padding: 40px 0;
     }
 }
 

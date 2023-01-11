@@ -276,7 +276,7 @@ get_header(); ?>
                 Find a Dealer
               </h2>
               <div class="loction-address">
-                <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/location.png" alt="image" class="img-fluid"><span class="address-input"><input
+                <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/home-loaction-1.png" alt="image" class="img-fluid"><span class="address-input"><input
                     type="text" id="home-zip-code" placeholder="Enter your zip"></span>
                 <div class="discover-your-button">
                   <a href="JavaScript:void(0);" class="discover-your" id="discover-your">Discover Yours</a>
@@ -293,7 +293,7 @@ get_header(); ?>
           <div class="col-lg-5">
             <div class="dealer-login-content">
               <div class="login-dealer">
-                <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/dealer.png" alt="image" class="img-fluid"><a href="#"
+                <img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/dealer-login-home.png" alt="image" class="img-fluid"><a href="#"
                   class="login-dealer-button">Dealer
                   Login</a>
               </div>
