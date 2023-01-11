@@ -7,16 +7,9 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="type-post">
 		<div class="row">
+		
 		<div class="col-sm-6">
-		<?php if ( has_post_thumbnail() ) : ?>
-			
-			<div class="brator-blog-listing-single-item-thumbnail">
-			<h3 class="brator-blog-listing-single-item-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3>
-				<a class="blog-listing-single-item-thumbnail-link" href="<?php esc_url( the_permalink() ); ?>"><?php the_post_thumbnail( 'brator-blog-list' ); ?></a>
-			</div>
-			<?php endif; ?>
-		</div>
-		<div class="col-sm-6">
+		<h3 class="brator-blog-listing-single-item-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3>
 		<div class="brator-blog-listing-single-item-content">
 				<?php
 				if ( is_sticky() ) {
@@ -59,6 +52,14 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 					</a> -->
 				</div>
 			</div>
+		</div>
+		<div class="col-sm-6">
+		<?php if ( has_post_thumbnail() ) : ?>
+			
+			<div class="brator-blog-listing-single-item-thumbnail">
+				<a class="blog-listing-single-item-thumbnail-link" href="<?php esc_url( the_permalink() ); ?>"><?php the_post_thumbnail( 'brator-blog-list' ); ?></a>
+			</div>
+			<?php endif; ?>
 		</div>
 		</div>
 			
