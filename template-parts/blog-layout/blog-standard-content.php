@@ -7,13 +7,13 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="type-post">
 		<div class="row">
-		<div class="col-sm-8">
+		<div class="col-sm-12">
 		<div class="row">
 		<div class="col-sm-6"><span><h3 class="brator-blog-listing-single-item-title"><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3></span></div>
 		<div class="col-sm-6"><span class="dates"><p><?php brator_posted_on(); ?></p></span></div>
 		</div>
 		<div class="row">
-		<div class="col-sm-12"></div>
+		<div class="col-sm-8">
 		<div class="brator-blog-listing-single-item-content">
 				<?php
 				if ( is_sticky() ) {
@@ -57,8 +57,6 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 				</div>
 			</div>
 		</div>
-		
-		</div>
 		<div class="col-sm-4">
 		<?php if ( has_post_thumbnail() ) : ?>
 			
@@ -67,6 +65,11 @@ $view  = ( $count > 1 ? esc_html__( ' Views', 'brator' ) : esc_html__( ' View', 
 			</div>
 			<?php endif; ?>
 		</div>
+		
+		</div>
+		
+		</div>
+		
 		</div>
 			
 			
