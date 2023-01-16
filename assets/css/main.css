@@ -192,18 +192,18 @@ body {
     font-family: 'Montserrat';
 }
 
-<<<<<<< HEAD
-=======
 .top-bar span {
     display: inline-block;
 }
+
 span.dates {
     float: right;
 }
-.type-post.news{
-	display:block!important;
+
+.type-post.news {
+    display: block !important;
 }
->>>>>>> 2ef77a3c7e4bcd4d40f01bda4768a2e65ac35bf1
+
 .login {
     background-color: #5d5d5d;
     color: #fff;
@@ -745,6 +745,7 @@ a.product_type_variable {
     font-family: 'League Gothic';
     letter-spacing: 3.2px;
     font-size: 60px;
+    font-weight: 500;
 }
 
 .custom-leave-review .modal-footer {
@@ -1355,6 +1356,7 @@ h.custom_product_detail_wrap r {
     display: inline-block;
     text-transform: uppercase;
     font-family: 'League Gothic', sans-serif;
+    letter-spacing: 5px;
 }
 
 .stay-connected .wpcf7-form-control {
@@ -2060,7 +2062,7 @@ button.button.single_add_to_cart_button {
 }
 
 .faqs-archive h2 {
-    margin: 0 0 0.5em;
+    margin: 0 0 1em;
     font-weight: normal;
 }
 
@@ -2088,23 +2090,40 @@ button.button.single_add_to_cart_button {
 .faqs-archive .tab-label {
     display: flex;
     justify-content: space-between;
-    padding: 1em;
-    background: #ed3333;
+    padding: 1em 0.1em 1em 1em;
+    background: transparent;
     font-weight: bold;
     cursor: pointer;
-    /* Icon */
+    border: 1px solid #000;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    color: #000;
+    box-shadow: unset;
+    font-family: 'League Gothic';
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 
-.faqs-archive .tab-label:hover {
-    background: #ed3333;
+.faqs-archive .tabs {
+    box-shadow: none;
+    margin: 0;
 }
+
+/* .faqs-archive .tab-label:hover {
+    background: #ed3333;
+} */
 
 .faqs-archive .tab-label::after {
-    content: "\276F";
+    /* content: "\276F"; */
+    content: "\2227";
     width: 1em;
     height: 1em;
     text-align: center;
     transition: all 0.35s;
+    background: red;
+    color: #fff;
 }
 
 .faqs-archive .tab-content {
@@ -2129,11 +2148,11 @@ button.button.single_add_to_cart_button {
 }
 
 .faqs-archive input:checked+.tab-label {
-    background: #ed3333;
+    /* background: #ed3333; */
 }
 
 .faqs-archive input:checked+.tab-label::after {
-    transform: rotate(90deg);
+    transform: rotate(182deg);
 }
 
 .faqs-archive input:checked~.tab-content {
@@ -3012,6 +3031,13 @@ ul.dealer_conditions {
 .become_dealer_form .brator-contact-form-field input[type="tel"] {
     background: var(--color-white);
     padding: 13px;
+    border: 1px solid;
+}
+
+.become_dealer_form select.wpcf7-form-control.wpcf7-select.country_auto.wpcf7-country_auto.wpcf7-validates-as-required,
+.become_dealer_form select.wpcf7-form-control.wpcf7-select.state_auto.wpcf7-state_auto.wpcf7-validates-as-required,
+.become_dealer_form textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
+    border: 1px solid #000;
 }
 
 .side_filter .count_categories {
@@ -4261,24 +4287,30 @@ section.brator-blog-post-area .woocommerce-MyAccount-navigation ul {
 .brator-contact-form-area .brator-contact-form-header h2 {
     font-family: 'DIN Next LT Pro' !important;
     margin-bottom: 29px !important;
-    font-size: 26px !important;
+    font-size: 40px !important;
     font-weight: 500 !important;
-
 }
 
 .brator-contact-list-area .brator-contact-sub-header h3 {
     font-family: 'DIN Next LT Pro' !important;
+    font-size: 24px;
+    color: #0f1423;
 }
 
-.contact-bottom .brator-contact-form-header h2 {
-    margin-bottom: 15px !important;
-    font-size: 46px !important;
-    font-weight: 500 !important;
-
-}
+/* .contact-bottom .brator-contact-form-header h2 {
+    font-size: 18px !important;
+    text-transform: uppercase;
+    color: #bbb7b7 !important;
+    margin-bottom: 20px !important;
+} */
 
 .brator-contact-form-area .brator-contact-form span.info-text {
     margin-bottom: 5px !important;
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 30px;
+    display: block;
+    font-weight: 400;
 }
 
 .brator-contact-area .brator-contact-list-area {
@@ -4291,14 +4323,14 @@ section.brator-blog-post-area .woocommerce-MyAccount-navigation ul {
 }
 
 .brator-contact-list-area .brator-contact-list-items span {
-    font-size: 15px !important;
+    font-size: 18px !important;
     text-transform: uppercase;
-    color: #bbb7b7 !important;
-    margin-bottom: 3px !important;
+    color: #c2c2c2 !important;
+    margin-bottom: 20px !important;
 }
 
 .brator-contact-list-area {
-    margin-right: 58px !important;
+    margin-right: 38px !important;
 }
 
 ul#menu-left-sidebar li.active a {
@@ -4306,14 +4338,23 @@ ul#menu-left-sidebar li.active a {
 }
 
 ul#menu-left-sidebar li {
-    line-height: 58px;
+    line-height: 82px;
 }
 
 ul#menu-left-sidebar li a {
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 50px !important;
     font-weight: 500;
     color: #ccc;
+    font-size: 35px;
+    font-family: 'League Gothic';
+    line-height: 50px;
+    letter-spacing: 3.5px;
+}
+
+.elementor-235 .elementor-element.elementor-element-cf197b7 .elementor-heading-title {
+    font-size: 80px !important;
+    letter-spacing: 3.5px;
 }
 
 .contact-heading::after {
@@ -4324,6 +4365,20 @@ ul#menu-left-sidebar li a {
     transform: translateX(-50%);
     bottom: -13px;
     left: 50%;
+}
+
+.brator-contact-form-area .brator-contact-form span.info-text {
+    font-size: 18px;
+    color: #666666;
+    margin-bottom: 30px;
+    display: block;
+    font-weight: 400;
+}
+
+.brator-contact-form-fields .brator-contact-form-field button {
+    /* min-width: 185px; */
+    /* margin-top: 5px; */
+    font-size: 31px !important;
 }
 
 /* .contact-left-side::before {
@@ -4341,10 +4396,15 @@ ul#menu-left-sidebar li a {
 
 .contact-heading h2,
 #menu-left-sidebar li a {
-    font-family: 'League Gothic', sans-serif !important;
-    padding-left: 0px !important;
+    font-family: 'League Gothic', sans-serif;
+    padding-left: 0px;
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.contact-heading h2 {
     font-size: 80px !important;
-    font-weight: 500 !important;
+    font-family: 'League Gothic', sans-serif !important;
 }
 
 .brator-contact-form-fields .wpcf7-submit {
@@ -4365,12 +4425,14 @@ ul#menu-left-sidebar li a {
 
 .brator-contact-list-area .brator-contact-list-items p,
 .brator-contact-list-area .brator-contact-list-items a {
-    font-size: 15px !important;
+    font-size: 18px !important;
+    color: #0f1423;
+    font-weight: 300;
 }
 
 .brator-contact-header-area .contact-header h4 {
     font-size: 58px !important;
-    font-weight: 400 !important;
+    font-weight: 500 !important;
     text-transform: uppercase;
     margin-bottom: 0px;
     line-height: 60px;
@@ -4381,8 +4443,15 @@ ul#menu-left-sidebar li a {
     margin-right: 31px;
 }
 
+.brator-contact-header-area .contact-header p {
+    font-size: 24px;
+    color: #0f1423;
+    margin: 15px 0 30px;
+    font-weight: 300;
+}
+
 .product-details-content h2 {
-    font-size: 50px;
+    font-size: 30px;
     color: #ed3333;
     border-bottom: 1px solid #ed3333;
     margin-bottom: 20px;
@@ -4394,8 +4463,9 @@ ul#menu-left-sidebar li a {
     /* font-weight: bold; */
     text-transform: capitalize;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 400;
     color: #0f1423;
+    margin-top: 15px;
 }
 
 .product-details-content h2::after {
@@ -4645,7 +4715,75 @@ ul#menu-left-sidebar li a {
 /********** 23 DEC 2022 *************/
 .brator-blog-post-area.newspage h2 {
     margin-top: 40px;
+    margin: 40px 22px 20px 22px;
+    border-bottom: 1px solid #000;
 }
+
+.brator-our-story-area {
+    padding: 0;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-flyout ul.mega-sub-menu {
+    width: 1900px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-flyout ul.mega-sub-menu .mega-menu-item {
+    border: 1px solid #000;
+    margin-left: 30px;
+    border-radius: 10px !important;
+    width: 230px;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item.current a.mega-menu-link {
+    background-color: #ed3333 !important;
+    color: #fff;
+    border: 1px solid #ed3333;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-flyout ul.mega-sub-menu .mega-menu-item.current {
+    border: 0px solid #000;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link {
+    border-radius: 10px !important;
+    font-size: 18px;
+    background: #ffff;
+    text-align: center;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary[data-effect="fade_up"] li.mega-menu-item.mega-toggle-on>ul.mega-sub-menu {
+    transform: translate(-990px, 0);
+    background: #ffff;
+    opacity: 1;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link:hover {
+    background: #fff;
+}
+
+.elementor-element.elementor-element-c7907d4.e-container--column.e-container {
+    border-right: 1px solid darkgray;
+    margin-right: 30px;
+}
+
+.elementor-element.elementor-element-905f6ef.innerpage.e-container--column.e-container {
+    margin-left: 27px;
+}
+
+.elementor-element.elementor-element-5704900.contact-left-side.e-container--column.e-container {
+    margin-top: 0 !important;
+}
+
+/* .elementor-element.elementor-element-5704900.contact-left-side.e-container--column.e-container {
+    margin-top: 0;
+} */
+
 
 /* h2:after {
     position: absolute;
@@ -4668,12 +4806,8 @@ ul#menu-left-sidebar li a {
 .newspage h2 {
     font-family: 'League Gothic';
     font-weight: 500 !important;
-    font-size: 50px;
-}
-
-ul#menu-left-sidebar li a {
-    font-size: 35px !important;
-    font-family: 'League Gothic';
+    font-size: 80px;
+    text-transform: uppercase;
 }
 
 .custom-card-main {
@@ -4952,7 +5086,7 @@ h4.brator-blog-listing-single-item-title {
     font-size: 60px;
 }
 
-.brator-blog-post-area {
+.brator-blog-post-area.catalogs-archive {
     padding: 80px 0 !important;
 }
 
@@ -5018,6 +5152,7 @@ section#overview_section {
 
 .custom-box-img {
     line-height: 0;
+    padding: 0 25px;
 }
 
 .custom-become-text p {
@@ -5044,6 +5179,15 @@ section#overview_section {
     background-color: #1f1f1f;
     padding: 10px;
     text-align: center;
+    margin: 0 25px;
+}
+
+.custom-box-text {
+    padding: 0 25px;
+}
+
+.custom-box-text ul li::marker {
+    color: #000;
 }
 
 .custom-box-title h3 {
@@ -5079,7 +5223,7 @@ section#overview_section {
     background-size: cover;
     width: 100%;
     height: auto;
-    padding: 80px 0;
+    padding: 30px 0;
 }
 
 .text-togather-wrapper h3 {
@@ -5126,7 +5270,7 @@ ul.need-shop-wrapper-ul {
 }
 
 .need-shop-section {
-    padding: 80px 0 20px;
+    padding: 80px 30px 20px;
 }
 
 .need-shop-wrapper h3 {
@@ -5161,11 +5305,11 @@ li.need-shop-wrapper-li {
 
 .dealers-black-box {
     background-color: #1f1f1f;
-    padding: 24px 20px 24px;
+    padding: 21px 20px 22px;
 }
 
 .need-shop-section-two {
-    padding: 0 0 50px 0;
+    padding: 0 30px 30px 30px;
 }
 
 .need-shop-img {
@@ -5173,7 +5317,7 @@ li.need-shop-wrapper-li {
 }
 
 section.faq-section {
-    padding: 0 0 100px 0;
+    padding: 0 30px 100px 30px;
 }
 
 .faq-section .faq-wrapper {
@@ -5222,7 +5366,12 @@ ul.faq-question-list-ul {
 }
 
 .faq-question-list-one {
-    width: 70%;
+    width: 54%;
+    padding: 0 50px 0 0;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output {
+    color: #fff;
 }
 
 /*=======================*/
@@ -5737,6 +5886,18 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:1366px) {
+    .custom_product_detail_wrap .custom-learn-more {
+        width: 32%;
+    }
+
+    li.need-shop-wrapper-li {
+        font-size: 18px;
+    }
+
+    .dealers-black-box p {
+        font-size: 25px;
+    }
+
     .login-dealer-button {
         font-size: 12px;
         padding: 10px 15px;
@@ -5756,6 +5917,11 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:1280px) {
+    .dealers-black-box {
+        background-color: #1f1f1f;
+        padding: 13px 20px 14px;
+    }
+
     .become-leader-button {
         font-size: 12px;
         padding: 10px 15px;
@@ -6128,6 +6294,14 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:1024px) {
+    .custom_product_detail_wrap .custom-card-text-wrapper .custom-card-text {
+        font-size: 16px;
+    }
+
+    .custom_product_detail_wrap .custom-card-main .custom-card-button {
+        min-height: auto;
+    }
+
     #asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-direction {
         width: 120px;
         padding: 13px 0 !important;
@@ -6238,6 +6412,10 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:992px) {
+    .top-banner {
+        height: 20vh;
+    }
+
     #asl-storelocator.asl-cont .sl-main-cont .asl-panel-inner .sl-main-cont-box ul.sl-list li.sl-item .sl-addr-sec .sl-act-btns .s-direction {
         width: 127px;
         padding: 13px 0 !important;
@@ -6267,7 +6445,7 @@ ul.faq-question-list-ul {
     }
 
     .custom_product_detail_wrap .custom-card-main .custom-card-button {
-        min-height: auto;
+        min-height: 382px;
     }
 
     h4.brator-blog-listing-single-item-title {
@@ -6355,7 +6533,7 @@ ul.faq-question-list-ul {
 
     .custom_product_detail_wrap .vl-form {
         border: 1px solid #fff;
-        height: 500px;
+        height: 650px;
         width: auto;
         margin: 30px 0;
     }
@@ -6825,6 +7003,30 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:798px) {
+
+    .post-type-archive-faqs ul#menu-left-sidebar li a {
+        font-size: 50px !important;
+        font-family: 'League Gothic';
+    }
+
+    .elementor-element.elementor-element-c7907d4.e-container--column.e-container {
+        margin-right: 5px;
+    }
+
+    ul#menu-left-sidebar li {
+        line-height: 40px;
+    }
+
+    ul#menu-left-sidebar li a {
+        font-size: 27px !important;
+        font-family: 'League Gothic';
+    }
+
+    .top-banner {
+        height: 20vh;
+        background-position: 36% center;
+    }
+
     .blog-details-content .woocommerce-MyAccount-content {
         padding: 0 16px;
     }
@@ -7464,6 +7666,12 @@ ul.faq-question-list-ul {
         padding: 30px 0;
     }
 
+    .post-type-archive-faqs .top-banner {
+        height: 40vh;
+        background-position: 19% 0;
+        background-size: cover !important;
+    }
+
     .top-banner {
         background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/mobile-banner.png) !important;
         padding: 0 !important;
@@ -7477,13 +7685,21 @@ ul.faq-question-list-ul {
         font-size: 32px;
     }
 
-    .brator-blog-post-area {
-        padding: 40px 0 !important;
+    .post-type-archive-faqs .brator-blog-post-area {
+        padding: 0 0 !important;
+    }
+
+    .terms-and-condition .brator-blog-post-area {
+        padding: 0 !important;
     }
 
     .brator-breadcrumb {
         height: 53px;
         border-bottom: 1px solid #000;
+    }
+
+    body.privacy-policy .page-content {
+        padding: 50px 25%;
     }
 
     .row.main-title-catalog h1 {
@@ -7692,7 +7908,7 @@ ul.faq-question-list-ul {
     }
 
     .custom_product_detail_wrap .specifications-title .specifications-section-title {
-        left: -7px;
+        left: 30px;
         font-size: 47px;
         transform: unset;
     }
@@ -7966,6 +8182,10 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:1024px) {
+    .custom-box-text p {
+        font-size: 18px;
+    }
+
     .faq-wrapper h3 {
         text-align: center;
     }
@@ -8008,6 +8228,10 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:991px) {
+    .custom-box-text p {
+        font-size: 18px;
+    }
+
     .banner-text-wrapper p {
         font-size: 123px;
         color: #fff;
@@ -8060,7 +8284,7 @@ ul.faq-question-list-ul {
     }
 
     .dealers-black-box p {
-        font-size: 27px;
+        font-size: 20px;
     }
 
     .faq-section .faq-wrapper {
@@ -8077,6 +8301,11 @@ ul.faq-question-list-ul {
 
     .box-dealer-section {
         padding: 40px 0;
+    }
+
+    .custom-box-text p {
+        font-size: 18px;
+        margin: 20px 0;
     }
 }
 

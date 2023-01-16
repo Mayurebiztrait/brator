@@ -31,7 +31,7 @@ $query = new WP_Query( $args);
 <style>
 .top-banner {
     padding-top: 425px;
-    background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/download.png)!important;
+    background-image: url(https://aodes.solutiontrackers.biz/wp-content/uploads/2022/12/about-us-banner.png)!important;
     background-size: cover;
 }
 .faqs-archive h2 {
@@ -46,12 +46,24 @@ $query = new WP_Query( $args);
     bottom: -13px;
     left: 50%;
 }
+.brator-contact-form-field-info span{
+    font-size: 17px;
+    color: #666666;
+}
+.brator-map iframe#gmap_canvas {
+    padding-right: 12px;
+}
 .brator-blog-post-area.faqs-archive li.menu-item.menu-item-type-custom.menu-item-object-custom.current-menu-item {
     background-color: #fff!important;
 }
 .innerpage h2 {
-    font-family: 'Robinson';
-	font-size: 52px;
+    font-family: 'League Gothic';
+	font-size: 80px;
+}
+.innerpage h2 {
+    font-family: 'League Gothic';
+    font-size: 80px! important;
+    font-weight: 500!important;
 }
 .innerpage li a {
     font-size: 41px!important;
@@ -68,45 +80,44 @@ ul#menu-left-sidebar {
 <div class="top-banner"></div>
 <div class="brator-blog-post-area faqs-archive innerpage">
 	<div class="container-xxxl container-xxl container">
-	<div class="row"><div class="col-sm-12"><h2><?php echo 'Faqs'; ?></h2></div></div>
-	<div class="row">
-	<div class="col-sm-4"><?php echo do_shortcode('[sh_custom_menu_display]'); ?></div>
-	<div class="col-sm-8">
-	<div class="leftside">
+	    <div class="row">
+            <div class="col-sm-12">
+                <h2><?php echo 'Faqs'; ?></h2>
+            </div>
+        </div>
+	    <div class="row">
+	        <div class="col-sm-12 col-md-3 col-xl-2 col-lg-2">
+                <?php echo do_shortcode('[sh_custom_menu_display]'); ?>
+            </div>
+	        <div class="col-sm-12 col-md-9 col-xl-10 col-lg-10">
+	            <div class="leftside">
 					<div class="brator-blog-post">
 					<?php
-					if ( $query->have_posts() ) : ?>
-                        <div class="row">
-                        <?php 
-                            while ( $query->have_posts() ) :
-                                $query->the_post();
-                                ?>
-                                
-                                <div class="col-12">
-                                 <div class="row">
-                                    <div class="col">
-                                       <div class="tabs">
-                                        
+                        if ( $query->have_posts() ) : ?>
+                            <div class="row">
+                            <?php 
+                                while ( $query->have_posts() ) :
+                                    $query->the_post();
+                                    ?>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col">
+                                                <div class="tabs">                                      
+                                                    <?php
+                                                        get_template_part( 'template-parts/blog-layout/faq-content' );
+                                                    ?>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     <?php
-                                
-                                    get_template_part( 'template-parts/blog-layout/faq-content' );
-                                ?>
-                                       </div>
-                                    </div>
-                                </div>
-                                </div>
-                    
-                            
-                            <?php
-                            endwhile;
-                        else :
-                            get_template_part( 'template-parts/content', 'none' );
+                                endwhile;
+                            else :
+                                get_template_part( 'template-parts/content', 'none' );
                         endif; ?>
-				
-
-                    </div>
+                        </div>
                     <?php
-					wp_reset_postdata();
+					    wp_reset_postdata();
 					?>
 					<?php if ( get_the_posts_pagination() ) : ?>
 						<div class="brator-pagination-box ">
@@ -116,12 +127,8 @@ ul#menu-left-sidebar {
 						</div>
 					<?php endif; ?>
 				</div>
-				</div>
-	</div>
-	</div>
-		
-
-			
+			</div>
+	    </div>
 	</div>
 </div>
 <?php
