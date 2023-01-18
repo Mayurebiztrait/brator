@@ -42,14 +42,15 @@ function review_data_fun( $post, $metabox ) {
 	// Output last time the post was modified.
 	//print_r($post);
 	$email = get_post_meta($post->ID,'_email',true);
-	$password = get_post_meta($post->ID,'_password',true);
+	$name = get_post_meta($post->ID,'_name',true);
 	$city = get_post_meta($post->ID,'_city',true);
 	$state = get_post_meta($post->ID,'_state',true);
 	$review = get_post_meta($post->ID,'_review',true);
 	$filename = get_post_meta($post->ID,'_file',true);
 
+	echo 'Name: ' . $name.'<br>';
 	echo 'Email: ' . $email.'<br>';
-	echo 'Password: ' . $password.'<br>';
+	
 	echo 'City: ' . $city.'<br>';
 	echo 'State: ' . $state.'<br>';
 	echo 'review: ' . $review.'<br>';

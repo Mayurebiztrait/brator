@@ -12,6 +12,7 @@ jQuery( document ).ready(function() {
     var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
     if(name == 0){
       jQuery('#name_id').after('<p class="error">Required field.</p>');
+      return false;
     }else{
       jQuery('#name_id').siblings('.error').remove();
     }
@@ -39,12 +40,7 @@ jQuery( document ).ready(function() {
     }else{
       jQuery('#review_form_submit_form #Review').siblings('.error').remove();
     }
-    if (testEmail.test(email)){
-      jQuery('#review_form_submit_form #Email4').siblings('.error').remove();
-    }else{
-      jQuery('#review_form_submit_form #Email4').after('<p class="error">Email is not valid.</p>');
-      return false;
-    }
+  
     
     jQuery('#review_form_submit_form').trigger('submit');
   });
