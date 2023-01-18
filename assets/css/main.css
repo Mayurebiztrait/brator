@@ -251,7 +251,13 @@ li.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link:h
 }
 
 .woocommerce-ordering .select2-container {
-    width: 200px !important;
+    width: 260px !important;
+}
+
+.brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-price p span {
+    line-height: 26px;
+    color: #ed3333;
+    font-size: 20px !important;
 }
 
 .select2-dropdown.select2-dropdown--below {
@@ -333,7 +339,7 @@ input#prosearch {
 a.product_type_variable {
     width: 100%;
     padding: 13px 20px !important;
-    font-size: 14px !important;
+    font-size: 16px !important;
     line-height: 14px !important;
     height: auto !important;
     text-align: center;
@@ -1089,6 +1095,12 @@ a.product_type_variable {
     text-align: center;
     white-space: nowrap;
     border-radius: 10px;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item ul.mega-sub-menu {
+    position: absolute;
+    left: 100%;
+    top: 40px;
 }
 
 .custom_product_detail_wrap .unsure-wrapper svg#Layer_1 {
@@ -1975,6 +1987,11 @@ h.custom_product_detail_wrap r {
 
 .product-template-default span.tinvwl_add_to_wishlist-text {
     line-height: 0;
+    text-transform: uppercase;
+}
+
+.woocommerce div.product form.cart .button {
+    text-transform: uppercase;
 }
 
 /* body.woocommerce-cart .bundled_table_item {
@@ -1982,6 +1999,11 @@ h.custom_product_detail_wrap r {
 } */
 .product-template-default span.tinvwl_already_on_wishlist-text {
     line-height: 0;
+    text-transform: uppercase;
+}
+
+.brator-product-hero-content .brator-product-hero-content-info .brator-product-hero-content-stock {
+    border-bottom: 2px solid #e5e5e5;
 }
 
 button.button.single_add_to_cart_button {
@@ -1996,6 +2018,11 @@ button.button.single_add_to_cart_button {
     margin-left: 29px !important;
 }
 
+.product-detail-page-right .brator-section-header {
+    border-bottom: 1px solid #000;
+    padding: 0 0 25px 0;
+}
+
 .product-template-default a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart.tinvwl-product-already-on-wishlist.tinvwl-position-after {
     font-size: 16px;
     font-weight: 700;
@@ -2008,7 +2035,8 @@ button.button.single_add_to_cart_button {
     height: auto;
     text-transform: capitalize;
     transition: 0.3s;
-    margin-left: 142px;
+    /* margin-left: 142px; */
+    margin: 0;
     padding: 15px 14px !important;
     width: auto !important;
     text-align: center;
@@ -2141,6 +2169,10 @@ button.button.single_add_to_cart_button {
     font-size: 0.75em;
     background: #2c3e50;
     cursor: pointer;
+}
+
+.brator-footer-top-element .brator-link-list-one a {
+    font-size: 14px !important;
 }
 
 .faqs-archive .tab-close:hover {
@@ -3486,6 +3518,7 @@ input.submit {
     background-image: url(../images/foote-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 0 175px;
 }
 
 .brator-footer-area {
@@ -3580,7 +3613,7 @@ input.submit {
 
 .footer {
     background-image: url(../images/foote-bg.png);
-    padding: 0px 275px;
+    padding: 0px;
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 140px;
@@ -3593,16 +3626,18 @@ input.submit {
 
 form#advanced-searchform {
     padding: 20px 15px;
-    box-shadow: 3px -5px 31px #d3d2d2;
+    box-shadow: 3px -5px 31px #807878;
 }
 
 #advanced-searchform select,
 #advanced-searchform .select2 {
     margin-bottom: 17px;
+    padding: 10px 35px 10px 15px;
 }
 
 #advanced-searchform button[type=submit] {
     width: 100%;
+    text-transform: uppercase;
 }
 
 #advanced-searchform h5 {
@@ -3624,6 +3659,7 @@ form#advanced-searchform {
     font-size: 18px;
     padding-bottom: 13px;
     font-weight: 800;
+    text-transform: uppercase;
 }
 
 .brator-sidebar-single-item .shop-cat-list .cat-item::before {
@@ -4082,6 +4118,10 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
     margin-bottom: 50px;
 }
 
+.under-line img {
+    width: 100%;
+}
+
 iframe {
     width: 60%;
 }
@@ -4258,6 +4298,7 @@ ul#shipping_method li label {
     width: 100%;
     display: flex !important;
     justify-content: space-between;
+    font-size: 14px;
 }
 
 .brator-cart-header-area h3 {
@@ -4269,7 +4310,7 @@ section.brator-blog-post-area .woocommerce-MyAccount-navigation ul {
 }
 
 .blog-details-content .woocommerce-MyAccount-content {
-    padding: 0 15px 0 0;
+    padding: 0 35px 0 25px;
 }
 
 /****************/
@@ -4724,7 +4765,7 @@ ul#menu-left-sidebar li a {
 }
 
 #mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-flyout ul.mega-sub-menu {
-    width: 1900px;
+    width: 1920px;
     left: 0;
     right: 0;
     display: flex;
@@ -4752,7 +4793,7 @@ ul#menu-left-sidebar li a {
 
 #mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link {
     border-radius: 10px !important;
-    font-size: 18px;
+    font-size: 11px;
     background: #ffff;
     text-align: center;
 }
@@ -5052,6 +5093,17 @@ li.custom-tabbing-item.active::after {
     border-right: .3em solid #f7000000;
     border-bottom: 0;
     border-left: .3em solid #ff000000;
+}
+
+.brator-product-slider.splide.js-splide.p-splide {
+    display: none;
+}
+
+.content-side .woocommerce .woocommerce-customer-details address {
+
+    /* border: 1px solid rgba(0, 0, 0, .1); */
+    border-bottom-width: 1px;
+    border-right-width: 1px;
 }
 
 /*************************************/
@@ -5374,6 +5426,29 @@ ul.faq-question-list-ul {
     color: #fff;
 }
 
+.tinv-wishlist.woocommerce.tinv-wishlist-clear {
+    padding: 20px;
+}
+
+.brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-btn a.add_to_cart_button {
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.brator-product-single-item-img {
+    border-bottom: 1px solid gray;
+}
+
+.tinv-wishlist .tinv-wishlist-clear {
+    margin-bottom: 20px;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger {
+    background: #f00;
+    border-radius: 0;
+}
+
+
 /*=======================*/
 /* medai quary start here*/
 /*=======================*/
@@ -5557,6 +5632,13 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:1440px) {
+    .brator-sidebar-area.design-one {
+        margin-bottom: 40px;
+    }
+
+    .brator-footer-top-area {
+        padding: 0 0;
+    }
 
     .stay-connected .stay-connected-highlighted-title,
     .stay-connected .stay-connected-title {
@@ -5802,7 +5884,7 @@ ul.faq-question-list-ul {
     }
 
     .footer {
-        padding: 0px 200px;
+        padding: 0px 40px;
         padding-top: 100px;
         padding-bottom: 0px;
     }
@@ -5812,11 +5894,11 @@ ul.faq-question-list-ul {
     }
 
     .elementor-top-section {
-        padding: 0px 200px;
+        padding: 0 40px;
     }
 
     .brator-footer-area {
-        padding: 50px 200px;
+        padding: 50px 40px;
 
     }
 
@@ -5878,6 +5960,9 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:1400px) {
+    .brator-footer-top-area {
+        padding: 0 0;
+    }
 
     .brator-sidebar-single-item .product-categories,
     .brator-sidebar-single-item .shop-cat-list {
@@ -5886,6 +5971,20 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:1366px) {
+    .brator-sidebar-area.design-one {
+        margin-bottom: 40px;
+    }
+
+    .brator-footer-top-area {
+        padding: 0 0;
+    }
+
+    .footer {
+        padding: 0px 40px;
+        padding-top: 100px;
+        padding-bottom: 0px;
+    }
+
     .custom_product_detail_wrap .custom-learn-more {
         width: 32%;
     }
@@ -5917,6 +6016,14 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:1280px) {
+    .brator-sidebar-area.design-one {
+        margin-bottom: 40px;
+    }
+
+    .brator-footer-top-area {
+        padding: 0 0;
+    }
+
     .dealers-black-box {
         background-color: #1f1f1f;
         padding: 13px 20px 14px;
@@ -6294,6 +6401,10 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:1024px) {
+    .brator-sidebar-area.design-one {
+        margin-bottom: 40px;
+    }
+
     .custom_product_detail_wrap .custom-card-text-wrapper .custom-card-text {
         font-size: 16px;
     }
@@ -6412,6 +6523,10 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:992px) {
+    .brator-sidebar-area.design-one {
+        margin-bottom: 40px;
+    }
+
     .top-banner {
         height: 20vh;
     }
@@ -7028,7 +7143,7 @@ ul.faq-question-list-ul {
     }
 
     .blog-details-content .woocommerce-MyAccount-content {
-        padding: 0 16px;
+        padding: 0 36px;
     }
 
     .vehicle-product {
@@ -7321,6 +7436,10 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:767px) {
+    .brator-footer-top-area {
+        padding: 0;
+    }
+
     .custom-modal-form {
         margin: 0;
         text-align: left;
@@ -7645,6 +7764,17 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:576px) {
+    .bundle-side-cart {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .woocommerce-MyAccount-content .woocommerce-Message.woocommerce-Message--info.woocommerce-info {
+        display: flex;
+        flex-direction: column;
+    }
+
     .custom_product_detail_wrap .specifications-section {
         padding: 50px 0;
     }
@@ -7923,7 +8053,7 @@ ul.faq-question-list-ul {
     }
 
     .blog-details-content .woocommerce-MyAccount-content {
-        padding: 0 16px;
+        padding: 0 26px;
     }
 
     .tinv-wishlist.woocommerce.tinv-wishlist-clear {
@@ -8182,6 +8312,14 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:1024px) {
+    .brator-inline-product-filter-area .brator-inline-product-filter-left .brator-filter-show-result p {
+        padding-left: 80px;
+    }
+
+    .brator-footer-top-area {
+        padding: 0;
+    }
+
     .custom-box-text p {
         font-size: 18px;
     }
@@ -8228,6 +8366,10 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:991px) {
+    .brator-footer-top-area {
+        padding: 0;
+    }
+
     .custom-box-text p {
         font-size: 18px;
     }
@@ -8245,6 +8387,35 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:575px) {
+    .bundle-side-cart {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .woocommerce div.product form.cart .button {
+        text-transform: uppercase;
+        margin-top: 20px;
+    }
+
+    .product-list-items .brator-categories-single {
+        width: 100%;
+    }
+
+    .brator-footer-top-area {
+        padding: 0;
+    }
+
+    .brator-blog-single-post-content .brator-blog-single-post-qu {
+        padding: 11px;
+    }
+
+    .brator-blog-single-post-content .brator-blog-single-post-qu svg {
+        right: 15px;
+        top: 0;
+        font-size: 30px;
+    }
+
     .custom-become-text p {
         font-size: 50px;
         text-align: center;
