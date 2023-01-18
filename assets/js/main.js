@@ -1,10 +1,10 @@
 jQuery( document ).ready(function() {
 
-  if ($('.brator-cart-link').length) {
-      $('.brator-header-area.header-one .brator-info-right a.cart_tag').on('click', function(e) {
-          $('.brator-cart-item-list').toggleClass('mini-cart-open');
-      });
-  }
+  // if ($('.brator-cart-link').length) {
+  //     $('.brator-header-area.header-one .brator-info-right a.cart_tag').on('click', function(e) {
+  //         $('.brator-cart-item-list').toggleClass('mini-cart-open');
+  //     });
+  // }
 
 
   // download pdf code
