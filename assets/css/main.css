@@ -2152,6 +2152,7 @@ button.button.single_add_to_cart_button {
     transition: all 0.35s;
     background: red;
     color: #fff;
+    transform: rotate(180deg);
 }
 
 .faqs-archive .tab-content {
@@ -2184,7 +2185,7 @@ button.button.single_add_to_cart_button {
 }
 
 .faqs-archive input:checked+.tab-label::after {
-    transform: rotate(182deg);
+    transform: rotate(0deg);
 }
 
 .faqs-archive input:checked~.tab-content {
