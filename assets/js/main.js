@@ -10,14 +10,42 @@ jQuery( document ).ready(function() {
     var model = jQuery('#review_form_submit_form #Model').val().length;
     var review = jQuery('#review_form_submit_form #Review').val().length;
     var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-    if (testEmail.test(email)){
-      
+    if(name == 0){
+      jQuery('#name_id').after('<p class="error">Required field.</p>');
     }else{
+      jQuery('#name_id').siblings('.error').remove();
+    }
+    if(email == 0){
+      jQuery('#review_form_submit_form #Email4').after('<p class="error">Required field.</p>');
+      return false;
+    }else{
+      jQuery('#review_form_submit_form #Email4').siblings('.error').remove();
+    }
+    if(states == 0){
+      jQuery('#review_form_submit_form #States').after('<p class="error">Required field.</p>');
+      return false;
+    }else{
+      jQuery('#review_form_submit_form #States').siblings('.error').remove();
+    }
+    if(model == 0){
+      jQuery('#review_form_submit_form #Model').after('<p class="error">Required field.</p>');
+      return false;
+    }else{
+      jQuery('#review_form_submit_form #Model').siblings('.error').remove();
+    }
+    if(review == 0){
+      jQuery('#review_form_submit_form #Review').after('<p class="error">Required field.</p>');
+      return false;
+    }else{
+      jQuery('#review_form_submit_form #Review').siblings('.error').remove();
+    }
+    if (testEmail.test(email)){
+      jQuery('#review_form_submit_form #Email4').siblings('.error').remove();
+    }else{
+      jQuery('#review_form_submit_form #Email4').after('<p class="error">Email is not valid.</p>');
       return false;
     }
-    if(name == 0 || email == 0 || states == 0 || model == 0 || review == 0 ){
-      return false;
-    }
+    
     jQuery('#review_form_submit_form').trigger('submit');
   });
   jQuery("body").on("click", ".upload_btn", function () {

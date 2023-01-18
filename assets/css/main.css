@@ -4039,7 +4039,10 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
     border: 1px solid #fff;
     color: #fff;
 }
-
+.error{
+    color: #d7291c;
+    margin-bottom: 0px;
+}
 .become-leader-button {
     text-align: center;
     color: #d7291c;
