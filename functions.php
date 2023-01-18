@@ -684,7 +684,10 @@ function brator_track_post_views( $post_id ) {
 	}
 
 	$user = wp_get_current_user();
-	if ( in_array( 'Dealer', (array) $user->roles ) ) {
+	global $wp;
+	$pages_array = explode('/', $wp->request);
+
+	if ( in_array( 'Dealer', (array) $user->roles ) && $pages_array[0] == 'my-account') {
 		?>
 		<style>
 			.brator-header-menu .mega-menu-item{
