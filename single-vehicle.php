@@ -28,13 +28,13 @@ if (isset($_POST['review_form_submit']) && $_POST['review_form_submit'] == 'SUBM
     $inserted_id = wp_insert_post($my_post);
 
     add_post_meta($inserted_id, '_email', $_POST['email']);
-    add_post_meta($inserted_id, '_password', $_POST['password']);
+    add_post_meta($inserted_id, '_name', $_POST['name']);
     add_post_meta($inserted_id, '_city', $_POST['city']);
     add_post_meta($inserted_id, '_state', $_POST['state']);
     add_post_meta($inserted_id, '_review', $_POST['review']);
     $upload_dir = get_template_directory() . '/assets/images/';
     add_post_meta($inserted_id, '_email', $_POST['email']);
-    add_post_meta($inserted_id, '_password', $_POST['password']);
+    add_post_meta($inserted_id, '_name', $_POST['name']);
     add_post_meta($inserted_id, '_city', $_POST['city']);
     add_post_meta($inserted_id, '_state', $_POST['state']);
     add_post_meta($inserted_id, '_review', $_POST['review']);
@@ -388,14 +388,14 @@ while (have_rows('variations_images', $vehicle_id)):
                                                                 value="<?php echo get_the_title($vehicle_id); ?>">
                                                             <input type="hidden" name="vehicle_id"
                                                                 value="<?php echo $vehicle_id; ?>">
-                                                            <label for="inputEmail4" class="form-label"><span>*</span>Name</label>
-                                                            <input type="text" name="email" class="form-control"
-                                                                id="inputEmail4">
+                                                            <label for="name_id" class="form-label"><span>*</span>Name</label>
+                                                            <input type="text" name="name" required class="form-control"
+                                                                id="name_id">
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="Email4"
                                                                 class="form-label"><span>*</span>Email</label>
-                                                            <input type="email" name="password" class="form-control"
+                                                            <input type="email" name="email" required class="form-control"
                                                                 id="Email4">
                                                         </div>
                                                         <div class="col-md-6">
@@ -405,13 +405,13 @@ while (have_rows('variations_images', $vehicle_id)):
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="Model" class="form-label"><span>*</span>Model</label>
-                                                            <input type="text" name="state" class="form-control"
+                                                            <input type="text" name="state" required class="form-control"
                                                                 id="Model">
                                                         </div>
                                                         <div class="col-md-12">
                                                             <label for="Review"
                                                                 class="form-label"><span>*</span>Review</label>
-                                                            <textarea class="form-control" name="review"
+                                                            <textarea class="form-control" required name="review"
                                                                 id="Review" rows="3"></textarea>
                                                         </div>
                                                         <div class="col-md-12">

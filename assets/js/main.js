@@ -4,6 +4,20 @@ jQuery( document ).ready(function() {
   
   jQuery('.find-dealer-page .map-image').after('<p class="map_description">Need help finding a Aodes dealer near you? Find a dealer nearest to you with our locator map. Simply enter your address and select the type of equipment you\' are looking for.</p>');
   jQuery("body").on("click", ".review_form_submit", function () {
+    var name = jQuery('#review_form_submit_form #name_id').val().length;
+    var email = jQuery('#review_form_submit_form #Email4').val().length;
+    var states = jQuery('#review_form_submit_form #States').val().length;
+    var model = jQuery('#review_form_submit_form #Model').val().length;
+    var review = jQuery('#review_form_submit_form #Review').val().length;
+    var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+    if (testEmail.test(email)){
+      
+    }else{
+      return false;
+    }
+    if(name == 0 || email == 0 || states == 0 || model == 0 || review == 0 ){
+      return false;
+    }
     jQuery('#review_form_submit_form').trigger('submit');
   });
   jQuery("body").on("click", ".upload_btn", function () {
@@ -84,6 +98,10 @@ jQuery("body").on("click", ".brator-manuals .accordion", function () {
   
  
 
+});
+jQuery("body").on("click", ".terms_wrap", function () {
+  jQuery(this).find('.form-check-input').toggleClass('checked');
+  jQuery(this).find('.form-check-input').toggleClass('wpcf7-validates-as-required');
 });
 jQuery("body").on("click", ".brator-manuals .panel .sub_categories .c_title", function () {
   jQuery('.brator-manuals .panel .sub_categories .c_title').removeClass('active');

@@ -4055,7 +4055,9 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
     text-transform: uppercase;
     font-family: 'Montserrat';
 }
-
+.terms_wrap .form-check-input.checked {
+    background-color: red !important;
+}
 .become-leader-button:hover {
     background-color: transparent;
     border: 1px solid #fff;
