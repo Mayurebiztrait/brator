@@ -1,5 +1,12 @@
 jQuery( document ).ready(function() {
 
+  if ($('.brator-cart-link').length) {
+      $('.brator-header-area.header-one .brator-info-right a.cart_tag').on('click', function(e) {
+          $('.brator-cart-item-list').toggleClass('mini-cart-open');
+      });
+  }
+
+
   // download pdf code
   
   jQuery('.find-dealer-page .map-image').after('<p class="map_description">Need help finding a Aodes dealer near you? Find a dealer nearest to you with our locator map. Simply enter your address and select the type of equipment you\' are looking for.</p>');
