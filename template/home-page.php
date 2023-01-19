@@ -23,7 +23,7 @@ get_header(); ?>
       <a href="<?php echo site_url().'/stores/'; ?>" class="find-deal">
         FIND A Dealer
       </a>
-      <a href="<?php echo site_url().'/contact-us/'; ?>" class="contact-us">
+      <a href="<?php echo site_url().'/contact/'; ?>" class="contact-us">
         CONTACT US NOW
       </a>
     </div>

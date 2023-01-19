@@ -117,6 +117,9 @@ jQuery(document).ready(function() {
         </div>
     </div>
 </section>
+<?php
+do_action('brator_breadcrumb');
+?>
 
 <div class="custom_product_detail_wrap">
     <section class="" id="overview_section">

@@ -71,4 +71,6 @@ if (function_exists('wp_body_open')) {
 
 do_action('brator_preloader');
 get_template_part('components/header/header');
+echo "<div class='brator_breadcrumb_wrap'>";
 do_action('brator_breadcrumb');
+echo "</div>";

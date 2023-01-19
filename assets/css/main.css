@@ -251,7 +251,7 @@ li.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link:h
 }
 
 .woocommerce-ordering .select2-container {
-    width: 260px !important;
+    width: 230px !important;
 }
 
 .brator-product-single-item-area .brator-product-single-item-mini .brator-product-single-item-price p span {
@@ -428,10 +428,28 @@ a.product_type_variable {
     text-decoration: none !important;
 }
 
+.single-vehicle .brator_breadcrumb_wrap .brator-breadcrumb-area {
+    display: none;
+}
+
 .login-section .sign_in_btn,
 .login-section .sign_in_btn:hover {
     background-color: #000;
     border-color: #000;
+}
+
+#review_form_submit_form .upload_btn {
+    display: inline-block;
+}
+
+.stay-connected .wpcf7-response-output {
+    color: #fff;
+}
+
+#review_form_submit_form .filename {
+    display: inline-block;
+    margin-left: 13px;
+    font-size: 13px;
 }
 
 .login-section .input-group-text {
@@ -3712,7 +3730,7 @@ li.cat-item.cat-parent.sub-cat.current .children {
     line-height: 42px;
     margin-bottom: 0px;
     color: #666666;
-    padding-left: 30px;
+    padding-left: 50px;
 }
 
 .brator-banner-area.design-four.shop-bg {
@@ -4040,10 +4058,12 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
     border: 1px solid #fff;
     color: #fff;
 }
-.error{
+
+.error {
     color: #d7291c;
     margin-bottom: 0px;
 }
+
 .brator-header-menu .mega-menu-item.mega-toggle-on a.mega-menu-link::before {
     content: "";
     position: absolute !important;
@@ -4060,6 +4080,7 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
     top: 38px !important;
     transform: translate(-50%, -50%);
 }
+
 .become-leader-button {
     text-align: center;
     color: #d7291c;
@@ -4075,9 +4096,11 @@ footer.brator-footer-area.home-three-footer.brator-footer-three-area {
     text-transform: uppercase;
     font-family: 'Montserrat';
 }
+
 .terms_wrap .form-check-input.checked {
     background-color: red !important;
 }
+
 .become-leader-button:hover {
     background-color: transparent;
     border: 1px solid #fff;
@@ -4939,14 +4962,26 @@ ul#menu-left-sidebar li a {
     margin-top: 40px;
 }
 
+.about-us .brator-social-link.svg-link a {
+    width: auto;
+}
+
+.about-us .brator-social-link {
+    justify-content: start;
+}
+
 .row.main-title-catalog {
     margin-top: 0;
     border-bottom: 0;
 }
 
 .brator-breadcrumb {
-    height: 80px;
+    height: 40px;
     border-bottom: 1px solid #000;
+}
+
+.bundle-product .brator-blog-post-area {
+    padding: 50px 0;
 }
 
 .brator-manuals {
@@ -8388,6 +8423,12 @@ ul.faq-question-list-ul {
 }
 
 @media screen and (max-width:991px) {
+    .woocommerce-shop .brator-product-single-item-area {
+        padding: 0 0 0 0;
+        margin-bottom: 30px !important;
+        width: 100%;
+    }
+
     .brator-footer-top-area {
         padding: 0;
     }

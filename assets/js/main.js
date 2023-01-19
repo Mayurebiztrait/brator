@@ -1,5 +1,31 @@
 jQuery( document ).ready(function() {
 
+  
+    //ttInputCounter
+    var inputCounter = $('.tt-input-counter');
+    if (inputCounter.length){
+      inputCounter.find('.minus-btn, .plus-btn').on('click',function(e) {
+        var $input = $(this).parent().find('input');
+        var count = parseInt($input.val(), 10) + parseInt(e.currentTarget.className === 'plus-btn' ? 1 : -1, 10);
+        $input.val(count).change();
+      });
+      inputCounter.find("input").change(function() {
+        var _ = $(this);
+        var min = 1;
+        var val = parseInt(_.val(), 10);
+        var max = parseInt(_.attr('size'), 10);
+        val = Math.min(val, max);
+        val = Math.max(val, min);
+        _.val(val);
+      })
+      .on("keypress", function( e ) {
+        if (e.keyCode === 13) {
+          e.preventDefault();
+        }
+      });
+    }
+
+
   // if ($('.brator-cart-link').length) {
   //     $('.brator-header-area.header-one .brator-info-right a.cart_tag').on('click', function(e) {
   //         $('.brator-cart-item-list').toggleClass('mini-cart-open');
@@ -103,7 +129,11 @@ jQuery(".custom-card-main .custom-learn-svg").click(function(){
   
 });
 
-
+jQuery("body").on("change", "#review_form_submit_form #image_uploads", function () { 
+  var filename = jQuery('#review_form_submit_form #image_uploads').val().split('\\').pop();
+  jQuery('#review_form_submit_form .upload_btn').siblings('.filename').remove();
+  jQuery('#review_form_submit_form .upload_btn').after('<span class="filename">'+filename+'</span>');
+});
 jQuery("body").on("click", ".product-detail .change_slide", function () {
   var slide = jQuery(this).data('slide');
   imgId = slide;
@@ -132,8 +162,23 @@ jQuery("body").on("click", ".brator-manuals .accordion", function () {
 });
 jQuery("body").on("click", ".terms_wrap", function () {
   jQuery(this).find('.form-check-input').toggleClass('checked');
-  jQuery(this).find('.form-check-input').toggleClass('wpcf7-validates-as-required');
+  
 });
+jQuery("body").on("click", ".stay-connected .wpcf7-submit", function (e) { 
+  
+  jQuery('.terms_wrap .error').remove();
+  if(jQuery('.terms_wrap #flexCheckDefault').is(':checked')){
+    jQuery('.stay-connected form').submit();
+  }else{
+    if(jQuery('.stay-connected input[name=your-name]').val() != '' && jQuery('.stay-connected input[name=your-lastname]').val() != '' && jQuery('.stay-connected input[name=your-email]').val() != '' && jQuery('.stay-connected input[name=your-zip]').val() != ''){
+      jQuery('.stay-connected .wpcf7-form-control-wrap .wpcf7-not-valid-tip').remove();
+      jQuery('.terms_wrap label').append('<p class="error">Please check term and condition checkbox.</p>');
+      e.preventDefault();
+    }
+    
+  }
+});
+
 jQuery("body").on("click", ".brator-manuals .panel .sub_categories .c_title", function () {
   jQuery('.brator-manuals .panel .sub_categories .c_title').removeClass('active');
 
